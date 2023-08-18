@@ -4,13 +4,17 @@
   import Input from "./Input.svelte";
   import Output from "./Output.svelte";
   import Filter from "./Filter.svelte";
+  import FilterPicker from "./FilterPicker.svelte";
+  import Modal from "./Modal.svelte";
+
+  let showFilterModal = false;
 
   function newInput() {
     $inputs = [...$inputs, ""];
   }
 
   function newFilter() {
-    $filters = [...$filters, {}];
+    showFilterModal = true;
   }
 
   let command = "";
@@ -70,6 +74,9 @@
     <!-- {JSON.stringify($filters)} -->
     <h3>Filters</h3>
     <button on:click={newFilter}>Add Filter</button>
+    <Modal bind:showModal={showFilterModal}>
+      <FilterPicker bind:showFilterModal />
+    </Modal>
     <div class="filters-holder">
       {#each $filters as f, index}
         <div class="filter">
