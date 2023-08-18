@@ -2,6 +2,7 @@ import json
 import re
 from subprocess import run
 
+
 def get_names():
     filters = []
 
@@ -70,13 +71,26 @@ def get_params(f):
             if item.get("max", 0) in ["INT_MAX", "FLT_MAX", "DBL_MAX", "I64_MAX"]:
                 item["max"] = 2147483647
 
-            if item.get("min", 0) in ["INT_MIN", "FLT_MIN", "DBL_MIN", "-DBL_MAX", "I64_MIN", "-FLT_MAX"]:
+            if item.get("min", 0) in [
+                "INT_MIN",
+                "FLT_MIN",
+                "DBL_MIN",
+                "-DBL_MAX",
+                "I64_MIN",
+                "-FLT_MAX",
+            ]:
                 item["min"] = -2147483648
 
             if item.get("default", 0) in ["INT_MAX", "FLT_MAX", "DBL_MAX", "I64_MAX"]:
                 item["default"] = 2147483647
 
-            if item.get("default", 0) in ["INT_MIN", "FLT_MIN", "DBL_MIN", "-DBL_MAX", "I64_MAX"]:
+            if item.get("default", 0) in [
+                "INT_MIN",
+                "FLT_MIN",
+                "DBL_MIN",
+                "-DBL_MAX",
+                "I64_MAX",
+            ]:
                 item["default"] = -2147483648
 
             if item["default"] == "nan":
@@ -96,6 +110,9 @@ def get_params(f):
                         item["default"] = int(item["default"])
                 except Exception as e:
                     pass
+
+            if type(item["default"]) == str:
+                item["default"] = item["default"].replace("'", "").replace('"', "")
 
         else:
             item = {"value": parts[0], "desc": " ".join(parts[3:])}
