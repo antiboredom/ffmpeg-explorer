@@ -14,7 +14,7 @@ def get_names():
         parts = re.split(r" +", l)
         filter_meta = parts[0]
         filter_name = parts[1]
-        filter_type = parts[3]
+        filter_type = parts[2]
         description = " ".join(parts[3:])
 
         item = {

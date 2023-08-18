@@ -43,7 +43,7 @@
 
     let out = `ffmpeg ${cInputs}`;
 
-    if (cFilters) out += `-vf "${cFilters}"`;
+    if (cFilters) out += ` -filter_complex "${cFilters}"`;
 
     out += ` ${cOutput}`;
 
