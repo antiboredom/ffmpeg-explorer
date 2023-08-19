@@ -6,7 +6,7 @@ from subprocess import run
 def get_names():
     filters = []
 
-    with open("./filternames.txt", "r") as infile:
+    with open("./filternames_wasm.txt", "r") as infile:
         input = infile.readlines()
         input = [l.strip() for l in input]
 

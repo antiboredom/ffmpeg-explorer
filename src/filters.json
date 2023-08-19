@@ -1233,47 +1233,6 @@
   {
     "id": 14,
     "meta": "TSC",
-    "name": "adrc",
-    "type": "A->A",
-    "description": "Audio Spectral Dynamic Range Controller.",
-    "params": [
-      {
-        "name": "transfer",
-        "type": "string",
-        "desc": "set the transfer expression (default \"p\")",
-        "min": null,
-        "max": null,
-        "default": "p"
-      },
-      {
-        "name": "attack",
-        "type": "double",
-        "desc": "set the attack (from 1 to 1000) (default 50)",
-        "min": 1.0,
-        "max": 1000.0,
-        "default": 50.0
-      },
-      {
-        "name": "release",
-        "type": "double",
-        "desc": "set the release (from 5 to 2000) (default 100)",
-        "min": 5.0,
-        "max": 2000.0,
-        "default": 100.0
-      },
-      {
-        "name": "channels",
-        "type": "string",
-        "desc": "set channels to filter (default \"all\")",
-        "min": null,
-        "max": null,
-        "default": "all"
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "meta": "TSC",
     "name": "adynamicequalizer",
     "type": "A->A",
     "description": "Apply Dynamic Equalization of input audio.",
@@ -1445,7 +1404,7 @@
     ]
   },
   {
-    "id": 16,
+    "id": 15,
     "meta": "T.C",
     "name": "adynamicsmooth",
     "type": "A->A",
@@ -1470,7 +1429,7 @@
     ]
   },
   {
-    "id": 17,
+    "id": 16,
     "meta": "...",
     "name": "aecho",
     "type": "A->A",
@@ -1511,7 +1470,7 @@
     ]
   },
   {
-    "id": 18,
+    "id": 17,
     "meta": "TSC",
     "name": "aemphasis",
     "type": "A->A",
@@ -1600,7 +1559,7 @@
     ]
   },
   {
-    "id": 19,
+    "id": 18,
     "meta": "T..",
     "name": "aeval",
     "type": "A->A",
@@ -1633,7 +1592,7 @@
     ]
   },
   {
-    "id": 20,
+    "id": 19,
     "meta": "T.C",
     "name": "aexciter",
     "type": "A->A",
@@ -1706,7 +1665,7 @@
     ]
   },
   {
-    "id": 21,
+    "id": 20,
     "meta": "T.C",
     "name": "afade",
     "type": "A->A",
@@ -2011,7 +1970,7 @@
     ]
   },
   {
-    "id": 22,
+    "id": 21,
     "meta": "TSC",
     "name": "afftdn",
     "type": "A->A",
@@ -2444,7 +2403,7 @@
     ]
   },
   {
-    "id": 23,
+    "id": 22,
     "meta": "TS.",
     "name": "afftfilt",
     "type": "A->A",
@@ -2583,7 +2542,7 @@
     ]
   },
   {
-    "id": 24,
+    "id": 23,
     "meta": ".SC",
     "name": "afir",
     "type": "N->N",
@@ -2770,7 +2729,7 @@
     ]
   },
   {
-    "id": 25,
+    "id": 24,
     "meta": "...",
     "name": "aformat",
     "type": "A->A",
@@ -2827,7 +2786,7 @@
     ]
   },
   {
-    "id": 26,
+    "id": 25,
     "meta": "TSC",
     "name": "afreqshift",
     "type": "A->A",
@@ -2860,7 +2819,7 @@
     ]
   },
   {
-    "id": 27,
+    "id": 26,
     "meta": "TSC",
     "name": "afwtdn",
     "type": "A->A",
@@ -2963,7 +2922,7 @@
     ]
   },
   {
-    "id": 28,
+    "id": 27,
     "meta": "T.C",
     "name": "agate",
     "type": "A->A",
@@ -3098,7 +3057,7 @@
     ]
   },
   {
-    "id": 29,
+    "id": 28,
     "meta": ".S.",
     "name": "aiir",
     "type": "A->N",
@@ -3399,7 +3358,7 @@
     ]
   },
   {
-    "id": 30,
+    "id": 29,
     "meta": "T..",
     "name": "aintegral",
     "type": "A->A",
@@ -3407,7 +3366,7 @@
     "params": []
   },
   {
-    "id": 31,
+    "id": 30,
     "meta": "...",
     "name": "ainterleave",
     "type": "N->A",
@@ -3454,14 +3413,14 @@
     ]
   },
   {
-    "id": 32,
+    "id": 31,
     "meta": "T..",
     "name": "alatency",
     "type": "A->A",
     "description": "Report audio filtering latency."
   },
   {
-    "id": 33,
+    "id": 32,
     "meta": "T.C",
     "name": "alimiter",
     "type": "A->A",
@@ -3542,7 +3501,7 @@
     ]
   },
   {
-    "id": 34,
+    "id": 33,
     "meta": "TSC",
     "name": "allpass",
     "type": "A->A",
@@ -3843,7 +3802,7 @@
     ]
   },
   {
-    "id": 35,
+    "id": 34,
     "meta": "...",
     "name": "aloop",
     "type": "A->A",
@@ -3876,7 +3835,7 @@
     ]
   },
   {
-    "id": 36,
+    "id": 35,
     "meta": "...",
     "name": "amerge",
     "type": "N->A",
@@ -3893,7 +3852,7 @@
     ]
   },
   {
-    "id": 37,
+    "id": 36,
     "meta": "T..",
     "name": "ametadata",
     "type": "A->A",
@@ -4010,7 +3969,7 @@
     ]
   },
   {
-    "id": 38,
+    "id": 37,
     "meta": "..C",
     "name": "amix",
     "type": "N->A",
@@ -4073,14 +4032,14 @@
     ]
   },
   {
-    "id": 39,
+    "id": 38,
     "meta": "...",
     "name": "amultiply",
     "type": "AA->A",
     "description": "Multiply two audio streams."
   },
   {
-    "id": 40,
+    "id": 39,
     "meta": "TSC",
     "name": "anequalizer",
     "type": "A->N",
@@ -4147,7 +4106,7 @@
     ]
   },
   {
-    "id": 41,
+    "id": 40,
     "meta": "TSC",
     "name": "anlmdn",
     "type": "A->A",
@@ -4264,7 +4223,7 @@
     ]
   },
   {
-    "id": 42,
+    "id": 41,
     "meta": "TSC",
     "name": "anlmf",
     "type": "AA->A",
@@ -4331,7 +4290,7 @@
     ]
   },
   {
-    "id": 43,
+    "id": 42,
     "meta": "TSC",
     "name": "anlms",
     "type": "AA->A",
@@ -4398,14 +4357,14 @@
     ]
   },
   {
-    "id": 44,
+    "id": 43,
     "meta": "...",
     "name": "anull",
     "type": "A->A",
     "description": "Pass the source unchanged to the output."
   },
   {
-    "id": 45,
+    "id": 44,
     "meta": "T..",
     "name": "apad",
     "type": "A->A",
@@ -4454,7 +4413,7 @@
     ]
   },
   {
-    "id": 46,
+    "id": 45,
     "meta": "T.C",
     "name": "aperms",
     "type": "A->A",
@@ -4501,7 +4460,7 @@
     ]
   },
   {
-    "id": 47,
+    "id": 46,
     "meta": "...",
     "name": "aphaser",
     "type": "A->A",
@@ -4576,7 +4535,7 @@
     ]
   },
   {
-    "id": 48,
+    "id": 47,
     "meta": "TSC",
     "name": "aphaseshift",
     "type": "A->A",
@@ -4609,7 +4568,7 @@
     ]
   },
   {
-    "id": 49,
+    "id": 48,
     "meta": "TSC",
     "name": "apsyclip",
     "type": "A->A",
@@ -4674,7 +4633,7 @@
     ]
   },
   {
-    "id": 50,
+    "id": 49,
     "meta": "...",
     "name": "apulsator",
     "type": "A->A",
@@ -4807,7 +4766,7 @@
     ]
   },
   {
-    "id": 51,
+    "id": 50,
     "meta": "..C",
     "name": "arealtime",
     "type": "A->A",
@@ -4832,7 +4791,7 @@
     ]
   },
   {
-    "id": 52,
+    "id": 51,
     "meta": "...",
     "name": "aresample",
     "type": "A->A",
@@ -4849,14 +4808,14 @@
     ]
   },
   {
-    "id": 53,
+    "id": 52,
     "meta": "...",
     "name": "areverse",
     "type": "A->A",
     "description": "Reverse an audio clip."
   },
   {
-    "id": 54,
+    "id": 53,
     "meta": "TSC",
     "name": "arnndn",
     "type": "A->A",
@@ -4889,14 +4848,14 @@
     ]
   },
   {
-    "id": 55,
+    "id": 54,
     "meta": "...",
     "name": "asdr",
     "type": "AA->A",
     "description": "Measure Audio Signal-to-Distortion Ratio."
   },
   {
-    "id": 56,
+    "id": 55,
     "meta": "...",
     "name": "asegment",
     "type": "A->N",
@@ -4921,7 +4880,7 @@
     ]
   },
   {
-    "id": 57,
+    "id": 56,
     "meta": "...",
     "name": "aselect",
     "type": "A->N",
@@ -4962,7 +4921,7 @@
     ]
   },
   {
-    "id": 58,
+    "id": 57,
     "meta": "...",
     "name": "asendcmd",
     "type": "A->A",
@@ -5003,7 +4962,7 @@
     ]
   },
   {
-    "id": 59,
+    "id": 58,
     "meta": "...",
     "name": "asetnsamples",
     "type": "A->A",
@@ -5044,7 +5003,7 @@
     ]
   },
   {
-    "id": 60,
+    "id": 59,
     "meta": "...",
     "name": "asetpts",
     "type": "A->A",
@@ -5061,7 +5020,7 @@
     ]
   },
   {
-    "id": 61,
+    "id": 60,
     "meta": "...",
     "name": "asetrate",
     "type": "A->A",
@@ -5086,7 +5045,7 @@
     ]
   },
   {
-    "id": 62,
+    "id": 61,
     "meta": "...",
     "name": "asettb",
     "type": "A->A",
@@ -5111,14 +5070,14 @@
     ]
   },
   {
-    "id": 63,
+    "id": 62,
     "meta": "...",
     "name": "ashowinfo",
     "type": "A->A",
     "description": "Show textual information for each audio frame."
   },
   {
-    "id": 64,
+    "id": 63,
     "meta": "T..",
     "name": "asidedata",
     "type": "A->A",
@@ -5239,7 +5198,7 @@
     ]
   },
   {
-    "id": 65,
+    "id": 64,
     "meta": "TSC",
     "name": "asoftclip",
     "type": "A->A",
@@ -5326,7 +5285,7 @@
     ]
   },
   {
-    "id": 66,
+    "id": 65,
     "meta": ".S.",
     "name": "aspectralstats",
     "type": "A->A",
@@ -5519,7 +5478,7 @@
     ]
   },
   {
-    "id": 67,
+    "id": 66,
     "meta": "...",
     "name": "asplit",
     "type": "A->N",
@@ -5536,7 +5495,7 @@
     ]
   },
   {
-    "id": 68,
+    "id": 67,
     "meta": ".S.",
     "name": "astats",
     "type": "A->A",
@@ -5805,7 +5764,7 @@
     ]
   },
   {
-    "id": 69,
+    "id": 68,
     "meta": "..C",
     "name": "astreamselect",
     "type": "N->N",
@@ -5830,7 +5789,7 @@
     ]
   },
   {
-    "id": 70,
+    "id": 69,
     "meta": "TSC",
     "name": "asubboost",
     "type": "A->A",
@@ -5911,7 +5870,7 @@
     ]
   },
   {
-    "id": 71,
+    "id": 70,
     "meta": "TSC",
     "name": "asubcut",
     "type": "A->A",
@@ -5944,7 +5903,7 @@
     ]
   },
   {
-    "id": 72,
+    "id": 71,
     "meta": "TSC",
     "name": "asupercut",
     "type": "A->A",
@@ -5977,7 +5936,7 @@
     ]
   },
   {
-    "id": 73,
+    "id": 72,
     "meta": "TSC",
     "name": "asuperpass",
     "type": "A->A",
@@ -6018,7 +5977,7 @@
     ]
   },
   {
-    "id": 74,
+    "id": 73,
     "meta": "TSC",
     "name": "asuperstop",
     "type": "A->A",
@@ -6059,7 +6018,7 @@
     ]
   },
   {
-    "id": 75,
+    "id": 74,
     "meta": "..C",
     "name": "atempo",
     "type": "A->A",
@@ -6076,7 +6035,7 @@
     ]
   },
   {
-    "id": 76,
+    "id": 75,
     "meta": "TSC",
     "name": "atilt",
     "type": "A->A",
@@ -6125,7 +6084,7 @@
     ]
   },
   {
-    "id": 77,
+    "id": 76,
     "meta": "...",
     "name": "atrim",
     "type": "A->A",
@@ -6214,7 +6173,7 @@
     ]
   },
   {
-    "id": 78,
+    "id": 77,
     "meta": "...",
     "name": "axcorrelate",
     "type": "AA->A",
@@ -6249,32 +6208,7 @@
     ]
   },
   {
-    "id": 79,
-    "meta": "...",
-    "name": "azmq",
-    "type": "A->A",
-    "description": "Receive commands through ZMQ and broker them to filters.",
-    "params": [
-      {
-        "name": "bind_address",
-        "type": "string",
-        "desc": "set bind address (default \"tcp://*:5555\")",
-        "min": null,
-        "max": null,
-        "default": "tcp://*:5555"
-      },
-      {
-        "name": "b",
-        "type": "string",
-        "desc": "set bind address (default \"tcp://*:5555\")",
-        "min": null,
-        "max": null,
-        "default": "tcp://*:5555"
-      }
-    ]
-  },
-  {
-    "id": 80,
+    "id": 78,
     "meta": "TSC",
     "name": "bandpass",
     "type": "A->A",
@@ -6583,7 +6517,7 @@
     ]
   },
   {
-    "id": 81,
+    "id": 79,
     "meta": "TSC",
     "name": "bandreject",
     "type": "A->A",
@@ -6884,7 +6818,7 @@
     ]
   },
   {
-    "id": 82,
+    "id": 80,
     "meta": "TSC",
     "name": "bass",
     "type": "A->A",
@@ -7217,7 +7151,7 @@
     ]
   },
   {
-    "id": 83,
+    "id": 81,
     "meta": "TSC",
     "name": "biquad",
     "type": "A->A",
@@ -7474,7 +7408,7 @@
     ]
   },
   {
-    "id": 84,
+    "id": 82,
     "meta": "...",
     "name": "channelmap",
     "type": "A->A",
@@ -7499,7 +7433,7 @@
     ]
   },
   {
-    "id": 85,
+    "id": 83,
     "meta": "...",
     "name": "channelsplit",
     "type": "A->N",
@@ -7524,7 +7458,7 @@
     ]
   },
   {
-    "id": 86,
+    "id": 84,
     "meta": "...",
     "name": "chorus",
     "type": "A->A",
@@ -7581,7 +7515,7 @@
     ]
   },
   {
-    "id": 87,
+    "id": 85,
     "meta": "...",
     "name": "compand",
     "type": "A->A",
@@ -7646,7 +7580,7 @@
     ]
   },
   {
-    "id": 88,
+    "id": 86,
     "meta": "T.C",
     "name": "compensationdelay",
     "type": "A->A",
@@ -7703,7 +7637,7 @@
     ]
   },
   {
-    "id": 89,
+    "id": 87,
     "meta": "T.C",
     "name": "crossfeed",
     "type": "A->A",
@@ -7760,7 +7694,7 @@
     ]
   },
   {
-    "id": 90,
+    "id": 88,
     "meta": "TSC",
     "name": "crystalizer",
     "type": "A->A",
@@ -7785,7 +7719,7 @@
     ]
   },
   {
-    "id": 91,
+    "id": 89,
     "meta": "T..",
     "name": "dcshift",
     "type": "A->A",
@@ -7810,7 +7744,7 @@
     ]
   },
   {
-    "id": 92,
+    "id": 90,
     "meta": "T..",
     "name": "deesser",
     "type": "A->A",
@@ -7865,7 +7799,7 @@
     ]
   },
   {
-    "id": 93,
+    "id": 91,
     "meta": "T.C",
     "name": "dialoguenhance",
     "type": "A->A",
@@ -7898,7 +7832,7 @@
     ]
   },
   {
-    "id": 94,
+    "id": 92,
     "meta": "...",
     "name": "drmeter",
     "type": "A->A",
@@ -7915,8 +7849,8 @@
     ]
   },
   {
-    "id": 95,
-    "meta": "TSC",
+    "id": 93,
+    "meta": "T.C",
     "name": "dynaudnorm",
     "type": "A->A",
     "description": "Dynamic Audio Normalizer.",
@@ -8132,14 +8066,14 @@
     ]
   },
   {
-    "id": 96,
+    "id": 94,
     "meta": "...",
     "name": "earwax",
     "type": "A->A",
     "description": "Widen the stereo image."
   },
   {
-    "id": 97,
+    "id": 95,
     "meta": "...",
     "name": "ebur128",
     "type": "A->N",
@@ -8300,7 +8234,7 @@
     ]
   },
   {
-    "id": 98,
+    "id": 96,
     "meta": "TSC",
     "name": "equalizer",
     "type": "A->A",
@@ -8617,7 +8551,7 @@
     ]
   },
   {
-    "id": 99,
+    "id": 97,
     "meta": "T.C",
     "name": "extrastereo",
     "type": "A->A",
@@ -8642,7 +8576,7 @@
     ]
   },
   {
-    "id": 100,
+    "id": 98,
     "meta": "..C",
     "name": "firequalizer",
     "type": "A->A",
@@ -8833,7 +8767,7 @@
     ]
   },
   {
-    "id": 101,
+    "id": 99,
     "meta": "...",
     "name": "flanger",
     "type": "A->A",
@@ -8934,7 +8868,7 @@
     ]
   },
   {
-    "id": 102,
+    "id": 100,
     "meta": "...",
     "name": "haas",
     "type": "A->A",
@@ -9065,7 +8999,7 @@
     ]
   },
   {
-    "id": 103,
+    "id": 101,
     "meta": "...",
     "name": "hdcd",
     "type": "A->A",
@@ -9158,7 +9092,7 @@
     ]
   },
   {
-    "id": 104,
+    "id": 102,
     "meta": ".S.",
     "name": "headphone",
     "type": "N->A",
@@ -9235,7 +9169,7 @@
     ]
   },
   {
-    "id": 105,
+    "id": 103,
     "meta": "TSC",
     "name": "highpass",
     "type": "A->A",
@@ -9552,7 +9486,7 @@
     ]
   },
   {
-    "id": 106,
+    "id": 104,
     "meta": "TSC",
     "name": "highshelf",
     "type": "A->A",
@@ -9885,7 +9819,7 @@
     ]
   },
   {
-    "id": 107,
+    "id": 105,
     "meta": "...",
     "name": "join",
     "type": "N->A",
@@ -9918,7 +9852,7 @@
     ]
   },
   {
-    "id": 108,
+    "id": 106,
     "meta": "...",
     "name": "loudnorm",
     "type": "A->A",
@@ -10077,7 +10011,7 @@
     ]
   },
   {
-    "id": 109,
+    "id": 107,
     "meta": "TSC",
     "name": "lowpass",
     "type": "A->A",
@@ -10394,7 +10328,7 @@
     ]
   },
   {
-    "id": 110,
+    "id": 108,
     "meta": "TSC",
     "name": "lowshelf",
     "type": "A->A",
@@ -10727,7 +10661,7 @@
     ]
   },
   {
-    "id": 111,
+    "id": 109,
     "meta": "...",
     "name": "mcompand",
     "type": "A->A",
@@ -10744,7 +10678,7 @@
     ]
   },
   {
-    "id": 112,
+    "id": 110,
     "meta": "...",
     "name": "pan",
     "type": "A->A",
@@ -10761,199 +10695,14 @@
     ]
   },
   {
-    "id": 113,
+    "id": 111,
     "meta": "...",
     "name": "replaygain",
     "type": "A->A",
     "description": "ReplayGain scanner."
   },
   {
-    "id": 114,
-    "meta": "..C",
-    "name": "rubberband",
-    "type": "A->A",
-    "description": "Apply time-stretching and pitch-shifting.",
-    "params": [
-      {
-        "name": "tempo",
-        "type": "double",
-        "desc": "set tempo scale factor (from 0.01 to 100) (default 1)",
-        "min": 0.01,
-        "max": 100.0,
-        "default": 1.0
-      },
-      {
-        "name": "pitch",
-        "type": "double",
-        "desc": "set pitch scale factor (from 0.01 to 100) (default 1)",
-        "min": 0.01,
-        "max": 100.0,
-        "default": 1.0
-      },
-      {
-        "name": "transients",
-        "type": "int",
-        "desc": "set transients (from 0 to INT_MAX) (default crisp)",
-        "min": 0,
-        "max": 2147483647,
-        "default": "crisp",
-        "options": [
-          {
-            "value": "crisp",
-            "desc": ""
-          },
-          {
-            "value": "mixed",
-            "desc": ""
-          },
-          {
-            "value": "smooth",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "detector",
-        "type": "int",
-        "desc": "set detector (from 0 to INT_MAX) (default compound)",
-        "min": 0,
-        "max": 2147483647,
-        "default": "compound",
-        "options": [
-          {
-            "value": "compound",
-            "desc": ""
-          },
-          {
-            "value": "percussive",
-            "desc": ""
-          },
-          {
-            "value": "soft",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "phase",
-        "type": "int",
-        "desc": "set phase (from 0 to INT_MAX) (default laminar)",
-        "min": 0,
-        "max": 2147483647,
-        "default": "laminar",
-        "options": [
-          {
-            "value": "laminar",
-            "desc": ""
-          },
-          {
-            "value": "independent",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "window",
-        "type": "int",
-        "desc": "set window (from 0 to INT_MAX) (default standard)",
-        "min": 0,
-        "max": 2147483647,
-        "default": "standard",
-        "options": [
-          {
-            "value": "standard",
-            "desc": ""
-          },
-          {
-            "value": "short",
-            "desc": ""
-          },
-          {
-            "value": "long",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "smoothing",
-        "type": "int",
-        "desc": "set smoothing (from 0 to INT_MAX) (default off)",
-        "min": 0,
-        "max": 2147483647,
-        "default": "off",
-        "options": [
-          {
-            "value": "off",
-            "desc": ""
-          },
-          {
-            "value": "on",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "formant",
-        "type": "int",
-        "desc": "set formant (from 0 to INT_MAX) (default shifted)",
-        "min": 0,
-        "max": 2147483647,
-        "default": "shifted",
-        "options": [
-          {
-            "value": "shifted",
-            "desc": ""
-          },
-          {
-            "value": "preserved",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "pitchq",
-        "type": "int",
-        "desc": "set pitch quality (from 0 to INT_MAX) (default speed)",
-        "min": 0,
-        "max": 2147483647,
-        "default": "speed",
-        "options": [
-          {
-            "value": "quality",
-            "desc": ""
-          },
-          {
-            "value": "speed",
-            "desc": ""
-          },
-          {
-            "value": "consistency",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "channels",
-        "type": "int",
-        "desc": "set channels (from 0 to INT_MAX) (default apart)",
-        "min": 0,
-        "max": 2147483647,
-        "default": "apart",
-        "options": [
-          {
-            "value": "apart",
-            "desc": ""
-          },
-          {
-            "value": "together",
-            "desc": ""
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 115,
+    "id": 112,
     "meta": "..C",
     "name": "sidechaincompress",
     "type": "AA->A",
@@ -11088,7 +10837,7 @@
     ]
   },
   {
-    "id": 116,
+    "id": 113,
     "meta": "T.C",
     "name": "sidechaingate",
     "type": "AA->A",
@@ -11223,7 +10972,7 @@
     ]
   },
   {
-    "id": 117,
+    "id": 114,
     "meta": "...",
     "name": "silencedetect",
     "type": "A->A",
@@ -11280,7 +11029,7 @@
     ]
   },
   {
-    "id": 118,
+    "id": 115,
     "meta": "...",
     "name": "silenceremove",
     "type": "A->A",
@@ -11415,7 +11164,7 @@
     ]
   },
   {
-    "id": 119,
+    "id": 116,
     "meta": "T.C",
     "name": "speechnorm",
     "type": "A->A",
@@ -11584,7 +11333,7 @@
     ]
   },
   {
-    "id": 120,
+    "id": 117,
     "meta": "T.C",
     "name": "stereotools",
     "type": "A->A",
@@ -11827,7 +11576,7 @@
     ]
   },
   {
-    "id": 121,
+    "id": 118,
     "meta": "T.C",
     "name": "stereowiden",
     "type": "A->A",
@@ -11868,7 +11617,7 @@
     ]
   },
   {
-    "id": 122,
+    "id": 119,
     "meta": "...",
     "name": "superequalizer",
     "type": "A->A",
@@ -12021,8 +11770,8 @@
     ]
   },
   {
-    "id": 123,
-    "meta": ".SC",
+    "id": 120,
+    "meta": ".S.",
     "name": "surround",
     "type": "A->A",
     "description": "Apply audio surround upmix filter.",
@@ -12530,7 +12279,7 @@
     ]
   },
   {
-    "id": 124,
+    "id": 121,
     "meta": "TSC",
     "name": "tiltshelf",
     "type": "A->A",
@@ -12863,7 +12612,7 @@
     ]
   },
   {
-    "id": 125,
+    "id": 122,
     "meta": "TSC",
     "name": "treble",
     "type": "A->A",
@@ -13196,7 +12945,7 @@
     ]
   },
   {
-    "id": 126,
+    "id": 123,
     "meta": "T..",
     "name": "tremolo",
     "type": "A->A",
@@ -13221,7 +12970,7 @@
     ]
   },
   {
-    "id": 127,
+    "id": 124,
     "meta": "T..",
     "name": "vibrato",
     "type": "A->A",
@@ -13246,7 +12995,7 @@
     ]
   },
   {
-    "id": 128,
+    "id": 125,
     "meta": "T.C",
     "name": "virtualbass",
     "type": "A->A",
@@ -13271,7 +13020,7 @@
     ]
   },
   {
-    "id": 129,
+    "id": 126,
     "meta": "T.C",
     "name": "volume",
     "type": "A->A",
@@ -13370,14 +13119,14 @@
     ]
   },
   {
-    "id": 130,
+    "id": 127,
     "meta": "...",
     "name": "volumedetect",
     "type": "A->A",
     "description": "Detect audio volume."
   },
   {
-    "id": 131,
+    "id": 128,
     "meta": "...",
     "name": "aevalsrc",
     "type": "|->A",
@@ -13458,96 +13207,7 @@
     ]
   },
   {
-    "id": 132,
-    "meta": "...",
-    "name": "afdelaysrc",
-    "type": "|->A",
-    "description": "Generate a Fractional delay FIR coefficients.",
-    "params": [
-      {
-        "name": "delay",
-        "type": "double",
-        "desc": "set fractional delay (from 0 to 32767) (default 0)",
-        "min": 0.0,
-        "max": 32767.0,
-        "default": 0.0
-      },
-      {
-        "name": "d",
-        "type": "double",
-        "desc": "set fractional delay (from 0 to 32767) (default 0)",
-        "min": 0.0,
-        "max": 32767.0,
-        "default": 0.0
-      },
-      {
-        "name": "sample_rate",
-        "type": "int",
-        "desc": "set sample rate (from 1 to INT_MAX) (default 44100)",
-        "min": 1,
-        "max": 2147483647,
-        "default": 44100
-      },
-      {
-        "name": "r",
-        "type": "int",
-        "desc": "set sample rate (from 1 to INT_MAX) (default 44100)",
-        "min": 1,
-        "max": 2147483647,
-        "default": 44100
-      },
-      {
-        "name": "nb_samples",
-        "type": "int",
-        "desc": "set the number of samples per requested frame (from 1 to INT_MAX) (default 1024)",
-        "min": 1,
-        "max": 2147483647,
-        "default": 1024
-      },
-      {
-        "name": "n",
-        "type": "int",
-        "desc": "set the number of samples per requested frame (from 1 to INT_MAX) (default 1024)",
-        "min": 1,
-        "max": 2147483647,
-        "default": 1024
-      },
-      {
-        "name": "taps",
-        "type": "int",
-        "desc": "set number of taps for delay filter (from 0 to 32768) (default 0)",
-        "min": 0,
-        "max": 32768,
-        "default": 0
-      },
-      {
-        "name": "t",
-        "type": "int",
-        "desc": "set number of taps for delay filter (from 0 to 32768) (default 0)",
-        "min": 0,
-        "max": 32768,
-        "default": 0
-      },
-      {
-        "name": "channel_layout",
-        "type": "string",
-        "desc": "set channel layout (default \"stereo\")",
-        "min": null,
-        "max": null,
-        "default": "stereo"
-      },
-      {
-        "name": "c",
-        "type": "string",
-        "desc": "set channel layout (default \"stereo\")",
-        "min": null,
-        "max": null,
-        "default": "stereo"
-      }
-    ]
-  },
-  {
-    "id": 133,
+    "id": 129,
     "meta": "...",
     "name": "afirsrc",
     "type": "|->A",
@@ -14024,7 +13684,7 @@
     ]
   },
   {
-    "id": 134,
+    "id": 130,
     "meta": "...",
     "name": "anoisesrc",
     "type": "|->A",
@@ -14215,7 +13875,7 @@
     ]
   },
   {
-    "id": 135,
+    "id": 131,
     "meta": "...",
     "name": "anullsrc",
     "type": "|->A",
@@ -14288,7 +13948,7 @@
     ]
   },
   {
-    "id": 136,
+    "id": 132,
     "meta": "...",
     "name": "hilbert",
     "type": "|->A",
@@ -14717,7 +14377,7 @@
     ]
   },
   {
-    "id": 137,
+    "id": 133,
     "meta": "...",
     "name": "sinc",
     "type": "|->A",
@@ -14822,7 +14482,7 @@
     ]
   },
   {
-    "id": 138,
+    "id": 134,
     "meta": "...",
     "name": "sine",
     "type": "|->A",
@@ -14903,14 +14563,14 @@
     ]
   },
   {
-    "id": 139,
+    "id": 135,
     "meta": "...",
     "name": "anullsink",
     "type": "A->|",
     "description": "Do absolutely nothing with the input audio."
   },
   {
-    "id": 140,
+    "id": 136,
     "meta": "...",
     "name": "addroi",
     "type": "V->V",
@@ -14967,14 +14627,14 @@
     ]
   },
   {
-    "id": 141,
+    "id": 137,
     "meta": "...",
     "name": "alphaextract",
     "type": "V->V",
     "description": "Extract an alpha channel as a grayscale image component."
   },
   {
-    "id": 142,
+    "id": 138,
     "meta": "T..",
     "name": "alphamerge",
     "type": "VV->V",
@@ -14982,7 +14642,7 @@
     "params": []
   },
   {
-    "id": 143,
+    "id": 139,
     "meta": "TSC",
     "name": "amplify",
     "type": "V->V",
@@ -15047,7 +14707,7 @@
     ]
   },
   {
-    "id": 144,
+    "id": 140,
     "meta": "...",
     "name": "ass",
     "type": "V->V",
@@ -15118,7 +14778,7 @@
     ]
   },
   {
-    "id": 145,
+    "id": 141,
     "meta": "TSC",
     "name": "atadenoise",
     "type": "V->V",
@@ -15233,7 +14893,7 @@
     ]
   },
   {
-    "id": 146,
+    "id": 142,
     "meta": "T.C",
     "name": "avgblur",
     "type": "V->V",
@@ -15266,40 +14926,7 @@
     ]
   },
   {
-    "id": 147,
-    "meta": "TSC",
-    "name": "backgroundkey",
-    "type": "V->V",
-    "description": "Turns a static background into transparency.",
-    "params": [
-      {
-        "name": "threshold",
-        "type": "float",
-        "desc": "set the scene change threshold (from 0 to 1) (default 0.08)",
-        "min": 0.0,
-        "max": 1.0,
-        "default": 0.08
-      },
-      {
-        "name": "similarity",
-        "type": "float",
-        "desc": "set the similarity (from 0 to 1) (default 0.1)",
-        "min": 0.0,
-        "max": 1.0,
-        "default": 0.1
-      },
-      {
-        "name": "blend",
-        "type": "float",
-        "desc": "set the blend value (from 0 to 1) (default 0)",
-        "min": 0.0,
-        "max": 1.0,
-        "default": 0.0
-      }
-    ]
-  },
-  {
-    "id": 148,
+    "id": 143,
     "meta": "T.C",
     "name": "bbox",
     "type": "V->V",
@@ -15316,7 +14943,7 @@
     ]
   },
   {
-    "id": 149,
+    "id": 144,
     "meta": "...",
     "name": "bench",
     "type": "V->V",
@@ -15343,7 +14970,7 @@
     ]
   },
   {
-    "id": 150,
+    "id": 145,
     "meta": "TSC",
     "name": "bilateral",
     "type": "V->V",
@@ -15376,7 +15003,7 @@
     ]
   },
   {
-    "id": 151,
+    "id": 146,
     "meta": "T..",
     "name": "bitplanenoise",
     "type": "V->V",
@@ -15401,7 +15028,7 @@
     ]
   },
   {
-    "id": 152,
+    "id": 147,
     "meta": ".S.",
     "name": "blackdetect",
     "type": "V->V",
@@ -15458,7 +15085,7 @@
     ]
   },
   {
-    "id": 153,
+    "id": 148,
     "meta": "...",
     "name": "blackframe",
     "type": "V->V",
@@ -15491,7 +15118,7 @@
     ]
   },
   {
-    "id": 154,
+    "id": 149,
     "meta": "TSC",
     "name": "blend",
     "type": "VV->V",
@@ -16470,7 +16097,7 @@
     ]
   },
   {
-    "id": 155,
+    "id": 150,
     "meta": "...",
     "name": "blockdetect",
     "type": "V->V",
@@ -16503,7 +16130,7 @@
     ]
   },
   {
-    "id": 156,
+    "id": 151,
     "meta": "...",
     "name": "blurdetect",
     "type": "V->V",
@@ -16568,7 +16195,7 @@
     ]
   },
   {
-    "id": 157,
+    "id": 152,
     "meta": "TS.",
     "name": "bm3d",
     "type": "N->V",
@@ -16675,7 +16302,7 @@
     ]
   },
   {
-    "id": 158,
+    "id": 153,
     "meta": "T..",
     "name": "boxblur",
     "type": "V->V",
@@ -16780,7 +16407,7 @@
     ]
   },
   {
-    "id": 159,
+    "id": 154,
     "meta": "TS.",
     "name": "bwdif",
     "type": "V->V",
@@ -16847,7 +16474,7 @@
     ]
   },
   {
-    "id": 160,
+    "id": 155,
     "meta": "TSC",
     "name": "cas",
     "type": "V->V",
@@ -16872,7 +16499,7 @@
     ]
   },
   {
-    "id": 161,
+    "id": 156,
     "meta": "TSC",
     "name": "chromahold",
     "type": "V->V",
@@ -16913,7 +16540,7 @@
     ]
   },
   {
-    "id": 162,
+    "id": 157,
     "meta": "TSC",
     "name": "chromakey",
     "type": "V->V",
@@ -16954,7 +16581,7 @@
     ]
   },
   {
-    "id": 163,
+    "id": 158,
     "meta": "TSC",
     "name": "chromanr",
     "type": "V->V",
@@ -17045,7 +16672,7 @@
     ]
   },
   {
-    "id": 164,
+    "id": 159,
     "meta": "TSC",
     "name": "chromashift",
     "type": "V->V",
@@ -17104,7 +16731,7 @@
     ]
   },
   {
-    "id": 165,
+    "id": 160,
     "meta": "...",
     "name": "ciescope",
     "type": "V->V",
@@ -17339,7 +16966,7 @@
     ]
   },
   {
-    "id": 166,
+    "id": 161,
     "meta": "T..",
     "name": "codecview",
     "type": "V->V",
@@ -17466,7 +17093,7 @@
     ]
   },
   {
-    "id": 167,
+    "id": 162,
     "meta": "TSC",
     "name": "colorbalance",
     "type": "V->V",
@@ -17555,7 +17182,7 @@
     ]
   },
   {
-    "id": 168,
+    "id": 163,
     "meta": "TSC",
     "name": "colorchannelmixer",
     "type": "V->V",
@@ -17738,7 +17365,7 @@
     ]
   },
   {
-    "id": 169,
+    "id": 164,
     "meta": "TSC",
     "name": "colorcontrast",
     "type": "V->V",
@@ -17803,7 +17430,7 @@
     ]
   },
   {
-    "id": 170,
+    "id": 165,
     "meta": "TSC",
     "name": "colorcorrect",
     "type": "V->V",
@@ -17878,7 +17505,7 @@
     ]
   },
   {
-    "id": 171,
+    "id": 166,
     "meta": "TSC",
     "name": "colorize",
     "type": "V->V",
@@ -17919,7 +17546,7 @@
     ]
   },
   {
-    "id": 172,
+    "id": 167,
     "meta": "TSC",
     "name": "colorkey",
     "type": "V->V",
@@ -17952,7 +17579,7 @@
     ]
   },
   {
-    "id": 173,
+    "id": 168,
     "meta": "TSC",
     "name": "colorhold",
     "type": "V->V",
@@ -17985,7 +17612,7 @@
     ]
   },
   {
-    "id": 174,
+    "id": 169,
     "meta": "TSC",
     "name": "colorlevels",
     "type": "V->V",
@@ -18160,7 +17787,7 @@
     ]
   },
   {
-    "id": 175,
+    "id": 170,
     "meta": "TSC",
     "name": "colormap",
     "type": "VVV->V",
@@ -18221,7 +17848,7 @@
     ]
   },
   {
-    "id": 176,
+    "id": 171,
     "meta": "TS.",
     "name": "colormatrix",
     "type": "V->V",
@@ -18314,7 +17941,7 @@
     ]
   },
   {
-    "id": 177,
+    "id": 172,
     "meta": "TS.",
     "name": "colorspace",
     "type": "V->V",
@@ -18893,7 +18520,7 @@
     ]
   },
   {
-    "id": 178,
+    "id": 173,
     "meta": "TSC",
     "name": "colortemperature",
     "type": "V->V",
@@ -18926,7 +18553,7 @@
     ]
   },
   {
-    "id": 179,
+    "id": 174,
     "meta": "TSC",
     "name": "convolution",
     "type": "V->V",
@@ -19119,7 +18746,7 @@
     ]
   },
   {
-    "id": 180,
+    "id": 175,
     "meta": "TS.",
     "name": "convolve",
     "type": "VV->V",
@@ -19162,63 +18789,14 @@
     ]
   },
   {
-    "id": 181,
+    "id": 176,
     "meta": "...",
     "name": "copy",
     "type": "V->V",
     "description": "Copy the input video unchanged to the output."
   },
   {
-    "id": 182,
-    "meta": "...",
-    "name": "coreimage",
-    "type": "V->V",
-    "description": "Video filtering using CoreImage API.",
-    "params": [
-      {
-        "name": "list_filters",
-        "type": "boolean",
-        "desc": "list available filters (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      },
-      {
-        "name": "list_generators",
-        "type": "boolean",
-        "desc": "list available generators (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      },
-      {
-        "name": "filter",
-        "type": "string",
-        "desc": "names and options of filters to apply",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "output_rect",
-        "type": "string",
-        "desc": "output rectangle within output image",
-        "min": null,
-        "max": null,
-        "default": null
-      }
-    ]
-  },
-  {
-    "id": 183,
-    "meta": "T..",
-    "name": "corr",
-    "type": "VV->V",
-    "description": "Calculate the correlation between two video streams.",
-    "params": []
-  },
-  {
-    "id": 184,
+    "id": 177,
     "meta": "...",
     "name": "cover_rect",
     "type": "V->V",
@@ -19253,7 +18831,7 @@
     ]
   },
   {
-    "id": 185,
+    "id": 178,
     "meta": "..C",
     "name": "crop",
     "type": "V->V",
@@ -19326,8 +18904,8 @@
     ]
   },
   {
-    "id": 186,
-    "meta": "T.C",
+    "id": 179,
+    "meta": "T..",
     "name": "cropdetect",
     "type": "V->V",
     "description": "Auto-detect crop size.",
@@ -19425,7 +19003,7 @@
     ]
   },
   {
-    "id": 187,
+    "id": 180,
     "meta": "...",
     "name": "cue",
     "type": "V->V",
@@ -19458,7 +19036,7 @@
     ]
   },
   {
-    "id": 188,
+    "id": 181,
     "meta": "TSC",
     "name": "curves",
     "type": "V->V",
@@ -19627,7 +19205,7 @@
     ]
   },
   {
-    "id": 189,
+    "id": 182,
     "meta": ".SC",
     "name": "datascope",
     "type": "V->V",
@@ -19732,7 +19310,7 @@
     ]
   },
   {
-    "id": 190,
+    "id": 183,
     "meta": "T.C",
     "name": "dblur",
     "type": "V->V",
@@ -19765,7 +19343,7 @@
     ]
   },
   {
-    "id": 191,
+    "id": 184,
     "meta": "TS.",
     "name": "dctdnoiz",
     "type": "V->V",
@@ -19822,7 +19400,7 @@
     ]
   },
   {
-    "id": 192,
+    "id": 185,
     "meta": "TSC",
     "name": "deband",
     "type": "V->V",
@@ -19927,7 +19505,7 @@
     ]
   },
   {
-    "id": 193,
+    "id": 186,
     "meta": "T.C",
     "name": "deblock",
     "type": "V->V",
@@ -20002,7 +19580,7 @@
     ]
   },
   {
-    "id": 194,
+    "id": 187,
     "meta": "...",
     "name": "decimate",
     "type": "N->V",
@@ -20075,7 +19653,7 @@
     ]
   },
   {
-    "id": 195,
+    "id": 188,
     "meta": "TS.",
     "name": "deconvolve",
     "type": "VV->V",
@@ -20118,7 +19696,7 @@
     ]
   },
   {
-    "id": 196,
+    "id": 189,
     "meta": "TS.",
     "name": "dedot",
     "type": "V->V",
@@ -20177,7 +19755,7 @@
     ]
   },
   {
-    "id": 197,
+    "id": 190,
     "meta": "TSC",
     "name": "deflate",
     "type": "V->V",
@@ -20218,7 +19796,7 @@
     ]
   },
   {
-    "id": 198,
+    "id": 191,
     "meta": "...",
     "name": "deflicker",
     "type": "V->V",
@@ -20327,7 +19905,7 @@
     ]
   },
   {
-    "id": 199,
+    "id": 192,
     "meta": "...",
     "name": "dejudder",
     "type": "V->V",
@@ -20344,7 +19922,7 @@
     ]
   },
   {
-    "id": 200,
+    "id": 193,
     "meta": "T..",
     "name": "delogo",
     "type": "V->V",
@@ -20393,7 +19971,7 @@
     ]
   },
   {
-    "id": 201,
+    "id": 194,
     "meta": "T..",
     "name": "derain",
     "type": "V->V",
@@ -20458,7 +20036,7 @@
     ]
   },
   {
-    "id": 202,
+    "id": 195,
     "meta": "...",
     "name": "deshake",
     "type": "V->V",
@@ -20591,7 +20169,7 @@
     ]
   },
   {
-    "id": 203,
+    "id": 196,
     "meta": "TSC",
     "name": "despill",
     "type": "V->V",
@@ -20674,7 +20252,7 @@
     ]
   },
   {
-    "id": 204,
+    "id": 197,
     "meta": "...",
     "name": "detelecine",
     "type": "V->V",
@@ -20725,7 +20303,7 @@
     ]
   },
   {
-    "id": 205,
+    "id": 198,
     "meta": "TSC",
     "name": "dilation",
     "type": "V->V",
@@ -20774,7 +20352,7 @@
     ]
   },
   {
-    "id": 206,
+    "id": 199,
     "meta": "T..",
     "name": "displace",
     "type": "VVV->V",
@@ -20809,7 +20387,7 @@
     ]
   },
   {
-    "id": 207,
+    "id": 200,
     "meta": "...",
     "name": "dnn_classify",
     "type": "V->V",
@@ -20898,7 +20476,7 @@
     ]
   },
   {
-    "id": 208,
+    "id": 201,
     "meta": "...",
     "name": "dnn_detect",
     "type": "V->V",
@@ -20979,7 +20557,7 @@
     ]
   },
   {
-    "id": 209,
+    "id": 202,
     "meta": "...",
     "name": "dnn_processing",
     "type": "V->V",
@@ -21050,7 +20628,7 @@
     ]
   },
   {
-    "id": 210,
+    "id": 203,
     "meta": ".S.",
     "name": "doubleweave",
     "type": "V->V",
@@ -21085,7 +20663,7 @@
     ]
   },
   {
-    "id": 211,
+    "id": 204,
     "meta": "T.C",
     "name": "drawbox",
     "type": "V->V",
@@ -21190,7 +20768,7 @@
     ]
   },
   {
-    "id": 212,
+    "id": 205,
     "meta": "...",
     "name": "drawgraph",
     "type": "V->V",
@@ -21371,7 +20949,7 @@
     ]
   },
   {
-    "id": 213,
+    "id": 206,
     "meta": "T.C",
     "name": "drawgrid",
     "type": "V->V",
@@ -21468,7 +21046,7 @@
     ]
   },
   {
-    "id": 214,
+    "id": 207,
     "meta": "T.C",
     "name": "drawtext",
     "type": "V->V",
@@ -21809,7 +21387,7 @@
     ]
   },
   {
-    "id": 215,
+    "id": 208,
     "meta": "T..",
     "name": "edgedetect",
     "type": "V->V",
@@ -21890,7 +21468,7 @@
     ]
   },
   {
-    "id": 216,
+    "id": 209,
     "meta": "...",
     "name": "elbg",
     "type": "V->V",
@@ -21963,7 +21541,7 @@
     ]
   },
   {
-    "id": 217,
+    "id": 210,
     "meta": "T..",
     "name": "entropy",
     "type": "V->V",
@@ -21990,7 +21568,7 @@
     ]
   },
   {
-    "id": 218,
+    "id": 211,
     "meta": ".S.",
     "name": "epx",
     "type": "V->V",
@@ -22007,7 +21585,7 @@
     ]
   },
   {
-    "id": 219,
+    "id": 212,
     "meta": "T.C",
     "name": "eq",
     "type": "V->V",
@@ -22098,7 +21676,7 @@
     ]
   },
   {
-    "id": 220,
+    "id": 213,
     "meta": "TSC",
     "name": "erosion",
     "type": "V->V",
@@ -22147,7 +21725,7 @@
     ]
   },
   {
-    "id": 221,
+    "id": 214,
     "meta": "TSC",
     "name": "estdif",
     "type": "V->V",
@@ -22276,7 +21854,7 @@
     ]
   },
   {
-    "id": 222,
+    "id": 215,
     "meta": "TSC",
     "name": "exposure",
     "type": "V->V",
@@ -22301,7 +21879,7 @@
     ]
   },
   {
-    "id": 223,
+    "id": 216,
     "meta": "...",
     "name": "extractplanes",
     "type": "V->N",
@@ -22348,7 +21926,7 @@
     ]
   },
   {
-    "id": 224,
+    "id": 217,
     "meta": "TS.",
     "name": "fade",
     "type": "V->V",
@@ -22481,7 +22059,7 @@
     ]
   },
   {
-    "id": 225,
+    "id": 218,
     "meta": "..C",
     "name": "feedback",
     "type": "VV->VV",
@@ -22522,7 +22100,7 @@
     ]
   },
   {
-    "id": 226,
+    "id": 219,
     "meta": "TSC",
     "name": "fftdnoiz",
     "type": "V->V",
@@ -22703,7 +22281,7 @@
     ]
   },
   {
-    "id": 227,
+    "id": 220,
     "meta": "TS.",
     "name": "fftfilt",
     "type": "V->V",
@@ -22778,7 +22356,7 @@
     ]
   },
   {
-    "id": 228,
+    "id": 221,
     "meta": "...",
     "name": "field",
     "type": "V->V",
@@ -22805,7 +22383,7 @@
     ]
   },
   {
-    "id": 229,
+    "id": 222,
     "meta": "...",
     "name": "fieldhint",
     "type": "V->V",
@@ -22844,7 +22422,7 @@
     ]
   },
   {
-    "id": 230,
+    "id": 223,
     "meta": "...",
     "name": "fieldmatch",
     "type": "N->V",
@@ -23055,7 +22633,7 @@
     ]
   },
   {
-    "id": 231,
+    "id": 224,
     "meta": "T..",
     "name": "fieldorder",
     "type": "V->V",
@@ -23082,7 +22660,7 @@
     ]
   },
   {
-    "id": 232,
+    "id": 225,
     "meta": "T.C",
     "name": "fillborders",
     "type": "V->V",
@@ -23169,7 +22747,7 @@
     ]
   },
   {
-    "id": 233,
+    "id": 226,
     "meta": "...",
     "name": "find_rect",
     "type": "V->V",
@@ -23242,7 +22820,7 @@
     ]
   },
   {
-    "id": 234,
+    "id": 227,
     "meta": "T..",
     "name": "floodfill",
     "type": "V->V",
@@ -23331,7 +22909,7 @@
     ]
   },
   {
-    "id": 235,
+    "id": 228,
     "meta": "...",
     "name": "format",
     "type": "V->V",
@@ -23348,7 +22926,7 @@
     ]
   },
   {
-    "id": 236,
+    "id": 229,
     "meta": "...",
     "name": "fps",
     "type": "V->V",
@@ -23421,7 +22999,7 @@
     ]
   },
   {
-    "id": 237,
+    "id": 230,
     "meta": "...",
     "name": "framepack",
     "type": "VV->V",
@@ -23460,7 +23038,7 @@
     ]
   },
   {
-    "id": 238,
+    "id": 231,
     "meta": ".S.",
     "name": "framerate",
     "type": "V->V",
@@ -23519,7 +23097,7 @@
     ]
   },
   {
-    "id": 239,
+    "id": 232,
     "meta": "T..",
     "name": "framestep",
     "type": "V->V",
@@ -23536,7 +23114,7 @@
     ]
   },
   {
-    "id": 240,
+    "id": 233,
     "meta": "...",
     "name": "freezedetect",
     "type": "V->V",
@@ -23577,7 +23155,7 @@
     ]
   },
   {
-    "id": 241,
+    "id": 234,
     "meta": "...",
     "name": "freezeframes",
     "type": "VV->V",
@@ -23610,32 +23188,7 @@
     ]
   },
   {
-    "id": 242,
-    "meta": "T.C",
-    "name": "frei0r",
-    "type": "V->V",
-    "description": "Apply a frei0r effect.",
-    "params": [
-      {
-        "name": "filter_name",
-        "type": "string",
-        "desc": "",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "filter_params",
-        "type": "string",
-        "desc": "",
-        "min": null,
-        "max": null,
-        "default": null
-      }
-    ]
-  },
-  {
-    "id": 243,
+    "id": 235,
     "meta": "T..",
     "name": "fspp",
     "type": "V->V",
@@ -23676,7 +23229,7 @@
     ]
   },
   {
-    "id": 244,
+    "id": 236,
     "meta": "TSC",
     "name": "gblur",
     "type": "V->V",
@@ -23717,7 +23270,7 @@
     ]
   },
   {
-    "id": 245,
+    "id": 237,
     "meta": "TS.",
     "name": "geq",
     "type": "V->V",
@@ -23890,7 +23443,7 @@
     ]
   },
   {
-    "id": 246,
+    "id": 238,
     "meta": "T..",
     "name": "gradfun",
     "type": "V->V",
@@ -23915,7 +23468,7 @@
     ]
   },
   {
-    "id": 247,
+    "id": 239,
     "meta": "...",
     "name": "graphmonitor",
     "type": "V->V",
@@ -24156,7 +23709,7 @@
     ]
   },
   {
-    "id": 248,
+    "id": 240,
     "meta": "TS.",
     "name": "grayworld",
     "type": "V->V",
@@ -24164,7 +23717,7 @@
     "params": []
   },
   {
-    "id": 249,
+    "id": 241,
     "meta": "TS.",
     "name": "greyedge",
     "type": "V->V",
@@ -24197,7 +23750,7 @@
     ]
   },
   {
-    "id": 250,
+    "id": 242,
     "meta": "TSC",
     "name": "guided",
     "type": "N->V",
@@ -24274,7 +23827,7 @@
     ]
   },
   {
-    "id": 251,
+    "id": 243,
     "meta": "TSC",
     "name": "haldclut",
     "type": "VV->V",
@@ -24331,7 +23884,7 @@
     ]
   },
   {
-    "id": 252,
+    "id": 244,
     "meta": "TS.",
     "name": "hflip",
     "type": "V->V",
@@ -24339,7 +23892,7 @@
     "params": []
   },
   {
-    "id": 253,
+    "id": 245,
     "meta": "T..",
     "name": "histeq",
     "type": "V->V",
@@ -24386,7 +23939,7 @@
     ]
   },
   {
-    "id": 254,
+    "id": 246,
     "meta": "...",
     "name": "histogram",
     "type": "V->V",
@@ -24639,7 +24192,7 @@
     ]
   },
   {
-    "id": 255,
+    "id": 247,
     "meta": "TSC",
     "name": "hqdn3d",
     "type": "V->V",
@@ -24680,7 +24233,7 @@
     ]
   },
   {
-    "id": 256,
+    "id": 248,
     "meta": ".S.",
     "name": "hqx",
     "type": "V->V",
@@ -24697,7 +24250,7 @@
     ]
   },
   {
-    "id": 257,
+    "id": 249,
     "meta": ".S.",
     "name": "hstack",
     "type": "N->V",
@@ -24722,7 +24275,7 @@
     ]
   },
   {
-    "id": 258,
+    "id": 250,
     "meta": "TSC",
     "name": "hsvhold",
     "type": "V->V",
@@ -24771,7 +24324,7 @@
     ]
   },
   {
-    "id": 259,
+    "id": 251,
     "meta": "TSC",
     "name": "hsvkey",
     "type": "V->V",
@@ -24820,7 +24373,7 @@
     ]
   },
   {
-    "id": 260,
+    "id": 252,
     "meta": "T.C",
     "name": "hue",
     "type": "V->V",
@@ -24861,7 +24414,7 @@
     ]
   },
   {
-    "id": 261,
+    "id": 253,
     "meta": "TSC",
     "name": "huesaturation",
     "type": "V->V",
@@ -24972,14 +24525,14 @@
     ]
   },
   {
-    "id": 262,
+    "id": 254,
     "meta": "...",
     "name": "hwdownload",
     "type": "V->V",
     "description": "Download a hardware frame to a normal frame"
   },
   {
-    "id": 263,
+    "id": 255,
     "meta": "...",
     "name": "hwmap",
     "type": "V->V",
@@ -25030,7 +24583,7 @@
     ]
   },
   {
-    "id": 264,
+    "id": 256,
     "meta": "...",
     "name": "hwupload",
     "type": "V->V",
@@ -25047,7 +24600,7 @@
     ]
   },
   {
-    "id": 265,
+    "id": 257,
     "meta": "T..",
     "name": "hysteresis",
     "type": "VV->V",
@@ -25072,7 +24625,7 @@
     ]
   },
   {
-    "id": 266,
+    "id": 258,
     "meta": "TS.",
     "name": "identity",
     "type": "VV->V",
@@ -25080,7 +24633,7 @@
     "params": []
   },
   {
-    "id": 267,
+    "id": 259,
     "meta": "...",
     "name": "idet",
     "type": "V->V",
@@ -25129,7 +24682,7 @@
     ]
   },
   {
-    "id": 268,
+    "id": 260,
     "meta": "T.C",
     "name": "il",
     "type": "V->V",
@@ -25366,7 +24919,7 @@
     ]
   },
   {
-    "id": 269,
+    "id": 261,
     "meta": "TSC",
     "name": "inflate",
     "type": "V->V",
@@ -25407,7 +24960,7 @@
     ]
   },
   {
-    "id": 270,
+    "id": 262,
     "meta": "...",
     "name": "interlace",
     "type": "V->V",
@@ -25456,7 +25009,7 @@
     ]
   },
   {
-    "id": 271,
+    "id": 263,
     "meta": "...",
     "name": "interleave",
     "type": "N->V",
@@ -25503,7 +25056,7 @@
     ]
   },
   {
-    "id": 272,
+    "id": 264,
     "meta": "...",
     "name": "kerndeint",
     "type": "V->V",
@@ -25552,7 +25105,7 @@
     ]
   },
   {
-    "id": 273,
+    "id": 265,
     "meta": "TSC",
     "name": "kirsch",
     "type": "V->V",
@@ -25585,7 +25138,7 @@
     ]
   },
   {
-    "id": 274,
+    "id": 266,
     "meta": "TSC",
     "name": "lagfun",
     "type": "V->V",
@@ -25610,14 +25163,14 @@
     ]
   },
   {
-    "id": 275,
+    "id": 267,
     "meta": "T..",
     "name": "latency",
     "type": "V->V",
     "description": "Report video filtering latency."
   },
   {
-    "id": 276,
+    "id": 268,
     "meta": "TSC",
     "name": "lenscorrection",
     "type": "V->V",
@@ -25684,128 +25237,7 @@
     ]
   },
   {
-    "id": 277,
-    "meta": "...",
-    "name": "libvmaf",
-    "type": "VV->V",
-    "description": "Calculate the VMAF between two video streams.",
-    "params": [
-      {
-        "name": "model_path",
-        "type": "string",
-        "desc": "use model='path=...'.",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "log_path",
-        "type": "string",
-        "desc": "Set the file path to be used to write log.",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "log_fmt",
-        "type": "string",
-        "desc": "Set the format of the log (csv, json, xml, or sub). (default \"xml\")",
-        "min": null,
-        "max": null,
-        "default": "xml"
-      },
-      {
-        "name": "enable_transform",
-        "type": "boolean",
-        "desc": "use model='enable_transform=true'. (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      },
-      {
-        "name": "phone_model",
-        "type": "boolean",
-        "desc": "use model='enable_transform=true'. (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      },
-      {
-        "name": "psnr",
-        "type": "boolean",
-        "desc": "use feature='name=psnr'. (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      },
-      {
-        "name": "ssim",
-        "type": "boolean",
-        "desc": "use feature='name=float_ssim'. (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      },
-      {
-        "name": "ms_ssim",
-        "type": "boolean",
-        "desc": "use feature='name=float_ms_ssim'. (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      },
-      {
-        "name": "pool",
-        "type": "string",
-        "desc": "Set the pool method to be used for computing vmaf.",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "n_threads",
-        "type": "int",
-        "desc": "Set number of threads to be used when computing vmaf. (from 0 to UINT32_MAX) (default 0)",
-        "min": 0,
-        "max": "UINT32_MAX",
-        "default": "0"
-      },
-      {
-        "name": "n_subsample",
-        "type": "int",
-        "desc": "Set interval for frame subsampling used when computing vmaf. (from 1 to UINT32_MAX) (default 1)",
-        "min": 1,
-        "max": "UINT32_MAX",
-        "default": "1"
-      },
-      {
-        "name": "enable_conf_interval",
-        "type": "boolean",
-        "desc": "model='enable_conf_interval=true'. (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      },
-      {
-        "name": "model",
-        "type": "string",
-        "desc": "Set the model to be used for computing vmaf. (default \"version=vmaf_v0.6.1\")",
-        "min": null,
-        "max": null,
-        "default": "version=vmaf_v0.6.1"
-      },
-      {
-        "name": "feature",
-        "type": "string",
-        "desc": "Set the feature to be used for computing vmaf.",
-        "min": null,
-        "max": null,
-        "default": null
-      }
-    ]
-  },
-  {
-    "id": 278,
+    "id": 269,
     "meta": "TSC",
     "name": "limitdiff",
     "type": "N->V",
@@ -25846,7 +25278,7 @@
     ]
   },
   {
-    "id": 279,
+    "id": 270,
     "meta": "TSC",
     "name": "limiter",
     "type": "V->V",
@@ -25879,7 +25311,7 @@
     ]
   },
   {
-    "id": 280,
+    "id": 271,
     "meta": "...",
     "name": "loop",
     "type": "V->V",
@@ -25912,7 +25344,7 @@
     ]
   },
   {
-    "id": 281,
+    "id": 272,
     "meta": "TSC",
     "name": "lumakey",
     "type": "V->V",
@@ -25945,7 +25377,7 @@
     ]
   },
   {
-    "id": 282,
+    "id": 273,
     "meta": "TSC",
     "name": "lut",
     "type": "V->V",
@@ -26042,7 +25474,7 @@
     ]
   },
   {
-    "id": 283,
+    "id": 274,
     "meta": "TSC",
     "name": "lut1d",
     "type": "V->V",
@@ -26089,7 +25521,7 @@
     ]
   },
   {
-    "id": 284,
+    "id": 275,
     "meta": "TSC",
     "name": "lut2",
     "type": "VV->V",
@@ -26138,7 +25570,7 @@
     ]
   },
   {
-    "id": 285,
+    "id": 276,
     "meta": "TSC",
     "name": "lut3d",
     "type": "V->V",
@@ -26203,7 +25635,7 @@
     ]
   },
   {
-    "id": 286,
+    "id": 277,
     "meta": "TSC",
     "name": "lutrgb",
     "type": "V->V",
@@ -26300,7 +25732,7 @@
     ]
   },
   {
-    "id": 287,
+    "id": 278,
     "meta": "TSC",
     "name": "lutyuv",
     "type": "V->V",
@@ -26397,7 +25829,7 @@
     ]
   },
   {
-    "id": 288,
+    "id": 279,
     "meta": "TSC",
     "name": "maskedclamp",
     "type": "VVV->V",
@@ -26430,7 +25862,7 @@
     ]
   },
   {
-    "id": 289,
+    "id": 280,
     "meta": "TSC",
     "name": "maskedmax",
     "type": "VVV->V",
@@ -26447,7 +25879,7 @@
     ]
   },
   {
-    "id": 290,
+    "id": 281,
     "meta": "TSC",
     "name": "maskedmerge",
     "type": "VVV->V",
@@ -26464,7 +25896,7 @@
     ]
   },
   {
-    "id": 291,
+    "id": 282,
     "meta": "TSC",
     "name": "maskedmin",
     "type": "VVV->V",
@@ -26481,7 +25913,7 @@
     ]
   },
   {
-    "id": 292,
+    "id": 283,
     "meta": "TSC",
     "name": "maskedthreshold",
     "type": "VV->V",
@@ -26524,7 +25956,7 @@
     ]
   },
   {
-    "id": 293,
+    "id": 284,
     "meta": "TSC",
     "name": "maskfun",
     "type": "V->V",
@@ -26573,7 +26005,7 @@
     ]
   },
   {
-    "id": 294,
+    "id": 285,
     "meta": "TSC",
     "name": "median",
     "type": "V->V",
@@ -26614,7 +26046,7 @@
     ]
   },
   {
-    "id": 295,
+    "id": 286,
     "meta": "...",
     "name": "mergeplanes",
     "type": "N->V",
@@ -26703,7 +26135,7 @@
     ]
   },
   {
-    "id": 296,
+    "id": 287,
     "meta": "...",
     "name": "mestimate",
     "type": "V->V",
@@ -26774,7 +26206,7 @@
     ]
   },
   {
-    "id": 297,
+    "id": 288,
     "meta": "T..",
     "name": "metadata",
     "type": "V->V",
@@ -26891,7 +26323,7 @@
     ]
   },
   {
-    "id": 298,
+    "id": 289,
     "meta": "T..",
     "name": "midequalizer",
     "type": "VV->V",
@@ -26908,7 +26340,7 @@
     ]
   },
   {
-    "id": 299,
+    "id": 290,
     "meta": "...",
     "name": "minterpolate",
     "type": "V->V",
@@ -27079,7 +26511,7 @@
     ]
   },
   {
-    "id": 300,
+    "id": 291,
     "meta": "TSC",
     "name": "mix",
     "type": "N->V",
@@ -27142,7 +26574,7 @@
     ]
   },
   {
-    "id": 301,
+    "id": 292,
     "meta": "TSC",
     "name": "monochrome",
     "type": "V->V",
@@ -27183,7 +26615,7 @@
     ]
   },
   {
-    "id": 302,
+    "id": 293,
     "meta": "T.C",
     "name": "morpho",
     "type": "VV->V",
@@ -27256,7 +26688,7 @@
     ]
   },
   {
-    "id": 303,
+    "id": 294,
     "meta": "...",
     "name": "mpdecimate",
     "type": "V->V",
@@ -27297,7 +26729,7 @@
     ]
   },
   {
-    "id": 304,
+    "id": 295,
     "meta": "TS.",
     "name": "msad",
     "type": "VV->V",
@@ -27305,7 +26737,7 @@
     "params": []
   },
   {
-    "id": 305,
+    "id": 296,
     "meta": "TSC",
     "name": "multiply",
     "type": "VV->V",
@@ -27338,7 +26770,7 @@
     ]
   },
   {
-    "id": 306,
+    "id": 297,
     "meta": "TSC",
     "name": "negate",
     "type": "V->V",
@@ -27393,7 +26825,7 @@
     ]
   },
   {
-    "id": 307,
+    "id": 298,
     "meta": "TS.",
     "name": "nlmeans",
     "type": "V->V",
@@ -27442,7 +26874,7 @@
     ]
   },
   {
-    "id": 308,
+    "id": 299,
     "meta": "TSC",
     "name": "nnedi",
     "type": "V->V",
@@ -27661,7 +27093,7 @@
     ]
   },
   {
-    "id": 309,
+    "id": 300,
     "meta": "...",
     "name": "noformat",
     "type": "V->V",
@@ -27678,7 +27110,7 @@
     ]
   },
   {
-    "id": 310,
+    "id": 301,
     "meta": "TS.",
     "name": "noise",
     "type": "V->V",
@@ -28067,7 +27499,7 @@
     ]
   },
   {
-    "id": 311,
+    "id": 302,
     "meta": "T.C",
     "name": "normalize",
     "type": "V->V",
@@ -28116,55 +27548,14 @@
     ]
   },
   {
-    "id": 312,
+    "id": 303,
     "meta": "...",
     "name": "null",
     "type": "V->V",
     "description": "Pass the source unchanged to the output."
   },
   {
-    "id": 313,
-    "meta": "...",
-    "name": "ocr",
-    "type": "V->V",
-    "description": "Optical Character Recognition.",
-    "params": [
-      {
-        "name": "datapath",
-        "type": "string",
-        "desc": "set datapath",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "language",
-        "type": "string",
-        "desc": "set language (default \"eng\")",
-        "min": null,
-        "max": null,
-        "default": "eng"
-      },
-      {
-        "name": "whitelist",
-        "type": "string",
-        "desc": "set character whitelist (default \"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.:;,-+_!?\"'[]{}()<>|/\\=*&%$#@!~ \")",
-        "min": null,
-        "max": null,
-        "default": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.:;,-+_!?[]{}("
-      },
-      {
-        "name": "blacklist",
-        "type": "string",
-        "desc": "set character blacklist (default \"\")",
-        "min": null,
-        "max": null,
-        "default": ""
-      }
-    ]
-  },
-  {
-    "id": 314,
+    "id": 304,
     "meta": "T.C",
     "name": "oscilloscope",
     "type": "V->V",
@@ -28277,7 +27668,7 @@
     ]
   },
   {
-    "id": 315,
+    "id": 305,
     "meta": "TSC",
     "name": "overlay",
     "type": "VV->V",
@@ -28418,7 +27809,7 @@
     ]
   },
   {
-    "id": 316,
+    "id": 306,
     "meta": "T..",
     "name": "owdenoise",
     "type": "V->V",
@@ -28467,7 +27858,7 @@
     ]
   },
   {
-    "id": 317,
+    "id": 307,
     "meta": "...",
     "name": "pad",
     "type": "V->V",
@@ -28558,7 +27949,7 @@
     ]
   },
   {
-    "id": 318,
+    "id": 308,
     "meta": "...",
     "name": "palettegen",
     "type": "V->V",
@@ -28613,7 +28004,7 @@
     ]
   },
   {
-    "id": 319,
+    "id": 309,
     "meta": "...",
     "name": "paletteuse",
     "type": "VV->V",
@@ -28710,7 +28101,7 @@
     ]
   },
   {
-    "id": 320,
+    "id": 310,
     "meta": "T.C",
     "name": "perms",
     "type": "V->V",
@@ -28757,7 +28148,7 @@
     ]
   },
   {
-    "id": 321,
+    "id": 311,
     "meta": "TS.",
     "name": "perspective",
     "type": "V->V",
@@ -28884,7 +28275,7 @@
     ]
   },
   {
-    "id": 322,
+    "id": 312,
     "meta": "T.C",
     "name": "phase",
     "type": "V->V",
@@ -28939,7 +28330,7 @@
     ]
   },
   {
-    "id": 323,
+    "id": 313,
     "meta": "...",
     "name": "photosensitivity",
     "type": "V->V",
@@ -28996,14 +28387,14 @@
     ]
   },
   {
-    "id": 324,
+    "id": 314,
     "meta": "...",
     "name": "pixdesctest",
     "type": "V->V",
     "description": "Test pixel format definitions."
   },
   {
-    "id": 325,
+    "id": 315,
     "meta": "TSC",
     "name": "pixelize",
     "type": "V->V",
@@ -29104,7 +28495,7 @@
     ]
   },
   {
-    "id": 326,
+    "id": 316,
     "meta": "T.C",
     "name": "pixscope",
     "type": "V->V",
@@ -29169,7 +28560,7 @@
     ]
   },
   {
-    "id": 327,
+    "id": 317,
     "meta": "T.C",
     "name": "pp",
     "type": "V->V",
@@ -29186,7 +28577,7 @@
     ]
   },
   {
-    "id": 328,
+    "id": 318,
     "meta": "T..",
     "name": "pp7",
     "type": "V->V",
@@ -29225,7 +28616,7 @@
     ]
   },
   {
-    "id": 329,
+    "id": 319,
     "meta": "TS.",
     "name": "premultiply",
     "type": "N->V",
@@ -29250,7 +28641,7 @@
     ]
   },
   {
-    "id": 330,
+    "id": 320,
     "meta": "TSC",
     "name": "prewitt",
     "type": "V->V",
@@ -29283,7 +28674,7 @@
     ]
   },
   {
-    "id": 331,
+    "id": 321,
     "meta": "TSC",
     "name": "pseudocolor",
     "type": "V->V",
@@ -29496,7 +28887,7 @@
     ]
   },
   {
-    "id": 332,
+    "id": 322,
     "meta": "TS.",
     "name": "psnr",
     "type": "VV->V",
@@ -29537,7 +28928,7 @@
     ]
   },
   {
-    "id": 333,
+    "id": 323,
     "meta": "...",
     "name": "pullup",
     "type": "V->V",
@@ -29608,7 +28999,7 @@
     ]
   },
   {
-    "id": 334,
+    "id": 324,
     "meta": "T..",
     "name": "qp",
     "type": "V->V",
@@ -29625,7 +29016,7 @@
     ]
   },
   {
-    "id": 335,
+    "id": 325,
     "meta": "...",
     "name": "random",
     "type": "V->V",
@@ -29650,7 +29041,7 @@
     ]
   },
   {
-    "id": 336,
+    "id": 326,
     "meta": "TSC",
     "name": "readeia608",
     "type": "V->V",
@@ -29699,7 +29090,7 @@
     ]
   },
   {
-    "id": 337,
+    "id": 327,
     "meta": "...",
     "name": "readvitc",
     "type": "V->V",
@@ -29732,7 +29123,7 @@
     ]
   },
   {
-    "id": 338,
+    "id": 328,
     "meta": "..C",
     "name": "realtime",
     "type": "V->V",
@@ -29757,7 +29148,7 @@
     ]
   },
   {
-    "id": 339,
+    "id": 329,
     "meta": ".S.",
     "name": "remap",
     "type": "VVV->V",
@@ -29792,7 +29183,7 @@
     ]
   },
   {
-    "id": 340,
+    "id": 330,
     "meta": "TS.",
     "name": "removegrain",
     "type": "V->V",
@@ -29833,7 +29224,7 @@
     ]
   },
   {
-    "id": 341,
+    "id": 331,
     "meta": "T..",
     "name": "removelogo",
     "type": "V->V",
@@ -29858,21 +29249,21 @@
     ]
   },
   {
-    "id": 342,
+    "id": 332,
     "meta": "...",
     "name": "repeatfields",
     "type": "V->V",
     "description": "Hard repeat fields based on MPEG repeat field flag."
   },
   {
-    "id": 343,
+    "id": 333,
     "meta": "...",
     "name": "reverse",
     "type": "V->V",
     "description": "Reverse a clip."
   },
   {
-    "id": 344,
+    "id": 334,
     "meta": "TSC",
     "name": "rgbashift",
     "type": "V->V",
@@ -29963,7 +29354,7 @@
     ]
   },
   {
-    "id": 345,
+    "id": 335,
     "meta": "TSC",
     "name": "roberts",
     "type": "V->V",
@@ -29996,7 +29387,7 @@
     ]
   },
   {
-    "id": 346,
+    "id": 336,
     "meta": "TSC",
     "name": "rotate",
     "type": "V->V",
@@ -30077,7 +29468,7 @@
     ]
   },
   {
-    "id": 347,
+    "id": 337,
     "meta": "T..",
     "name": "sab",
     "type": "V->V",
@@ -30182,7 +29573,7 @@
     ]
   },
   {
-    "id": 348,
+    "id": 338,
     "meta": "..C",
     "name": "scale",
     "type": "V->V",
@@ -30503,7 +29894,7 @@
     ]
   },
   {
-    "id": 349,
+    "id": 339,
     "meta": "..C",
     "name": "scale2ref",
     "type": "VV->VV",
@@ -30824,7 +30215,7 @@
     ]
   },
   {
-    "id": 350,
+    "id": 340,
     "meta": "...",
     "name": "scdet",
     "type": "V->V",
@@ -30865,7 +30256,7 @@
     ]
   },
   {
-    "id": 351,
+    "id": 341,
     "meta": "TSC",
     "name": "scharr",
     "type": "V->V",
@@ -30898,7 +30289,7 @@
     ]
   },
   {
-    "id": 352,
+    "id": 342,
     "meta": "TSC",
     "name": "scroll",
     "type": "V->V",
@@ -30955,7 +30346,7 @@
     ]
   },
   {
-    "id": 353,
+    "id": 343,
     "meta": "...",
     "name": "segment",
     "type": "V->N",
@@ -30980,7 +30371,7 @@
     ]
   },
   {
-    "id": 354,
+    "id": 344,
     "meta": "...",
     "name": "select",
     "type": "V->N",
@@ -31021,7 +30412,7 @@
     ]
   },
   {
-    "id": 355,
+    "id": 345,
     "meta": "TS.",
     "name": "selectivecolor",
     "type": "V->V",
@@ -31128,7 +30519,7 @@
     ]
   },
   {
-    "id": 356,
+    "id": 346,
     "meta": "...",
     "name": "sendcmd",
     "type": "V->V",
@@ -31169,14 +30560,14 @@
     ]
   },
   {
-    "id": 357,
+    "id": 347,
     "meta": "...",
     "name": "separatefields",
     "type": "V->V",
     "description": "Split input video frames into fields."
   },
   {
-    "id": 358,
+    "id": 348,
     "meta": "...",
     "name": "setdar",
     "type": "V->V",
@@ -31217,7 +30608,7 @@
     ]
   },
   {
-    "id": 359,
+    "id": 349,
     "meta": "...",
     "name": "setfield",
     "type": "V->V",
@@ -31252,7 +30643,7 @@
     ]
   },
   {
-    "id": 360,
+    "id": 350,
     "meta": "...",
     "name": "setparams",
     "type": "V->V",
@@ -31551,7 +30942,7 @@
     ]
   },
   {
-    "id": 361,
+    "id": 351,
     "meta": "...",
     "name": "setpts",
     "type": "V->V",
@@ -31568,7 +30959,7 @@
     ]
   },
   {
-    "id": 362,
+    "id": 352,
     "meta": "...",
     "name": "setrange",
     "type": "V->V",
@@ -31623,7 +31014,7 @@
     ]
   },
   {
-    "id": 363,
+    "id": 353,
     "meta": "...",
     "name": "setsar",
     "type": "V->V",
@@ -31664,7 +31055,7 @@
     ]
   },
   {
-    "id": 364,
+    "id": 354,
     "meta": "...",
     "name": "settb",
     "type": "V->V",
@@ -31689,7 +31080,7 @@
     ]
   },
   {
-    "id": 365,
+    "id": 355,
     "meta": "TSC",
     "name": "shear",
     "type": "V->V",
@@ -31748,7 +31139,7 @@
     ]
   },
   {
-    "id": 366,
+    "id": 356,
     "meta": "...",
     "name": "showinfo",
     "type": "V->V",
@@ -31765,7 +31156,7 @@
     ]
   },
   {
-    "id": 367,
+    "id": 357,
     "meta": "...",
     "name": "showpalette",
     "type": "V->V",
@@ -31782,7 +31173,7 @@
     ]
   },
   {
-    "id": 368,
+    "id": 358,
     "meta": "T..",
     "name": "shuffleframes",
     "type": "V->V",
@@ -31799,7 +31190,7 @@
     ]
   },
   {
-    "id": 369,
+    "id": 359,
     "meta": "TS.",
     "name": "shufflepixels",
     "type": "V->V",
@@ -31936,7 +31327,7 @@
     ]
   },
   {
-    "id": 370,
+    "id": 360,
     "meta": "T..",
     "name": "shuffleplanes",
     "type": "V->V",
@@ -31977,7 +31368,7 @@
     ]
   },
   {
-    "id": 371,
+    "id": 361,
     "meta": "T..",
     "name": "sidedata",
     "type": "V->V",
@@ -32098,7 +31489,7 @@
     ]
   },
   {
-    "id": 372,
+    "id": 362,
     "meta": ".S.",
     "name": "signalstats",
     "type": "V->V",
@@ -32167,7 +31558,7 @@
     ]
   },
   {
-    "id": 373,
+    "id": 363,
     "meta": "...",
     "name": "signature",
     "type": "N->V",
@@ -32272,7 +31663,7 @@
     ]
   },
   {
-    "id": 374,
+    "id": 364,
     "meta": "...",
     "name": "siti",
     "type": "V->V",
@@ -32289,7 +31680,7 @@
     ]
   },
   {
-    "id": 375,
+    "id": 365,
     "meta": "T..",
     "name": "smartblur",
     "type": "V->V",
@@ -32394,7 +31785,7 @@
     ]
   },
   {
-    "id": 376,
+    "id": 366,
     "meta": "TSC",
     "name": "sobel",
     "type": "V->V",
@@ -32427,7 +31818,7 @@
     ]
   },
   {
-    "id": 377,
+    "id": 367,
     "meta": "...",
     "name": "split",
     "type": "V->N",
@@ -32444,7 +31835,7 @@
     ]
   },
   {
-    "id": 378,
+    "id": 368,
     "meta": "T.C",
     "name": "spp",
     "type": "V->V",
@@ -32495,7 +31886,7 @@
     ]
   },
   {
-    "id": 379,
+    "id": 369,
     "meta": "...",
     "name": "sr",
     "type": "V->V",
@@ -32550,7 +31941,7 @@
     ]
   },
   {
-    "id": 380,
+    "id": 370,
     "meta": "TS.",
     "name": "ssim",
     "type": "VV->V",
@@ -32575,208 +31966,7 @@
     ]
   },
   {
-    "id": 381,
-    "meta": "...",
-    "name": "ssim360",
-    "type": "VV->V",
-    "description": "Calculate the SSIM between two 360 video streams.",
-    "params": [
-      {
-        "name": "stats_file",
-        "type": "string",
-        "desc": "Set file where to store per-frame difference information",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "f",
-        "type": "string",
-        "desc": "Set file where to store per-frame difference information",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "compute_chroma",
-        "type": "int",
-        "desc": "Specifies if non-luma channels must be computed (from 0 to 1) (default 1)",
-        "min": 0,
-        "max": 1,
-        "default": 1
-      },
-      {
-        "name": "frame_skip_ratio",
-        "type": "int",
-        "desc": "Specifies the number of frames to be skipped from evaluation, for every evaluated frame (from 0 to 1e+06) (default 0)",
-        "min": 0,
-        "max": "1e+06",
-        "default": "0"
-      },
-      {
-        "name": "ref_projection",
-        "type": "int",
-        "desc": "projection of the reference video (from 0 to 4) (default e)",
-        "min": 0,
-        "max": 4,
-        "default": "e",
-        "options": [
-          {
-            "value": "e",
-            "desc": "equirectangular"
-          },
-          {
-            "value": "equirect",
-            "desc": "equirectangular"
-          },
-          {
-            "value": "c3x2",
-            "desc": "cubemap 3x2"
-          },
-          {
-            "value": "c2x3",
-            "desc": "cubemap 2x3"
-          },
-          {
-            "value": "barrel",
-            "desc": "barrel facebook's 360 format"
-          },
-          {
-            "value": "barrelsplit",
-            "desc": "barrel split facebook's 360 format"
-          }
-        ]
-      },
-      {
-        "name": "main_projection",
-        "type": "int",
-        "desc": "projection of the main video (from 0 to 5) (default 5)",
-        "min": 0,
-        "max": 5,
-        "default": 5,
-        "options": [
-          {
-            "value": "e",
-            "desc": "equirectangular"
-          },
-          {
-            "value": "equirect",
-            "desc": "equirectangular"
-          },
-          {
-            "value": "c3x2",
-            "desc": "cubemap 3x2"
-          },
-          {
-            "value": "c2x3",
-            "desc": "cubemap 2x3"
-          },
-          {
-            "value": "barrel",
-            "desc": "barrel facebook's 360 format"
-          },
-          {
-            "value": "barrelsplit",
-            "desc": "barrel split facebook's 360 format"
-          }
-        ]
-      },
-      {
-        "name": "ref_stereo",
-        "type": "int",
-        "desc": "stereo format of the reference video (from 0 to 2) (default mono)",
-        "min": 0,
-        "max": 2,
-        "default": "mono",
-        "options": [
-          {
-            "value": "mono",
-            "desc": ""
-          },
-          {
-            "value": "tb",
-            "desc": ""
-          },
-          {
-            "value": "lr",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "main_stereo",
-        "type": "int",
-        "desc": "stereo format of main video (from 0 to 3) (default 3)",
-        "min": 0,
-        "max": 3,
-        "default": 3,
-        "options": [
-          {
-            "value": "mono",
-            "desc": ""
-          },
-          {
-            "value": "tb",
-            "desc": ""
-          },
-          {
-            "value": "lr",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "ref_pad",
-        "type": "float",
-        "desc": "Expansion (padding) coefficient for each cube face of the reference video (from 0 to 10) (default 0)",
-        "min": 0.0,
-        "max": 10.0,
-        "default": 0.0
-      },
-      {
-        "name": "main_pad",
-        "type": "float",
-        "desc": "Expansion (padding) coeffiecient for each cube face of the main video (from 0 to 10) (default 0)",
-        "min": 0.0,
-        "max": 10.0,
-        "default": 0.0
-      },
-      {
-        "name": "use_tape",
-        "type": "int",
-        "desc": "Specifies if the tape based SSIM 360 algorithm must be used independent of the input video types (from 0 to 1) (default 0)",
-        "min": 0,
-        "max": 1,
-        "default": 0
-      },
-      {
-        "name": "heatmap_str",
-        "type": "string",
-        "desc": "Heatmap data for view-based evaluation. For heatmap file format, please refer to EntSphericalVideoHeatmapData.",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "default_heatmap_width",
-        "type": "int",
-        "desc": "Default heatmap dimension. Will be used when dimension is not specified in heatmap data. (from 1 to 4096) (default 32)",
-        "min": 1,
-        "max": 4096,
-        "default": 32
-      },
-      {
-        "name": "default_heatmap_height",
-        "type": "int",
-        "desc": "Default heatmap dimension. Will be used when dimension is not specified in heatmap data. (from 1 to 4096) (default 16)",
-        "min": 1,
-        "max": 4096,
-        "default": 16
-      }
-    ]
-  },
-  {
-    "id": 382,
+    "id": 371,
     "meta": ".S.",
     "name": "stereo3d",
     "type": "V->V",
@@ -33025,7 +32215,7 @@
     ]
   },
   {
-    "id": 383,
+    "id": 372,
     "meta": "..C",
     "name": "streamselect",
     "type": "N->N",
@@ -33050,7 +32240,7 @@
     ]
   },
   {
-    "id": 384,
+    "id": 373,
     "meta": "...",
     "name": "subtitles",
     "type": "V->V",
@@ -33131,14 +32321,14 @@
     ]
   },
   {
-    "id": 385,
+    "id": 374,
     "meta": ".S.",
     "name": "super2xsai",
     "type": "V->V",
     "description": "Scale the input by 2x using the Super2xSaI pixel art algorithm."
   },
   {
-    "id": 386,
+    "id": 375,
     "meta": "T.C",
     "name": "swaprect",
     "type": "V->V",
@@ -33195,7 +32385,7 @@
     ]
   },
   {
-    "id": 387,
+    "id": 376,
     "meta": "T..",
     "name": "swapuv",
     "type": "V->V",
@@ -33203,7 +32393,7 @@
     "params": []
   },
   {
-    "id": 388,
+    "id": 377,
     "meta": "TSC",
     "name": "tblend",
     "type": "V->V",
@@ -34182,7 +33372,7 @@
     ]
   },
   {
-    "id": 389,
+    "id": 378,
     "meta": "...",
     "name": "telecine",
     "type": "V->V",
@@ -34225,7 +33415,7 @@
     ]
   },
   {
-    "id": 390,
+    "id": 379,
     "meta": "...",
     "name": "thistogram",
     "type": "V->V",
@@ -34424,7 +33614,7 @@
     ]
   },
   {
-    "id": 391,
+    "id": 380,
     "meta": "TSC",
     "name": "threshold",
     "type": "VVVV->V",
@@ -34441,8 +33631,8 @@
     ]
   },
   {
-    "id": 392,
-    "meta": "TS.",
+    "id": 381,
+    "meta": "T..",
     "name": "thumbnail",
     "type": "V->V",
     "description": "Select the most representative frame in a given sequence of consecutive frames.",
@@ -34480,7 +33670,7 @@
     ]
   },
   {
-    "id": 393,
+    "id": 382,
     "meta": "...",
     "name": "tile",
     "type": "V->V",
@@ -34545,7 +33735,7 @@
     ]
   },
   {
-    "id": 394,
+    "id": 383,
     "meta": "...",
     "name": "tinterlace",
     "type": "V->V",
@@ -34596,7 +33786,7 @@
     ]
   },
   {
-    "id": 395,
+    "id": 384,
     "meta": "TSC",
     "name": "tlut2",
     "type": "V->V",
@@ -34637,7 +33827,7 @@
     ]
   },
   {
-    "id": 396,
+    "id": 385,
     "meta": "TSC",
     "name": "tmedian",
     "type": "V->V",
@@ -34670,7 +33860,7 @@
     ]
   },
   {
-    "id": 397,
+    "id": 386,
     "meta": "T..",
     "name": "tmidequalizer",
     "type": "V->V",
@@ -34703,7 +33893,7 @@
     ]
   },
   {
-    "id": 398,
+    "id": 387,
     "meta": "TSC",
     "name": "tmix",
     "type": "V->V",
@@ -34744,7 +33934,7 @@
     ]
   },
   {
-    "id": 399,
+    "id": 388,
     "meta": ".S.",
     "name": "tonemap",
     "type": "V->V",
@@ -34815,7 +34005,7 @@
     ]
   },
   {
-    "id": 400,
+    "id": 389,
     "meta": "...",
     "name": "tpad",
     "type": "V->V",
@@ -34900,7 +34090,7 @@
     ]
   },
   {
-    "id": 401,
+    "id": 390,
     "meta": ".S.",
     "name": "transpose",
     "type": "V->V",
@@ -34957,7 +34147,7 @@
     ]
   },
   {
-    "id": 402,
+    "id": 391,
     "meta": "...",
     "name": "trim",
     "type": "V->V",
@@ -35046,7 +34236,7 @@
     ]
   },
   {
-    "id": 403,
+    "id": 392,
     "meta": "TS.",
     "name": "unpremultiply",
     "type": "N->V",
@@ -35071,7 +34261,7 @@
     ]
   },
   {
-    "id": 404,
+    "id": 393,
     "meta": "TS.",
     "name": "unsharp",
     "type": "V->V",
@@ -35224,7 +34414,7 @@
     ]
   },
   {
-    "id": 405,
+    "id": 394,
     "meta": "...",
     "name": "untile",
     "type": "V->V",
@@ -35241,7 +34431,7 @@
     ]
   },
   {
-    "id": 406,
+    "id": 395,
     "meta": ".SC",
     "name": "v360",
     "type": "V->V",
@@ -35864,7 +35054,7 @@
     ]
   },
   {
-    "id": 407,
+    "id": 396,
     "meta": "T..",
     "name": "vaguedenoiser",
     "type": "V->V",
@@ -35945,7 +35135,7 @@
     ]
   },
   {
-    "id": 408,
+    "id": 397,
     "meta": "TSC",
     "name": "varblur",
     "type": "VV->V",
@@ -35978,7 +35168,7 @@
     ]
   },
   {
-    "id": 409,
+    "id": 398,
     "meta": "..C",
     "name": "vectorscope",
     "type": "V->V",
@@ -36383,7 +35573,7 @@
     ]
   },
   {
-    "id": 410,
+    "id": 399,
     "meta": "T..",
     "name": "vflip",
     "type": "V->V",
@@ -36391,14 +35581,14 @@
     "params": []
   },
   {
-    "id": 411,
+    "id": 400,
     "meta": "...",
     "name": "vfrdet",
     "type": "V->V",
     "description": "Variable frame rate detect filter."
   },
   {
-    "id": 412,
+    "id": 401,
     "meta": "TSC",
     "name": "vibrance",
     "type": "V->V",
@@ -36471,235 +35661,7 @@
     ]
   },
   {
-    "id": 413,
-    "meta": "...",
-    "name": "vidstabdetect",
-    "type": "V->V",
-    "description": "Extract relative transformations, pass 1 of 2 for stabilization (see vidstabtransform for pass 2).",
-    "params": [
-      {
-        "name": "result",
-        "type": "string",
-        "desc": "path to the file used to write the transforms (default \"transforms.trf\")",
-        "min": null,
-        "max": null,
-        "default": "transforms.trf"
-      },
-      {
-        "name": "shakiness",
-        "type": "int",
-        "desc": "how shaky is the video and how quick is the camera? 1: little (fast) 10: very strong/quick (slow) (from 1 to 10) (default 5)",
-        "min": 1,
-        "max": 10,
-        "default": 5
-      },
-      {
-        "name": "accuracy",
-        "type": "int",
-        "desc": "(>=shakiness) 1: low 15: high (slow) (from 1 to 15) (default 15)",
-        "min": 1,
-        "max": 15,
-        "default": 15
-      },
-      {
-        "name": "stepsize",
-        "type": "int",
-        "desc": "region around minimum is scanned with 1 pixel resolution (from 1 to 32) (default 6)",
-        "min": 1,
-        "max": 32,
-        "default": 6
-      },
-      {
-        "name": "mincontrast",
-        "type": "double",
-        "desc": "below this contrast a field is discarded (0-1) (from 0 to 1) (default 0.25)",
-        "min": 0.0,
-        "max": 1.0,
-        "default": 0.25
-      },
-      {
-        "name": "show",
-        "type": "int",
-        "desc": "0: draw nothing; 1,2: show fields and transforms (from 0 to 2) (default 0)",
-        "min": 0,
-        "max": 2,
-        "default": 0
-      },
-      {
-        "name": "tripod",
-        "type": "int",
-        "desc": "virtual tripod mode (if >0): motion is compared to a reference reference frame (frame # is the value) (from 0 to INT_MAX) (default 0)",
-        "min": 0,
-        "max": 2147483647,
-        "default": 0
-      }
-    ]
-  },
-  {
-    "id": 414,
-    "meta": "...",
-    "name": "vidstabtransform",
-    "type": "V->V",
-    "description": "Transform the frames, pass 2 of 2 for stabilization (see vidstabdetect for pass 1).",
-    "params": [
-      {
-        "name": "input",
-        "type": "string",
-        "desc": "set path to the file storing the transforms (default \"transforms.trf\")",
-        "min": null,
-        "max": null,
-        "default": "transforms.trf"
-      },
-      {
-        "name": "smoothing",
-        "type": "int",
-        "desc": "set number of frames*2 + 1 used for lowpass filtering (from 0 to 1000) (default 15)",
-        "min": 0,
-        "max": 1000,
-        "default": 15
-      },
-      {
-        "name": "optalgo",
-        "type": "int",
-        "desc": "set camera path optimization algo (from 0 to 2) (default opt)",
-        "min": 0,
-        "max": 2,
-        "default": "opt",
-        "options": [
-          {
-            "value": "opt",
-            "desc": "global optimization"
-          },
-          {
-            "value": "gauss",
-            "desc": "gaussian kernel"
-          },
-          {
-            "value": "avg",
-            "desc": "simple averaging on motion"
-          }
-        ]
-      },
-      {
-        "name": "maxshift",
-        "type": "int",
-        "desc": "set maximal number of pixels to translate image (from -1 to 500) (default -1)",
-        "min": -1,
-        "max": 500,
-        "default": -1
-      },
-      {
-        "name": "maxangle",
-        "type": "double",
-        "desc": "set maximal angle in rad to rotate image (from -1 to 3.14) (default -1)",
-        "min": -1.0,
-        "max": 3.14,
-        "default": -1.0
-      },
-      {
-        "name": "crop",
-        "type": "int",
-        "desc": "set cropping mode (from 0 to 1) (default keep)",
-        "min": 0,
-        "max": 1,
-        "default": "keep",
-        "options": [
-          {
-            "value": "keep",
-            "desc": "keep border"
-          },
-          {
-            "value": "black",
-            "desc": "black border"
-          }
-        ]
-      },
-      {
-        "name": "invert",
-        "type": "int",
-        "desc": "invert transforms (from 0 to 1) (default 0)",
-        "min": 0,
-        "max": 1,
-        "default": 0
-      },
-      {
-        "name": "relative",
-        "type": "int",
-        "desc": "consider transforms as relative (from 0 to 1) (default 1)",
-        "min": 0,
-        "max": 1,
-        "default": 1
-      },
-      {
-        "name": "zoom",
-        "type": "double",
-        "desc": "set percentage to zoom (>0: zoom in, <0: zoom out (from -100 to 100) (default 0)",
-        "min": -100.0,
-        "max": 100.0,
-        "default": 0.0
-      },
-      {
-        "name": "optzoom",
-        "type": "int",
-        "desc": "set optimal zoom (0: nothing, 1: optimal static zoom, 2: optimal dynamic zoom) (from 0 to 2) (default 1)",
-        "min": 0,
-        "max": 2,
-        "default": 1
-      },
-      {
-        "name": "zoomspeed",
-        "type": "double",
-        "desc": "for adative zoom: percent to zoom maximally each frame (from 0 to 5) (default 0.25)",
-        "min": 0.0,
-        "max": 5.0,
-        "default": 0.25
-      },
-      {
-        "name": "interpol",
-        "type": "int",
-        "desc": "set type of interpolation (from 0 to 3) (default bilinear)",
-        "min": 0,
-        "max": 3,
-        "default": "bilinear",
-        "options": [
-          {
-            "value": "no",
-            "desc": "no interpolation"
-          },
-          {
-            "value": "linear",
-            "desc": "linear (horizontal)"
-          },
-          {
-            "value": "bilinear",
-            "desc": "bi-linear"
-          },
-          {
-            "value": "bicubic",
-            "desc": "bi-cubic"
-          }
-        ]
-      },
-      {
-        "name": "tripod",
-        "type": "boolean",
-        "desc": "enable virtual tripod mode (same as relative=0:smoothing=0) (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      },
-      {
-        "name": "debug",
-        "type": "boolean",
-        "desc": "enable debug mode and writer global motions information to file (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      }
-    ]
-  },
-  {
-    "id": 415,
+    "id": 402,
     "meta": "TS.",
     "name": "vif",
     "type": "VV->V",
@@ -36707,7 +35669,7 @@
     "params": []
   },
   {
-    "id": 416,
+    "id": 403,
     "meta": "T..",
     "name": "vignette",
     "type": "V->V",
@@ -36800,7 +35762,7 @@
     ]
   },
   {
-    "id": 417,
+    "id": 404,
     "meta": "...",
     "name": "vmafmotion",
     "type": "V->V",
@@ -36817,7 +35779,7 @@
     ]
   },
   {
-    "id": 418,
+    "id": 405,
     "meta": ".S.",
     "name": "vstack",
     "type": "N->V",
@@ -36842,7 +35804,7 @@
     ]
   },
   {
-    "id": 419,
+    "id": 406,
     "meta": "TSC",
     "name": "w3fdif",
     "type": "V->V",
@@ -36927,7 +35889,7 @@
     ]
   },
   {
-    "id": 420,
+    "id": 407,
     "meta": ".SC",
     "name": "waveform",
     "type": "V->V",
@@ -37432,7 +36394,7 @@
     ]
   },
   {
-    "id": 421,
+    "id": 408,
     "meta": ".S.",
     "name": "weave",
     "type": "V->V",
@@ -37467,7 +36429,7 @@
     ]
   },
   {
-    "id": 422,
+    "id": 409,
     "meta": ".S.",
     "name": "xbr",
     "type": "V->V",
@@ -37484,7 +36446,7 @@
     ]
   },
   {
-    "id": 423,
+    "id": 410,
     "meta": "TS.",
     "name": "xcorrelate",
     "type": "VV->V",
@@ -37519,7 +36481,7 @@
     ]
   },
   {
-    "id": 424,
+    "id": 411,
     "meta": ".S.",
     "name": "xfade",
     "type": "VV->V",
@@ -37750,7 +36712,7 @@
     ]
   },
   {
-    "id": 425,
+    "id": 412,
     "meta": "TSC",
     "name": "xmedian",
     "type": "N->V",
@@ -37783,7 +36745,7 @@
     ]
   },
   {
-    "id": 426,
+    "id": 413,
     "meta": ".S.",
     "name": "xstack",
     "type": "N->V",
@@ -37832,7 +36794,7 @@
     ]
   },
   {
-    "id": 427,
+    "id": 414,
     "meta": "TS.",
     "name": "yadif",
     "type": "V->V",
@@ -37907,82 +36869,7 @@
     ]
   },
   {
-    "id": 428,
-    "meta": "T..",
-    "name": "yadif_videotoolbox",
-    "type": "V->V",
-    "description": "YADIF for VideoToolbox frames using Metal compute",
-    "params": [
-      {
-        "name": "mode",
-        "type": "int",
-        "desc": "specify the interlacing mode (from 0 to 3) (default send_frame)",
-        "min": 0,
-        "max": 3,
-        "default": "send_frame",
-        "options": [
-          {
-            "value": "send_frame",
-            "desc": "send one frame for each frame"
-          },
-          {
-            "value": "send_field",
-            "desc": "send one frame for each field"
-          },
-          {
-            "value": "send_frame_nospatial",
-            "desc": "send one frame for each frame, but skip spatial interlacing check"
-          },
-          {
-            "value": "send_field_nospatial",
-            "desc": "send one frame for each field, but skip spatial interlacing check"
-          }
-        ]
-      },
-      {
-        "name": "parity",
-        "type": "int",
-        "desc": "specify the assumed picture field parity (from -1 to 1) (default auto)",
-        "min": -1,
-        "max": 1,
-        "default": "auto",
-        "options": [
-          {
-            "value": "tff",
-            "desc": "assume top field first"
-          },
-          {
-            "value": "bff",
-            "desc": "assume bottom field first"
-          },
-          {
-            "value": "auto",
-            "desc": "auto detect parity"
-          }
-        ]
-      },
-      {
-        "name": "deint",
-        "type": "int",
-        "desc": "specify which frames to deinterlace (from 0 to 1) (default all)",
-        "min": 0,
-        "max": 1,
-        "default": "all",
-        "options": [
-          {
-            "value": "all",
-            "desc": "deinterlace all frames"
-          },
-          {
-            "value": "interlaced",
-            "desc": "only deinterlace frames marked as interlaced"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 429,
+    "id": 415,
     "meta": "TSC",
     "name": "yaepblur",
     "type": "V->V",
@@ -38039,32 +36926,7 @@
     ]
   },
   {
-    "id": 430,
-    "meta": "...",
-    "name": "zmq",
-    "type": "V->V",
-    "description": "Receive commands through ZMQ and broker them to filters.",
-    "params": [
-      {
-        "name": "bind_address",
-        "type": "string",
-        "desc": "set bind address (default \"tcp://*:5555\")",
-        "min": null,
-        "max": null,
-        "default": "tcp://*:5555"
-      },
-      {
-        "name": "b",
-        "type": "string",
-        "desc": "set bind address (default \"tcp://*:5555\")",
-        "min": null,
-        "max": null,
-        "default": "tcp://*:5555"
-      }
-    ]
-  },
-  {
-    "id": 431,
+    "id": 416,
     "meta": "...",
     "name": "zoompan",
     "type": "V->V",
@@ -38129,1668 +36991,7 @@
     ]
   },
   {
-    "id": 432,
-    "meta": ".SC",
-    "name": "zscale",
-    "type": "V->V",
-    "description": "Apply resizing, colorspace and bit depth conversion.",
-    "params": [
-      {
-        "name": "w",
-        "type": "string",
-        "desc": "Output video width",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "width",
-        "type": "string",
-        "desc": "Output video width",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "h",
-        "type": "string",
-        "desc": "Output video height",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "height",
-        "type": "string",
-        "desc": "Output video height",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "size",
-        "type": "string",
-        "desc": "set video size",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "s",
-        "type": "string",
-        "desc": "set video size",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "dither",
-        "type": "int",
-        "desc": "set dither type (from 0 to 3) (default none)",
-        "min": 0,
-        "max": 3,
-        "default": "none",
-        "options": [
-          {
-            "value": "none",
-            "desc": ""
-          },
-          {
-            "value": "ordered",
-            "desc": ""
-          },
-          {
-            "value": "random",
-            "desc": ""
-          },
-          {
-            "value": "error_diffusion",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "d",
-        "type": "int",
-        "desc": "set dither type (from 0 to 3) (default none)",
-        "min": 0,
-        "max": 3,
-        "default": "none",
-        "options": [
-          {
-            "value": "none",
-            "desc": ""
-          },
-          {
-            "value": "ordered",
-            "desc": ""
-          },
-          {
-            "value": "random",
-            "desc": ""
-          },
-          {
-            "value": "error_diffusion",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "filter",
-        "type": "int",
-        "desc": "set filter type (from 0 to 5) (default bilinear)",
-        "min": 0,
-        "max": 5,
-        "default": "bilinear",
-        "options": [
-          {
-            "value": "point",
-            "desc": ""
-          },
-          {
-            "value": "bilinear",
-            "desc": ""
-          },
-          {
-            "value": "bicubic",
-            "desc": ""
-          },
-          {
-            "value": "spline16",
-            "desc": ""
-          },
-          {
-            "value": "spline36",
-            "desc": ""
-          },
-          {
-            "value": "lanczos",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "f",
-        "type": "int",
-        "desc": "set filter type (from 0 to 5) (default bilinear)",
-        "min": 0,
-        "max": 5,
-        "default": "bilinear",
-        "options": [
-          {
-            "value": "point",
-            "desc": ""
-          },
-          {
-            "value": "bilinear",
-            "desc": ""
-          },
-          {
-            "value": "bicubic",
-            "desc": ""
-          },
-          {
-            "value": "spline16",
-            "desc": ""
-          },
-          {
-            "value": "spline36",
-            "desc": ""
-          },
-          {
-            "value": "lanczos",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "out_range",
-        "type": "int",
-        "desc": "set color range (from -1 to 1) (default input)",
-        "min": -1,
-        "max": 1,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "limited",
-            "desc": ""
-          },
-          {
-            "value": "full",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "tv",
-            "desc": ""
-          },
-          {
-            "value": "pc",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "range",
-        "type": "int",
-        "desc": "set color range (from -1 to 1) (default input)",
-        "min": -1,
-        "max": 1,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "limited",
-            "desc": ""
-          },
-          {
-            "value": "full",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "tv",
-            "desc": ""
-          },
-          {
-            "value": "pc",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "r",
-        "type": "int",
-        "desc": "set color range (from -1 to 1) (default input)",
-        "min": -1,
-        "max": 1,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "limited",
-            "desc": ""
-          },
-          {
-            "value": "full",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "tv",
-            "desc": ""
-          },
-          {
-            "value": "pc",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "primaries",
-        "type": "int",
-        "desc": "set color primaries (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "170m",
-            "desc": ""
-          },
-          {
-            "value": "240m",
-            "desc": ""
-          },
-          {
-            "value": "2020",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "bt470m",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "film",
-            "desc": ""
-          },
-          {
-            "value": "bt2020",
-            "desc": ""
-          },
-          {
-            "value": "smpte428",
-            "desc": ""
-          },
-          {
-            "value": "smpte431",
-            "desc": ""
-          },
-          {
-            "value": "smpte432",
-            "desc": ""
-          },
-          {
-            "value": "jedec-p22",
-            "desc": ""
-          },
-          {
-            "value": "ebu3213",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "p",
-        "type": "int",
-        "desc": "set color primaries (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "170m",
-            "desc": ""
-          },
-          {
-            "value": "240m",
-            "desc": ""
-          },
-          {
-            "value": "2020",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "bt470m",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "film",
-            "desc": ""
-          },
-          {
-            "value": "bt2020",
-            "desc": ""
-          },
-          {
-            "value": "smpte428",
-            "desc": ""
-          },
-          {
-            "value": "smpte431",
-            "desc": ""
-          },
-          {
-            "value": "smpte432",
-            "desc": ""
-          },
-          {
-            "value": "jedec-p22",
-            "desc": ""
-          },
-          {
-            "value": "ebu3213",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "transfer",
-        "type": "int",
-        "desc": "set transfer characteristic (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "601",
-            "desc": ""
-          },
-          {
-            "value": "linear",
-            "desc": ""
-          },
-          {
-            "value": "2020_10",
-            "desc": ""
-          },
-          {
-            "value": "2020_12",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "bt470m",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "linear",
-            "desc": ""
-          },
-          {
-            "value": "log100",
-            "desc": ""
-          },
-          {
-            "value": "log316",
-            "desc": ""
-          },
-          {
-            "value": "bt2020-10",
-            "desc": ""
-          },
-          {
-            "value": "bt2020-12",
-            "desc": ""
-          },
-          {
-            "value": "smpte2084",
-            "desc": ""
-          },
-          {
-            "value": "iec61966-2-4",
-            "desc": ""
-          },
-          {
-            "value": "iec61966-2-1",
-            "desc": ""
-          },
-          {
-            "value": "arib-std-b67",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "t",
-        "type": "int",
-        "desc": "set transfer characteristic (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "601",
-            "desc": ""
-          },
-          {
-            "value": "linear",
-            "desc": ""
-          },
-          {
-            "value": "2020_10",
-            "desc": ""
-          },
-          {
-            "value": "2020_12",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "bt470m",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "linear",
-            "desc": ""
-          },
-          {
-            "value": "log100",
-            "desc": ""
-          },
-          {
-            "value": "log316",
-            "desc": ""
-          },
-          {
-            "value": "bt2020-10",
-            "desc": ""
-          },
-          {
-            "value": "bt2020-12",
-            "desc": ""
-          },
-          {
-            "value": "smpte2084",
-            "desc": ""
-          },
-          {
-            "value": "iec61966-2-4",
-            "desc": ""
-          },
-          {
-            "value": "iec61966-2-1",
-            "desc": ""
-          },
-          {
-            "value": "arib-std-b67",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "matrix",
-        "type": "int",
-        "desc": "set colorspace matrix (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "470bg",
-            "desc": ""
-          },
-          {
-            "value": "170m",
-            "desc": ""
-          },
-          {
-            "value": "2020_ncl",
-            "desc": ""
-          },
-          {
-            "value": "2020_cl",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "gbr",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "fcc",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "ycgco",
-            "desc": ""
-          },
-          {
-            "value": "bt2020nc",
-            "desc": ""
-          },
-          {
-            "value": "bt2020c",
-            "desc": ""
-          },
-          {
-            "value": "chroma-derived-nc",
-            "desc": ""
-          },
-          {
-            "value": "chroma-derived-c",
-            "desc": ""
-          },
-          {
-            "value": "ictcp",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "m",
-        "type": "int",
-        "desc": "set colorspace matrix (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "470bg",
-            "desc": ""
-          },
-          {
-            "value": "170m",
-            "desc": ""
-          },
-          {
-            "value": "2020_ncl",
-            "desc": ""
-          },
-          {
-            "value": "2020_cl",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "gbr",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "fcc",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "ycgco",
-            "desc": ""
-          },
-          {
-            "value": "bt2020nc",
-            "desc": ""
-          },
-          {
-            "value": "bt2020c",
-            "desc": ""
-          },
-          {
-            "value": "chroma-derived-nc",
-            "desc": ""
-          },
-          {
-            "value": "chroma-derived-c",
-            "desc": ""
-          },
-          {
-            "value": "ictcp",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "in_range",
-        "type": "int",
-        "desc": "set input color range (from -1 to 1) (default input)",
-        "min": -1,
-        "max": 1,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "limited",
-            "desc": ""
-          },
-          {
-            "value": "full",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "tv",
-            "desc": ""
-          },
-          {
-            "value": "pc",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "rangein",
-        "type": "int",
-        "desc": "set input color range (from -1 to 1) (default input)",
-        "min": -1,
-        "max": 1,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "limited",
-            "desc": ""
-          },
-          {
-            "value": "full",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "tv",
-            "desc": ""
-          },
-          {
-            "value": "pc",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "rin",
-        "type": "int",
-        "desc": "set input color range (from -1 to 1) (default input)",
-        "min": -1,
-        "max": 1,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "limited",
-            "desc": ""
-          },
-          {
-            "value": "full",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "tv",
-            "desc": ""
-          },
-          {
-            "value": "pc",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "primariesin",
-        "type": "int",
-        "desc": "set input color primaries (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "170m",
-            "desc": ""
-          },
-          {
-            "value": "240m",
-            "desc": ""
-          },
-          {
-            "value": "2020",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "bt470m",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "film",
-            "desc": ""
-          },
-          {
-            "value": "bt2020",
-            "desc": ""
-          },
-          {
-            "value": "smpte428",
-            "desc": ""
-          },
-          {
-            "value": "smpte431",
-            "desc": ""
-          },
-          {
-            "value": "smpte432",
-            "desc": ""
-          },
-          {
-            "value": "jedec-p22",
-            "desc": ""
-          },
-          {
-            "value": "ebu3213",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "pin",
-        "type": "int",
-        "desc": "set input color primaries (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "170m",
-            "desc": ""
-          },
-          {
-            "value": "240m",
-            "desc": ""
-          },
-          {
-            "value": "2020",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "bt470m",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "film",
-            "desc": ""
-          },
-          {
-            "value": "bt2020",
-            "desc": ""
-          },
-          {
-            "value": "smpte428",
-            "desc": ""
-          },
-          {
-            "value": "smpte431",
-            "desc": ""
-          },
-          {
-            "value": "smpte432",
-            "desc": ""
-          },
-          {
-            "value": "jedec-p22",
-            "desc": ""
-          },
-          {
-            "value": "ebu3213",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "transferin",
-        "type": "int",
-        "desc": "set input transfer characteristic (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "601",
-            "desc": ""
-          },
-          {
-            "value": "linear",
-            "desc": ""
-          },
-          {
-            "value": "2020_10",
-            "desc": ""
-          },
-          {
-            "value": "2020_12",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "bt470m",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "linear",
-            "desc": ""
-          },
-          {
-            "value": "log100",
-            "desc": ""
-          },
-          {
-            "value": "log316",
-            "desc": ""
-          },
-          {
-            "value": "bt2020-10",
-            "desc": ""
-          },
-          {
-            "value": "bt2020-12",
-            "desc": ""
-          },
-          {
-            "value": "smpte2084",
-            "desc": ""
-          },
-          {
-            "value": "iec61966-2-4",
-            "desc": ""
-          },
-          {
-            "value": "iec61966-2-1",
-            "desc": ""
-          },
-          {
-            "value": "arib-std-b67",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "tin",
-        "type": "int",
-        "desc": "set input transfer characteristic (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "601",
-            "desc": ""
-          },
-          {
-            "value": "linear",
-            "desc": ""
-          },
-          {
-            "value": "2020_10",
-            "desc": ""
-          },
-          {
-            "value": "2020_12",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "bt470m",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "linear",
-            "desc": ""
-          },
-          {
-            "value": "log100",
-            "desc": ""
-          },
-          {
-            "value": "log316",
-            "desc": ""
-          },
-          {
-            "value": "bt2020-10",
-            "desc": ""
-          },
-          {
-            "value": "bt2020-12",
-            "desc": ""
-          },
-          {
-            "value": "smpte2084",
-            "desc": ""
-          },
-          {
-            "value": "iec61966-2-4",
-            "desc": ""
-          },
-          {
-            "value": "iec61966-2-1",
-            "desc": ""
-          },
-          {
-            "value": "arib-std-b67",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "matrixin",
-        "type": "int",
-        "desc": "set input colorspace matrix (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "470bg",
-            "desc": ""
-          },
-          {
-            "value": "170m",
-            "desc": ""
-          },
-          {
-            "value": "2020_ncl",
-            "desc": ""
-          },
-          {
-            "value": "2020_cl",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "gbr",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "fcc",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "ycgco",
-            "desc": ""
-          },
-          {
-            "value": "bt2020nc",
-            "desc": ""
-          },
-          {
-            "value": "bt2020c",
-            "desc": ""
-          },
-          {
-            "value": "chroma-derived-nc",
-            "desc": ""
-          },
-          {
-            "value": "chroma-derived-c",
-            "desc": ""
-          },
-          {
-            "value": "ictcp",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "min",
-        "type": "int",
-        "desc": "set input colorspace matrix (from -1 to INT_MAX) (default input)",
-        "min": -1,
-        "max": 2147483647,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "709",
-            "desc": ""
-          },
-          {
-            "value": "unspecified",
-            "desc": ""
-          },
-          {
-            "value": "470bg",
-            "desc": ""
-          },
-          {
-            "value": "170m",
-            "desc": ""
-          },
-          {
-            "value": "2020_ncl",
-            "desc": ""
-          },
-          {
-            "value": "2020_cl",
-            "desc": ""
-          },
-          {
-            "value": "unknown",
-            "desc": ""
-          },
-          {
-            "value": "gbr",
-            "desc": ""
-          },
-          {
-            "value": "bt709",
-            "desc": ""
-          },
-          {
-            "value": "fcc",
-            "desc": ""
-          },
-          {
-            "value": "bt470bg",
-            "desc": ""
-          },
-          {
-            "value": "smpte170m",
-            "desc": ""
-          },
-          {
-            "value": "smpte240m",
-            "desc": ""
-          },
-          {
-            "value": "ycgco",
-            "desc": ""
-          },
-          {
-            "value": "bt2020nc",
-            "desc": ""
-          },
-          {
-            "value": "bt2020c",
-            "desc": ""
-          },
-          {
-            "value": "chroma-derived-nc",
-            "desc": ""
-          },
-          {
-            "value": "chroma-derived-c",
-            "desc": ""
-          },
-          {
-            "value": "ictcp",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "chromal",
-        "type": "int",
-        "desc": "set output chroma location (from -1 to 5) (default input)",
-        "min": -1,
-        "max": 5,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "left",
-            "desc": ""
-          },
-          {
-            "value": "center",
-            "desc": ""
-          },
-          {
-            "value": "topleft",
-            "desc": ""
-          },
-          {
-            "value": "top",
-            "desc": ""
-          },
-          {
-            "value": "bottomleft",
-            "desc": ""
-          },
-          {
-            "value": "bottom",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "c",
-        "type": "int",
-        "desc": "set output chroma location (from -1 to 5) (default input)",
-        "min": -1,
-        "max": 5,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "left",
-            "desc": ""
-          },
-          {
-            "value": "center",
-            "desc": ""
-          },
-          {
-            "value": "topleft",
-            "desc": ""
-          },
-          {
-            "value": "top",
-            "desc": ""
-          },
-          {
-            "value": "bottomleft",
-            "desc": ""
-          },
-          {
-            "value": "bottom",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "chromalin",
-        "type": "int",
-        "desc": "set input chroma location (from -1 to 5) (default input)",
-        "min": -1,
-        "max": 5,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "left",
-            "desc": ""
-          },
-          {
-            "value": "center",
-            "desc": ""
-          },
-          {
-            "value": "topleft",
-            "desc": ""
-          },
-          {
-            "value": "top",
-            "desc": ""
-          },
-          {
-            "value": "bottomleft",
-            "desc": ""
-          },
-          {
-            "value": "bottom",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "cin",
-        "type": "int",
-        "desc": "set input chroma location (from -1 to 5) (default input)",
-        "min": -1,
-        "max": 5,
-        "default": "input",
-        "options": [
-          {
-            "value": "input",
-            "desc": ""
-          },
-          {
-            "value": "left",
-            "desc": ""
-          },
-          {
-            "value": "center",
-            "desc": ""
-          },
-          {
-            "value": "topleft",
-            "desc": ""
-          },
-          {
-            "value": "top",
-            "desc": ""
-          },
-          {
-            "value": "bottomleft",
-            "desc": ""
-          },
-          {
-            "value": "bottom",
-            "desc": ""
-          }
-        ]
-      },
-      {
-        "name": "npl",
-        "type": "double",
-        "desc": "set nominal peak luminance (from 0 to DBL_MAX) (default nan)",
-        "min": 0.0,
-        "max": 2147483647.0,
-        "default": null
-      },
-      {
-        "name": "agamma",
-        "type": "boolean",
-        "desc": "allow approximate gamma (default true)",
-        "min": null,
-        "max": null,
-        "default": "true"
-      },
-      {
-        "name": "param_a",
-        "type": "double",
-        "desc": "parameter A, which is parameter \"b\" for bicubic, and the number of filter taps for lanczos (from -DBL_MAX to DBL_MAX) (default nan)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
-        "default": null
-      },
-      {
-        "name": "param_b",
-        "type": "double",
-        "desc": "parameter B, which is parameter \"c\" for bicubic (from -DBL_MAX to DBL_MAX) (default nan)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
-        "default": null
-      }
-    ]
-  },
-  {
-    "id": 433,
+    "id": 417,
     "meta": "...",
     "name": "allrgb",
     "type": "|->V",
@@ -39839,7 +37040,7 @@
     ]
   },
   {
-    "id": 434,
+    "id": 418,
     "meta": "...",
     "name": "allyuv",
     "type": "|->V",
@@ -39888,7 +37089,7 @@
     ]
   },
   {
-    "id": 435,
+    "id": 419,
     "meta": "...",
     "name": "cellauto",
     "type": "|->V",
@@ -40033,7 +37234,7 @@
     ]
   },
   {
-    "id": 436,
+    "id": 420,
     "meta": "..C",
     "name": "color",
     "type": "|->V",
@@ -40114,7 +37315,7 @@
     ]
   },
   {
-    "id": 437,
+    "id": 421,
     "meta": "...",
     "name": "colorchart",
     "type": "|->V",
@@ -40189,7 +37390,7 @@
     ]
   },
   {
-    "id": 438,
+    "id": 422,
     "meta": "...",
     "name": "colorspectrum",
     "type": "|->V",
@@ -40276,145 +37477,7 @@
     ]
   },
   {
-    "id": 439,
-    "meta": "...",
-    "name": "coreimagesrc",
-    "type": "|->V",
-    "description": "Video source using image generators of CoreImage API.",
-    "params": [
-      {
-        "name": "size",
-        "type": "image_size",
-        "desc": "set video size (default \"320x240\")",
-        "min": null,
-        "max": null,
-        "default": "320x240"
-      },
-      {
-        "name": "s",
-        "type": "image_size",
-        "desc": "set video size (default \"320x240\")",
-        "min": null,
-        "max": null,
-        "default": "320x240"
-      },
-      {
-        "name": "rate",
-        "type": "video_rate",
-        "desc": "set video rate (default \"25\")",
-        "min": null,
-        "max": null,
-        "default": "25"
-      },
-      {
-        "name": "r",
-        "type": "video_rate",
-        "desc": "set video rate (default \"25\")",
-        "min": null,
-        "max": null,
-        "default": "25"
-      },
-      {
-        "name": "duration",
-        "type": "duration",
-        "desc": "set video duration (default -0.000001)",
-        "min": null,
-        "max": null,
-        "default": "-0.000001"
-      },
-      {
-        "name": "d",
-        "type": "duration",
-        "desc": "set video duration (default -0.000001)",
-        "min": null,
-        "max": null,
-        "default": "-0.000001"
-      },
-      {
-        "name": "sar",
-        "type": "rational",
-        "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
-        "min": "0",
-        "max": 2147483647,
-        "default": "1/1"
-      },
-      {
-        "name": "list_filters",
-        "type": "boolean",
-        "desc": "list available filters (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      },
-      {
-        "name": "list_generators",
-        "type": "boolean",
-        "desc": "list available generators (default false)",
-        "min": null,
-        "max": null,
-        "default": "false"
-      },
-      {
-        "name": "filter",
-        "type": "string",
-        "desc": "names and options of filters to apply",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "output_rect",
-        "type": "string",
-        "desc": "output rectangle within output image",
-        "min": null,
-        "max": null,
-        "default": null
-      }
-    ]
-  },
-  {
-    "id": 440,
-    "meta": "...",
-    "name": "frei0r_src",
-    "type": "|->V",
-    "description": "Generate a frei0r source.",
-    "params": [
-      {
-        "name": "size",
-        "type": "image_size",
-        "desc": "Dimensions of the generated video. (default \"320x240\")",
-        "min": null,
-        "max": null,
-        "default": "320x240"
-      },
-      {
-        "name": "framerate",
-        "type": "video_rate",
-        "desc": "(default \"25\")",
-        "min": null,
-        "max": null,
-        "default": "25"
-      },
-      {
-        "name": "filter_name",
-        "type": "string",
-        "desc": "",
-        "min": null,
-        "max": null,
-        "default": null
-      },
-      {
-        "name": "filter_params",
-        "type": "string",
-        "desc": "",
-        "min": null,
-        "max": null,
-        "default": null
-      }
-    ]
-  },
-  {
-    "id": 441,
+    "id": 423,
     "meta": ".S.",
     "name": "gradients",
     "type": "|->V",
@@ -40651,7 +37714,7 @@
     ]
   },
   {
-    "id": 442,
+    "id": 424,
     "meta": "...",
     "name": "haldclutsrc",
     "type": "|->V",
@@ -40708,7 +37771,7 @@
     ]
   },
   {
-    "id": 443,
+    "id": 425,
     "meta": "...",
     "name": "life",
     "type": "|->V",
@@ -40845,7 +37908,7 @@
     ]
   },
   {
-    "id": 444,
+    "id": 426,
     "meta": "...",
     "name": "mandelbrot",
     "type": "|->V",
@@ -41018,7 +38081,7 @@
     ]
   },
   {
-    "id": 445,
+    "id": 427,
     "meta": "...",
     "name": "mptestsrc",
     "type": "|->V",
@@ -41183,7 +38246,7 @@
     ]
   },
   {
-    "id": 446,
+    "id": 428,
     "meta": "...",
     "name": "nullsrc",
     "type": "|->V",
@@ -41248,7 +38311,7 @@
     ]
   },
   {
-    "id": 447,
+    "id": 429,
     "meta": "...",
     "name": "pal75bars",
     "type": "|->V",
@@ -41313,7 +38376,7 @@
     ]
   },
   {
-    "id": 448,
+    "id": 430,
     "meta": "...",
     "name": "pal100bars",
     "type": "|->V",
@@ -41378,7 +38441,7 @@
     ]
   },
   {
-    "id": 449,
+    "id": 431,
     "meta": "...",
     "name": "rgbtestsrc",
     "type": "|->V",
@@ -41459,7 +38522,7 @@
     ]
   },
   {
-    "id": 450,
+    "id": 432,
     "meta": ".S.",
     "name": "sierpinski",
     "type": "|->V",
@@ -41534,7 +38597,7 @@
     ]
   },
   {
-    "id": 451,
+    "id": 433,
     "meta": "...",
     "name": "smptebars",
     "type": "|->V",
@@ -41599,7 +38662,7 @@
     ]
   },
   {
-    "id": 452,
+    "id": 434,
     "meta": "...",
     "name": "smptehdbars",
     "type": "|->V",
@@ -41664,7 +38727,7 @@
     ]
   },
   {
-    "id": 453,
+    "id": 435,
     "meta": "...",
     "name": "testsrc",
     "type": "|->V",
@@ -41745,7 +38808,7 @@
     ]
   },
   {
-    "id": 454,
+    "id": 436,
     "meta": "...",
     "name": "testsrc2",
     "type": "|->V",
@@ -41818,7 +38881,7 @@
     ]
   },
   {
-    "id": 455,
+    "id": 437,
     "meta": "...",
     "name": "yuvtestsrc",
     "type": "|->V",
@@ -41883,143 +38946,14 @@
     ]
   },
   {
-    "id": 456,
+    "id": 438,
     "meta": "...",
     "name": "nullsink",
     "type": "V->|",
     "description": "Do absolutely nothing with the input video."
   },
   {
-    "id": 457,
-    "meta": "..C",
-    "name": "a3dscope",
-    "type": "A->V",
-    "description": "Convert input audio to 3d scope video output.",
-    "params": [
-      {
-        "name": "rate",
-        "type": "video_rate",
-        "desc": "set video rate (default \"25\")",
-        "min": null,
-        "max": null,
-        "default": "25"
-      },
-      {
-        "name": "r",
-        "type": "video_rate",
-        "desc": "set video rate (default \"25\")",
-        "min": null,
-        "max": null,
-        "default": "25"
-      },
-      {
-        "name": "size",
-        "type": "image_size",
-        "desc": "set video size (default \"hd720\")",
-        "min": null,
-        "max": null,
-        "default": "hd720"
-      },
-      {
-        "name": "s",
-        "type": "image_size",
-        "desc": "set video size (default \"hd720\")",
-        "min": null,
-        "max": null,
-        "default": "hd720"
-      },
-      {
-        "name": "fov",
-        "type": "float",
-        "desc": "set camera FoV (from 40 to 150) (default 90)",
-        "min": 40.0,
-        "max": 150.0,
-        "default": 90.0
-      },
-      {
-        "name": "roll",
-        "type": "float",
-        "desc": "set camera roll (from -180 to 180) (default 0)",
-        "min": -180.0,
-        "max": 180.0,
-        "default": 0.0
-      },
-      {
-        "name": "pitch",
-        "type": "float",
-        "desc": "set camera pitch (from -180 to 180) (default 0)",
-        "min": -180.0,
-        "max": 180.0,
-        "default": 0.0
-      },
-      {
-        "name": "yaw",
-        "type": "float",
-        "desc": "set camera yaw (from -180 to 180) (default 0)",
-        "min": -180.0,
-        "max": 180.0,
-        "default": 0.0
-      },
-      {
-        "name": "xzoom",
-        "type": "float",
-        "desc": "set camera zoom (from 0.01 to 10) (default 1)",
-        "min": 0.01,
-        "max": 10.0,
-        "default": 1.0
-      },
-      {
-        "name": "yzoom",
-        "type": "float",
-        "desc": "set camera zoom (from 0.01 to 10) (default 1)",
-        "min": 0.01,
-        "max": 10.0,
-        "default": 1.0
-      },
-      {
-        "name": "zzoom",
-        "type": "float",
-        "desc": "set camera zoom (from 0.01 to 10) (default 1)",
-        "min": 0.01,
-        "max": 10.0,
-        "default": 1.0
-      },
-      {
-        "name": "xpos",
-        "type": "float",
-        "desc": "set camera position (from -60 to 60) (default 0)",
-        "min": -60.0,
-        "max": 60.0,
-        "default": 0.0
-      },
-      {
-        "name": "ypos",
-        "type": "float",
-        "desc": "set camera position (from -60 to 60) (default 0)",
-        "min": -60.0,
-        "max": 60.0,
-        "default": 0.0
-      },
-      {
-        "name": "zpos",
-        "type": "float",
-        "desc": "set camera position (from -60 to 60) (default 0)",
-        "min": -60.0,
-        "max": 60.0,
-        "default": 0.0
-      },
-      {
-        "name": "length",
-        "type": "int",
-        "desc": "set length (from 1 to 60) (default 15)",
-        "min": 1,
-        "max": 60,
-        "default": 15
-      }
-    ]
-  },
-  {
-    "id": 458,
+    "id": 439,
     "meta": "...",
     "name": "abitscope",
     "type": "A->V",
@@ -42104,7 +39038,7 @@
     ]
   },
   {
-    "id": 459,
+    "id": 440,
     "meta": "...",
     "name": "adrawgraph",
     "type": "A->V",
@@ -42285,7 +39219,7 @@
     ]
   },
   {
-    "id": 460,
+    "id": 441,
     "meta": "...",
     "name": "agraphmonitor",
     "type": "A->V",
@@ -42526,7 +39460,7 @@
     ]
   },
   {
-    "id": 461,
+    "id": 442,
     "meta": "...",
     "name": "ahistogram",
     "type": "A->V",
@@ -42685,7 +39619,7 @@
     ]
   },
   {
-    "id": 462,
+    "id": 443,
     "meta": "...",
     "name": "aphasemeter",
     "type": "A->N",
@@ -42822,7 +39756,7 @@
     ]
   },
   {
-    "id": 463,
+    "id": 444,
     "meta": ".SC",
     "name": "avectorscope",
     "type": "A->V",
@@ -43061,7 +39995,7 @@
     ]
   },
   {
-    "id": 464,
+    "id": 445,
     "meta": "..C",
     "name": "concat",
     "type": "N->N",
@@ -43102,7 +40036,7 @@
     ]
   },
   {
-    "id": 465,
+    "id": 446,
     "meta": "...",
     "name": "showcqt",
     "type": "A->V",
@@ -43421,196 +40355,7 @@
     ]
   },
   {
-    "id": 466,
-    "meta": ".S.",
-    "name": "showcwt",
-    "type": "A->V",
-    "description": "Convert input audio to a CWT (Continuous Wavelet Transform) spectrum video output.",
-    "params": [
-      {
-        "name": "size",
-        "type": "image_size",
-        "desc": "set video size (default \"640x512\")",
-        "min": null,
-        "max": null,
-        "default": "640x512"
-      },
-      {
-        "name": "s",
-        "type": "image_size",
-        "desc": "set video size (default \"640x512\")",
-        "min": null,
-        "max": null,
-        "default": "640x512"
-      },
-      {
-        "name": "rate",
-        "type": "string",
-        "desc": "set video rate (default \"25\")",
-        "min": null,
-        "max": null,
-        "default": "25"
-      },
-      {
-        "name": "r",
-        "type": "string",
-        "desc": "set video rate (default \"25\")",
-        "min": null,
-        "max": null,
-        "default": "25"
-      },
-      {
-        "name": "scale",
-        "type": "int",
-        "desc": "set frequency scale (from 0 to 4) (default linear)",
-        "min": 0,
-        "max": 4,
-        "default": "linear",
-        "options": [
-          {
-            "value": "linear",
-            "desc": "linear"
-          },
-          {
-            "value": "log2",
-            "desc": "logarithmic"
-          },
-          {
-            "value": "bark",
-            "desc": "bark"
-          },
-          {
-            "value": "mel",
-            "desc": "mel"
-          },
-          {
-            "value": "erbs",
-            "desc": "erbs"
-          }
-        ]
-      },
-      {
-        "name": "min",
-        "type": "float",
-        "desc": "set minimum frequency (from 1 to 2000) (default 20)",
-        "min": 1.0,
-        "max": 2000.0,
-        "default": 20.0
-      },
-      {
-        "name": "max",
-        "type": "float",
-        "desc": "set maximum frequency (from 0 to 192000) (default 20000)",
-        "min": 0.0,
-        "max": 192000.0,
-        "default": 20000.0
-      },
-      {
-        "name": "logb",
-        "type": "float",
-        "desc": "set logarithmic basis (from 0 to 1) (default 0.0001)",
-        "min": 0.0,
-        "max": 1.0,
-        "default": 0.0001
-      },
-      {
-        "name": "deviation",
-        "type": "float",
-        "desc": "set frequency deviation (from 0 to 10) (default 1)",
-        "min": 0.0,
-        "max": 10.0,
-        "default": 1.0
-      },
-      {
-        "name": "pps",
-        "type": "int",
-        "desc": "set pixels per second (from 1 to 1024) (default 64)",
-        "min": 1,
-        "max": 1024,
-        "default": 64
-      },
-      {
-        "name": "mode",
-        "type": "int",
-        "desc": "set output mode (from 0 to 4) (default magnitude)",
-        "min": 0,
-        "max": 4,
-        "default": "magnitude",
-        "options": [
-          {
-            "value": "magnitude",
-            "desc": "magnitude"
-          },
-          {
-            "value": "phase",
-            "desc": "phase"
-          },
-          {
-            "value": "magphase",
-            "desc": "magnitude+phase"
-          },
-          {
-            "value": "channel",
-            "desc": "color per channel"
-          },
-          {
-            "value": "stereo",
-            "desc": "stereo difference"
-          }
-        ]
-      },
-      {
-        "name": "slide",
-        "type": "int",
-        "desc": "set slide mode (from 0 to 2) (default replace)",
-        "min": 0,
-        "max": 2,
-        "default": "replace",
-        "options": [
-          {
-            "value": "replace",
-            "desc": "replace"
-          },
-          {
-            "value": "scroll",
-            "desc": "scroll"
-          },
-          {
-            "value": "frame",
-            "desc": "frame"
-          }
-        ]
-      },
-      {
-        "name": "direction",
-        "type": "int",
-        "desc": "set direction mode (from 0 to 3) (default lr)",
-        "min": 0,
-        "max": 3,
-        "default": "lr",
-        "options": [
-          {
-            "value": "lr",
-            "desc": "left to right"
-          },
-          {
-            "value": "rl",
-            "desc": "right to left"
-          },
-          {
-            "value": "ud",
-            "desc": "up to down"
-          },
-          {
-            "value": "du",
-            "desc": "down to up"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 467,
+    "id": 447,
     "meta": "...",
     "name": "showfreqs",
     "type": "A->V",
@@ -43907,7 +40652,7 @@
     ]
   },
   {
-    "id": 468,
+    "id": 448,
     "meta": ".S.",
     "name": "showspatial",
     "type": "A->V",
@@ -44054,7 +40799,7 @@
     ]
   },
   {
-    "id": 469,
+    "id": 449,
     "meta": ".S.",
     "name": "showspectrum",
     "type": "A->V",
@@ -44475,7 +41220,7 @@
     ]
   },
   {
-    "id": 470,
+    "id": 450,
     "meta": ".S.",
     "name": "showspectrumpic",
     "type": "A->V",
@@ -44828,7 +41573,7 @@
     ]
   },
   {
-    "id": 471,
+    "id": 451,
     "meta": "...",
     "name": "showvolume",
     "type": "A->V",
@@ -44995,7 +41740,7 @@
     ]
   },
   {
-    "id": 472,
+    "id": 452,
     "meta": "...",
     "name": "showwaves",
     "type": "A->V",
@@ -45130,7 +41875,7 @@
     ]
   },
   {
-    "id": 473,
+    "id": 453,
     "meta": "...",
     "name": "showwavespic",
     "type": "A->V",
@@ -45233,7 +41978,7 @@
     ]
   },
   {
-    "id": 474,
+    "id": 454,
     "meta": "...",
     "name": "spectrumsynth",
     "type": "VV->A",
@@ -45426,7 +42171,7 @@
     ]
   },
   {
-    "id": 475,
+    "id": 455,
     "meta": "...",
     "name": "avsynctest",
     "type": "|->AV",
@@ -45587,7 +42332,7 @@
     ]
   },
   {
-    "id": 476,
+    "id": 456,
     "meta": "..C",
     "name": "amovie",
     "type": "|->N",
@@ -45700,7 +42445,7 @@
     ]
   },
   {
-    "id": 477,
+    "id": 457,
     "meta": "..C",
     "name": "movie",
     "type": "|->N",
@@ -45813,21 +42558,21 @@
     ]
   },
   {
-    "id": 478,
+    "id": 458,
     "meta": "...",
     "name": "afifo",
     "type": "A->A",
     "description": "Buffer input frames and send them when they are requested."
   },
   {
-    "id": 479,
+    "id": 459,
     "meta": "...",
     "name": "fifo",
     "type": "V->V",
     "description": "Buffer input images and send them when they are requested."
   },
   {
-    "id": 480,
+    "id": 460,
     "meta": "...",
     "name": "abuffer",
     "type": "|->A",
@@ -45876,7 +42621,7 @@
     ]
   },
   {
-    "id": 481,
+    "id": 461,
     "meta": "...",
     "name": "buffer",
     "type": "|->V",
@@ -45949,7 +42694,7 @@
     ]
   },
   {
-    "id": 482,
+    "id": 462,
     "meta": "...",
     "name": "abuffersink",
     "type": "A->|",
@@ -46006,7 +42751,7 @@
     ]
   },
   {
-    "id": 483,
+    "id": 463,
     "meta": "...",
     "name": "buffersink",
     "type": "V->|",

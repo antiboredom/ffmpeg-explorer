@@ -14,6 +14,8 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.4",
+    "@ffmpeg/util": "^0.12.0",
     "@leeoniya/ufuzzy": "^1.0.8"
   }
 }
