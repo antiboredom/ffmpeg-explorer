@@ -8,7 +8,7 @@
   import { FFmpeg } from "@ffmpeg/ffmpeg";
   import { fetchFile, toBlobURL } from "@ffmpeg/util";
 
-  const baseURL = "https://unpkg.com/@ffmpeg/core-mt@0.12.2/dist/esm";
+  const baseURL = "https://unpkg.com/@ffmpeg/core@0.12.2/dist/esm";
   // const baseURL = "";
   // const videoURL = "https://ffmpegwasm.netlify.app/video/video-15s.avi";
   const TIMEOUT = 40000;
@@ -136,7 +136,7 @@
       // workerURL: `${baseURL}/ffmpeg-core.worker.js`,
       coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
       wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),
-      workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
+      // workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
     });
     ffmpegLoaded = true;
   });
