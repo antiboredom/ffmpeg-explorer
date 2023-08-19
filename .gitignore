@@ -8,6 +8,8 @@ pnpm-debug.log*
 lerna-debug.log*
 venv/
 *.mp4
+!shoe.mp4
+!punch.mp4
 
 node_modules
 dist
