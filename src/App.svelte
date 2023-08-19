@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+  import { onMount } from "svelte";
   import { inputs, output, filters } from "./stores.js";
   import Input from "./Input.svelte";
   import Output from "./Output.svelte";
@@ -10,9 +10,10 @@
   import { fetchFile, toBlobURL } from "@ffmpeg/util";
 
   const baseURL = "https://unpkg.com/@ffmpeg/core-mt@0.12.2/dist/esm";
+  // const baseURL = "";
   // const videoURL = "https://ffmpegwasm.netlify.app/video/video-15s.avi";
   const videoURL = "/example.mp4";
-	const TIMEOUT = 40000;
+  const TIMEOUT = 40000;
 
   const ffmpeg = new FFmpeg();
 
@@ -20,8 +21,8 @@
   let command = "";
   let message = "";
   let videoValue = null;
-	let ffmpegLoaded = false;
-	let rendering = false;
+  let ffmpegLoaded = false;
+  let rendering = false;
 
   function newInput() {
     $inputs = [...$inputs, ""];
@@ -35,12 +36,11 @@
     transcode();
   }
 
-
   async function transcode() {
     // try {
     message = "Start transcoding";
-		videoValue = null;
-		rendering = true;
+    videoValue = null;
+    rendering = true;
     await ffmpeg.writeFile("example.mp4", await fetchFile(videoURL));
     // const infile = await ffmpeg.readFile("example.mp4");
     //    videoValue = URL.createObjectURL(new Blob([infile.buffer], { type: "video/mp4" }));
@@ -51,9 +51,9 @@
     await ffmpeg.exec(clist, TIMEOUT);
     message = "Complete transcoding";
     const data = await ffmpeg.readFile("out.mp4");
-		rendering = false;
+    rendering = false;
     videoValue = URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }));
-		rendering = false;
+    rendering = false;
     // console.log("VIDEO", videoValue);
     // } catch (error) {
     //   console.log(error);
@@ -92,25 +92,28 @@
     return out;
   }
 
+  function makeFilterArgs(f) {
+    let fCommand = f.name;
+    if (f.params && f.params.length > 0) {
+      let params = f.params
+        .map((p) => {
+          if (p.value === "" || p.value === null || p.value === p.default) return null;
+          return `${p.name}=${p.value}`;
+        })
+        .filter((p) => p !== null)
+        .join(":");
+      fCommand += "=" + params;
+    }
+    return fCommand;
+  }
+
   function commandList() {
     let command = ["-i", "example.mp4"];
 
-    const cFilters = $filters
-      .map((f) => {
-        let fCommand = f.name;
-        if (f.params && f.params.length > 0) {
-          let params = f.params
-            .map((p) => {
-              if (p.value === "" || p.value === null || p.value===p.default) return null;
-              return `${p.name}=${p.value}`;
-            })
-            .filter((p) => p !== null)
-            .join(":");
-          fCommand += "=" + params;
-        }
-        return fCommand;
-      })
-      .join(",");
+		// const audioFilters = $filters.filter(f => f.type[0] === "A").map(makeFilterArgs);
+		// const videoFilters = $filters.filter(f => f.type[0] === "V").map(makeFilterArgs);
+
+    const cFilters = $filters.map(makeFilterArgs).join(",");
 
     if (cFilters.length > 0) {
       command.push("-filter_complex");
@@ -127,19 +130,22 @@
   output.subscribe(updateCommand);
   filters.subscribe(updateCommand);
 
-	onMount(async () => {
+  onMount(async () => {
     ffmpeg.on("log", ({ message: msg }) => {
       console.log(msg);
       // message = msg;
     });
     await ffmpeg.load({
+      // coreURL: `${baseURL}/ffmpeg-core.js`,
+      // wasmURL: `${baseURL}/ffmpeg-core.wasm`,
+      // workerURL: `${baseURL}/ffmpeg-core.worker.js`,
       coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
       wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),
       workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
     });
-		console.log(ffmpeg);
-		ffmpegLoaded = true;
-	});
+    console.log(ffmpeg);
+    ffmpegLoaded = true;
+  });
 </script>
 
 <main>
@@ -177,19 +183,19 @@
     <h3>Output</h3>
     <Output bind:filename={$output} />
     <button on:click={render} disabled={!ffmpegLoaded}>
-			{#if ffmpegLoaded}
-				{#if rendering}
-					Rendering...
-				{:else}
-					Render
-				{/if}
-			{:else}
-				Loading ffmpeg
-			{/if}
-		</button>
-		{#if videoValue}
-			<video controls src={videoValue} />
-		{/if}
+      {#if ffmpegLoaded}
+        {#if rendering}
+          Rendering...
+        {:else}
+          Render
+        {/if}
+      {:else}
+        Loading ffmpeg
+      {/if}
+    </button>
+    {#if videoValue}
+      <video controls src={videoValue} />
+    {/if}
   </section>
 </main>
 
