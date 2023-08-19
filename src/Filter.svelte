@@ -9,6 +9,7 @@
   };
 
   export let index;
+	let show = false;
 
   function remove() {
     $filters.splice(index, 1);
@@ -18,13 +19,16 @@
 
 <div class="filter-holder">
   <div class="head">
-    <div class="name">{filter.name}</div>
-    <button on:click={remove}>X</button>
+    <div class="name"><h3>{filter.name}<h3></div>
+		<div>
+			<button on:click={() => show = !show}>{show ? "Hide" : "Show"} Options</button>
+			<button on:click={remove}>X</button>
+		</div>
   </div>
 
   <div class="description">{filter.description}</div>
 
-  {#if filter.params.length > 0}
+  {#if filter.params && filter.params.length > 0 && show}
     <div class="options">
       {#each filter.params as p}
         <div class="param-holder">
@@ -41,7 +45,7 @@
                   {/each}
                 </select>
               {:else if p.type == "float" || p.type == "double" || p.type == "long" || p.type == "int"}
-                <input type="range" min={p.min} max={p.max} bind:value={p.value} />
+                <input step={p.type == "int" ? 1 : 0.01 } type="range" min={p.min} max={p.max} bind:value={p.value} />
                 <input bind:value={p.value} />
               {:else}
                 <input bind:value={p.value} />
@@ -56,6 +60,12 @@
 </div>
 
 <style>
+	h3 {
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	font-size: 18px;
+	}
   .filter-holder {
     background-color: #fff;
     padding: 10px;

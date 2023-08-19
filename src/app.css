@@ -1,13 +1,24 @@
+* {
+	box-sizing: border-box;
+}
 :root {
 }
 
 a {
+	color: #000;
 }
 a:hover {
 }
 
 body {
 	background-color: #eee;
+	font: 16px Times, serif;
+}
+textrea, select, input, button {
+	font: inherit;
+}
+video {
+	width: 100%;
 }
 
 h1 {
