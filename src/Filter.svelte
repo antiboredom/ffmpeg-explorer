@@ -7,40 +7,40 @@
     description: "",
   };
 
-	let show = false;
+  let show = false;
 
   function remove() {
-		const index = $filters.findIndex((f) => f.id === filter.id);
+    const index = $filters.findIndex((f) => f.id === filter.id);
     $filters.splice(index, 1);
     $filters = $filters;
   }
 
-	function reset() {
-		for (let p of filter.params) {
-			p.value = null;
-			if (p.default != null) p.value = p.default;
-		}
-		filter = filter;
-	}
+  function reset() {
+    for (let p of filter.params) {
+      p.value = null;
+      if (p.default != null) p.value = p.default;
+    }
+    filter = filter;
+  }
 
-	$: url = `https://ffmpeg.org/ffmpeg-filters.html#${filter.name}`;
+  $: url = `https://ffmpeg.org/ffmpeg-filters.html#${filter.name}`;
 </script>
 
 <div class="filter-holder">
   <div class="head">
     <div class="name"><h3>{filter.name}</h3></div>
-		<div>
-			{#if filter.params && filter.params.length > 0}
-				<button on:click={() => show = !show}>{show ? "Hide" : "Show"} Options</button>
-			{/if}
-			<button on:click={remove}>X</button>
-		</div>
+    <div>
+      {#if filter.params && filter.params.length > 0}
+        <button on:click={() => (show = !show)}>{show ? "Hide" : "Show"} Options</button>
+      {/if}
+      <button on:click={remove}>X</button>
+    </div>
   </div>
 
   <div class="description">
-		{filter.description}
-		<a style="color: #666" href="{url}" target="_blank">Full documentation.</a>
-	</div>
+    {filter.description}
+    <a style="color: #666" href={url} target="_blank">Full documentation.</a>
+  </div>
 
   {#if filter.params && filter.params.length > 0 && show}
     <div class="options">
@@ -59,7 +59,13 @@
                   {/each}
                 </select>
               {:else if p.type == "float" || p.type == "double" || p.type == "long" || p.type == "int"}
-                <input step={p.type == "int" ? 1 : 0.01 } type="range" min={p.min} max={p.max} bind:value={p.value} />
+                <input
+                  step={p.type == "int" ? 1 : 0.01}
+                  type="range"
+                  min={p.min}
+                  max={p.max}
+                  bind:value={p.value}
+                />
                 <input bind:value={p.value} />
               {:else}
                 <input bind:value={p.value} />
@@ -69,25 +75,25 @@
           <div class="p-description">{p.desc}</div>
         </div>
       {/each}
-			<div class="param-holder">
-				<button on:click={reset}>Reset to Defaults</button>
-			</div>
+      <div class="param-holder">
+        <button on:click={reset}>Reset to Defaults</button>
+      </div>
     </div>
   {/if}
 </div>
 
 <style>
-	h3 {
-	font-weight: normal;
-	margin: 0;
-	padding: 0;
-	font-size: 18px;
-	}
+  h3 {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+  }
   .filter-holder {
     background-color: #fff;
     padding: 10px;
-		border: 1px solid #999;
-		/* box-shadow: 5px 5px 0px #000; */
+    border: 1px solid #999;
+    /* box-shadow: 5px 5px 0px #000; */
   }
   .filter-holder,
   input,
