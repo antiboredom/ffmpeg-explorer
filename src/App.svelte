@@ -166,21 +166,13 @@
   </section>
   <!-- {message} -->
   <section class="command">
+		<h3>Output Command</h3>
+		<div class="inner-command">
     <textarea readonly class="actual-command" bind:this={commandRef}>{command}</textarea>
     <div>
-      <button on:click={copyCommand}>Copy</button>
-      <button on:click={render} disabled={!ffmpegLoaded || rendering}>
-        {#if ffmpegLoaded}
-          {#if rendering}
-            Rendering...
-          {:else}
-            Render
-          {/if}
-        {:else}
-          Loading ffmpeg
-        {/if}
-      </button>
+      <button on:click={copyCommand}>Copy Command</button>
     </div>
+		</div>
   </section>
 
   <section class="inputs">
@@ -203,6 +195,19 @@
       <div class="rendering-video"><span>Rendering...</span></div>
     {/if}
     <video controls src={videoValue} />
+		<div style="text-align: right;margin-top:5px;">
+      <button on:click={render} disabled={!ffmpegLoaded || rendering}>
+        {#if ffmpegLoaded}
+          {#if rendering}
+            Rendering...
+          {:else}
+            Render Preview
+          {/if}
+        {:else}
+          Loading ffmpeg
+        {/if}
+      </button>
+		</div>
   </section>
 
   <section class="output">
@@ -237,8 +242,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas:
-      "hdr hdr hdr"
-      "cmd cmd cmd"
+      "hdr cmd cmd"
       "inp log prv"
       "out log prv"
       "flt flt flt";
@@ -330,7 +334,7 @@
     margin: 0;
   }
 
-  .command {
+  .inner-command {
     display: flex;
     align-items: center;
     margin: 10px 0px;
