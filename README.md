@@ -26,4 +26,5 @@ npm run dev
 - [ ] Add more sample inputs (at least need an image and an audio file)
 - [ ] Put filter options in a separate panel
 - [ ] Add filters that generate content
+- [ ] Handle audio and image output.
 - [ ] MAYBE add previews in the filter list itself
