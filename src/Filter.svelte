@@ -39,7 +39,7 @@
 
   <div class="description">
     {filter.description}
-    <a style="color: #666" href={url} target="_blank">Full documentation.</a>
+    <a href={url} target="_blank">Full documentation.</a>
   </div>
 
   {#if filter.params && filter.params.length > 0 && show}
@@ -93,7 +93,7 @@
     background-color: #fff;
     padding: 10px;
     /* border: 1px solid #999; */
-		border: 1px solid var(--b1);
+    border: 1px solid var(--b1);
     /* box-shadow: 5px 5px 0px #000; */
   }
   .filter-holder,
@@ -113,22 +113,22 @@
     margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
-		align-items: center;
+    align-items: center;
   }
 
   .param-holder {
-		border-top: 1px solid var(--b1);
+    border-top: 1px solid var(--b1);
     padding: 10px 0px;
   }
   .param-holder:last-child {
     padding-bottom: 0;
   }
-	.p-value {
-		display: flex;
-	}
-	input[type="range"] {
-	margin-right: 5px;
-	}
+  .p-value {
+    display: flex;
+  }
+  input[type="range"] {
+    margin-right: 5px;
+  }
   .p-description {
     opacity: 0.8;
     font-size: 0.9em;
