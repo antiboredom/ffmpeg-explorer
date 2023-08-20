@@ -159,7 +159,7 @@
       export and add some filters, and then hit "render" to preview the output in browser. Note: this
       is a work in progress, many things may still be broken! Only audio to audio and video to video
       filters are included. If it hangs/crashes refresh the page. Post issues/feedback to
-      <a href="https://github.com/antiboredom/ffmpeg-explorer/ffmpeg-explore" target="_blank"
+      <a href="https://github.com/antiboredom/ffmpeg-explorer/" target="_blank"
         >GitHub</a
       >. By <a href="https://lav.io" target="_blank">Sam Lavigne</a>.
     </p>
