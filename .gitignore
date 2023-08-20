@@ -10,6 +10,7 @@ venv/
 *.mp4
 !shoe.mp4
 !punch.mp4
+deploy.sh
 
 node_modules
 dist
