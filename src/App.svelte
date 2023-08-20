@@ -372,6 +372,12 @@
     justify-content: center;
   }
 
+  @media only screen and (max-width: 1400px) {
+    .filters-holder {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
   @media only screen and (max-width: 600px) {
     main {
       grid-template-areas:
@@ -410,11 +416,6 @@
       flex: 1;
       align-content: start;
       padding: 0;
-    }
-  }
-  @media only screen and (max-width: 1400px) {
-    .filters-holder {
-      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>
