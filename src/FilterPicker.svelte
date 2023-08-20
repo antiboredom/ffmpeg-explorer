@@ -22,8 +22,6 @@
 	}
 
 	function reset() {
-		console.log('ressetting', select)
-		selectedFilters = selectFilters(select);
 		q = "";
 	}
 
