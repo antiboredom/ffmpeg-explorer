@@ -20,7 +20,7 @@
   <div class="head">
     <div class="name"><h3>{filter.name}<h3></div>
 		<div>
-			{#if filter.params}
+			{#if filter.params && filter.params.length > 0}
 				<button on:click={() => show = !show}>{show ? "Hide" : "Show"} Options</button>
 			{/if}
 			<button on:click={remove}>X</button>
