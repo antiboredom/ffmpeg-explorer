@@ -79,6 +79,7 @@
     flex-direction: column;
 		height: 100%;
 		padding: 10px;
+		border: 1px solid #999;
   }
 	.type {
 		color: #999;

@@ -1,5 +1,11 @@
 <script>
-	export let filename="";
+  export let filename = "";
 </script>
 
 <input bind:value={filename} />
+
+<style>
+  input {
+    width: 100%;
+  }
+</style>

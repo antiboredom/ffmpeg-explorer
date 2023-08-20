@@ -86,6 +86,8 @@
   .filter-holder {
     background-color: #fff;
     padding: 10px;
+		border: 1px solid #999;
+		/* box-shadow: 5px 5px 0px #000; */
   }
   .filter-holder,
   input,
