@@ -93,7 +93,7 @@
     background-color: #fff;
     padding: 10px;
     /* border: 1px solid #999; */
-		border: 1px solid var(--b2);
+		border: 1px solid var(--b1);
     /* box-shadow: 5px 5px 0px #000; */
   }
   .filter-holder,
@@ -113,15 +113,22 @@
     margin-bottom: 5px;
     display: flex;
     justify-content: space-between;
+		align-items: center;
   }
+
   .param-holder {
-    /* border-top: 1px solid #999; */
-		border-top: 1px solid var(--b2);
+		border-top: 1px solid var(--b1);
     padding: 10px 0px;
   }
   .param-holder:last-child {
     padding-bottom: 0;
   }
+	.p-value {
+		display: flex;
+	}
+	input[type="range"] {
+	margin-right: 5px;
+	}
   .p-description {
     opacity: 0.8;
     font-size: 0.9em;

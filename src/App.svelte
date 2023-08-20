@@ -408,4 +408,9 @@
       padding: 0;
     }
   }
+  @media only screen and (max-width: 1400px) {
+    .filters-holder {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
 </style>

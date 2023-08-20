@@ -2,14 +2,21 @@
   box-sizing: border-box;
 }
 :root {
+    /* --b1: #004dff; */
+    /* --b2: #f19696b3; */
     --b1: #004dff;
-    --b2: #f19696b3;
+    --b2: #ffdadab3;
+		/* --b1: #ff0000; */
+		/* --b2: #b6e3f2b3; */
 }
 
 a {
-  color: #000;
+  color: var(--b1);
 }
+
 a:hover {
+	background-color: var(--b1);
+	color: #fff;
 }
 
 body {
@@ -24,20 +31,76 @@ input,
 button {
   font: inherit;
 }
+
+button, input:not([type="range"]) , select {
+	border: 1px solid var(--b1);
+	background-color: white;
+	box-shadow: 2px 2px 0px var(--b2);
+}
+button:active {
+	position: relative;
+	top: 2px;
+	left: 2px;
+	box-shadow: none;
+}
 video {
   width: 100%;
 }
 
-h1 {
+input[type="range"] {
+   -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
 }
 
-#app {
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
 }
 
-button {
+/***** Chrome, Safari, Opera and Edge Chromium styles *****/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+   background-color: var(--b1);
+   border-radius: 0;
+   height: 0.3rem;  
 }
-button:hover {
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+   appearance: none;
+   margin-top: -5px; /* Centers thumb on the track */
+
+   /*custom styles*/
+   background-color: var(--b1);
+   height: 15px;
+   width: 10px;
 }
-button:focus,
-button:focus-visible {
+
+input[type="range"]:focus::-webkit-slider-thumb {   
+  /* border: 1px solid #053a5f; */
+}
+
+/******** Firefox styles ********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+   background-color: var(--b1);
+   border-radius: 0;
+   height: 0.3rem;  
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+   border: none; /*Removes extra border that FF applies*/
+   border-radius: 0; /*Removes default border-radius that FF applies*/
+
+   /*custom styles*/
+   background-color: var(--b1);
+   height: 15px;
+   width: 10px;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
 }
