@@ -1,6 +1,6 @@
 # Interactive FFMPEG Command Generator
 
-A work in progress web tool to explore FFmpeg.
+A work in progress web tool to explore FFmpeg. Please log [issues/suggestions](https://github.com/antiboredom/ffmpeg-explorer/issues).
 
 To run in dev mode:
 
