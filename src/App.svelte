@@ -17,7 +17,6 @@
   const ffmpeg = new FFmpeg();
 
   let command = "";
-  let message = "";
   let videoValue = "/" + $inputs[0];
   let ffmpegLoaded = false;
   let rendering = false;
@@ -39,20 +38,22 @@
   }
 
   async function transcode() {
-    message = "Start transcoding";
     videoValue = null;
     rendering = true;
-    for (let vid of $inputs) {
-      await ffmpeg.writeFile(vid, await fetchFile("/" + vid));
+    try {
+      for (let vid of $inputs) {
+        await ffmpeg.writeFile(vid, await fetchFile("/" + vid));
+      }
+      const clist = commandList();
+      console.log(clist);
+      await ffmpeg.exec(clist, TIMEOUT);
+      // await ffmpeg.exec(["-f", "lavfi", "-i", "color=size=1280x720:rate=25:color=red", "-t", "5", "out.mp4"])
+      const data = await ffmpeg.readFile("out.mp4");
+      rendering = false;
+      videoValue = URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }));
+    } catch (e) {
+      log += "Failed";
     }
-    const clist = commandList();
-    console.log(clist);
-    await ffmpeg.exec(clist, TIMEOUT);
-    // await ffmpeg.exec(["-f", "lavfi", "-i", "color=size=1280x720:rate=25:color=red", "-t", "5", "out.mp4"])
-    message = "Complete transcoding";
-    const data = await ffmpeg.readFile("out.mp4");
-    rendering = false;
-    videoValue = URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }));
     rendering = false;
   }
 
@@ -61,7 +62,6 @@
       console.log(msg);
       log += msg + "\n";
       logbox.scrollTop = logbox.scrollHeight;
-      // message = msg;
     });
     if (isChrome) {
       await ffmpeg.load({
@@ -154,10 +154,14 @@
   <section class="header">
     <h1>FFmpeg Explorer</h1>
     <p>
-      A tool to help you explore FFmpeg filters and options. To use: select one or more input videos
-      (there are currently two options), export and add some filters, and then hit "render" to
-      preview the output in browser. Note: this is a work in progress, many things may still be
-      broken, and only audio->audio and video->video filters are included. By <a href="https://lav.io">Sam Lavigne</a>.
+      A tool to help you explore <a href="https://www.ffmpeg.org/" target="_blank">FFmpeg</a>
+      filters and options. To use: select one or more input videos (there are currently two options),
+      export and add some filters, and then hit "render" to preview the output in browser. Note: this
+      is a work in progress, many things may still be broken! Only audio to audio and video to video
+      filters are included. If it hangs/crashes refresh the page. Post issues/feedback to
+      <a href="https://github.com/antiboredom/ffmpeg-explorer/ffmpeg-explore" target="_blank"
+        >GitHub</a
+      >. By <a href="https://lav.io" target="_blank">Sam Lavigne</a>.
     </p>
   </section>
   <!-- {message} -->
@@ -239,12 +243,14 @@
       "out log prv"
       "flt flt flt";
     grid-gap: 20px;
+    padding: 20px;
   }
 
   section {
     border: 1px solid #999;
     padding: 10px;
     background-color: rgb(245, 245, 245);
+    box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.7);
   }
 
   .header {
@@ -284,7 +290,8 @@
 
   .filter-picker {
     max-height: 500px;
-    max-width: 400px;
+    width: 400px;
+
     position: sticky;
     top: 0;
     left: 0;
@@ -293,6 +300,7 @@
   }
 
   .filters-holder {
+    min-height: 500px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
@@ -309,6 +317,9 @@
     font-weight: normal;
     margin: 0;
     padding: 0;
+  }
+  h1 {
+    margin-bottom: 5px;
   }
   h3 {
     margin-bottom: 10px;
@@ -329,6 +340,7 @@
     resize: none;
     flex: 1;
     font: inherit;
+    padding: 5px;
   }
   .section-header {
     display: flex;
@@ -352,5 +364,46 @@
     display: grid;
     align-items: center;
     justify-content: center;
+  }
+
+  @media only screen and (max-width: 600px) {
+    main {
+      grid-template-areas:
+        "hdr hdr hdr"
+        "cmd cmd cmd"
+        "inp inp inp"
+        "out out out"
+        "prv prv prv"
+        "log log log"
+        "flt flt flt";
+      grid-gap: 0px;
+      padding: 0px;
+    }
+    .command {
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    section {
+      box-shadow: none;
+      margin-bottom: 10px;
+      padding: 10px;
+      box-shadow: 2px 2px 0px #000;
+    }
+    .inner-filters {
+      display: block;
+    }
+    .filter-picker {
+      width: 100%;
+      margin-bottom: 20px;
+			height: 300px;
+			position: static;
+    }
+    .filters-holder {
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 10px;
+      flex: 1;
+      align-content: start;
+			padding: 0;
+    }
   }
 </style>
