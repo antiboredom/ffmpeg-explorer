@@ -79,7 +79,7 @@
     flex-direction: column;
 		height: 100%;
 		padding: 10px;
-		border: 1px solid #999;
+		border: 1px solid var(--b1);
   }
 	.type {
 		color: #999;
@@ -87,7 +87,7 @@
 	}
 
   .filter {
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid var(--b1);
     padding: 10px 0px;
     cursor: pointer;
   }

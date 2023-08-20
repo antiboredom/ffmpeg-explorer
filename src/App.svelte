@@ -211,7 +211,7 @@
   </section>
 
   <section class="filters">
-    <h3>Filters</h3>
+    <h3>Filters (click to add)</h3>
     <div class="inner-filters">
       <div class="filter-picker">
         <FilterPicker select={"video"} />
@@ -247,10 +247,12 @@
   }
 
   section {
-    border: 1px solid #999;
+    /* border: 1px solid #999; */
+    /* box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.7); */
+    border: 1px solid var(--b1);
+    box-shadow: 7px 7px var(--b2);
     padding: 10px;
     background-color: rgb(245, 245, 245);
-    box-shadow: 7px 7px 0px rgba(0, 0, 0, 0.7);
   }
 
   .header {
@@ -395,15 +397,15 @@
     .filter-picker {
       width: 100%;
       margin-bottom: 20px;
-			height: 300px;
-			position: static;
+      height: 300px;
+      position: static;
     }
     .filters-holder {
       grid-template-columns: repeat(1, 1fr);
       grid-gap: 10px;
       flex: 1;
       align-content: start;
-			padding: 0;
+      padding: 0;
     }
   }
 </style>

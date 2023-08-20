@@ -92,7 +92,8 @@
   .filter-holder {
     background-color: #fff;
     padding: 10px;
-    border: 1px solid #999;
+    /* border: 1px solid #999; */
+		border: 1px solid var(--b2);
     /* box-shadow: 5px 5px 0px #000; */
   }
   .filter-holder,
@@ -114,7 +115,8 @@
     justify-content: space-between;
   }
   .param-holder {
-    border-top: 1px solid #999;
+    /* border-top: 1px solid #999; */
+		border-top: 1px solid var(--b2);
     padding: 10px 0px;
   }
   .param-holder:last-child {

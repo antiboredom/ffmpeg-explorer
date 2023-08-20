@@ -2,6 +2,8 @@
   box-sizing: border-box;
 }
 :root {
+    --b1: #004dff;
+    --b2: #f19696b3;
 }
 
 a {
