@@ -7,9 +7,10 @@
   import FilterPicker from "./FilterPicker.svelte";
   import { FFmpeg } from "@ffmpeg/ffmpeg";
   import { fetchFile, toBlobURL } from "@ffmpeg/util";
-	import {dndzone} from "svelte-dnd-action";
+  import { dndzone } from "svelte-dnd-action";
 
-  const baseURL = "https://unpkg.com/@ffmpeg/core@0.12.2/dist/esm";
+  const isChrome = navigator.userAgent.match(/chrome|chromium|crios/i);
+  const baseURL = `https://unpkg.com/@ffmpeg/core${!isChrome ? "-mt" : ""}@0.12.2/dist/esm`;
   // const baseURL = "";
   const TIMEOUT = 40000;
 
@@ -47,7 +48,7 @@
     const clist = commandList();
     console.log(clist);
     await ffmpeg.exec(clist, TIMEOUT);
-		// await ffmpeg.exec(["-f", "lavfi", "-i", "color=size=1280x720:rate=25:color=red", "-t", "5", "out.mp4"])
+    // await ffmpeg.exec(["-f", "lavfi", "-i", "color=size=1280x720:rate=25:color=red", "-t", "5", "out.mp4"])
     message = "Complete transcoding";
     const data = await ffmpeg.readFile("out.mp4");
     rendering = false;
@@ -55,21 +56,29 @@
     rendering = false;
   }
 
-	async function loadFFmpeg() {
+  async function loadFFmpeg() {
     ffmpeg.on("log", ({ message: msg }) => {
       console.log(msg);
       log += msg + "\n";
       logbox.scrollTop = logbox.scrollHeight;
       // message = msg;
     });
-    await ffmpeg.load({
-      coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
-      wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),
-      // workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
-    });
+    if (isChrome) {
+      await ffmpeg.load({
+        coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
+        wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),
+        // workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
+      });
+    } else {
+      await ffmpeg.load({
+        coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
+        wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),
+        workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
+      });
+    }
     console.log(ffmpeg);
     ffmpegLoaded = true;
-	}
+  }
 
   function updateCommand() {
     const cInputs = $inputs.map((i) => `-i ${i}`).join(" ");
@@ -128,16 +137,16 @@
     return command;
   }
 
-	function handleFilterSort(e) {
-		filters.set(e.detail.items);
-	}
+  function handleFilterSort(e) {
+    filters.set(e.detail.items);
+  }
 
   inputs.subscribe(updateCommand);
   output.subscribe(updateCommand);
   filters.subscribe(updateCommand);
 
   onMount(async () => {
-		loadFFmpeg();
+    loadFFmpeg();
   });
 </script>
 
@@ -186,9 +195,9 @@
   </section>
 
   <section class="preview">
-		{#if rendering}
-			<div class="rendering-video"><span>Rendering...</span></div>
-		{/if}
+    {#if rendering}
+      <div class="rendering-video"><span>Rendering...</span></div>
+    {/if}
     <video controls src={videoValue} />
   </section>
 
@@ -203,7 +212,12 @@
       <div class="filter-picker">
         <FilterPicker select={"video"} />
       </div>
-      <div class="filters-holder" use:dndzone={{items:$filters}} on:consider={handleFilterSort} on:finalize={handleFilterSort}>
+      <div
+        class="filters-holder"
+        use:dndzone={{ items: $filters }}
+        on:consider={handleFilterSort}
+        on:finalize={handleFilterSort}
+      >
         {#each $filters as f (f.id)}
           <div class="filter">
             <Filter bind:filter={f} />
@@ -247,7 +261,7 @@
 
   .preview {
     grid-area: prv;
-		position: relative;
+    position: relative;
   }
 
   .output {
@@ -327,16 +341,16 @@
     resize: none;
     flex: 1;
   }
-	.rendering-video {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		z-index: 2;
-		background-color: rgba(255, 255, 255, 0.8);
-		top: 0;
-		left: 0;
-		display: grid;
-		align-items: center;
-		justify-content: center;
-	}
+  .rendering-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.8);
+    top: 0;
+    left: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
 </style>
