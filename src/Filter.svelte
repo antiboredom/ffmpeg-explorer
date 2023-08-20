@@ -14,6 +14,16 @@
     $filters.splice(index, 1);
     $filters = $filters;
   }
+
+	function reset() {
+		for (let p of filter.params) {
+			p.value = null;
+			if (p.default != null) p.value = p.default;
+		}
+		filter = filter;
+	}
+
+	$: url = `https://ffmpeg.org/ffmpeg-filters.html#${filter.name}`;
 </script>
 
 <div class="filter-holder">
@@ -27,7 +37,10 @@
 		</div>
   </div>
 
-  <div class="description">{filter.description}</div>
+  <div class="description">
+		{filter.description}
+		<a style="color: #666" href="{url}" target="_blank">Full documentation.</a>
+	</div>
 
   {#if filter.params && filter.params.length > 0 && show}
     <div class="options">
@@ -56,6 +69,9 @@
           <div class="p-description">{p.desc}</div>
         </div>
       {/each}
+			<div class="param-holder">
+				<button on:click={reset}>Reset to Defaults</button>
+			</div>
     </div>
   {/if}
 </div>
