@@ -157,7 +157,7 @@
       A tool to help you explore FFmpeg filters and options. To use: select one or more input videos
       (there are currently two options), export and add some filters, and then hit "render" to
       preview the output in browser. Note: this is a work in progress, many things may still be
-      broken! By <a href="https://lav.io">Sam Lavigne</a>.
+      broken, and only audio->audio and video->video filters are included. By <a href="https://lav.io">Sam Lavigne</a>.
     </p>
   </section>
   <!-- {message} -->
