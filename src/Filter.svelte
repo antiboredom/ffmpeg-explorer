@@ -28,7 +28,7 @@
 
 <div class="filter-holder">
   <div class="head">
-    <div class="name"><h3>{filter.name}<h3></div>
+    <div class="name"><h3>{filter.name}</h3></div>
 		<div>
 			{#if filter.params && filter.params.length > 0}
 				<button on:click={() => show = !show}>{show ? "Hide" : "Show"} Options</button>
@@ -102,10 +102,6 @@
     display: flex;
     justify-content: space-between;
   }
-  .options {
-    /* margin-top: 10px; */
-    /* padding-top: 10px; */
-  }
   .param {
     margin-bottom: 5px;
     display: flex;
@@ -121,9 +117,5 @@
   .p-description {
     opacity: 0.8;
     font-size: 0.9em;
-  }
-
-  p {
-    margin: 0;
   }
 </style>
