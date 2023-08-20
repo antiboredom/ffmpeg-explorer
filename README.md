@@ -4,8 +4,7 @@ A work in progress web tool to explore FFmpeg. Please log [issues/suggestions](h
 
 To run in dev mode:
 
-```
-bash
+```bash
 npm install
 npm run dev
 ```
