@@ -7,10 +7,10 @@
   import FilterPicker from "./FilterPicker.svelte";
   import { FFmpeg } from "@ffmpeg/ffmpeg";
   import { fetchFile, toBlobURL } from "@ffmpeg/util";
+	import {dndzone} from "svelte-dnd-action";
 
   const baseURL = "https://unpkg.com/@ffmpeg/core@0.12.2/dist/esm";
   // const baseURL = "";
-  // const videoURL = "https://ffmpegwasm.netlify.app/video/video-15s.avi";
   const TIMEOUT = 40000;
 
   const ffmpeg = new FFmpeg();
@@ -38,30 +38,38 @@
   }
 
   async function transcode() {
-    // try {
     message = "Start transcoding";
     videoValue = null;
     rendering = true;
     for (let vid of $inputs) {
       await ffmpeg.writeFile(vid, await fetchFile("/" + vid));
     }
-    // const infile = await ffmpeg.readFile("example.mp4");
-    //    videoValue = URL.createObjectURL(new Blob([infile.buffer], { type: "video/mp4" }));
-    // console.log("VIDEO", videoValue);
     const clist = commandList();
     console.log(clist);
-    // await ffmpeg.exec(["-hide_banner", "-i", "example.mp4", "-vf", "negate", "out.mp4", "-y"]);
     await ffmpeg.exec(clist, TIMEOUT);
+		// await ffmpeg.exec(["-f", "lavfi", "-i", "color=size=1280x720:rate=25:color=red", "-t", "5", "out.mp4"])
     message = "Complete transcoding";
     const data = await ffmpeg.readFile("out.mp4");
     rendering = false;
     videoValue = URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }));
     rendering = false;
-    // console.log("VIDEO", videoValue);
-    // } catch (error) {
-    //   console.log(error);
-    // }
   }
+
+	async function loadFFmpeg() {
+    ffmpeg.on("log", ({ message: msg }) => {
+      console.log(msg);
+      log += msg + "\n";
+      logbox.scrollTop = logbox.scrollHeight;
+      // message = msg;
+    });
+    await ffmpeg.load({
+      coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
+      wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),
+      // workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
+    });
+    console.log(ffmpeg);
+    ffmpegLoaded = true;
+	}
 
   function updateCommand() {
     const cInputs = $inputs.map((i) => `-i ${i}`).join(" ");
@@ -116,29 +124,20 @@
     command.push("-pix_fmt");
     command.push("yuv420p");
     command.push("out.mp4");
+
     return command;
   }
+
+	function handleFilterSort(e) {
+		filters.set(e.detail.items);
+	}
 
   inputs.subscribe(updateCommand);
   output.subscribe(updateCommand);
   filters.subscribe(updateCommand);
 
   onMount(async () => {
-    ffmpeg.on("log", ({ message: msg }) => {
-      console.log(msg);
-      log += msg + "\n";
-      logbox.scrollTop = logbox.scrollHeight;
-      // message = msg;
-    });
-    await ffmpeg.load({
-      // coreURL: `${baseURL}/ffmpeg-core.js`,
-      // wasmURL: `${baseURL}/ffmpeg-core.wasm`,
-      // workerURL: `${baseURL}/ffmpeg-core.worker.js`,
-      coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
-      wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),
-      // workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
-    });
-    ffmpegLoaded = true;
+		loadFFmpeg();
   });
 </script>
 
@@ -148,18 +147,16 @@
     <p>
       A tool to help you explore FFmpeg filters and options. To use: select one or more input videos
       (there are currently two options), export and add some filters, and then hit "render" to
-      preview the output in browser.
-      Note: this is a work in progress, many things may still be broken! By <a href="https://lav.io"
-        >Sam Lavigne</a
-      >.
+      preview the output in browser. Note: this is a work in progress, many things may still be
+      broken! By <a href="https://lav.io">Sam Lavigne</a>.
     </p>
   </section>
   <!-- {message} -->
   <section class="command">
-    <textarea class="actual-command" bind:this={commandRef}>{command}</textarea>
+    <textarea readonly class="actual-command" bind:this={commandRef}>{command}</textarea>
     <div>
       <button on:click={copyCommand}>Copy</button>
-      <button on:click={render} disabled={!ffmpegLoaded}>
+      <button on:click={render} disabled={!ffmpegLoaded || rendering}>
         {#if ffmpegLoaded}
           {#if rendering}
             Rendering...
@@ -185,10 +182,13 @@
 
   <section class="log">
     <h3>FFmpeg Log</h3>
-    <textarea class="the-log" bind:this={logbox}>{log}</textarea>
+    <textarea readonly class="the-log" bind:this={logbox}>{log}</textarea>
   </section>
 
   <section class="preview">
+		{#if rendering}
+			<div class="rendering-video"><span>Rendering...</span></div>
+		{/if}
     <video controls src={videoValue} />
   </section>
 
@@ -203,10 +203,10 @@
       <div class="filter-picker">
         <FilterPicker select={"video"} />
       </div>
-      <div class="filters-holder">
-        {#each $filters as f, index}
+      <div class="filters-holder" use:dndzone={{items:$filters}} on:consider={handleFilterSort} on:finalize={handleFilterSort}>
+        {#each $filters as f (f.id)}
           <div class="filter">
-            <Filter bind:filter={f} {index} />
+            <Filter bind:filter={f} />
           </div>
         {/each}
       </div>
@@ -247,6 +247,7 @@
 
   .preview {
     grid-area: prv;
+		position: relative;
   }
 
   .output {
@@ -326,4 +327,16 @@
     resize: none;
     flex: 1;
   }
+	.rendering-video {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		background-color: rgba(255, 255, 255, 0.8);
+		top: 0;
+		left: 0;
+		display: grid;
+		align-items: center;
+		justify-content: center;
+	}
 </style>

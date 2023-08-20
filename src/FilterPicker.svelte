@@ -1,5 +1,6 @@
 <script>
   import uFuzzy from "@leeoniya/ufuzzy";
+	import { v4 as uuidv4 } from 'uuid';
   import FILTERS from "./filters.json";
   import { filters } from "./stores.js";
 
@@ -27,7 +28,7 @@
 	}
 
   function add(f) {
-    const newFilter = { ...f };
+    const newFilter = { ...f, filterId: f.id, id: uuidv4()  };
 		if (f.params) {
 			newFilter.params = f.params.map((p) => {
 				p.value = null;

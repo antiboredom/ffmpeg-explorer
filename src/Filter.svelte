@@ -1,5 +1,4 @@
 <script>
-  import FILTERS from "./filters.json";
   import { filters } from "./stores.js";
 
   export let filter = {
@@ -8,10 +7,10 @@
     description: "",
   };
 
-  export let index;
 	let show = false;
 
   function remove() {
+		const index = $filters.findIndex((f) => f.id === filter.id);
     $filters.splice(index, 1);
     $filters = $filters;
   }
@@ -21,7 +20,9 @@
   <div class="head">
     <div class="name"><h3>{filter.name}<h3></div>
 		<div>
-			<button on:click={() => show = !show}>{show ? "Hide" : "Show"} Options</button>
+			{#if filter.params}
+				<button on:click={() => show = !show}>{show ? "Hide" : "Show"} Options</button>
+			{/if}
 			<button on:click={remove}>X</button>
 		</div>
   </div>
