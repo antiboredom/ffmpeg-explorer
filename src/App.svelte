@@ -166,13 +166,13 @@
   </section>
   <!-- {message} -->
   <section class="command">
-		<h3>Output Command</h3>
-		<div class="inner-command">
-    <textarea readonly class="actual-command" bind:this={commandRef}>{command}</textarea>
-    <div>
-      <button on:click={copyCommand}>Copy Command</button>
+    <h3>Output Command</h3>
+    <div class="inner-command">
+      <textarea readonly class="actual-command" bind:this={commandRef}>{command}</textarea>
+      <div>
+        <button on:click={copyCommand}>Copy Command</button>
+      </div>
     </div>
-		</div>
   </section>
 
   <section class="inputs">
@@ -195,7 +195,7 @@
       <div class="rendering-video"><span>Rendering...</span></div>
     {/if}
     <video controls src={videoValue} />
-		<div style="text-align: right;margin-top:5px;">
+    <div style="text-align: right;margin-top:5px;">
       <button on:click={render} disabled={!ffmpegLoaded || rendering}>
         {#if ffmpegLoaded}
           {#if rendering}
@@ -207,7 +207,7 @@
           Loading ffmpeg
         {/if}
       </button>
-		</div>
+    </div>
   </section>
 
   <section class="output">
@@ -265,6 +265,8 @@
 
   .command {
     grid-area: cmd;
+    display: flex;
+    flex-direction: column;
   }
 
   .inputs {
@@ -338,6 +340,7 @@
     display: flex;
     align-items: center;
     margin: 10px 0px;
+    flex: 1;
   }
 
   .actual-command {
@@ -347,6 +350,7 @@
     flex: 1;
     font: inherit;
     padding: 5px;
+    height: 100%;
   }
   .section-header {
     display: flex;
