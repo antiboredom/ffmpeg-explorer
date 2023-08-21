@@ -27,4 +27,5 @@ npm run dev
 - [ ] Put filter options in a separate panel
 - [ ] Add filters that generate content
 - [ ] Handle audio and image output.
+- [ ] Allow command to be editable
 - [ ] MAYBE add previews in the filter list itself
