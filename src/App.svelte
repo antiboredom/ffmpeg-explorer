@@ -118,8 +118,6 @@
       command.push("-i");
       command.push(vid);
     }
-    // let command = ["-i", "example.mp4"];
-
     // const audioFilters = $filters.filter(f => f.type[0] === "A").map(makeFilterArgs);
     // const videoFilters = $filters.filter(f => f.type[0] === "V").map(makeFilterArgs);
 
@@ -316,11 +314,7 @@
     flex: 1;
     align-content: start;
   }
-  .filter {
-    /* width: 33%; */
-  }
   h1,
-  h2,
   h3 {
     font-weight: normal;
     margin: 0;

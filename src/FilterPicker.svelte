@@ -1,39 +1,39 @@
 <script>
   import uFuzzy from "@leeoniya/ufuzzy";
-	import { v4 as uuidv4 } from 'uuid';
+  import { v4 as uuidv4 } from "uuid";
   import FILTERS from "./filters.json";
   import { filters } from "./stores.js";
 
-	export let select = "video";
-	$: selectedFilters = selectFilters(select);
+  export let select = "video";
+  $: selectedFilters = selectFilters(select);
   $: allfilters = [...selectedFilters];
   let q = "";
 
   const uf = new uFuzzy();
 
-	function selectFilters(sel) {
-		if (sel == "video") {
-			return FILTERS.filter(f => f.type[0] === "V")
-		} else if (sel == "audio") {
-			return FILTERS.filter(f => f.type[0] === "A")
-		} else {
-			return [...FILTERS];
-		}
-	}
+  function selectFilters(sel) {
+    if (sel == "video") {
+      return FILTERS.filter((f) => f.type[0] === "V" || f.type === "N->V");
+    } else if (sel == "audio") {
+      return FILTERS.filter((f) => f.type[0] === "A" || f.type === "N->A");
+    } else {
+      return [...FILTERS];
+    }
+  }
 
-	function reset() {
-		q = "";
-	}
+  function reset() {
+    q = "";
+  }
 
   function add(f) {
-    const newFilter = { ...f, filterId: f.id, id: uuidv4()  };
-		if (f.params) {
-			newFilter.params = f.params.map((p) => {
-				p.value = null;
-				if (p.default != null) p.value = p.default;
-				return p;
-			});
-		}
+    const newFilter = { ...f, filterId: f.id, id: uuidv4() };
+    if (f.params) {
+      newFilter.params = f.params.map((p) => {
+        p.value = null;
+        if (p.default != null) p.value = p.default;
+        return p;
+      });
+    }
     $filters = [...$filters, newFilter];
     console.log(newFilter);
   }
@@ -58,10 +58,10 @@
 <div class="holder">
   <div class="search">
     <input placeholder="Search Filters" on:keyup={update} bind:value={q} type="text" />
-		<select on:change={reset} bind:value={select}>
-			<option value="video">Video Filters</option>
-			<option value="audio">Audio Filters</option>
-		</select>
+    <select on:change={reset} bind:value={select}>
+      <option value="video">Video Filters</option>
+      <option value="audio">Audio Filters</option>
+    </select>
   </div>
   <div class="all-filters">
     {#each allfilters as f}
@@ -77,22 +77,22 @@
   .holder {
     display: flex;
     flex-direction: column;
-		height: 100%;
-		padding: 10px;
-		border: 1px solid var(--b1);
+    height: 100%;
+    padding: 10px;
+    border: 1px solid var(--b1);
   }
-	.search {
-		display: flex;
-		justify-items: stretch;
-	}
-	input {
-		flex: 1;
-		margin-right: 10px;
-	}
-	.type {
-		color: #999;
-		font-size: 0.8em;
-	}
+  .search {
+    display: flex;
+    justify-items: stretch;
+  }
+  input {
+    flex: 1;
+    margin-right: 10px;
+  }
+  .type {
+    color: #999;
+    font-size: 0.8em;
+  }
 
   .filter {
     border-bottom: 1px solid var(--b1);
