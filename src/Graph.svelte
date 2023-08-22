@@ -1,7 +1,25 @@
 <script>
   import { inputs, output, filters } from "./stores.js";
   import { Anchor, Node, Svelvet, Minimap, Controls } from "svelvet";
-  import { generateInput, generateOutput } from "svelvet";
+
+	// let nodes = [];
+	// for (let inp of $inputs) {
+	// 	nodes.push({item: inp});
+	// }
+	//
+	// for (let filter of $filters) {
+	// 	nodes.push({item: filter});
+	// }
+	let edges = [];
+	let command = '';
+
+	function makeCommand() {
+		for (let e of edges) {
+			const [from, to] = e;
+			const [fromAnchorId, fromNodeId] = from.split("/");
+			const [toAnchorId, toNodeId] = to.split("/");
+		}
+	}
 
   function countInputs(f) {
     const [ins, outs] = f.type.split("->");
@@ -25,16 +43,27 @@
 		const targetAnchor = e.detail.targetAnchor;
 		const sourceNode = e.detail.sourceNode;
 		const targetNode = e.detail.targetNode;
-		console.log(sourceNode.id, "->", targetNode.id)
-		console.log(sourceAnchor.id, "->", targetAnchor.id)
+		// console.log(e);
+		// console.log(sourceNode.id, "->", targetNode.id)
+		// console.log(sourceAnchor.id, "->", targetAnchor.id)
+		edges.push([sourceAnchor.id, targetAnchor.id])
+		edges = edges;
+		makeCommand();
   }
+
   function onDisconnect(e) {
 		const sourceAnchor = e.detail.sourceAnchor;
 		const targetAnchor = e.detail.targetAnchor;
 		const sourceNode = e.detail.sourceNode;
 		const targetNode = e.detail.targetNode;
-		console.log(sourceNode.id, "-/>", targetNode.id)
-		console.log(sourceAnchor.id, "-/>", targetAnchor.id)
+
+		// console.log(sourceNode.id, "-/>", targetNode.id)
+		// console.log(sourceAnchor.id, "-/>", targetAnchor.id)
+
+		const index = edges.findIndex((e) => e[0] === sourceAnchor.id && e[1] === targetAnchor.id);
+		edges.splice(index, 1);
+		edges = edges;
+		makeCommand();
   }
 </script>
 
@@ -47,18 +76,18 @@
   on:connection={onConnect}
 >
   {#each $inputs as inp, index}
-    <Node inputs={0} outputs={2}>
+    <Node inputs={0} outputs={2} id={"input_" + inp.id}>
       <div class="node">
         <div class="header">
-          {inp}
+          {inp.name}
         </div>
         <slot />
       </div>
       <div class="output-anchors">
-        <Anchor id={"v" + index} let:linked let:connecting let:hovering output>
+        <Anchor id={"video"} let:linked let:connecting let:hovering output>
           <div class:linked class:hovering class:connecting class="anchor video">v</div>
         </Anchor>
-        <Anchor id={"a" + index} let:linked let:connecting let:hovering output>
+        <Anchor id={"audio"} let:linked let:connecting let:hovering output>
           <div class:linked class:hovering class:connecting class="anchor audio">a</div>
         </Anchor>
       </div>
@@ -66,7 +95,7 @@
   {/each}
 
   {#each $filters as f, index}
-    <Node inputs={countInputs(f)} outputs={countOutputs(f)}>
+    <Node inputs={countInputs(f)} outputs={countOutputs(f)} id={"filter_" + f.id}>
       <div class="node">
         <div class="header">
           {f.name}
@@ -74,15 +103,15 @@
         <slot />
       </div>
       <div class="input-anchors">
-        {#each countCons(f).in as inp}
-          <Anchor let:linked let:connecting let:hovering input>
+        {#each countCons(f).in as inp, index}
+          <Anchor id={"in_" + inp + "_" + index} let:linked let:connecting let:hovering input>
             <div class:linked class:hovering class:connecting class="anchor in {inp}">{inp}</div>
           </Anchor>
         {/each}
       </div>
       <div class="output-anchors">
         {#each countCons(f).out as out}
-          <Anchor let:linked let:connecting let:hovering output>
+          <Anchor id={"out_" + out + "_" + index} let:linked let:connecting let:hovering output>
             <div class:linked class:hovering class:connecting class="anchor in {out}">{out}</div>
           </Anchor>
         {/each}
@@ -90,7 +119,7 @@
     </Node>
   {/each}
 
-  <Node inputs={2} outputs="0" position={{ x: 600, y: 250 }}>
+  <Node inputs={2} outputs="0" id="output" position={{ x: 600, y: 250 }}>
     <div class="node">
       <div class="header">
         {$output}
@@ -108,6 +137,14 @@
   </Node>
   <Controls />
 </Svelvet>
+
+<div>
+	{#each edges as e}
+		<p>
+			{e[0]} =======> {e[1]}
+		</p>
+	{/each}
+</div>
 
 <style>
   .node {
