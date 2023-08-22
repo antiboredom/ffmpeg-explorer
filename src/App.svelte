@@ -1,10 +1,11 @@
 <script>
   import { onMount } from "svelte";
-  import { inputs, output, filters } from "./stores.js";
+  import { inputs, addInput, output, filters } from "./stores.js";
   import Input from "./Input.svelte";
   import Output from "./Output.svelte";
   import Filter from "./Filter.svelte";
   import FilterPicker from "./FilterPicker.svelte";
+  import Graph from "./Graph.svelte";
   import { FFmpeg } from "@ffmpeg/ffmpeg";
   import { fetchFile, toBlobURL } from "@ffmpeg/util";
   import { dndzone } from "svelte-dnd-action";
@@ -17,7 +18,7 @@
   const ffmpeg = new FFmpeg();
 
   let command = "";
-  let videoValue = "/" + $inputs[0];
+  let videoValue = "/" + $inputs[0].name;
   let ffmpegLoaded = false;
   let rendering = false;
   let log = "";
@@ -25,7 +26,7 @@
   let commandRef;
 
   function newInput() {
-    $inputs = [...$inputs, "punch.mp4"];
+		addInput("punch.mp4");
   }
 
   function render() {
@@ -42,7 +43,7 @@
     rendering = true;
     try {
       for (let vid of $inputs) {
-        await ffmpeg.writeFile(vid, await fetchFile("/" + vid));
+        await ffmpeg.writeFile(vid.name, await fetchFile("/" + vid.name));
       }
       const clist = commandList();
       console.log(clist);
@@ -81,7 +82,8 @@
   }
 
   function updateCommand() {
-    const cInputs = $inputs.map((i) => `-i ${i}`).join(" ");
+		console.log($inputs);
+    const cInputs = $inputs.map((i) => `-i ${i.name}`).join(" ");
 
     const cOutput = $output;
 
@@ -116,7 +118,7 @@
     let command = [];
     for (let vid of $inputs) {
       command.push("-i");
-      command.push(vid);
+      command.push(vid.name);
     }
     // const audioFilters = $filters.filter(f => f.type[0] === "A").map(makeFilterArgs);
     // const videoFilters = $filters.filter(f => f.type[0] === "V").map(makeFilterArgs);
@@ -179,7 +181,7 @@
       <button on:click={newInput}>Add Input</button>
     </div>
     {#each $inputs as inp, index}
-      <Input bind:filename={inp} {index} />
+      <Input bind:filename={inp.name} id={inp.id} {index} />
     {/each}
   </section>
 
@@ -233,6 +235,10 @@
       </div>
     </div>
   </section>
+
+	<section class="graph">
+		<Graph />
+	</section>
 </main>
 
 <style>

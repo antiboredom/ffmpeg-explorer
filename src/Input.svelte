@@ -1,11 +1,12 @@
 <script>
-  import { inputs } from "./stores.js";
+  import { removeInput } from "./stores.js";
   export let filename = "punch.mp4";
+	export let id;
   export let index;
 
   function remove() {
-    $inputs.splice(index, 1);
-    $inputs = $inputs;
+		console.log(id);
+		removeInput(id);
   }
 </script>
 
