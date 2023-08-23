@@ -45,7 +45,6 @@
         await ffmpeg.writeFile(vid, await fetchFile("/" + vid));
       }
       const clist = commandList();
-      console.log(clist);
       await ffmpeg.exec(clist, TIMEOUT);
       // await ffmpeg.exec(["-f", "lavfi", "-i", "color=size=1280x720:rate=25:color=red", "-t", "5", "out.mp4"])
       const data = await ffmpeg.readFile("out.mp4");
@@ -59,7 +58,7 @@
 
   async function loadFFmpeg() {
     ffmpeg.on("log", ({ message: msg }) => {
-      console.log(msg);
+      // console.log(msg);
       log += msg + "\n";
       logbox.scrollTop = logbox.scrollHeight;
     });
@@ -76,7 +75,6 @@
         workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
       });
     }
-    console.log(ffmpeg);
     ffmpegLoaded = true;
   }
 

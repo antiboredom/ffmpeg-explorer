@@ -35,7 +35,6 @@
       });
     }
     $filters = [...$filters, newFilter];
-    console.log(newFilter);
   }
 
   function update() {
