@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { inputs, addInput, output, filters } from "./stores.js";
+  import { addNode, nodes, inputs, output, filters, previewCommand } from "./stores.js";
   import Input from "./Input.svelte";
   import Output from "./Output.svelte";
   import Filter from "./Filter.svelte";
@@ -26,7 +26,7 @@
   let commandRef;
 
   function newInput() {
-		addInput("punch.mp4");
+    addNode({ name: "punch.mp4" }, "input");
   }
 
   function render() {
@@ -81,38 +81,7 @@
     ffmpegLoaded = true;
   }
 
-  function updateCommand() {
-		console.log($inputs);
-    const cInputs = $inputs.map((i) => `-i ${i.name}`).join(" ");
 
-    const cOutput = $output;
-
-    const cFilters = $filters.map(makeFilterArgs).join(",");
-
-    let out = `ffmpeg ${cInputs}`;
-
-    if (cFilters) out += ` -filter_complex "${cFilters}"`;
-
-    out += ` ${cOutput}`;
-
-    command = out;
-    return out;
-  }
-
-  function makeFilterArgs(f) {
-    let fCommand = f.name;
-    if (f.params && f.params.length > 0) {
-      let params = f.params
-        .map((p) => {
-          if (p.value === "" || p.value === null || p.value === p.default) return null;
-          return `${p.name}=${p.value}`;
-        })
-        .filter((p) => p !== null)
-        .join(":");
-      if (params) fCommand += "=" + params;
-    }
-    return fCommand;
-  }
 
   function commandList() {
     let command = [];
@@ -141,9 +110,9 @@
     filters.set(e.detail.items);
   }
 
-  inputs.subscribe(updateCommand);
-  output.subscribe(updateCommand);
-  filters.subscribe(updateCommand);
+  // inputs.subscribe(updateCommand);
+  // output.subscribe(updateCommand);
+  // filters.subscribe(updateCommand);
 
   onMount(async () => {
     loadFFmpeg();
@@ -159,16 +128,15 @@
       export and add some filters, and then hit "render" to preview the output in browser. Note: this
       is a work in progress, many things may still be broken! Only audio to audio and video to video
       filters are included. If it hangs/crashes refresh the page. Post issues/feedback to
-      <a href="https://github.com/antiboredom/ffmpeg-explorer/" target="_blank"
-        >GitHub</a
-      >. By <a href="https://lav.io" target="_blank">Sam Lavigne</a>.
+      <a href="https://github.com/antiboredom/ffmpeg-explorer/" target="_blank">GitHub</a>. By
+      <a href="https://lav.io" target="_blank">Sam Lavigne</a>.
     </p>
   </section>
   <!-- {message} -->
   <section class="command">
     <h3>Output Command</h3>
     <div class="inner-command">
-      <textarea readonly class="actual-command" bind:this={commandRef}>{command}</textarea>
+      <textarea readonly class="actual-command" bind:this={commandRef}>{$previewCommand}</textarea>
       <div>
         <button on:click={copyCommand}>Copy Command</button>
       </div>
@@ -180,8 +148,10 @@
       <h3>Inputs</h3>
       <button on:click={newInput}>Add Input</button>
     </div>
-    {#each $inputs as inp, index}
-      <Input bind:filename={inp.name} id={inp.id} {index} />
+    {#each $nodes as node, index}
+      {#if node.nodeType === "input"}
+        <Input bind:filename={node.data.name} id={node.id} {index} />
+      {/if}
     {/each}
   </section>
 
@@ -212,7 +182,11 @@
 
   <section class="output">
     <h3>Output</h3>
-    <Output bind:filename={$output} />
+		{#each $nodes as node}
+			{#if node.nodeType==="output"}
+				<Output bind:filename={node.data.name} />
+			{/if}
+		{/each}
   </section>
 
   <section class="filters">
@@ -227,18 +201,20 @@
         on:consider={handleFilterSort}
         on:finalize={handleFilterSort}
       >
-        {#each $filters as f (f.id)}
-          <div class="filter">
-            <Filter bind:filter={f} />
-          </div>
+        {#each $nodes as f (f.id)}
+          {#if f.nodeType === "filter"}
+            <div class="filter">
+              <Filter bind:filter={f.data} />
+            </div>
+          {/if}
         {/each}
       </div>
     </div>
   </section>
 
-	<section class="graph">
-		<Graph />
-	</section>
+  <section class="graph">
+    <Graph />
+  </section>
 </main>
 
 <style>

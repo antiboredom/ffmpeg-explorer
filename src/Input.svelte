@@ -1,12 +1,11 @@
 <script>
-  import { removeInput } from "./stores.js";
+  import { removeNode } from "./stores.js";
   export let filename = "punch.mp4";
 	export let id;
   export let index;
 
   function remove() {
-		console.log(id);
-		removeInput(id);
+		removeNode(id);
   }
 </script>
 

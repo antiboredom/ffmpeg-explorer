@@ -1,201 +1,94 @@
 <script>
-  import { inputs, output, filters } from "./stores.js";
-  import { Anchor, Node, Svelvet, Minimap, Controls } from "svelvet";
+  import { nodes, edges, command } from "./stores.js";
+  import { SvelteFlow, Controls, Background, BackgroundVariant, MiniMap } from "@xyflow/svelte";
+  import Node from "./nodes/Node.svelte";
 
-	// let nodes = [];
-	// for (let inp of $inputs) {
-	// 	nodes.push({item: inp});
-	// }
-	//
-	// for (let filter of $filters) {
-	// 	nodes.push({item: filter});
-	// }
-	let edges = [];
-	let command = '';
+  const nodeTypes = {
+    ffmpeg: Node,
+  };
 
-	function makeCommand() {
-		for (let e of edges) {
-			const [from, to] = e;
-			const [fromAnchorId, fromNodeId] = from.split("/");
-			const [toAnchorId, toNodeId] = to.split("/");
-		}
+	console.log($nodes);
+
+  // const nodes = writable([
+  //   {
+  //     id: "1",
+  //     type: "ffmpeg",
+  //     data: { label: "test.mp4", inputs: [], outputs: ["v", "a"] },
+  //     position: { x: 0, y: 0 },
+  //   },
+  //   {
+  //     id: "2",
+  //     type: "ffmpeg",
+  //     data: { label: "filter", inputs: ["v"], outputs: ["v"] },
+  //     position: { x: 0, y: 150 },
+  //   },
+  //   {
+  //     id: "3",
+  //     type: "ffmpeg",
+  //     data: { label: "output.mp4", inputs: ["v", "a"], outputs: [] },
+  //     position: { x: 100, y: 20 },
+  //   },
+  // ]);
+
+  // same for edges
+  // const edges = writable([
+  //   {
+  //     id: "1-2",
+  //     type: "default",
+  //     source: "1",
+  //     sourceHandle: "v_0",
+  //     targetHandle: "v_0",
+  //     target: "2",
+  //     label: "Edge Text",
+  //   },
+  //   {
+  //     id: "2-3",
+  //     type: "default",
+  //     source: "2",
+  //     target: "3",
+  //     sourceHandle: "v_0",
+  //     targetHandle: "v_0",
+  //     label: "Edge Text",
+  //   },
+  // ]);
+
+  const defaultEdgeOptions = {
+    deletable: true,
+  };
+
+  function onEdgeUpdate(e) {
+    console.log(e);
+  }
+
+  function onEdgeUpdateStart(e) {
+    console.log(e);
+  }
+
+  function onEdgeUpdateEnd(e) {
+    console.log(e);
+  }
+	function onMoveStart(e) {
+	console.log(e);
 	}
-
-  function countInputs(f) {
-    const [ins, outs] = f.type.split("->");
-    if (ins == "N") return 1;
-    return ins.length;
-  }
-
-  function countCons(f) {
-    const [ins, outs] = f.type.split("->");
-    return { in: ins.split(""), out: outs.split("") };
-  }
-
-  function countOutputs(f) {
-    const [ins, outs] = f.type.split("->");
-    if (outs == "N") return 1;
-    return outs.length;
-  }
-
-  function onConnect(e) {
-		const sourceAnchor = e.detail.sourceAnchor;
-		const targetAnchor = e.detail.targetAnchor;
-		const sourceNode = e.detail.sourceNode;
-		const targetNode = e.detail.targetNode;
-		// console.log(e);
-		// console.log(sourceNode.id, "->", targetNode.id)
-		// console.log(sourceAnchor.id, "->", targetAnchor.id)
-		edges.push([sourceAnchor.id, targetAnchor.id])
-		edges = edges;
-		makeCommand();
-  }
-
-  function onDisconnect(e) {
-		const sourceAnchor = e.detail.sourceAnchor;
-		const targetAnchor = e.detail.targetAnchor;
-		const sourceNode = e.detail.sourceNode;
-		const targetNode = e.detail.targetNode;
-
-		// console.log(sourceNode.id, "-/>", targetNode.id)
-		// console.log(sourceAnchor.id, "-/>", targetAnchor.id)
-
-		const index = edges.findIndex((e) => e[0] === sourceAnchor.id && e[1] === targetAnchor.id);
-		edges.splice(index, 1);
-		edges = edges;
-		makeCommand();
-  }
+	function onConnect(e){
+		console.log('connect', e);
+	}
 </script>
 
-<Svelvet
-  id="my-canvas"
-  width={800}
-  height={500}
-  snapTo={25}
-  on:disconnection={onDisconnect}
-  on:connection={onConnect}
->
-  {#each $inputs as inp, index}
-    <Node inputs={0} outputs={2} id={"input_" + inp.id}>
-      <div class="node">
-        <div class="header">
-          {inp.name}
-        </div>
-        <slot />
-      </div>
-      <div class="output-anchors">
-        <Anchor id={"video"} let:linked let:connecting let:hovering output>
-          <div class:linked class:hovering class:connecting class="anchor video">v</div>
-        </Anchor>
-        <Anchor id={"audio"} let:linked let:connecting let:hovering output>
-          <div class:linked class:hovering class:connecting class="anchor audio">a</div>
-        </Anchor>
-      </div>
-    </Node>
-  {/each}
 
-  {#each $filters as f, index}
-    <Node inputs={countInputs(f)} outputs={countOutputs(f)} id={"filter_" + f.id}>
-      <div class="node">
-        <div class="header">
-          {f.name}
-        </div>
-        <slot />
-      </div>
-      <div class="input-anchors">
-        {#each countCons(f).in as inp, index}
-          <Anchor id={"in_" + inp + "_" + index} let:linked let:connecting let:hovering input>
-            <div class:linked class:hovering class:connecting class="anchor in {inp}">{inp}</div>
-          </Anchor>
-        {/each}
-      </div>
-      <div class="output-anchors">
-        {#each countCons(f).out as out}
-          <Anchor id={"out_" + out + "_" + index} let:linked let:connecting let:hovering output>
-            <div class:linked class:hovering class:connecting class="anchor in {out}">{out}</div>
-          </Anchor>
-        {/each}
-      </div>
-    </Node>
-  {/each}
-
-  <Node inputs={2} outputs="0" id="output" position={{ x: 600, y: 250 }}>
-    <div class="node">
-      <div class="header">
-        {$output}
-      </div>
-      <slot />
-    </div>
-    <div class="input-anchors">
-      <Anchor id={"output_video"} let:linked let:connecting let:hovering input>
-        <div class:linked class:hovering class:connecting class="anchor video">v</div>
-      </Anchor>
-      <Anchor id={"output_audio"} let:linked let:connecting let:hovering input>
-        <div class:linked class:hovering class:connecting class="anchor audio">a</div>
-      </Anchor>
-    </div>
-  </Node>
-  <Controls />
-</Svelvet>
-
-<div>
-	{#each edges as e}
-		<p>
-			{e[0]} =======> {e[1]}
-		</p>
-	{/each}
+<div style="width: 900px; height: 500px;">
+  <SvelteFlow
+    {nodeTypes}
+    {nodes}
+    {edges}
+		snapGrid={[10, 10]}
+    fitView
+  >
+    <Controls />
+    <Background variant={BackgroundVariant.Dots} />
+  </SvelteFlow>
 </div>
 
-<style>
-  .node {
-    box-sizing: border-box;
-    width: fit-content;
-    height: fit-content;
-    position: relative;
-    pointer-events: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    gap: 10px;
-    background-color: #fff;
-    border: 1px solid var(--b1);
-    font: 12px Times, serif;
-    box-shadow: none !important;
-  }
-  .output-anchors {
-    position: absolute;
-    right: -16px;
-    top: 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .input-anchors {
-    position: absolute;
-    left: -16px;
-    top: 0px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .anchor {
-    background-color: #fff;
-    font-size: 12px;
-    text-align: center;
-    line-height: 12px;
-    width: 14px;
-    height: 14px;
-    font-family: Times, serif;
-    border: solid 1px white;
-    border-color: var(--b1);
-  }
-  .hovering {
-    scale: 1.2;
-  }
-  .linked {
-    background-color: rgb(17, 214, 17) !important;
-  }
-  .connecting {
-    background-color: goldenrod;
-  }
-</style>
+<div>
+	{JSON.stringify(command)}
+</div>

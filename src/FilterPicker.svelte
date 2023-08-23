@@ -1,7 +1,7 @@
 <script>
   import uFuzzy from "@leeoniya/ufuzzy";
   import FILTERS from "./filters.json";
-  import { addFilter } from "./stores.js";
+  import { addNode } from "./stores.js";
 
   export let select = "video";
   $: selectedFilters = selectFilters(select);
@@ -25,7 +25,7 @@
   }
 
   function add(f) {
-		addFilter(f);
+		addNode(f, "filter");
   }
 
   function update() {

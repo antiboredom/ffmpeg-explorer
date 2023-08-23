@@ -1,5 +1,5 @@
 <script>
-  import { filters, removeFilter } from "./stores.js";
+  import { filters, removeNode } from "./stores.js";
 
   export let filter = {
     name: "",
@@ -10,7 +10,7 @@
   let show = false;
 
   function remove() {
-		removeFilter(filter.id);
+		removeNode(filter.id);
   }
 
   function reset() {
