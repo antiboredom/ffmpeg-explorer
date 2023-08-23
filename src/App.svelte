@@ -6,6 +6,7 @@
   import Filter from "./Filter.svelte";
   import FilterPicker from "./FilterPicker.svelte";
   import Graph from "./Graph.svelte";
+  import GraphOld from "./GraphOld.svelte";
   import { FFmpeg } from "@ffmpeg/ffmpeg";
   import { fetchFile, toBlobURL } from "@ffmpeg/util";
   import { dndzone } from "svelte-dnd-action";
@@ -195,8 +196,12 @@
   </section>
 
   <section class="graph">
-    <Graph />
+    <GraphOld />
   </section>
+
+  <!-- <section class="graph"> -->
+  <!--   <Graph /> -->
+  <!-- </section> -->
 </main>
 
 <style>
