@@ -45,14 +45,18 @@
       for (let vid of $inputs) {
         await ffmpeg.writeFile(vid.name, await fetchFile("/" + vid.name));
       }
-      const clist = commandList();
-      console.log(clist);
+      let clist = $previewCommand.replaceAll('"', '').replace("ffmpeg", "").split(" ").filter(i => i.trim() != '');
+      console.log("command", clist);
+			// command.push("-pix_fmt");
+			// command.push("yuv420p");
+			// command.push("out.mp4");
       await ffmpeg.exec(clist, TIMEOUT);
       // await ffmpeg.exec(["-f", "lavfi", "-i", "color=size=1280x720:rate=25:color=red", "-t", "5", "out.mp4"])
       const data = await ffmpeg.readFile("out.mp4");
       rendering = false;
       videoValue = URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }));
     } catch (e) {
+			console.log(e);
       log += "Failed";
     }
     rendering = false;
@@ -60,7 +64,6 @@
 
   async function loadFFmpeg() {
     ffmpeg.on("log", ({ message: msg }) => {
-      console.log(msg);
       log += msg + "\n";
       logbox.scrollTop = logbox.scrollHeight;
     });
@@ -77,34 +80,13 @@
         workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
       });
     }
-    console.log(ffmpeg);
     ffmpegLoaded = true;
   }
 
 
 
-  function commandList() {
-    let command = [];
-    for (let vid of $inputs) {
-      command.push("-i");
-      command.push(vid.name);
-    }
-    // const audioFilters = $filters.filter(f => f.type[0] === "A").map(makeFilterArgs);
-    // const videoFilters = $filters.filter(f => f.type[0] === "V").map(makeFilterArgs);
 
-    const cFilters = $filters.map(makeFilterArgs).join(",");
 
-    if (cFilters.length > 0) {
-      command.push("-filter_complex");
-      command.push(cFilters);
-    }
-
-    command.push("-pix_fmt");
-    command.push("yuv420p");
-    command.push("out.mp4");
-
-    return command;
-  }
 
   function handleFilterSort(e) {
     filters.set(e.detail.items);

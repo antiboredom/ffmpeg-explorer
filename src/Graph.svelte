@@ -1,5 +1,5 @@
 <script>
-  import { nodes, edges, command } from "./stores.js";
+  import { nodes, edges} from "./stores.js";
   import { SvelteFlow, Controls, Background, BackgroundVariant, MiniMap } from "@xyflow/svelte";
   import Node from "./nodes/Node.svelte";
 
@@ -87,8 +87,4 @@
     <Controls />
     <Background variant={BackgroundVariant.Dots} />
   </SvelteFlow>
-</div>
-
-<div>
-	{JSON.stringify(command)}
 </div>
