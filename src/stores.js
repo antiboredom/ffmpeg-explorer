@@ -42,6 +42,96 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
 		inputIds[inp.id] = i;
 	}
 
+	console.log($edges)
+	const edgeIds = {};
+	for (let i = 0; i < $edges.length; i++) {
+		const e = $edges[i];
+		edgeIds[e.id] = i + 1;
+
+		const source = $nodes.find(n => "N-" + n.id === e.source);
+		const target = $nodes.find(n => "N-" + n.id === e.target);
+
+		if (source.nodeType === "input") {
+			if (e.sourceAnchor.startsWith("A-v")) {
+				edgeIds[e.id] = inputIds[source.id] + ":v";
+			}
+			if (e.sourceAnchor.startsWith("A-a")) {
+				edgeIds[e.id] = inputIds[source.id] + ":a";
+			}
+		}
+
+		if (target.nodeType === "output") {
+			edgeIds[e.id] = "out";
+		}
+	}
+
+
+  for (let n of $nodes.filter((n) => n.nodeType == "filter")) {
+    let cmd = "";
+
+    const outs = $edges.filter((e) => e.source == "N-" + n.id);
+    const ins = $edges.filter((e) => e.target == "N-" + n.id);
+
+    if (outs.length == 0 && ins.length == 0) continue;
+
+    for (let i of ins) {
+			const eid = edgeIds[i.id];
+      cmd += `[${eid}]`
+    }
+    cmd += makeFilterArgs(n.data);
+    for (let o of outs) {
+			const eid = edgeIds[o.id];
+      cmd += `[${eid}]`
+    }
+		filtergraph.push(cmd);
+  }
+
+	finalCommand.push("ffmpeg");
+
+	for (let inp of inputs) {
+		finalCommand.push("-i");
+		finalCommand.push(inp.data.name);
+	}
+
+	finalCommand.push("-filter_complex")
+
+	finalCommand.push('"' + filtergraph.join(';') + '"');
+
+	for (let out of outputs) {
+		finalCommand.push("-map");
+		finalCommand.push('"[out]"');
+	}
+
+	for (let inp of inputs) {
+		finalCommand.push("-map");
+		finalCommand.push(inputIds[inp.id] + ":a");
+	}
+
+	for (let out of outputs) {
+		finalCommand.push(out.data.name);
+	}
+
+	const entireCommand = finalCommand.join(" ");
+	return entireCommand;
+});
+
+export const previewCommandOld2 = derived([edges, nodes], ([$edges, $nodes]) => {
+  // [0:v]f1=val,f2=val[out] -map out
+  // [0:v]f1=val,f2=val[1];[1][1:v]overlay[out] -map out`
+
+	let finalCommand = [];
+
+  let filtergraph = [];
+
+	const inputs = $nodes.filter(n => n.nodeType == "input");
+	const outputs = $nodes.filter(n => n.nodeType == "output");
+
+	const inputIds = {};
+	for (let i=0; i<inputs.length; i++) {
+		const inp = inputs[i];
+		inputIds[inp.id] = i;
+	}
+
 	const edgeIds = {};
 	for (let i = 0; i < $edges.length; i++) {
 		const e = $edges[i];
