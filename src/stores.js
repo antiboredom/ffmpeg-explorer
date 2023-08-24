@@ -275,11 +275,11 @@ nodes.subscribe(($nodes) => {
     for (let i = 0; i < n1.data.outputs.length; i++) {
       const edgeType = n1.data.outputs[i];
       for (let j = 0; j < rest.length; j++) {
-				let found = false;
+        let found = false;
         const n2 = rest[j];
         for (let k = 0; k < n2.data.inputs.length; k++) {
-					const targetEdgeType = n2.data.inputs[k];
-          if (edgeType === targetEdgeType && !filled.includes(n2.id+k)) {
+          const targetEdgeType = n2.data.inputs[k];
+          if (edgeType === targetEdgeType && !filled.includes(n2.id + k)) {
             newEdges.push({
               id: uuidv4(),
               type: "default",
@@ -288,12 +288,12 @@ nodes.subscribe(($nodes) => {
               sourceHandle: edgeType + "_" + i,
               targetHandle: edgeType + "_" + k,
             });
-            filled.push(n2.id+ k);
-						found = true;
+            filled.push(n2.id + k);
+            found = true;
             break;
           }
         }
-				if (found) break;
+        if (found) break;
       }
     }
     const nextNode = rest.shift();
@@ -330,25 +330,6 @@ export function addNode(data, type) {
     }
   }
 
-  let x = 0;
-  let y = 0;
-
-  const w = 100;
-  const h = 50;
-  const margin = 10;
-
-  let existing = get(nodes);
-
-  if (type === "input") {
-    const inps = existing.filter((n) => n.nodeType === "input");
-    y = inps.length * h;
-  } else if (type === "filter") {
-    const flts = existing.filter((n) => n.nodeType === "filter");
-    x = (flts.length + 1) * w;
-  } else if (type === "output") {
-    x = 500;
-  }
-
   data.inputs = ins;
   data.outputs = outs;
 
@@ -357,28 +338,44 @@ export function addNode(data, type) {
     type: "ffmpeg",
     data: data,
     nodeType: type,
-    position: { x, y },
+    position: { x: 0, y: 0 },
   };
 
-  nodes.update((n) => {
-    n.push(node);
-    return n;
+  nodes.update((_nodes) => {
+    _nodes.push(node);
+
+    const isAuto = get(auto);
+
+    if (isAuto) {
+      const w = 100;
+      const h = 50;
+      const margin = 10;
+      let prev = null;
+
+      for (let n of _nodes) {
+        if (n.nodeType === "input") {
+          n.position = { x: 0, y: prev ? prev.position.y + h + margin : 0 };
+          prev = n;
+        }
+      }
+
+      for (let n of _nodes) {
+        if (n.nodeType === "filter") {
+					let _w = prev && prev.width ? prev.width : w;
+          n.position = { x: prev ? prev.position.x + _w + margin : 0, y: -30 };
+          prev = n;
+        }
+      }
+
+      for (let n of _nodes) {
+        if (n.nodeType === "output") {
+					let _w = prev && prev.width ? prev.width : w;
+          n.position = { x: prev ? prev.position.x + _w + margin : 0, y: 0 };
+        }
+      }
+    }
+    return _nodes;
   });
-
-  //autolayout();
-
-  // edges.update((_edges) => {
-  // const target = existing[existing.length - 2];
-  // if (!target) return _edges;
-  //   const newEdge = {
-  //     id: uuidv4(),
-  //     type: "default",
-  //     source: target.id,
-  //     target: node.id,
-  //   };
-  //   _edges.push(newEdge);
-  //   return _edges;
-  // });
 }
 
 export function removeNode(id) {

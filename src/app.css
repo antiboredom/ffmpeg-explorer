@@ -108,3 +108,7 @@ input[type="range"]:focus::-moz-range-thumb {
 	border-radius: 0px !important;
 	border: 1px solid var(--b1) !important;
 }
+
+.svelte-flow__attribution {
+	display: none !important;
+}
