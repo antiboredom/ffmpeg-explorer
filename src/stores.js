@@ -189,19 +189,19 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
   }
 
   if (filtergraph.length > 0) {
-		const fg = '"' + filtergraph.join(";") + '"';
-		hasVid = fg.includes(":v]")
-		hasAud = fg.includes(":a]")
+    const fg = '"' + filtergraph.join(";") + '"';
+    hasVid = fg.includes(":v]");
+    hasAud = fg.includes(":a]");
 
     finalCommand.push("-filter_complex");
     finalCommand.push(fg);
 
-		finalCommand.push("-map");
+    finalCommand.push("-map");
     if (hasAud) {
       finalCommand.push('"[aud_out]"');
     } else {
-      finalCommand.push('0:a');
-		}
+      finalCommand.push("0:a");
+    }
 
     if (hasVid) {
       finalCommand.push("-map");
@@ -260,61 +260,52 @@ export const output = derived(nodes, ($nodes) => {
 });
 
 nodes.subscribe(($nodes) => {
-	console.log($nodes);
   const isAuto = get(auto);
   if (!isAuto) return;
 
   const outputNodes = $nodes.filter((n) => n.nodeType === "output");
   const inputNodes = $nodes.filter((n) => n.nodeType === "input");
   const filterNodes = $nodes.filter((n) => n.nodeType === "filter");
-  const orderedNodes = []
-    .concat(inputNodes, filterNodes, outputNodes)
-    .filter((n) => n != undefined);
+  const orderedNodes = [].concat(filterNodes, outputNodes).filter((n) => n != undefined);
 
-	const filled = [];
-
-  // find next open output for same input
+  const filled = [];
   let newEdges = [];
-  for (let i = 0; i < orderedNodes.length; i++) {
-    const n1 = orderedNodes[i];
-    for (let j = 0; j < n1.data.outputs.length; j++) {
-      const edgeType = n1.data.outputs[j];
-      for (let k = i + 1; k < orderedNodes.length; k++) {
-        const n2 = orderedNodes[k];
-        const ind = n2.data.inputs.indexOf(edgeType);
-        if (ind > -1 && !filled.includes(n2.id + edgeType + ind)) {
-          newEdges.push({
-            id: uuidv4(),
-            type: "default",
-            source: n1.id,
-            target: n2.id,
-            sourceHandle: edgeType + "_" + j,
-            targetHandle: edgeType + "_" + ind,
-          });
-					filled.push(n2.id + edgeType + ind);
-          break;
+
+  function connectNode(n1, rest) {
+    for (let i = 0; i < n1.data.outputs.length; i++) {
+      const edgeType = n1.data.outputs[i];
+      for (let j = 0; j < rest.length; j++) {
+				let found = false;
+        const n2 = rest[j];
+        for (let k = 0; k < n2.data.inputs.length; k++) {
+					const targetEdgeType = n2.data.inputs[k];
+          if (edgeType === targetEdgeType && !filled.includes(n2.id+k)) {
+            newEdges.push({
+              id: uuidv4(),
+              type: "default",
+              source: n1.id,
+              target: n2.id,
+              sourceHandle: edgeType + "_" + i,
+              targetHandle: edgeType + "_" + k,
+            });
+            filled.push(n2.id+ k);
+						found = true;
+            break;
+          }
         }
+				if (found) break;
       }
     }
+    const nextNode = rest.shift();
+    if (nextNode) {
+      connectNode(nextNode, rest);
+    }
   }
-  // for (let i = 0; i < orderedNodes.length - 1; i++) {
-  //   const n1 = orderedNodes[i];
-  //   const n2 = orderedNodes[i + 1];
-  //   for (let j = 0; j < n1.data.outputs.length; j++) {
-  //     const edgeType = n1.data.outputs[j];
-  //     if (n2.data.inputs.includes(edgeType)) {
-  //       newEdges.push({
-  //         id: uuidv4(),
-  //         type: "default",
-  //         source: n1.id,
-  //         target: n2.id,
-  //         sourceHandle: edgeType + "_0",
-  //         targetHandle: edgeType + "_0",
-  //       });
-  //     }
-  //   }
-  // }
-  console.log("new", newEdges);
+
+  for (let inpNode of inputNodes) {
+    connectNode(inpNode, [...orderedNodes]);
+  }
+  // console.log("new", newEdges);
   edges.set(newEdges);
 });
 

@@ -1,5 +1,5 @@
 <script>
-  import { nodes, edges} from "./stores.js";
+  import { nodes, edges, auto} from "./stores.js";
   import { SvelteFlow, Controls, Background, BackgroundVariant, MiniMap } from "@xyflow/svelte";
   import Node from "./nodes/Node.svelte";
 
@@ -31,6 +31,7 @@
 </script>
 
 
+<label for="auto"><input id="auto" type="checkbox" bind:checked={$auto} />Automatic Layout</label>
 <div style="width: 900px; height: 500px;">
   <SvelteFlow
     {nodeTypes}
