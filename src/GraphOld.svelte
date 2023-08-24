@@ -1,7 +1,7 @@
 <script>
   import { v4 as uuidv4 } from "uuid";
   import { nodes, edges } from "./stores.js";
-  import { Anchor, Node, Svelvet, Minimap, Controls } from "svelvet";
+  import { Anchor, Node, Svelvet} from "svelvet";
 
   function onConnect(e) {
     console.log(e);
@@ -25,6 +25,7 @@
   }
 
   function onDisconnect(e) {
+	console.log('dis', e);
     const sourceAnchor = e.detail.sourceAnchor.id;
     const targetAnchor = e.detail.targetAnchor.id;
     const source = e.detail.sourceNode.id;
@@ -80,7 +81,6 @@
       </div>
     </Node>
   {/each}
-  <Controls />
 </Svelvet>
 
 <style>

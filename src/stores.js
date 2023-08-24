@@ -6,6 +6,7 @@ import { writable, derived, get } from "svelte/store";
 // export const filters = writable([]);
 export const nodes = writable([]);
 export const edges = writable([]);
+export const auto = writable(true);
 
 addNode({ name: "punch.mp4" }, "input");
 addNode({ name: "out.mp4" }, "output");
@@ -42,7 +43,6 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
 		inputIds[inp.id] = i;
 	}
 
-	console.log($edges)
 	const edgeIds = {};
 	for (let i = 0; i < $edges.length; i++) {
 		const e = $edges[i];
@@ -50,6 +50,8 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
 
 		const source = $nodes.find(n => "N-" + n.id === e.source);
 		const target = $nodes.find(n => "N-" + n.id === e.target);
+
+		if (!source || !target) continue;
 
 		if (source.nodeType === "input") {
 			if (e.sourceAnchor.startsWith("A-v")) {
@@ -270,6 +272,8 @@ export function addNode(data, type) {
   const margin = 10;
 
   const existing = get(nodes);
+	const ouputNode = existing.find(n => n.nodeType === 'output');
+	const inputNodes = existing.find(n => n.nodeType === "input");
 
   if (type === "input") {
     const inps = existing.filter((n) => n.nodeType === "input");
@@ -284,6 +288,7 @@ export function addNode(data, type) {
   data.inputs = ins;
   data.outputs = outs;
 
+
   let node = {
     id: uuidv4(),
     type: "ffmpeg",
@@ -296,6 +301,16 @@ export function addNode(data, type) {
     n.push(node);
     return n;
   });
+
+	if (auto) {
+		const prev = existing[existing.length - 2];
+		if (prev) {
+			// set each prev out to new node in
+			// set new node out to output in
+		}
+	}
+
+	//autolayout();
 
   // edges.update((_edges) => {
   // const target = existing[existing.length - 2];
@@ -317,4 +332,14 @@ export function removeNode(id) {
     _nodes.splice(index, 1);
     return _nodes;
   });
+
+	edges.update((_edges) => {
+		for (let i=_edges.length-1; i--; i>=0) {
+			const e = _edges[i];
+			if ("N-" + e.source === id || "N-" + e.target === id) {
+				_edges.splice(i, 1);
+			}
+		}
+		return _edges;
+	});
 }
