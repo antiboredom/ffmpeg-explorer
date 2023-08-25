@@ -14,7 +14,6 @@
   import Graph from "./Graph.svelte";
   import { FFmpeg } from "@ffmpeg/ffmpeg";
   import { fetchFile, toBlobURL } from "@ffmpeg/util";
-  import { dndzone } from "svelte-dnd-action";
 
   const isChrome = navigator.userAgent.match(/chrome|chromium|crios/i);
   const baseURL = `https://unpkg.com/@ffmpeg/core${!isChrome ? "-mt" : ""}@0.12.2/dist/esm`;
@@ -23,7 +22,6 @@
 
   const ffmpeg = new FFmpeg();
 
-  let command = "";
   let videoValue = "/" + $inputs[0].name;
   let ffmpegLoaded = false;
   let rendering = false;
@@ -31,9 +29,6 @@
   let logbox;
   let commandRef;
 
-  function newInput() {
-    addNode({ name: "punch.mp4" }, "input");
-  }
 
   function render() {
     transcode();
@@ -92,14 +87,6 @@
     }
     ffmpegLoaded = true;
   }
-
-  function handleFilterSort(e) {
-    filters.set(e.detail.items);
-  }
-
-  // inputs.subscribe(updateCommand);
-  // output.subscribe(updateCommand);
-  // filters.subscribe(updateCommand);
 
   onMount(async () => {
     loadFFmpeg();
@@ -274,15 +261,6 @@
     background-color: #fff;
   }
 
-  .filters-holder {
-    min-height: 500px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    padding-left: 10px;
-    flex: 1;
-    align-content: start;
-  }
   h1,
   h3 {
     font-weight: normal;
@@ -321,12 +299,6 @@
     padding: 5px;
     height: 100%;
   }
-  .section-header {
-    display: flex;
-  }
-  .section-header h3 {
-    flex: 1;
-  }
   .the-log {
     border: none;
     resize: none;
@@ -358,9 +330,6 @@
   }
 
   @media only screen and (max-width: 1400px) {
-    .filters-holder {
-      grid-template-columns: repeat(2, 1fr);
-    }
   }
 
   @media only screen and (max-width: 600px) {
@@ -391,13 +360,6 @@
       margin-bottom: 20px;
       height: 300px;
       position: static;
-    }
-    .filters-holder {
-      grid-template-columns: repeat(1, 1fr);
-      grid-gap: 10px;
-      flex: 1;
-      align-content: start;
-      padding: 0;
     }
   }
 </style>
