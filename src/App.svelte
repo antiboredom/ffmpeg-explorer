@@ -20,6 +20,7 @@
   let log = "";
   let logbox;
   let commandRef;
+  let vidPlayerRef;
 
   function render() {
     transcode();
@@ -78,6 +79,7 @@
   }
 
   onMount(async () => {
+		vidPlayerRef.volume = 0.5;
     loadFFmpeg();
   });
 </script>
@@ -130,7 +132,7 @@
       {#if rendering}
         <div class="rendering-video"><span>Rendering...</span></div>
       {/if}
-      <video controls src={videoValue} />
+      <video bind:this={vidPlayerRef} controls src={videoValue} />
     </div>
     <div style="text-align: right;padding-top:5px;">
       <button on:click={render} disabled={!ffmpegLoaded || rendering}>
