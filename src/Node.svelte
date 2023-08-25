@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Handle, Position } from "@xyflow/svelte";
-  import { removeNode } from "../stores.js";
+  import { removeNode } from "./stores.js";
 
   export let data = { nodeType: "", name: "", inputs: [], outputs: [] };
   export let id;
@@ -13,7 +13,9 @@
 <div class="node {data.nodeType}">
   <div class="head">
     <div class="node-type">{data.nodeType}</div>
-    <button on:click={remove}>X</button>
+    {#if data.nodeType != "output"}
+      <button on:click={remove}>X</button>
+    {/if}
   </div>
   <div class="body">
     {#if data.nodeType == "input"}

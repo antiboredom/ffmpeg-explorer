@@ -1,15 +1,10 @@
 import { v4 as uuidv4 } from "uuid";
 import { writable, derived, get } from "svelte/store";
 
-// export const inputs = writable([]);
-// export const output = writable("out.mp4");
-// export const filters = writable([]);
 export const nodes = writable([]);
 export const edges = writable([]);
 export const auto = writable(true);
 export const selectedFilter = writable();
-
-const PREFIX = "";
 
 addNode({ name: "punch.mp4" }, "input");
 addNode({ name: "out.mp4" }, "output");
@@ -29,100 +24,7 @@ function makeFilterArgs(f) {
   return fCommand;
 }
 
-export const previewCommandSvelvet = derived([edges, nodes], ([$edges, $nodes]) => {
-  // [0:v]f1=val,f2=val[out] -map out
-  // [0:v]f1=val,f2=val[1];[1][1:v]overlay[out] -map out`
-
-  let finalCommand = [];
-
-  let filtergraph = [];
-
-  const inputs = $nodes.filter((n) => n.nodeType == "input");
-  const outputs = $nodes.filter((n) => n.nodeType == "output");
-
-  const inputIds = {};
-  for (let i = 0; i < inputs.length; i++) {
-    const inp = inputs[i];
-    inputIds[inp.id] = i;
-  }
-
-  const edgeIds = {};
-  for (let i = 0; i < $edges.length; i++) {
-    const e = $edges[i];
-    edgeIds[e.id] = i + 1;
-
-    const source = $nodes.find((n) => PREFIX + n.id === e.source);
-    const target = $nodes.find((n) => PREFIX + n.id === e.target);
-
-    if (!source || !target) continue;
-
-    if (source.nodeType === "input") {
-      if (e.sourceAnchor.startsWith("A-v")) {
-        edgeIds[e.id] = inputIds[source.id] + ":v";
-      }
-      if (e.sourceAnchor.startsWith("A-a")) {
-        edgeIds[e.id] = inputIds[source.id] + ":a";
-      }
-    }
-
-    if (target.nodeType === "output") {
-      edgeIds[e.id] = "out";
-    }
-  }
-
-  for (let n of $nodes.filter((n) => n.nodeType == "filter")) {
-    let cmd = "";
-
-    const outs = $edges.filter((e) => e.source == PREFIX + n.id);
-    const ins = $edges.filter((e) => e.target == PREFIX + n.id);
-
-    if (outs.length == 0 && ins.length == 0) continue;
-
-    for (let i of ins) {
-      const eid = edgeIds[i.id];
-      cmd += `[${eid}]`;
-    }
-    cmd += makeFilterArgs(n.data);
-    for (let o of outs) {
-      const eid = edgeIds[o.id];
-      cmd += `[${eid}]`;
-    }
-    filtergraph.push(cmd);
-  }
-
-  finalCommand.push("ffmpeg");
-
-  for (let inp of inputs) {
-    finalCommand.push("-i");
-    finalCommand.push(inp.data.name);
-  }
-
-  finalCommand.push("-filter_complex");
-
-  finalCommand.push('"' + filtergraph.join(";") + '"');
-
-  for (let out of outputs) {
-    finalCommand.push("-map");
-    finalCommand.push('"[out]"');
-  }
-
-  for (let inp of inputs) {
-    finalCommand.push("-map");
-    finalCommand.push(inputIds[inp.id] + ":a");
-  }
-
-  for (let out of outputs) {
-    finalCommand.push(out.data.name);
-  }
-
-  const entireCommand = finalCommand.join(" ");
-  return entireCommand;
-});
-
 export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
-  // [0:v]f1=val,f2=val[out] -map out
-  // [0:v]f1=val,f2=val[1];[1][1:v]overlay[out] -map out`
-
   let hasVid = false;
   let hasAud = false;
 
@@ -213,11 +115,6 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
     }
   }
 
-  // for (let inp of inputs) {
-  //   finalCommand.push("-map");
-  //   finalCommand.push(inputIds[inp.id] + ":a");
-  // }
-
   for (let out of outputs) {
     finalCommand.push(out.data.name);
   }
@@ -226,41 +123,9 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
   return entireCommand;
 });
 
-export const previewCommandOld = derived(nodes, ($nodes) => {
-  const cInputs = $nodes
-    .filter((n) => n.nodeType === "input")
-    .map((i) => `-i ${i.data.name}`)
-    .join(" ");
-
-  const cOutput = $nodes
-    .filter((n) => n.nodeType === "output")
-    .map((i) => `${i.data.name}`)
-    .join(" ");
-
-  const cFilters = $nodes
-    .filter((n) => n.nodeType === "filter")
-    .map((n) => n.data)
-    .map(makeFilterArgs)
-    .join(",");
-
-  let out = `ffmpeg ${cInputs}`;
-
-  if (cFilters) out += ` -filter_complex "${cFilters}"`;
-
-  out += ` ${cOutput}`;
-  return out;
-});
 
 export const inputs = derived(nodes, ($nodes) => {
   return $nodes.filter((n) => n.nodeType === "input").map((n) => n.data);
-});
-
-export const filters = derived(nodes, ($nodes) => {
-  return $nodes.filter((n) => n.nodeType === "filter").map((n) => n.data);
-});
-
-export const output = derived(nodes, ($nodes) => {
-  return $nodes.filter((n) => n.nodeType === "output").map((n) => n.data);
 });
 
 nodes.subscribe(($nodes) => {
@@ -384,8 +249,6 @@ export function addNode(data, type) {
 		}
     return _nodes;
   });
-
-
 }
 
 export function removeNode(id) {
@@ -394,14 +257,12 @@ export function removeNode(id) {
     _nodes.splice(index, 1);
     return _nodes;
   });
+}
 
-  edges.update((_edges) => {
-    for (let i = _edges.length - 1; i--; i >= 0) {
-      const e = _edges[i];
-      if ("N-" + e.source === id || "N-" + e.target === id) {
-        _edges.splice(i, 1);
-      }
-    }
+export function removeEdge(id) {
+	edges.update((_edges) => {
+    const index = _edges.findIndex((e) => e.id === id);
+    _edges.splice(index, 1);
     return _edges;
-  });
+	});
 }

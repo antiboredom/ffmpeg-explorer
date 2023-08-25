@@ -7,11 +7,16 @@
     Background,
     BackgroundVariant,
   } from "@xyflow/svelte";
-  import Node from "./nodes/Node.svelte";
+  import Node from "./Node.svelte";
   import FitComp from "./FitComp.svelte";
+  import ButtonEdge from "./ButtonEdge.svelte";
 
   const nodeTypes = {
     ffmpeg: Node,
+  };
+
+  const edgeTypes = {
+    default: ButtonEdge,
   };
 
   function onClick(e) {
@@ -23,22 +28,21 @@
     }
   }
 
-	function addInput() {
-		addNode({ name: "shoe.mp4" }, "input");
-	}
-
+  function addInput() {
+    addNode({ name: "shoe.mp4" }, "input");
+  }
 
 </script>
 
 <SvelteFlowProvider>
   <div class="holder">
     <FitComp />
-		<div class="nav">
-			<button on:click={addInput}>Add Input</button>
-			<label for="auto"
-				><input id="auto" type="checkbox" bind:checked={$auto} />Automatic Layout</label
-			>
-		</div>
+    <div class="nav">
+      <button on:click={addInput}>Add Input</button>
+      <label for="auto"
+        ><input id="auto" type="checkbox" bind:checked={$auto} />Automatic Layout</label
+      >
+    </div>
     <div class="flow">
       <div style="height: 100%; width: 100%">
         <SvelteFlow
@@ -48,8 +52,10 @@
           connectOnClick={true}
           nodesFocusable={!auto}
           edgesFocusable={!auto}
+          deleteKey={0}
           on:nodeclick={onClick}
           {nodeTypes}
+          {edgeTypes}
           {nodes}
           {edges}
           snapGrid={[10, 10]}
@@ -67,10 +73,10 @@
   .holder {
     flex-direction: column;
     display: flex;
-		flex: 1;
+    flex: 1;
   }
   .flow {
     flex: 1;
-		margin-top: 10px;
+    margin-top: 10px;
   }
 </style>

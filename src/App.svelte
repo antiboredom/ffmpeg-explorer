@@ -2,11 +2,8 @@
   import { onMount } from "svelte";
   import {
     selectedFilter,
-    addNode,
     nodes,
     inputs,
-    output,
-    filters,
     previewCommand,
   } from "./stores.js";
   import Filter from "./Filter.svelte";
@@ -56,7 +53,6 @@
       // command.push("yuv420p");
       // command.push("out.mp4");
       await ffmpeg.exec(clist, TIMEOUT);
-      // await ffmpeg.exec(["-f", "lavfi", "-i", "color=size=1280x720:rate=25:color=red", "-t", "5", "out.mp4"])
       const data = await ffmpeg.readFile("out.mp4");
       rendering = false;
       videoValue = URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }));
