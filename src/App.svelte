@@ -1,11 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import {
-    selectedFilter,
-    nodes,
-    inputs,
-    previewCommand,
-  } from "./stores.js";
+  import { selectedFilter, nodes, inputs, previewCommand } from "./stores.js";
   import Filter from "./Filter.svelte";
   import FilterPicker from "./FilterPicker.svelte";
   import Graph from "./Graph.svelte";
@@ -25,7 +20,6 @@
   let log = "";
   let logbox;
   let commandRef;
-
 
   function render() {
     transcode();
@@ -115,7 +109,12 @@
   <section class="command">
     <h3>Output Command</h3>
     <div class="inner-command">
-      <textarea readonly class="actual-command" bind:this={commandRef} on:click={() => commandRef.select()}>{$previewCommand}</textarea>
+      <textarea
+        readonly
+        class="actual-command"
+        bind:this={commandRef}
+        on:click={() => commandRef.select()}>{$previewCommand}</textarea
+      >
       <div>
         <button on:click={copyCommand}>Copy Command</button>
       </div>
@@ -180,7 +179,6 @@
     padding: 10px;
     grid-gap: 20px;
     height: 100vh;
-    border: 1px solid blue;
     align-items: stretch;
   }
 
@@ -333,13 +331,19 @@
       grid-template-areas:
         "hdr hdr hdr"
         "cmd cmd cmd"
-        "inp inp inp"
-        "out out out"
         "prv prv prv"
         "log log log"
-        "flt flt flt";
-      grid-gap: 0px;
-      padding: 0px;
+        "flt flt flt"
+        "gra gra gra"
+        "edt edt edt";
+      grid-gap: 5px;
+      padding: 10px;
+      height: auto;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+    }
+    .graph {
+      height: 50vh;
     }
     .command {
       margin: 0;
@@ -349,7 +353,7 @@
       box-shadow: none;
       margin-bottom: 10px;
       padding: 10px;
-      box-shadow: 2px 2px 0px #000;
+      box-shadow: 2px 2px 0px var(--b2);
     }
     .filter-picker {
       width: 100%;
