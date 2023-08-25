@@ -9,4 +9,4 @@
 		if ($auto) fitView();
 	});
 </script>
-<button>Fit</button>
+

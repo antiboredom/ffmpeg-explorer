@@ -47,7 +47,7 @@
 
 <div class="holder">
   <div class="search">
-    <input placeholder="Search Filters" on:keyup={update} bind:value={q} type="text" />
+    <input placeholder="Search Filters" on:keyup={update} bind:value={q} type="text" /><button on:click={() => {reset(); update();}}>X</button>
     <select on:change={reset} bind:value={select}>
       <option value="video">Video Filters</option>
       <option value="audio">Audio Filters</option>
@@ -73,12 +73,16 @@
   }
   .search {
     display: flex;
-    justify-items: stretch;
+    justify-content: stretch;
   }
   input {
+		width: 100%;
     flex: 1;
-    margin-right: 10px;
   }
+	button {
+	margin-left: 1px;
+	margin-right: 10px;
+	}
   .type {
     color: #999;
     font-size: 0.8em;

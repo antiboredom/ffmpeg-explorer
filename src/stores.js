@@ -7,6 +7,7 @@ import { writable, derived, get } from "svelte/store";
 export const nodes = writable([]);
 export const edges = writable([]);
 export const auto = writable(true);
+export const selectedFilter = writable();
 
 const PREFIX = "";
 
@@ -146,19 +147,22 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
     const source = $nodes.find((n) => n.id === e.source);
     const target = $nodes.find((n) => n.id === e.target);
 
-    if (source.nodeType === "input") {
-      if (e.sourceHandle.includes("v")) {
-        edgeIds[e.id] = inputIds[source.id] + ":v";
-      }
-      if (e.sourceHandle.includes("a")) {
-        edgeIds[e.id] = inputIds[source.id] + ":a";
-      }
-    }
+		if (source && target) {
 
-    if (target.nodeType === "output") {
-      const outType = e.targetHandle.includes("a") ? "aud_out" : "vid_out";
-      edgeIds[e.id] = outType;
-    }
+			if (source.nodeType === "input") {
+				if (e.sourceHandle.includes("v")) {
+					edgeIds[e.id] = inputIds[source.id] + ":v";
+				}
+				if (e.sourceHandle.includes("a")) {
+					edgeIds[e.id] = inputIds[source.id] + ":a";
+				}
+			}
+
+			if (target.nodeType === "output") {
+				const outType = e.targetHandle.includes("a") ? "aud_out" : "vid_out";
+				edgeIds[e.id] = outType;
+			}
+		}
   }
 
   for (let n of $nodes.filter((n) => n.nodeType == "filter")) {
@@ -330,6 +334,7 @@ export function addNode(data, type) {
     }
   }
 
+	data.nodeType = type;
   data.inputs = ins;
   data.outputs = outs;
 
@@ -347,9 +352,9 @@ export function addNode(data, type) {
     const isAuto = get(auto);
 
     if (isAuto) {
-      const w = 100;
+      const w = 120;
       const h = 50;
-      const margin = 10;
+      const margin = 50;
       let prev = null;
 
       for (let n of _nodes) {
@@ -362,7 +367,7 @@ export function addNode(data, type) {
       for (let n of _nodes) {
         if (n.nodeType === "filter") {
 					let _w = prev && prev.width ? prev.width : w;
-          n.position = { x: prev ? prev.position.x + _w + margin : 0, y: -30 };
+          n.position = { x: prev ? prev.position.x + _w + margin : 0, y: -50 };
           prev = n;
         }
       }
@@ -374,8 +379,13 @@ export function addNode(data, type) {
         }
       }
     }
+		if (node.nodeType === "filter") {
+			selectedFilter.set(_nodes.length - 1);
+		}
     return _nodes;
   });
+
+
 }
 
 export function removeNode(id) {

@@ -1,5 +1,5 @@
 <script>
-  import { nodes, edges, auto } from "./stores.js";
+  import { addNode, nodes, edges, auto, selectedFilter } from "./stores.js";
   import {
     SvelteFlowProvider,
     SvelteFlow,
@@ -14,36 +14,63 @@
     ffmpeg: Node,
   };
 
-  const defaultEdgeOptions = {
-    deletable: true,
-  };
-
-  function onEdgeUpdate(e) {
-    console.log(e);
+  function onClick(e) {
+    if (e.detail.nodeType === "filter") {
+      const newSelected = $nodes.findIndex((n) => n.id === e.detail.id);
+      if (newSelected > -1) {
+        $selectedFilter = newSelected;
+      }
+    }
   }
 
-  function onEdgeUpdateStart(e) {
-    console.log(e);
-  }
+	function addInput() {
+		addNode({ name: "shoe.mp4" }, "input");
+	}
 
-  function onEdgeUpdateEnd(e) {
-    console.log(e);
-  }
-  function onMoveStart(e) {
-    console.log(e);
-  }
-  function onConnect(e) {
-    console.log("connect", e);
-  }
+
 </script>
 
 <SvelteFlowProvider>
-	<FitComp/>
-  <label for="auto"><input id="auto" type="checkbox" bind:checked={$auto} />Automatic Layout</label>
-  <div style="width: 900px; height: 500px;">
-    <SvelteFlow {nodeTypes} {nodes} {edges} snapGrid={[10, 10]} fitView>
-      <Controls />
-      <Background variant={BackgroundVariant.Dots} />
-    </SvelteFlow>
+  <div class="holder">
+    <FitComp />
+		<div class="nav">
+			<button on:click={addInput}>Add Input</button>
+			<label for="auto"
+				><input id="auto" type="checkbox" bind:checked={$auto} />Automatic Layout</label
+			>
+		</div>
+    <div class="flow">
+      <div style="height: 100%; width: 100%">
+        <SvelteFlow
+          nodesConnectable={!auto}
+          panOnDrag={!auto}
+          edgesUpdatable={!auto}
+          connectOnClick={true}
+          nodesFocusable={!auto}
+          edgesFocusable={!auto}
+          on:nodeclick={onClick}
+          {nodeTypes}
+          {nodes}
+          {edges}
+          snapGrid={[10, 10]}
+          fitView
+        >
+          <Controls />
+          <Background variant={BackgroundVariant.Dots} />
+        </SvelteFlow>
+      </div>
+    </div>
   </div>
 </SvelteFlowProvider>
+
+<style>
+  .holder {
+    flex-direction: column;
+    display: flex;
+		flex: 1;
+  }
+  .flow {
+    flex: 1;
+		margin-top: 10px;
+  }
+</style>

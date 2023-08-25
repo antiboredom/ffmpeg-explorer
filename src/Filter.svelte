@@ -7,7 +7,7 @@
     description: "",
   };
 
-  let show = false;
+  let show = true;
 
   function remove() {
 		removeNode(filter.id);
@@ -27,12 +27,6 @@
 <div class="filter-holder">
   <div class="head">
     <div class="name"><h3>{filter.name}</h3></div>
-    <div>
-      {#if filter.params && filter.params.length > 0}
-        <button on:click={() => (show = !show)}>{show ? "Hide" : "Show"} Options</button>
-      {/if}
-      <button on:click={remove}>X</button>
-    </div>
   </div>
 
   <div class="description">
@@ -93,6 +87,8 @@
     /* border: 1px solid #999; */
     border: 1px solid var(--b1);
     /* box-shadow: 5px 5px 0px #000; */
+		overflow-y: scroll;
+		flex: 1;
   }
   .filter-holder,
   input,
@@ -123,7 +119,11 @@
   }
   .p-value {
     display: flex;
+		justify-content: stretch;
   }
+	input {
+	width: 100%;
+	}
   input[type="range"] {
     margin-right: 5px;
   }

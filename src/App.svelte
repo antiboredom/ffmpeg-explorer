@@ -1,12 +1,17 @@
 <script>
   import { onMount } from "svelte";
-  import { addNode, nodes, inputs, output, filters, previewCommand } from "./stores.js";
-  import Input from "./Input.svelte";
-  import Output from "./Output.svelte";
+  import {
+    selectedFilter,
+    addNode,
+    nodes,
+    inputs,
+    output,
+    filters,
+    previewCommand,
+  } from "./stores.js";
   import Filter from "./Filter.svelte";
   import FilterPicker from "./FilterPicker.svelte";
   import Graph from "./Graph.svelte";
-  // import GraphOld from "./GraphOld.svelte";
   import { FFmpeg } from "@ffmpeg/ffmpeg";
   import { fetchFile, toBlobURL } from "@ffmpeg/util";
   import { dndzone } from "svelte-dnd-action";
@@ -46,18 +51,22 @@
       for (let vid of $inputs) {
         await ffmpeg.writeFile(vid.name, await fetchFile("/" + vid.name));
       }
-      let clist = $previewCommand.replaceAll('"', '').replace("ffmpeg", "").split(" ").filter(i => i.trim() != '');
+      let clist = $previewCommand
+        .replaceAll('"', "")
+        .replace("ffmpeg", "")
+        .split(" ")
+        .filter((i) => i.trim() != "");
       console.log("command", clist);
-			// command.push("-pix_fmt");
-			// command.push("yuv420p");
-			// command.push("out.mp4");
+      // command.push("-pix_fmt");
+      // command.push("yuv420p");
+      // command.push("out.mp4");
       await ffmpeg.exec(clist, TIMEOUT);
       // await ffmpeg.exec(["-f", "lavfi", "-i", "color=size=1280x720:rate=25:color=red", "-t", "5", "out.mp4"])
       const data = await ffmpeg.readFile("out.mp4");
       rendering = false;
       videoValue = URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }));
     } catch (e) {
-			console.log(e);
+      console.log(e);
       log += "Failed";
     }
     rendering = false;
@@ -84,11 +93,6 @@
     ffmpegLoaded = true;
   }
 
-
-
-
-
-
   function handleFilterSort(e) {
     filters.set(e.detail.items);
   }
@@ -105,37 +109,34 @@
 <main>
   <section class="header">
     <h1>FFmpeg Explorer</h1>
-    <p>
-      A tool to help you explore <a href="https://www.ffmpeg.org/" target="_blank">FFmpeg</a>
-      filters and options. To use: select one or more input videos (there are currently two options),
-      export and add some filters, and then hit "render" to preview the output in browser. Note: this
-      is a work in progress, many things may still be broken! Only audio to audio and video to video
-      filters are included. If it hangs/crashes refresh the page. Post issues/feedback to
-      <a href="https://github.com/antiboredom/ffmpeg-explorer/" target="_blank">GitHub</a>. By
-      <a href="https://lav.io" target="_blank">Sam Lavigne</a>.
-    </p>
+    <div class="help">
+      <p>
+        A tool to help you explore <a href="https://www.ffmpeg.org/" target="_blank">FFmpeg</a>
+        filters. To use:
+      </p>
+      <ol>
+        <li>Add filters from the list on the left.</li>
+        <li>Click on filters in the center panel to edit options.</li>
+        <li>Hit "render" to preview the output in browser.</li>
+        <li>For more complex filtergraphs, disable "automatic layout."</li>
+      </ol>
+      <p>
+        Note: this is a work in progress, many things may still be broken! If it hangs/crashes
+        refresh the page. Post issues/feedback to
+        <a href="https://github.com/antiboredom/ffmpeg-explorer/" target="_blank">GitHub</a>. By
+        <a href="https://lav.io" target="_blank">Sam Lavigne</a>.
+      </p>
+    </div>
   </section>
   <!-- {message} -->
   <section class="command">
     <h3>Output Command</h3>
     <div class="inner-command">
-      <textarea readonly class="actual-command" bind:this={commandRef}>{$previewCommand}</textarea>
+      <textarea readonly class="actual-command" bind:this={commandRef} on:click={() => commandRef.select()}>{$previewCommand}</textarea>
       <div>
         <button on:click={copyCommand}>Copy Command</button>
       </div>
     </div>
-  </section>
-
-  <section class="inputs">
-    <div class="section-header">
-      <h3>Inputs</h3>
-      <button on:click={newInput}>Add Input</button>
-    </div>
-    {#each $nodes as node, index}
-      {#if node.nodeType === "input"}
-        <Input bind:filename={node.data.name} id={node.id} {index} />
-      {/if}
-    {/each}
   </section>
 
   <section class="log">
@@ -144,11 +145,13 @@
   </section>
 
   <section class="preview">
-    {#if rendering}
-      <div class="rendering-video"><span>Rendering...</span></div>
-    {/if}
-    <video controls src={videoValue} />
-    <div style="text-align: right;margin-top:5px;">
+    <div class="vid-holder">
+      {#if rendering}
+        <div class="rendering-video"><span>Rendering...</span></div>
+      {/if}
+      <video controls src={videoValue} />
+    </div>
+    <div style="text-align: right;padding-top:5px;">
       <button on:click={render} disabled={!ffmpegLoaded || rendering}>
         {#if ffmpegLoaded}
           {#if rendering}
@@ -163,58 +166,39 @@
     </div>
   </section>
 
-  <section class="output">
-    <h3>Output</h3>
-		{#each $nodes as node}
-			{#if node.nodeType==="output"}
-				<Output bind:filename={node.data.name} />
-			{/if}
-		{/each}
-  </section>
-
   <section class="filters">
     <h3>Filters (click to add)</h3>
-    <div class="inner-filters">
-      <div class="filter-picker">
-        <FilterPicker select={"video"} />
-      </div>
-      <div
-        class="filters-holder"
-        use:dndzone={{ items: $filters }}
-        on:consider={handleFilterSort}
-        on:finalize={handleFilterSort}
-      >
-        {#each $nodes as f (f.id)}
-          {#if f.nodeType === "filter"}
-            <div class="filter">
-              <Filter bind:filter={f.data} />
-            </div>
-          {/if}
-        {/each}
-      </div>
+    <div class="filter-picker">
+      <FilterPicker select={"video"} />
     </div>
   </section>
 
-  <!-- <section class="graph"> -->
-  <!--   <GraphOld /> -->
-  <!-- </section> -->
-
   <section class="graph">
     <Graph />
+  </section>
+
+  <section class="filter-editor">
+    {#if $selectedFilter && $nodes.length > 0 && $nodes[$selectedFilter]}
+      <Filter bind:filter={$nodes[$selectedFilter].data} />
+    {/if}
   </section>
 </main>
 
 <style>
   main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 300px 1fr 1fr 1fr 1fr 300px;
     grid-template-areas:
-      "hdr cmd cmd"
-      "inp log prv"
-      "out log prv"
-      "flt flt flt";
+      "hdr log log log prv prv"
+      "hdr cmd cmd cmd prv prv"
+      "flt gra gra gra gra edt";
+    /* grid-template-rows: 16% 17% 77%; */
+    grid-template-rows: 15% 15% calc(70% - 40px);
+    padding: 10px;
     grid-gap: 20px;
-    padding: 20px;
+    height: 100vh;
+    border: 1px solid blue;
+    align-items: stretch;
   }
 
   section {
@@ -228,6 +212,7 @@
 
   .header {
     grid-area: hdr;
+    overflow: scroll;
   }
 
   .command {
@@ -236,17 +221,26 @@
     flex-direction: column;
   }
 
-  .inputs {
-    grid-area: inp;
-  }
-
   .preview {
     grid-area: prv;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
   }
 
-  .output {
-    grid-area: out;
+  .preview video {
+    width: 100%;
+    /* object-fit: contain; */
+    flex: 1;
+  }
+
+  .vid-holder {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    height: calc(100% - 30px);
   }
 
   .log {
@@ -255,19 +249,25 @@
     flex-direction: column;
   }
 
-  .inner-filters {
+  .filters {
+    grid-area: flt;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .graph {
+    grid-area: gra;
     display: flex;
   }
 
-  .filters {
-    grid-area: flt;
+  .filter-editor {
+    grid-area: edt;
+    display: flex;
   }
 
   .filter-picker {
-    max-height: 500px;
-    width: 400px;
-
-    position: sticky;
+    /* max-height: 500px; */
+    /* width: 400px; */
     top: 0;
     left: 0;
     overflow: scroll;
@@ -302,14 +302,20 @@
   .inner-command {
     display: flex;
     align-items: center;
-    margin: 10px 0px;
     flex: 1;
+  }
+
+  textarea {
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
   }
 
   .actual-command {
     border: none;
     margin-right: 10px;
-    resize: none;
     flex: 1;
     font: inherit;
     padding: 5px;
@@ -324,6 +330,7 @@
   .the-log {
     border: none;
     resize: none;
+    padding: 5px;
     flex: 1;
   }
   .rendering-video {
@@ -337,6 +344,17 @@
     display: grid;
     align-items: center;
     justify-content: center;
+  }
+
+  .help {
+    font-size: 0.9em;
+  }
+  ol {
+    margin: 5px 0px;
+    padding-left: 20px;
+  }
+  ol li {
+    margin-bottom: 5px;
   }
 
   @media only screen and (max-width: 1400px) {
@@ -367,9 +385,6 @@
       margin-bottom: 10px;
       padding: 10px;
       box-shadow: 2px 2px 0px #000;
-    }
-    .inner-filters {
-      display: block;
     }
     .filter-picker {
       width: 100%;
