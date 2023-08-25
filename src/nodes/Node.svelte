@@ -32,7 +32,7 @@
     position={Position.Left}
     id={inp + "_" + index}
     class="handle {inp}"
-    style="top: {index * 12 + 4}px; left: -7px;">{inp}</Handle
+    style="top: {index * 12 + 4}px; left: -8px;">{inp}</Handle
   >
 {/each}
 {#each data.outputs as out, index}
@@ -41,7 +41,7 @@
     id={out + "_" + index}
     position={Position.Right}
     class="handle {out}"
-    style="top: {index * 12 + 4}px; left: 107%;">{out}</Handle
+    style="top: {index * 12 + 4}px; right: -18px; left: auto;">{out}</Handle
   >
 {/each}
 
