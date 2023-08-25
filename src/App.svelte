@@ -42,10 +42,9 @@
         .replace("ffmpeg", "")
         .split(" ")
         .filter((i) => i.trim() != "");
+			clist.splice(clist.length-1, 0, "-pix_fmt")
+			clist.splice(clist.length-1, 0, "yuv420p")
       console.log("command", clist);
-      // command.push("-pix_fmt");
-      // command.push("yuv420p");
-      // command.push("out.mp4");
       await ffmpeg.exec(clist, TIMEOUT);
       const data = await ffmpeg.readFile("out.mp4");
       rendering = false;
