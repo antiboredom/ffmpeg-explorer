@@ -6,7 +6,7 @@ export const edges = writable([]);
 export const auto = writable(true);
 export const selectedFilter = writable();
 
-addNode({ name: "punch.mp4" }, "input");
+addNode({ name: "rick.webm" }, "input");
 addNode({ name: "out.mp4" }, "output");
 
 function makeFilterArgs(f) {
