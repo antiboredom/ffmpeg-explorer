@@ -20,8 +20,8 @@
   <div class="body">
     {#if data.nodeType == "input"}
       <select bind:value={data.name}>
-        <option value="punch.mp4">punch.mp4</option>
-        <option value="shoe.mp4">shoe.mp4</option>
+        <option value="rick.webm">rick.webm</option>
+        <option value="monke.webm">monke.webm</option>
       </select>
     {:else}
       {data.name}
