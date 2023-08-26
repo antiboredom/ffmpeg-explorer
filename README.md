@@ -1,6 +1,6 @@
 # Interactive FFMPEG Command Generator
 
-A work in progress web tool to explore FFmpeg. Please log [issues/suggestions](https://github.com/antiboredom/ffmpeg-explorer/issues).
+A work in progress web tool to explore FFmpeg. Please log [issues/suggestions](https://github.com/antiboredom/ffmpeg-explorer/issues). Made with [svelte](https://svelte.dev/), [xyflow](https://github.com/wbkd/react-flow/tree/xyflow), and [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm).
 
 To run in dev mode:
 
@@ -34,3 +34,9 @@ npm run dev
 - [ ] MAYBE allow users to upload their own videos
 - [ ] MAYBE make each part of the output command clickable, to highlight the corresponding nodes
 - [ ] MAYBE add previews in the filter list itself
+
+## Inspiration / Alternatives
+
+- [ffmpeg.guide](https://ffmpeg.guide)
+- [ffmpeg.app](https://ffmpeg.app)
+- [this nice screenshot](https://fosstodon.org/@wader/110855089546846001)
