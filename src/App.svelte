@@ -33,6 +33,7 @@
     videoValue = null;
     rendering = true;
     try {
+			if (log.trim() != '') log += "\n\n";
       for (let vid of $inputs) {
         await ffmpeg.writeFile(vid.name, await fetchFile("/" + vid.name));
       }
@@ -44,14 +45,12 @@
         .filter((i) => i.trim() != "");
       clist.splice(clist.length - 1, 0, "-pix_fmt");
       clist.splice(clist.length - 1, 0, "yuv420p");
-      console.log("command", clist);
       await ffmpeg.exec(clist, TIMEOUT);
       const data = await ffmpeg.readFile("out.mp4");
       rendering = false;
       videoValue = URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }));
     } catch (e) {
-      console.log(e);
-      log += "Failed";
+      log += e + "\n";
     }
     rendering = false;
   }
