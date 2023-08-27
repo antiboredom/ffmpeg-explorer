@@ -21,30 +21,29 @@
   let logbox;
   let commandRef;
   let vidPlayerRef;
-
-  function render() {
-    transcode();
-  }
+  let renderProgress = 0;
 
   function copyCommand() {
     commandRef.select();
     document.execCommand("copy");
   }
 
-  async function transcode() {
+  async function render() {
+    renderProgress = 0;
     videoValue = null;
     rendering = true;
     try {
       for (let vid of $inputs) {
         await ffmpeg.writeFile(vid.name, await fetchFile("/" + vid.name));
       }
-      let clist = $previewCommand
+      const command = "-hide_banner -loglevel error" + $previewCommand;
+      let clist = command
         .replaceAll('"', "")
         .replace("ffmpeg", "")
         .split(" ")
         .filter((i) => i.trim() != "");
-			clist.splice(clist.length-1, 0, "-pix_fmt")
-			clist.splice(clist.length-1, 0, "yuv420p")
+      clist.splice(clist.length - 1, 0, "-pix_fmt");
+      clist.splice(clist.length - 1, 0, "yuv420p");
       console.log("command", clist);
       await ffmpeg.exec(clist, TIMEOUT);
       const data = await ffmpeg.readFile("out.mp4");
@@ -58,9 +57,15 @@
   }
 
   async function loadFFmpeg() {
-    ffmpeg.on("log", ({ message: msg }) => {
-      log += msg + "\n";
+    ffmpeg.on("log", ({ type, message }) => {
+      if (message.trim() === "Aborted()") return;
+
+      log += message + "\n";
       logbox.scrollTop = logbox.scrollHeight;
+    });
+    ffmpeg.on("progress", ({ progress }) => {
+      if (progress > 1) progress = 0;
+      renderProgress = progress;
     });
     if (isChrome) {
       await ffmpeg.load({
@@ -79,7 +84,7 @@
   }
 
   onMount(async () => {
-		vidPlayerRef.volume = 0.5;
+    vidPlayerRef.volume = 0.5;
     loadFFmpeg();
   });
 </script>
@@ -108,29 +113,44 @@
   </section>
   <!-- {message} -->
   <section class="command">
-    <h3>Output Command</h3>
+    <div class="section-head">
+      <h3>Output Command</h3>
+      <div>
+        <button on:click={copyCommand}>Copy Command</button>
+      </div>
+    </div>
+
     <div class="inner-command">
       <textarea
+        rows="1"
         readonly
         class="actual-command"
         bind:this={commandRef}
         on:click={() => commandRef.select()}>{$previewCommand}</textarea
       >
-      <div>
-        <button on:click={copyCommand}>Copy Command</button>
-      </div>
     </div>
   </section>
 
   <section class="log">
-    <h3>FFmpeg Log</h3>
-    <textarea readonly class="the-log" bind:this={logbox}>{log}</textarea>
+    <div class="section-head">
+      <h3>Error Log</h3>
+      <div>
+        <button
+          on:click={() => {
+            log = "";
+          }}>Clear Errors</button
+        >
+      </div>
+    </div>
+    <textarea rows="1" readonly class="the-log" bind:this={logbox}>{log}</textarea>
   </section>
 
   <section class="preview">
     <div class="vid-holder">
       {#if rendering}
-        <div class="rendering-video"><span>Rendering...</span></div>
+        <div class="rendering-video">
+          <span>Rendering...{(renderProgress * 100).toFixed(2)}%</span>
+        </div>
       {/if}
       <video bind:this={vidPlayerRef} controls src={videoValue} />
     </div>
@@ -175,7 +195,6 @@
       "hdr log log log prv prv"
       "hdr cmd cmd cmd prv prv"
       "flt gra gra gra gra edt";
-    /* grid-template-rows: 16% 17% 77%; */
     grid-template-rows: 15% 15% calc(70% - 40px);
     padding: 10px;
     grid-gap: 20px;
@@ -214,6 +233,7 @@
 
   .preview video {
     width: 100%;
+    background-color: #000;
     /* object-fit: contain; */
     flex: 1;
   }
@@ -245,6 +265,14 @@
   .filter-editor {
     grid-area: edt;
     display: flex;
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: stretch;
+  }
+  .section-head h3 {
+    flex: 1;
   }
 
   .filter-picker {
@@ -284,33 +312,42 @@
     -moz-box-shadow: none;
     box-shadow: none;
     resize: none;
+    height: auto;
   }
 
   .actual-command {
     border: none;
-    margin-right: 10px;
     flex: 1;
     font: inherit;
     padding: 5px;
     height: 100%;
   }
   .the-log {
+    color: red;
     border: none;
     resize: none;
     padding: 5px;
     flex: 1;
   }
+  .render-progress {
+    transition: 0.1s all;
+    width: 0%;
+    height: 7px;
+    background-color: var(--b1);
+  }
   .rendering-video {
     position: absolute;
     width: 100%;
     height: 100%;
+    opacity: 0.97;
+    background-color: var(--b2);
     z-index: 2;
-    background-color: rgba(255, 255, 255, 0.8);
     top: 0;
     left: 0;
     display: grid;
     align-items: center;
     justify-content: center;
+    align-content: center;
   }
 
   .help {

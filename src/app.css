@@ -5,7 +5,7 @@
   /* --b1: #004dff; */
   /* --b2: #f19696b3; */
   --b1: #004dff;
-  --b2: #ffdadab3;
+  --b2: #ffe5e5;
   /* --b1: #ff0000; */
   /* --b2: #b6e3f2b3; */
 }
@@ -46,8 +46,8 @@ select {
 }
 button:active {
   position: relative;
-  top: 2px;
-  left: 2px;
+  top: 1px;
+  left: 1px;
   box-shadow: none;
 }
 
