@@ -178,7 +178,9 @@ nodes.subscribe(($nodes) => {
   edges.set(newEdges);
 });
 
-export function addNode(data, type) {
+export function addNode(_data, type) {
+	const data = JSON.parse(JSON.stringify(_data));
+
   let ins = [];
   let outs = [];
 

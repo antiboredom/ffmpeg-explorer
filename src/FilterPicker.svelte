@@ -13,7 +13,7 @@
   function selectFilters(sel) {
     if (sel == "video") {
       // return FILTERS.filter((f) => f.type.startsWith("V")  || f.type.endsWith("V"));
-      return FILTERS.filter((f) => f.type[0] === "V" || (f.type[0] === "|") || f.type === "N->V");
+      return FILTERS.filter((f) => f.type[0] === "V" || f.type === "N->V");
     } else if (sel == "audio") {
       // return FILTERS.filter((f) => f.type.startsWith("A")  || f.type.endsWith("A"));
       return FILTERS.filter((f) => f.type[0] === "A" || f.type === "N->A");
