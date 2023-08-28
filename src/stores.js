@@ -109,9 +109,11 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
       finalCommand.push("0:a");
     }
 
+		finalCommand.push("-map");
     if (hasVid) {
-      finalCommand.push("-map");
       finalCommand.push('"[vid_out]"');
+    } else {
+      finalCommand.push("0:v");
     }
   }
 
@@ -251,6 +253,12 @@ export function addNode(_data, type) {
 		}
     return _nodes;
   });
+}
+
+export function resetNodes() {
+	nodes.set([]);
+	addNode({ name: "punch.mp4" }, "input");
+	addNode({ name: "out.mp4" }, "output");
 }
 
 export function removeNode(id) {
