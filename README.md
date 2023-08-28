@@ -16,7 +16,7 @@ npm run dev
 
 ## Todo
 
-- [ ] Rendering progress bar
+- [x] Rendering progress bar
 - [ ] "Cancel Render" button
 - [ ] Disable/enable filters without removing them
 - [ ] Deal with duplicate parameters in filters (sometimes filters have a long and short option)
