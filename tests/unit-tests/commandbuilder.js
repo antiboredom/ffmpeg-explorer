@@ -32,4 +32,18 @@ describe("Filter param builder", () => {
 		});
 		expect(results).toBe("filter");
 	});
+
+	test("Lots of params", () => {
+		const results = makeFilterArgs({
+			name: "filter",
+			params: [
+				{ name: "param1", value: 1, default: 1 }, // should be ignored
+				{ name: "param2", value: "", }, // should be ignored
+				{ name: "param3", value: 1, default: 2 },
+				{ name: "param4", value: 2},
+				{ name: "param5", value: "p5"},
+			],
+		});
+		expect(results).toBe("filter=param3=1:param4=2:param5=p5");
+	});
 });
