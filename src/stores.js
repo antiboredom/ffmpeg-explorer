@@ -9,7 +9,7 @@ export const selectedFilter = writable();
 addNode({ name: "punch.mp4" }, "input");
 addNode({ name: "out.mp4" }, "output");
 
-function makeFilterArgs(f) {
+export function makeFilterArgs(f) {
   let fCommand = f.name;
   if (f.params && f.params.length > 0) {
     let params = f.params
