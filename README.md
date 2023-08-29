@@ -13,7 +13,6 @@ npm run dev
 
 ## Known Issues
 
-- Combining audio and video filters can fail
 - Rendering on chrome doesn't work in multi-threading mode (it seems to fail on mp4s)
 
 ## Todo
