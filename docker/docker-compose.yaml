@@ -1,0 +1,8 @@
+---
+services:
+  ffmpeg-explorer:
+    image: antiboredom/ffmpeg-explorer
+    container_name: ffmpeg-explorer
+    restart: unless-stopped
+    ports:
+      - 3000:80
