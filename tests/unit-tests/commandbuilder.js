@@ -1,6 +1,6 @@
 import { expect, test, describe } from "vitest";
 import { get } from "svelte/store";
-import { nodes, edges, addNode, resetNodes, makeFilterArgs, previewCommand } from "../../src/stores.js";
+import { addNode, resetNodes, makeFilterArgs, previewCommand } from "../../src/stores.js";
 
 describe("Filter param builder", () => {
 	test("No params", () => {
@@ -58,7 +58,7 @@ describe("Command builder", () => {
 		resetNodes();
 		addNode({ name: "filter", type: "V->V" }, "filter");
 		expect(get(previewCommand)).toBe(
-			`ffmpeg -i punch.mp4 -filter_complex "[0:v]filter[vid_out]" -map 0:a -map "[vid_out]" out.mp4`
+			`ffmpeg -i punch.mp4 -filter_complex "[0:v]filter[out_v]" -map "[out_v]" -map 0:a out.mp4`
 		);
 	});
 
@@ -66,7 +66,36 @@ describe("Command builder", () => {
 		resetNodes();
 		addNode({ name: "filter", type: "A->A" }, "filter");
 		expect(get(previewCommand)).toBe(
-			`ffmpeg -i punch.mp4 -filter_complex "[0:a]filter[aud_out]" -map "[aud_out]" -map 0:v out.mp4`
+			`ffmpeg -i punch.mp4 -filter_complex "[0:a]filter[out_a]" -map "[out_a]" -map 0:v out.mp4`
+		);
+	});
+
+	test("One audio, one video filter", () => {
+		resetNodes();
+		addNode({ name: "afilter", type: "A->A" }, "filter");
+		addNode({ name: "vfilter", type: "V->V" }, "filter");
+		expect(get(previewCommand)).toBe(
+			`ffmpeg -i punch.mp4 -filter_complex "[0:a]afilter[out_a];[0:v]vfilter[out_v]" -map "[out_a]" -map "[out_v]" out.mp4`
+		);
+	});
+
+	test("video filter chain", () => {
+		resetNodes();
+		addNode({ name: "vfilter", type: "V->V" }, "filter");
+		addNode({ name: "vfilter2", type: "V->V" }, "filter");
+		addNode({ name: "vfilter3", type: "V->V" }, "filter");
+		expect(get(previewCommand)).toBe(
+			`ffmpeg -i punch.mp4 -filter_complex "[0:v]vfilter,vfilter2,vfilter3[out_v]" -map "[out_v]" -map 0:a out.mp4`
+		);
+	});
+
+	test("One audio, two video filters", () => {
+		resetNodes();
+		addNode({ name: "afilter", type: "A->A" }, "filter");
+		addNode({ name: "vfilter", type: "V->V" }, "filter");
+		addNode({ name: "vfilter2", type: "V->V" }, "filter");
+		expect(get(previewCommand)).toBe(
+			`ffmpeg -i punch.mp4 -filter_complex "[0:v]vfilter[1];[0:a]afilter[out_a];[1]vfilter2[out_v]" -map "[out_a]" -map "[out_v]" out.mp4`
 		);
 	});
 });

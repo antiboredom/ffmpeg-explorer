@@ -33,7 +33,7 @@
     videoValue = null;
     rendering = true;
     try {
-			if (log.trim() != '') log += "\n\n";
+      if (log.trim() != "") log += "\n\n";
       for (let vid of $inputs) {
         await ffmpeg.writeFile(vid.name, await fetchFile("/" + vid.name));
       }
