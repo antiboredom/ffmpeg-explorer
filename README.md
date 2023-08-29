@@ -29,7 +29,7 @@ npm run dev
 - [ ] Handle audio and image output.
 - [ ] Allow command to be editable
 - [x] Use commas to separate filters when possible
-- [ ] Include some default fonts so text works. Example -> [here](https://github.com/ffmpegwasm/ffmpeg.wasm-core/blob/n4.3.1-wasm/wasm/examples/browser/freetype2.html)
+- [x] Include some default fonts so text works.
 - [x] Allow gif as output
 - [ ] MAYBE allow users to upload their own videos
 - [ ] MAYBE make each part of the output command clickable, to highlight the corresponding nodes
