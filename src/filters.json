@@ -196,9 +196,9 @@
         "name": "cue",
         "type": "int64",
         "desc": "cue unix timestamp in microseconds (from 0 to I64_MAX) (default 0)",
-        "min": "0",
-        "max": 2147483647,
-        "default": "0"
+        "min": 0,
+        "max": 2000,
+        "default": 0
       },
       {
         "name": "preroll",
@@ -1148,9 +1148,9 @@
         "name": "seed",
         "type": "int64",
         "desc": "set random seed (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       }
     ]
   },
@@ -1711,33 +1711,33 @@
         "name": "start_sample",
         "type": "int64",
         "desc": "set number of first sample to start fading (from 0 to I64_MAX) (default 0)",
-        "min": "0",
-        "max": 2147483647,
-        "default": "0"
+        "min": 0,
+        "max": 2000,
+        "default": 0
       },
       {
         "name": "ss",
         "type": "int64",
         "desc": "set number of first sample to start fading (from 0 to I64_MAX) (default 0)",
-        "min": "0",
-        "max": 2147483647,
-        "default": "0"
+        "min": 0,
+        "max": 2000,
+        "default": 0
       },
       {
         "name": "nb_samples",
         "type": "int64",
         "desc": "set number of samples for fade duration (from 1 to I64_MAX) (default 44100)",
-        "min": "1",
-        "max": 2147483647,
-        "default": "44100"
+        "min": 1,
+        "max": 2000,
+        "default": 44100
       },
       {
         "name": "ns",
         "type": "int64",
         "desc": "set number of samples for fade duration (from 1 to I64_MAX) (default 44100)",
-        "min": "1",
-        "max": 2147483647,
-        "default": "44100"
+        "min": 1,
+        "max": 2000,
+        "default": 44100
       },
       {
         "name": "start_time",
@@ -2797,7 +2797,7 @@
         "type": "double",
         "desc": "set frequency shift (from -2.14748e+09 to INT_MAX) (default 0)",
         "min": -2147480000.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -3377,7 +3377,7 @@
         "type": "int",
         "desc": "set number of inputs (from 1 to INT_MAX) (default 2)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -3385,7 +3385,7 @@
         "type": "int",
         "desc": "set number of inputs (from 1 to INT_MAX) (default 2)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -3813,24 +3813,24 @@
         "type": "int",
         "desc": "number of loops (from -1 to INT_MAX) (default 0)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
         "name": "size",
         "type": "int64",
         "desc": "max number of samples to loop (from 0 to INT_MAX) (default 0)",
-        "min": "0",
-        "max": 2147483647,
-        "default": "0"
+        "min": 0,
+        "max": 2000,
+        "default": 0
       },
       {
         "name": "start",
         "type": "int64",
         "desc": "set the loop start sample (from 0 to I64_MAX) (default 0)",
-        "min": "0",
-        "max": 2147483647,
-        "default": "0"
+        "min": 0,
+        "max": 2000,
+        "default": 0
       }
     ]
   },
@@ -4010,7 +4010,7 @@
         "type": "float",
         "desc": "Transition time, in seconds, for volume renormalization when an input stream ends. (from 0 to INT_MAX) (default 2)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 2.0
       },
       {
@@ -4375,24 +4375,24 @@
         "type": "int",
         "desc": "set silence packet size (from 0 to INT_MAX) (default 4096)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 4096
       },
       {
         "name": "pad_len",
         "type": "int64",
         "desc": "set number of samples of silence to add (from -1 to I64_MAX) (default -1)",
-        "min": "-1",
-        "max": 2147483647,
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "whole_len",
         "type": "int64",
         "desc": "set minimum target number of samples in the audio stream (from -1 to I64_MAX) (default -1)",
-        "min": "-1",
-        "max": 2147483647,
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "pad_dur",
@@ -4453,9 +4453,9 @@
         "name": "seed",
         "type": "int64",
         "desc": "set the seed for the random mode (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       }
     ]
   },
@@ -4784,8 +4784,8 @@
         "name": "speed",
         "type": "double",
         "desc": "speed factor (from DBL_MIN to DBL_MAX) (default 1)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 1.0
       }
     ]
@@ -4802,7 +4802,7 @@
         "type": "int",
         "desc": "(from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       }
     ]
@@ -4907,7 +4907,7 @@
         "type": "int",
         "desc": "set the number of outputs (from 1 to INT_MAX) (default 1)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       },
       {
@@ -4915,7 +4915,7 @@
         "type": "int",
         "desc": "set the number of outputs (from 1 to INT_MAX) (default 1)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       }
     ]
@@ -4973,7 +4973,7 @@
         "type": "int",
         "desc": "set the number of per-frame output samples (from 1 to INT_MAX) (default 1024)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       },
       {
@@ -4981,7 +4981,7 @@
         "type": "int",
         "desc": "set the number of per-frame output samples (from 1 to INT_MAX) (default 1024)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       },
       {
@@ -5031,7 +5031,7 @@
         "type": "int",
         "desc": "set the sample rate (from 1 to INT_MAX) (default 44100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 44100
       },
       {
@@ -5039,7 +5039,7 @@
         "type": "int",
         "desc": "set the sample rate (from 1 to INT_MAX) (default 44100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 44100
       }
     ]
@@ -5106,7 +5106,7 @@
         "type": "int",
         "desc": "set side data type (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1,
         "options": [
           {
@@ -5489,7 +5489,7 @@
         "type": "int",
         "desc": "set number of outputs (from 1 to INT_MAX) (default 2)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       }
     ]
@@ -5522,7 +5522,7 @@
         "type": "int",
         "desc": "Set the number of frames over which cumulative stats are calculated before being reset (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -5775,7 +5775,7 @@
         "type": "int",
         "desc": "number of input streams (from 2 to INT_MAX) (default 2)",
         "min": 2,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -6126,17 +6126,17 @@
         "name": "start_pts",
         "type": "int64",
         "desc": "Timestamp of the first frame that should be passed (from I64_MIN to I64_MAX) (default I64_MIN)",
-        "min": -2147483648,
-        "max": 2147483647,
-        "default": "I64_MIN"
+        "min": -2000,
+        "max": 2000,
+        "default": -2000
       },
       {
         "name": "end_pts",
         "type": "int64",
         "desc": "Timestamp of the first frame that should be dropped again (from I64_MIN to I64_MAX) (default I64_MIN)",
-        "min": -2147483648,
-        "max": 2147483647,
-        "default": "I64_MIN"
+        "min": -2000,
+        "max": 2000,
+        "default": -2000
       },
       {
         "name": "duration",
@@ -6158,17 +6158,17 @@
         "name": "start_sample",
         "type": "int64",
         "desc": "Number of the first audio sample that should be passed to the output (from -1 to I64_MAX) (default -1)",
-        "min": "-1",
-        "max": 2147483647,
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "end_sample",
         "type": "int64",
         "desc": "Number of the first audio sample that should be dropped again (from 0 to I64_MAX) (default I64_MAX)",
-        "min": "0",
-        "max": 2147483647,
-        "default": 2147483647
+        "min": 0,
+        "max": 2000,
+        "default": 2000
       }
     ]
   },
@@ -7161,48 +7161,48 @@
         "name": "a0",
         "type": "double",
         "desc": "(from INT_MIN to INT_MAX) (default 1)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 1.0
       },
       {
         "name": "a1",
         "type": "double",
         "desc": "(from INT_MIN to INT_MAX) (default 0)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
         "name": "a2",
         "type": "double",
         "desc": "(from INT_MIN to INT_MAX) (default 0)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
         "name": "b0",
         "type": "double",
         "desc": "(from INT_MIN to INT_MAX) (default 0)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
         "name": "b1",
         "type": "double",
         "desc": "(from INT_MIN to INT_MAX) (default 0)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
         "name": "b2",
         "type": "double",
         "desc": "(from INT_MIN to INT_MAX) (default 0)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -8107,8 +8107,8 @@
         "name": "framelog",
         "type": "int",
         "desc": "force frame logging level (from INT_MIN to INT_MAX) (default -1)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": -1,
         "options": [
           {
@@ -9830,7 +9830,7 @@
         "type": "int",
         "desc": "Number of input streams. (from 1 to INT_MAX) (default 2)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -10983,7 +10983,7 @@
         "type": "double",
         "desc": "set noise tolerance (from 0 to DBL_MAX) (default 0.001)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.001
       },
       {
@@ -10991,7 +10991,7 @@
         "type": "double",
         "desc": "set noise tolerance (from 0 to DBL_MAX) (default 0.001)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.001
       },
       {
@@ -11056,7 +11056,7 @@
         "type": "double",
         "desc": "set threshold for start silence detection (from 0 to DBL_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -11106,7 +11106,7 @@
         "type": "double",
         "desc": "set threshold for stop silence detection (from 0 to DBL_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -13145,7 +13145,7 @@
         "type": "int",
         "desc": "set the number of samples per requested frame (from 0 to INT_MAX) (default 1024)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       },
       {
@@ -13153,7 +13153,7 @@
         "type": "int",
         "desc": "set the number of samples per requested frame (from 0 to INT_MAX) (default 1024)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       },
       {
@@ -13282,7 +13282,7 @@
         "type": "int",
         "desc": "set sample rate (from 1 to INT_MAX) (default 44100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 44100
       },
       {
@@ -13290,7 +13290,7 @@
         "type": "int",
         "desc": "set sample rate (from 1 to INT_MAX) (default 44100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 44100
       },
       {
@@ -13298,7 +13298,7 @@
         "type": "int",
         "desc": "set the number of samples per requested frame (from 1 to INT_MAX) (default 1024)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       },
       {
@@ -13306,7 +13306,7 @@
         "type": "int",
         "desc": "set the number of samples per requested frame (from 1 to INT_MAX) (default 1024)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       },
       {
@@ -13695,7 +13695,7 @@
         "type": "int",
         "desc": "set sample rate (from 15 to INT_MAX) (default 48000)",
         "min": 15,
-        "max": 2147483647,
+        "max": 2000,
         "default": 48000
       },
       {
@@ -13703,7 +13703,7 @@
         "type": "int",
         "desc": "set sample rate (from 15 to INT_MAX) (default 48000)",
         "min": 15,
-        "max": 2147483647,
+        "max": 2000,
         "default": 48000
       },
       {
@@ -13844,24 +13844,24 @@
         "name": "seed",
         "type": "int64",
         "desc": "set random seed (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "s",
         "type": "int64",
         "desc": "set random seed (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "nb_samples",
         "type": "int",
         "desc": "set the number of samples per requested frame (from 1 to INT_MAX) (default 1024)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       },
       {
@@ -13869,7 +13869,7 @@
         "type": "int",
         "desc": "set the number of samples per requested frame (from 1 to INT_MAX) (default 1024)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       }
     ]
@@ -13959,7 +13959,7 @@
         "type": "int",
         "desc": "set sample rate (from 1 to INT_MAX) (default 44100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 44100
       },
       {
@@ -13967,7 +13967,7 @@
         "type": "int",
         "desc": "set sample rate (from 1 to INT_MAX) (default 44100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 44100
       },
       {
@@ -13991,7 +13991,7 @@
         "type": "int",
         "desc": "set the number of samples per requested frame (from 1 to INT_MAX) (default 1024)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       },
       {
@@ -13999,7 +13999,7 @@
         "type": "int",
         "desc": "set the number of samples per requested frame (from 1 to INT_MAX) (default 1024)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       },
       {
@@ -14388,7 +14388,7 @@
         "type": "int",
         "desc": "set sample rate (from 1 to INT_MAX) (default 44100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 44100
       },
       {
@@ -14396,7 +14396,7 @@
         "type": "int",
         "desc": "set sample rate (from 1 to INT_MAX) (default 44100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 44100
       },
       {
@@ -14404,7 +14404,7 @@
         "type": "int",
         "desc": "set the number of samples per requested frame (from 1 to INT_MAX) (default 1024)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       },
       {
@@ -14412,7 +14412,7 @@
         "type": "int",
         "desc": "set the number of samples per requested frame (from 1 to INT_MAX) (default 1024)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1024
       },
       {
@@ -14420,7 +14420,7 @@
         "type": "float",
         "desc": "set high-pass filter frequency (from 0 to INT_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -14428,7 +14428,7 @@
         "type": "float",
         "desc": "set low-pass filter frequency (from 0 to INT_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -14493,7 +14493,7 @@
         "type": "double",
         "desc": "set the sine frequency (from 0 to DBL_MAX) (default 440)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 440.0
       },
       {
@@ -14501,7 +14501,7 @@
         "type": "double",
         "desc": "set the sine frequency (from 0 to DBL_MAX) (default 440)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 440.0
       },
       {
@@ -14509,7 +14509,7 @@
         "type": "double",
         "desc": "set the beep frequency factor (from 0 to DBL_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -14517,7 +14517,7 @@
         "type": "double",
         "desc": "set the beep frequency factor (from 0 to DBL_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -14525,7 +14525,7 @@
         "type": "int",
         "desc": "set the sample rate (from 1 to INT_MAX) (default 44100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 44100
       },
       {
@@ -14533,7 +14533,7 @@
         "type": "int",
         "desc": "set the sample rate (from 1 to INT_MAX) (default 44100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 44100
       },
       {
@@ -15039,7 +15039,7 @@
         "type": "double",
         "desc": "set minimum detected black duration in seconds (from 0 to DBL_MAX) (default 2)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 2.0
       },
       {
@@ -15047,7 +15047,7 @@
         "type": "double",
         "desc": "set minimum detected black duration in seconds (from 0 to DBL_MAX) (default 2)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 2.0
       },
       {
@@ -16173,7 +16173,7 @@
         "type": "int",
         "desc": "block size for block-based abbreviation of blurriness (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -16181,7 +16181,7 @@
         "type": "int",
         "desc": "block size for block-based abbreviation of blurriness (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -16238,7 +16238,7 @@
         "type": "int",
         "desc": "set block matching range (from 1 to INT_MAX) (default 9)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 9
       },
       {
@@ -16254,7 +16254,7 @@
         "type": "float",
         "desc": "set threshold of mean square error for block matching (from 0 to INT_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -16262,7 +16262,7 @@
         "type": "float",
         "desc": "set hard threshold for 3D transfer domain (from 0 to INT_MAX) (default 2.7)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 2.7
       },
       {
@@ -16329,7 +16329,7 @@
         "type": "int",
         "desc": "How many times should the boxblur be applied to luma (from 0 to INT_MAX) (default 2)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -16337,7 +16337,7 @@
         "type": "int",
         "desc": "How many times should the boxblur be applied to luma (from 0 to INT_MAX) (default 2)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -16361,7 +16361,7 @@
         "type": "int",
         "desc": "How many times should the boxblur be applied to chroma (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -16369,7 +16369,7 @@
         "type": "int",
         "desc": "How many times should the boxblur be applied to chroma (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -16393,7 +16393,7 @@
         "type": "int",
         "desc": "How many times should the boxblur be applied to alpha (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -16401,7 +16401,7 @@
         "type": "int",
         "desc": "How many times should the boxblur be applied to alpha (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       }
     ]
@@ -18596,7 +18596,7 @@
         "type": "float",
         "desc": "set rdiv for 1st plane (from 0 to INT_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -18604,7 +18604,7 @@
         "type": "float",
         "desc": "set rdiv for 2nd plane (from 0 to INT_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -18612,7 +18612,7 @@
         "type": "float",
         "desc": "set rdiv for 3rd plane (from 0 to INT_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -18620,7 +18620,7 @@
         "type": "float",
         "desc": "set rdiv for 4th plane (from 0 to INT_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -18628,7 +18628,7 @@
         "type": "float",
         "desc": "set bias for 1st plane (from 0 to INT_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -18636,7 +18636,7 @@
         "type": "float",
         "desc": "set bias for 2nd plane (from 0 to INT_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -18644,7 +18644,7 @@
         "type": "float",
         "desc": "set bias for 3rd plane (from 0 to INT_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -18652,7 +18652,7 @@
         "type": "float",
         "desc": "set bias for 4th plane (from 0 to INT_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -18923,7 +18923,7 @@
         "type": "int",
         "desc": "Value by which the width/height should be divisible (from 0 to INT_MAX) (default 16)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 16
       },
       {
@@ -18931,7 +18931,7 @@
         "type": "int",
         "desc": "Recalculate the crop area after this many frames (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -18939,7 +18939,7 @@
         "type": "int",
         "desc": "Number of initial frames to skip (from 0 to INT_MAX) (default 2)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -18947,7 +18947,7 @@
         "type": "int",
         "desc": "Recalculate the crop area after this many frames (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -18955,7 +18955,7 @@
         "type": "int",
         "desc": "Threshold count of outliers (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -19013,9 +19013,9 @@
         "name": "cue",
         "type": "int64",
         "desc": "cue unix timestamp in microseconds (from 0 to I64_MAX) (default 0)",
-        "min": "0",
-        "max": 2147483647,
-        "default": "0"
+        "min": 0,
+        "max": 2000,
+        "default": 0
       },
       {
         "name": "preroll",
@@ -19232,7 +19232,7 @@
         "type": "int",
         "desc": "set x offset (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -19240,7 +19240,7 @@
         "type": "int",
         "desc": "set y offset (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -19442,16 +19442,16 @@
         "name": "range",
         "type": "int",
         "desc": "set range (from INT_MIN to INT_MAX) (default 16)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 16
       },
       {
         "name": "r",
         "type": "int",
         "desc": "set range (from INT_MIN to INT_MAX) (default 16)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 16
       },
       {
@@ -20047,7 +20047,7 @@
         "type": "int",
         "desc": "set x for the rectangular search area (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -20055,7 +20055,7 @@
         "type": "int",
         "desc": "set y for the rectangular search area (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -20063,7 +20063,7 @@
         "type": "int",
         "desc": "set width for the rectangular search area (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -20071,7 +20071,7 @@
         "type": "int",
         "desc": "set height for the rectangular search area (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -20397,8 +20397,8 @@
         "name": "dnn_backend",
         "type": "int",
         "desc": "DNN backend (from INT_MIN to INT_MAX) (default 2)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 2
       },
       {
@@ -20486,8 +20486,8 @@
         "name": "dnn_backend",
         "type": "int",
         "desc": "DNN backend (from INT_MIN to INT_MAX) (default 2)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 2
       },
       {
@@ -20567,8 +20567,8 @@
         "name": "dnn_backend",
         "type": "int",
         "desc": "DNN backend (from INT_MIN to INT_MAX) (default native)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": "native",
         "options": [
           {
@@ -20850,16 +20850,16 @@
         "name": "min",
         "type": "float",
         "desc": "set minimal value (from INT_MIN to INT_MAX) (default -1)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": -1.0
       },
       {
         "name": "max",
         "type": "float",
         "desc": "set maximal value (from INT_MIN to INT_MAX) (default 1)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 1.0
       },
       {
@@ -21058,7 +21058,29 @@
         "desc": "set font file",
         "min": null,
         "max": null,
-        "default": null
+        "default": "",
+        "options": [
+          {
+            "value": "",
+            "desc": ""
+          },
+          {
+            "value": "times.ttf",
+            "desc": "Times"
+          },
+          {
+            "value": "arial.ttf",
+            "desc": "Arial"
+          },
+          {
+            "value": "courier.ttf",
+            "desc": "Courier"
+          },
+          {
+            "value": "comic.ttf",
+            "desc": "Comic Sans"
+          }
+        ]
       },
       {
         "name": "text",
@@ -21128,16 +21150,16 @@
         "name": "boxborderw",
         "type": "int",
         "desc": "set box border width (from INT_MIN to INT_MAX) (default 0)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 0
       },
       {
         "name": "line_spacing",
         "type": "int",
         "desc": "set line spacing in pixels (from INT_MIN to INT_MAX) (default 0)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 0
       },
       {
@@ -21168,24 +21190,24 @@
         "name": "shadowx",
         "type": "int",
         "desc": "set shadow x offset (from INT_MIN to INT_MAX) (default 0)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 0
       },
       {
         "name": "shadowy",
         "type": "int",
         "desc": "set shadow y offset (from INT_MIN to INT_MAX) (default 0)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 0
       },
       {
         "name": "borderw",
         "type": "int",
         "desc": "set border width (from INT_MIN to INT_MAX) (default 0)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 0
       },
       {
@@ -21193,16 +21215,16 @@
         "type": "int",
         "desc": "set tab size (from 0 to INT_MAX) (default 4)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 4
       },
       {
         "name": "basetime",
         "type": "int64",
         "desc": "set base time (from I64_MIN to I64_MAX) (default I64_MIN)",
-        "min": -2147483648,
-        "max": 2147483647,
-        "default": "I64_MIN"
+        "min": -2000,
+        "max": 2000,
+        "default": -2000
       },
       {
         "name": "font",
@@ -21255,7 +21277,7 @@
         "type": "rational",
         "desc": "set rate (timecode only) (from 0 to INT_MAX) (default 0/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "0/1"
       },
       {
@@ -21263,7 +21285,7 @@
         "type": "rational",
         "desc": "set rate (timecode only) (from 0 to INT_MAX) (default 0/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "0/1"
       },
       {
@@ -21271,7 +21293,7 @@
         "type": "rational",
         "desc": "set rate (timecode only) (from 0 to INT_MAX) (default 0/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "0/1"
       },
       {
@@ -21279,7 +21301,7 @@
         "type": "int",
         "desc": "reload text file at specified frame interval (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -21303,7 +21325,7 @@
         "type": "int",
         "desc": "start frame number for n/frame_num variable (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -21479,7 +21501,7 @@
         "type": "int",
         "desc": "set codebook length (from 1 to INT_MAX) (default 256)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 256
       },
       {
@@ -21487,7 +21509,7 @@
         "type": "int",
         "desc": "set codebook length (from 1 to INT_MAX) (default 256)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 256
       },
       {
@@ -21495,7 +21517,7 @@
         "type": "int",
         "desc": "set max number of steps used to compute the mapping (from 1 to INT_MAX) (default 1)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       },
       {
@@ -21503,24 +21525,24 @@
         "type": "int",
         "desc": "set max number of steps used to compute the mapping (from 1 to INT_MAX) (default 1)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       },
       {
         "name": "seed",
         "type": "int64",
         "desc": "set the random seed (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "s",
         "type": "int64",
         "desc": "set the random seed (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "pal8",
@@ -21973,7 +21995,7 @@
         "type": "int",
         "desc": "Number of the first frame to which to apply the effect. (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -21981,7 +22003,7 @@
         "type": "int",
         "desc": "Number of the first frame to which to apply the effect. (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -21989,7 +22011,7 @@
         "type": "int",
         "desc": "Number of frames to which the effect should be applied. (from 1 to INT_MAX) (default 25)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 25
       },
       {
@@ -21997,7 +22019,7 @@
         "type": "int",
         "desc": "Number of frames to which the effect should be applied. (from 1 to INT_MAX) (default 25)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 25
       },
       {
@@ -22070,7 +22092,7 @@
         "type": "int",
         "desc": "set top left crop position (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22078,7 +22100,7 @@
         "type": "int",
         "desc": "set top left crop position (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22086,7 +22108,7 @@
         "type": "int",
         "desc": "set crop size (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22094,7 +22116,7 @@
         "type": "int",
         "desc": "set crop size (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       }
     ]
@@ -22527,7 +22549,7 @@
         "type": "int",
         "desc": "define an exclusion band which excludes the lines between y0 and y1 from the field matching decision (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22535,7 +22557,7 @@
         "type": "int",
         "desc": "define an exclusion band which excludes the lines between y0 and y1 from the field matching decision (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22627,7 +22649,7 @@
         "type": "int",
         "desc": "set the number of combed pixels inside any of the blocky by blockx size blocks on the frame for the frame to be detected as combed (from 0 to INT_MAX) (default 80)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 80
       }
     ]
@@ -22671,7 +22693,7 @@
         "type": "int",
         "desc": "set the left fill border (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22679,7 +22701,7 @@
         "type": "int",
         "desc": "set the right fill border (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22687,7 +22709,7 @@
         "type": "int",
         "desc": "set the top fill border (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22695,7 +22717,7 @@
         "type": "int",
         "desc": "set the bottom fill border (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22782,7 +22804,7 @@
         "type": "int",
         "desc": "(from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22790,7 +22812,7 @@
         "type": "int",
         "desc": "(from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22798,7 +22820,7 @@
         "type": "int",
         "desc": "(from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22806,7 +22828,7 @@
         "type": "int",
         "desc": "(from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -22944,9 +22966,9 @@
         "name": "start_time",
         "type": "double",
         "desc": "Assume the first PTS should be this value. (from -DBL_MAX to DBL_MAX) (default DBL_MAX)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
-        "default": 2147483647.0
+        "min": -2000.0,
+        "max": 2000.0,
+        "default": 2000.0
       },
       {
         "name": "round",
@@ -23010,7 +23032,7 @@
         "type": "int",
         "desc": "Frame pack output format (from 0 to INT_MAX) (default sbs)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": "sbs",
         "options": [
           {
@@ -23108,7 +23130,7 @@
         "type": "int",
         "desc": "set frame step (from 1 to INT_MAX) (default 1)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       }
     ]
@@ -23165,25 +23187,25 @@
         "name": "first",
         "type": "int64",
         "desc": "set first frame to freeze (from 0 to I64_MAX) (default 0)",
-        "min": "0",
-        "max": 2147483647,
-        "default": "0"
+        "min": 0,
+        "max": 2000,
+        "default": 0
       },
       {
         "name": "last",
         "type": "int64",
         "desc": "set last frame to freeze (from 0 to I64_MAX) (default 0)",
-        "min": "0",
-        "max": 2147483647,
-        "default": "0"
+        "min": 0,
+        "max": 2000,
+        "default": 0
       },
       {
         "name": "replace",
         "type": "int64",
         "desc": "set frame to replace (from 0 to I64_MAX) (default 0)",
-        "min": "0",
-        "max": 2147483647,
-        "default": "0"
+        "min": 0,
+        "max": 2000,
+        "default": 0
       }
     ]
   },
@@ -24203,7 +24225,7 @@
         "type": "double",
         "desc": "spatial luma strength (from 0 to DBL_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -24211,7 +24233,7 @@
         "type": "double",
         "desc": "spatial chroma strength (from 0 to DBL_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -24219,7 +24241,7 @@
         "type": "double",
         "desc": "temporal luma strength (from 0 to DBL_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -24227,7 +24249,7 @@
         "type": "double",
         "desc": "temporal chroma strength (from 0 to DBL_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       }
     ]
@@ -24261,7 +24283,7 @@
         "type": "int",
         "desc": "set number of inputs (from 2 to INT_MAX) (default 2)",
         "min": 2,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -24644,7 +24666,7 @@
         "type": "float",
         "desc": "set interlacing threshold (from -1 to FLT_MAX) (default 1.04)",
         "min": -1.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 1.04
       },
       {
@@ -24652,7 +24674,7 @@
         "type": "float",
         "desc": "set progressive threshold (from -1 to FLT_MAX) (default 1.5)",
         "min": -1.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 1.5
       },
       {
@@ -24660,7 +24682,7 @@
         "type": "float",
         "desc": "set repeat threshold (from -1 to FLT_MAX) (default 3)",
         "min": -1.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 3.0
       },
       {
@@ -24668,7 +24690,7 @@
         "type": "float",
         "desc": "half life of cumulative statistics (from -1 to INT_MAX) (default 0)",
         "min": -1.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -24676,7 +24698,7 @@
         "type": "int",
         "desc": "set number of frames to use to determine if the interlace flag is accurate (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       }
     ]
@@ -25020,7 +25042,7 @@
         "type": "int",
         "desc": "set number of inputs (from 1 to INT_MAX) (default 2)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -25028,7 +25050,7 @@
         "type": "int",
         "desc": "set number of inputs (from 1 to INT_MAX) (default 2)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -25322,24 +25344,24 @@
         "type": "int",
         "desc": "number of loops (from -1 to INT_MAX) (default 0)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
         "name": "size",
         "type": "int64",
         "desc": "max number of frames to loop (from 0 to 32767) (default 0)",
-        "min": "0",
-        "max": "32767",
-        "default": "0"
+        "min": 0,
+        "max": 32767,
+        "default": 0
       },
       {
         "name": "start",
         "type": "int64",
         "desc": "set the loop start frame (from 0 to I64_MAX) (default 0)",
-        "min": "0",
-        "max": 2147483647,
-        "default": "0"
+        "min": 0,
+        "max": 2000,
+        "default": 0
       }
     ]
   },
@@ -26192,7 +26214,7 @@
         "type": "int",
         "desc": "macroblock size (from 8 to INT_MAX) (default 16)",
         "min": 8,
-        "max": 2147483647,
+        "max": 2000,
         "default": 16
       },
       {
@@ -26200,7 +26222,7 @@
         "type": "int",
         "desc": "search parameter (from 4 to INT_MAX) (default 7)",
         "min": 4,
-        "max": 2147483647,
+        "max": 2000,
         "default": 7
       }
     ]
@@ -26471,7 +26493,7 @@
         "type": "int",
         "desc": "search parameter (from 4 to INT_MAX) (default 32)",
         "min": 4,
-        "max": 2147483647,
+        "max": 2000,
         "default": 32
       },
       {
@@ -26698,24 +26720,24 @@
         "name": "max",
         "type": "int",
         "desc": "set the maximum number of consecutive dropped frames (positive), or the minimum interval between dropped frames (negative) (from INT_MIN to INT_MAX) (default 0)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 0
       },
       {
         "name": "hi",
         "type": "int",
         "desc": "set high dropping threshold (from INT_MIN to INT_MAX) (default 768)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 768
       },
       {
         "name": "lo",
         "type": "int",
         "desc": "set low dropping threshold (from INT_MIN to INT_MAX) (default 320)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": 320
       },
       {
@@ -27121,7 +27143,7 @@
         "type": "int",
         "desc": "set component #0 noise seed (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -27197,7 +27219,7 @@
         "type": "int",
         "desc": "set component #0 noise seed (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -27273,7 +27295,7 @@
         "type": "int",
         "desc": "set component #1 noise seed (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -27349,7 +27371,7 @@
         "type": "int",
         "desc": "set component #2 noise seed (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -27425,7 +27447,7 @@
         "type": "int",
         "desc": "set component #3 noise seed (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -27943,7 +27965,7 @@
         "type": "rational",
         "desc": "pad to fit an aspect instead of a resolution (from 0 to DBL_MAX) (default 0/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "0/1"
       }
     ]
@@ -28141,9 +28163,9 @@
         "name": "seed",
         "type": "int64",
         "desc": "set the seed for the random mode (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       }
     ]
   },
@@ -28357,7 +28379,7 @@
         "type": "float",
         "desc": "set detection threshold factor (lower is stricter) (from 0.1 to FLT_MAX) (default 1)",
         "min": 0.1,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 1.0
       },
       {
@@ -28365,7 +28387,7 @@
         "type": "float",
         "desc": "set detection threshold factor (lower is stricter) (from 0.1 to FLT_MAX) (default 1)",
         "min": 0.1,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 1.0
       },
       {
@@ -28939,7 +28961,7 @@
         "type": "int",
         "desc": "set left junk size (from 0 to INT_MAX) (default 1)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       },
       {
@@ -28947,7 +28969,7 @@
         "type": "int",
         "desc": "set right junk size (from 0 to INT_MAX) (default 1)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       },
       {
@@ -28955,7 +28977,7 @@
         "type": "int",
         "desc": "set top junk size (from 1 to INT_MAX) (default 4)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 4
       },
       {
@@ -28963,7 +28985,7 @@
         "type": "int",
         "desc": "set bottom junk size (from 1 to INT_MAX) (default 4)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 4
       },
       {
@@ -29034,9 +29056,9 @@
         "name": "seed",
         "type": "int64",
         "desc": "set the seed (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       }
     ]
   },
@@ -29052,7 +29074,7 @@
         "type": "int",
         "desc": "set from which line to scan for codes (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -29060,7 +29082,7 @@
         "type": "int",
         "desc": "set to which line to scan for codes (from 0 to INT_MAX) (default 29)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 29
       },
       {
@@ -29101,7 +29123,7 @@
         "type": "int",
         "desc": "maximum line numbers to scan for VITC data (from -1 to INT_MAX) (default 45)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 45
       },
       {
@@ -29141,8 +29163,8 @@
         "name": "speed",
         "type": "double",
         "desc": "speed factor (from DBL_MIN to DBL_MAX) (default 1)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 1.0
       }
     ]
@@ -29861,17 +29883,17 @@
         "name": "param0",
         "type": "double",
         "desc": "Scaler param 0 (from -DBL_MAX to DBL_MAX) (default DBL_MAX)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
-        "default": 2147483647.0
+        "min": -2000.0,
+        "max": 2000.0,
+        "default": 2000.0
       },
       {
         "name": "param1",
         "type": "double",
         "desc": "Scaler param 1 (from -DBL_MAX to DBL_MAX) (default DBL_MAX)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
-        "default": 2147483647.0
+        "min": -2000.0,
+        "max": 2000.0,
+        "default": 2000.0
       },
       {
         "name": "eval",
@@ -30182,17 +30204,17 @@
         "name": "param0",
         "type": "double",
         "desc": "Scaler param 0 (from -DBL_MAX to DBL_MAX) (default DBL_MAX)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
-        "default": 2147483647.0
+        "min": -2000.0,
+        "max": 2000.0,
+        "default": 2000.0
       },
       {
         "name": "param1",
         "type": "double",
         "desc": "Scaler param 1 (from -DBL_MAX to DBL_MAX) (default DBL_MAX)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
-        "default": 2147483647.0
+        "min": -2000.0,
+        "max": 2000.0,
+        "default": 2000.0
       },
       {
         "name": "eval",
@@ -30398,7 +30420,7 @@
         "type": "int",
         "desc": "set the number of outputs (from 1 to INT_MAX) (default 1)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       },
       {
@@ -30406,7 +30428,7 @@
         "type": "int",
         "desc": "set the number of outputs (from 1 to INT_MAX) (default 1)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       }
     ]
@@ -30602,7 +30624,7 @@
         "type": "int",
         "desc": "set max value for nominator or denominator in the ratio (from 1 to INT_MAX) (default 100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 100
       }
     ]
@@ -31049,7 +31071,7 @@
         "type": "int",
         "desc": "set max value for nominator or denominator in the ratio (from 1 to INT_MAX) (default 100)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 100
       }
     ]
@@ -31312,17 +31334,17 @@
         "name": "seed",
         "type": "int64",
         "desc": "set random seed (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "s",
         "type": "int64",
         "desc": "set random seed (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       }
     ]
   },
@@ -31397,7 +31419,7 @@
         "type": "int",
         "desc": "set side data type (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1,
         "options": [
           {
@@ -31591,7 +31613,7 @@
         "type": "int",
         "desc": "number of inputs (from 1 to INT_MAX) (default 1)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       },
       {
@@ -31625,7 +31647,7 @@
         "type": "int",
         "desc": "threshold to detect one word as similar (from 1 to INT_MAX) (default 9000)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 9000
       },
       {
@@ -31633,7 +31655,7 @@
         "type": "int",
         "desc": "threshold to detect all words as similar (from 1 to INT_MAX) (default 60000)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 60000
       },
       {
@@ -31641,7 +31663,7 @@
         "type": "int",
         "desc": "threshold to detect frames as similar (from 1 to INT_MAX) (default 116)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 116
       },
       {
@@ -31649,7 +31671,7 @@
         "type": "int",
         "desc": "minimum length of matching sequence in frames (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -31829,7 +31851,7 @@
         "type": "int",
         "desc": "set number of outputs (from 1 to INT_MAX) (default 2)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       }
     ]
@@ -32226,7 +32248,7 @@
         "type": "int",
         "desc": "number of input streams (from 2 to INT_MAX) (default 2)",
         "min": 2,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -32299,7 +32321,7 @@
         "type": "int",
         "desc": "set stream index (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -32307,7 +32329,7 @@
         "type": "int",
         "desc": "set stream index (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -33642,15 +33664,15 @@
         "type": "int",
         "desc": "set the frames batch size (from 2 to INT_MAX) (default 100)",
         "min": 2,
-        "max": 2147483647,
+        "max": 2000,
         "default": 100
       },
       {
         "name": "log",
         "type": "int",
         "desc": "force stats logging level (from INT_MIN to INT_MAX) (default info)",
-        "min": -2147483648,
-        "max": 2147483647,
+        "min": -2000,
+        "max": 2000,
         "default": "info",
         "options": [
           {
@@ -33689,7 +33711,7 @@
         "type": "int",
         "desc": "set maximum number of frame to render (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -33721,7 +33743,7 @@
         "type": "int",
         "desc": "set how many frames to overlap for each render (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -33729,7 +33751,7 @@
         "type": "int",
         "desc": "set how many frames to initially pad (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       }
     ]
@@ -33982,8 +34004,8 @@
         "name": "param",
         "type": "double",
         "desc": "tonemap parameter (from DBL_MIN to DBL_MAX) (default nan)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": null
       },
       {
@@ -33991,7 +34013,7 @@
         "type": "double",
         "desc": "desaturation strength (from 0 to DBL_MAX) (default 2)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 2.0
       },
       {
@@ -33999,7 +34021,7 @@
         "type": "double",
         "desc": "signal peak override (from 0 to DBL_MAX) (default 0)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.0
       }
     ]
@@ -34016,7 +34038,7 @@
         "type": "int",
         "desc": "set the number of frames to delay input (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -34024,7 +34046,7 @@
         "type": "int",
         "desc": "set the number of frames to add after input finished (from -1 to INT_MAX) (default 0)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -34127,7 +34149,7 @@
         "type": "int",
         "desc": "do not apply transposition if the input matches the specified geometry (from 0 to INT_MAX) (default none)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": "none",
         "options": [
           {
@@ -34189,17 +34211,17 @@
         "name": "start_pts",
         "type": "int64",
         "desc": "Timestamp of the first frame that should be passed (from I64_MIN to I64_MAX) (default I64_MIN)",
-        "min": -2147483648,
-        "max": 2147483647,
-        "default": "I64_MIN"
+        "min": -2000,
+        "max": 2000,
+        "default": -2000
       },
       {
         "name": "end_pts",
         "type": "int64",
         "desc": "Timestamp of the first frame that should be dropped again (from I64_MIN to I64_MAX) (default I64_MIN)",
-        "min": -2147483648,
-        "max": 2147483647,
-        "default": "I64_MIN"
+        "min": -2000,
+        "max": 2000,
+        "default": -2000
       },
       {
         "name": "duration",
@@ -34221,17 +34243,17 @@
         "name": "start_frame",
         "type": "int64",
         "desc": "Number of the first frame that should be passed to the output (from -1 to I64_MAX) (default -1)",
-        "min": "-1",
-        "max": 2147483647,
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "end_frame",
         "type": "int64",
         "desc": "Number of the first frame that should be dropped again (from 0 to I64_MAX) (default I64_MAX)",
-        "min": "0",
-        "max": 2147483647,
-        "default": 2147483647
+        "min": 0,
+        "max": 2000,
+        "default": 2000
       }
     ]
   },
@@ -35065,7 +35087,7 @@
         "type": "float",
         "desc": "set filtering strength (from 0 to DBL_MAX) (default 2)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 2.0
       },
       {
@@ -35756,7 +35778,7 @@
         "type": "rational",
         "desc": "set aspect ratio (from 0 to DBL_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       }
     ]
@@ -35790,7 +35812,7 @@
         "type": "int",
         "desc": "set number of inputs (from 2 to INT_MAX) (default 2)",
         "min": 2,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -36756,7 +36778,7 @@
         "type": "int",
         "desc": "set number of inputs (from 2 to INT_MAX) (default 2)",
         "min": 2,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -36880,7 +36902,7 @@
         "type": "int",
         "desc": "set window radius (from 0 to INT_MAX) (default 3)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 3
       },
       {
@@ -36888,7 +36910,7 @@
         "type": "int",
         "desc": "set window radius (from 0 to INT_MAX) (default 3)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 3
       },
       {
@@ -36912,7 +36934,7 @@
         "type": "int",
         "desc": "set blur strength (from 1 to INT_MAX) (default 128)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 128
       },
       {
@@ -36920,7 +36942,7 @@
         "type": "int",
         "desc": "set blur strength (from 1 to INT_MAX) (default 128)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 128
       }
     ]
@@ -37034,7 +37056,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       }
     ]
@@ -37083,7 +37105,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       }
     ]
@@ -37187,17 +37209,17 @@
         "name": "random_seed",
         "type": "int64",
         "desc": "set the seed for filling the initial grid randomly (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "seed",
         "type": "int64",
         "desc": "set the seed for filling the initial grid randomly (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "scroll",
@@ -37309,7 +37331,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       }
     ]
@@ -37358,7 +37380,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       },
       {
@@ -37449,7 +37471,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       },
       {
@@ -37584,7 +37606,7 @@
         "type": "int",
         "desc": "set gradient line source x0 (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -37592,7 +37614,7 @@
         "type": "int",
         "desc": "set gradient line source y0 (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -37600,7 +37622,7 @@
         "type": "int",
         "desc": "set gradient line destination x1 (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -37608,7 +37630,7 @@
         "type": "int",
         "desc": "set gradient line destination y1 (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -37631,9 +37653,9 @@
         "name": "seed",
         "type": "int64",
         "desc": "set the seed (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "duration",
@@ -37765,7 +37787,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       }
     ]
@@ -37853,17 +37875,17 @@
         "name": "random_seed",
         "type": "int64",
         "desc": "set the seed for filling the initial grid randomly (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "seed",
         "type": "int64",
         "desc": "set the seed for filling the initial grid randomly (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "stitch",
@@ -37951,7 +37973,7 @@
         "type": "int",
         "desc": "set max iterations number (from 1 to INT_MAX) (default 7189)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 7189
       },
       {
@@ -37975,7 +37997,7 @@
         "type": "double",
         "desc": "set the initial scale value (from 0 to FLT_MAX) (default 3)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 3.0
       },
       {
@@ -37983,7 +38005,7 @@
         "type": "double",
         "desc": "set the terminal scale value (from 0 to FLT_MAX) (default 0.3)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 0.3
       },
       {
@@ -37991,7 +38013,7 @@
         "type": "double",
         "desc": "set the terminal pts value (from 0 to I64_MAX) (default 400)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 400.0
       },
       {
@@ -37999,31 +38021,31 @@
         "type": "double",
         "desc": "set the bailout value (from 0 to FLT_MAX) (default 10)",
         "min": 0.0,
-        "max": 2147483647.0,
+        "max": 2000.0,
         "default": 10.0
       },
       {
         "name": "morphxf",
         "type": "double",
         "desc": "set morph x frequency (from -FLT_MAX to FLT_MAX) (default 0.01)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 0.01
       },
       {
         "name": "morphyf",
         "type": "double",
         "desc": "set morph y frequency (from -FLT_MAX to FLT_MAX) (default 0.0123)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 0.0123
       },
       {
         "name": "morphamp",
         "type": "double",
         "desc": "set morph amplitude (from -FLT_MAX to FLT_MAX) (default 0)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 0.0
       },
       {
@@ -38031,7 +38053,7 @@
         "type": "int",
         "desc": "set outer coloring mode (from 0 to INT_MAX) (default normalized_iteration_count)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": "normalized_iteration_count",
         "options": [
           {
@@ -38057,7 +38079,7 @@
         "type": "int",
         "desc": "set inner coloring mode (from 0 to INT_MAX) (default mincol)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": "mincol",
         "options": [
           {
@@ -38124,7 +38146,7 @@
         "type": "int",
         "desc": "set test to perform (from 0 to INT_MAX) (default all)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": "all",
         "options": [
           {
@@ -38178,7 +38200,7 @@
         "type": "int",
         "desc": "set test to perform (from 0 to INT_MAX) (default all)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": "all",
         "options": [
           {
@@ -38231,17 +38253,17 @@
         "name": "max_frames",
         "type": "int64",
         "desc": "Set the maximum number of frames generated for each test (from 1 to I64_MAX) (default 30)",
-        "min": "1",
-        "max": 2147483647,
-        "default": "30"
+        "min": 1,
+        "max": 2000,
+        "default": 30
       },
       {
         "name": "m",
         "type": "int64",
         "desc": "Set the maximum number of frames generated for each test (from 1 to I64_MAX) (default 30)",
-        "min": "1",
-        "max": 2147483647,
-        "default": "30"
+        "min": 1,
+        "max": 2000,
+        "default": 30
       }
     ]
   },
@@ -38305,7 +38327,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       }
     ]
@@ -38370,7 +38392,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       }
     ]
@@ -38435,7 +38457,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       }
     ]
@@ -38500,7 +38522,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       },
       {
@@ -38564,9 +38586,9 @@
         "name": "seed",
         "type": "int64",
         "desc": "set the seed (from -1 to UINT32_MAX) (default -1)",
-        "min": "-1",
-        "max": "UINT32_MAX",
-        "default": "-1"
+        "min": -1,
+        "max": 2000,
+        "default": -1
       },
       {
         "name": "jump",
@@ -38656,7 +38678,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       }
     ]
@@ -38721,7 +38743,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       }
     ]
@@ -38786,7 +38808,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       },
       {
@@ -38867,7 +38889,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       },
       {
@@ -38940,7 +38962,7 @@
         "type": "rational",
         "desc": "set video sample aspect ratio (from 0 to INT_MAX) (default 1/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "1/1"
       }
     ]
@@ -39120,16 +39142,16 @@
         "name": "min",
         "type": "float",
         "desc": "set minimal value (from INT_MIN to INT_MAX) (default -1)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": -1.0
       },
       {
         "name": "max",
         "type": "float",
         "desc": "set maximal value (from INT_MIN to INT_MAX) (default 1)",
-        "min": -2147483648.0,
-        "max": 2147483647.0,
+        "min": -2000.0,
+        "max": 2000.0,
         "default": 1.0
       },
       {
@@ -40006,7 +40028,7 @@
         "type": "int",
         "desc": "specify the number of segments (from 1 to INT_MAX) (default 2)",
         "min": 1,
-        "max": 2147483647,
+        "max": 2000,
         "default": 2
       },
       {
@@ -40014,7 +40036,7 @@
         "type": "int",
         "desc": "specify the number of video streams (from 0 to INT_MAX) (default 1)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       },
       {
@@ -40022,7 +40044,7 @@
         "type": "int",
         "desc": "specify the number of audio streams (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -40087,7 +40109,7 @@
         "type": "int",
         "desc": "set bargraph height (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -40095,7 +40117,7 @@
         "type": "int",
         "desc": "set axis height (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -40103,7 +40125,7 @@
         "type": "int",
         "desc": "set sonogram height (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -40311,7 +40333,7 @@
         "type": "int",
         "desc": "set color space (from 0 to INT_MAX) (default unspecified)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": "unspecified",
         "options": [
           {
@@ -40582,7 +40604,7 @@
         "type": "int",
         "desc": "set time averaging (from 0 to INT_MAX) (default 1)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       },
       {
@@ -40615,7 +40637,7 @@
         "name": "minamp",
         "type": "float",
         "desc": "set minimum amplitude (from FLT_MIN to 1e-06) (default 1e-06)",
-        "min": -2147483648.0,
+        "min": -2000.0,
         "max": 1e-06,
         "default": 1e-06
       },
@@ -41166,7 +41188,7 @@
         "type": "int",
         "desc": "start frequency (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -41174,7 +41196,7 @@
         "type": "int",
         "desc": "stop frequency (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -41535,7 +41557,7 @@
         "type": "int",
         "desc": "start frequency (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -41543,7 +41565,7 @@
         "type": "int",
         "desc": "stop frequency (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -41793,7 +41815,7 @@
         "type": "int",
         "desc": "set how many samples to show in the same point (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -41989,7 +42011,7 @@
         "type": "int",
         "desc": "set sample rate (from 15 to INT_MAX) (default 44100)",
         "min": 15,
-        "max": 2147483647,
+        "max": 2000,
         "default": 44100
       },
       {
@@ -42367,7 +42389,7 @@
         "type": "int",
         "desc": "set stream index (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -42375,7 +42397,7 @@
         "type": "int",
         "desc": "set stream index (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -42415,7 +42437,7 @@
         "type": "int",
         "desc": "set loop count (from 0 to INT_MAX) (default 1)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       },
       {
@@ -42431,7 +42453,7 @@
         "type": "int",
         "desc": "set the number of threads for decoding (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -42480,7 +42502,7 @@
         "type": "int",
         "desc": "set stream index (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -42488,7 +42510,7 @@
         "type": "int",
         "desc": "set stream index (from -1 to INT_MAX) (default -1)",
         "min": -1,
-        "max": 2147483647,
+        "max": 2000,
         "default": -1
       },
       {
@@ -42528,7 +42550,7 @@
         "type": "int",
         "desc": "set loop count (from 0 to INT_MAX) (default 1)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 1
       },
       {
@@ -42544,7 +42566,7 @@
         "type": "int",
         "desc": "set the number of threads for decoding (from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -42583,7 +42605,7 @@
         "type": "rational",
         "desc": "(from 0 to INT_MAX) (default 0/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "0/1"
       },
       {
@@ -42591,7 +42613,7 @@
         "type": "int",
         "desc": "(from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -42615,7 +42637,7 @@
         "type": "int",
         "desc": "(from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       }
     ]
@@ -42632,7 +42654,7 @@
         "type": "int",
         "desc": "(from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -42648,7 +42670,7 @@
         "type": "int",
         "desc": "(from 0 to INT_MAX) (default 0)",
         "min": 0,
-        "max": 2147483647,
+        "max": 2000,
         "default": 0
       },
       {
@@ -42664,7 +42686,7 @@
         "type": "rational",
         "desc": "sample aspect ratio (from 0 to DBL_MAX) (default 0/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "0/1"
       },
       {
@@ -42672,7 +42694,7 @@
         "type": "rational",
         "desc": "sample aspect ratio (from 0 to DBL_MAX) (default 0/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "0/1"
       },
       {
@@ -42680,7 +42702,7 @@
         "type": "rational",
         "desc": "(from 0 to DBL_MAX) (default 0/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "0/1"
       },
       {
@@ -42688,7 +42710,7 @@
         "type": "rational",
         "desc": "(from 0 to DBL_MAX) (default 0/1)",
         "min": "0",
-        "max": 2147483647,
+        "max": 2000,
         "default": "0/1"
       }
     ]

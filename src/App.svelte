@@ -37,15 +37,21 @@
 
     try {
       if (log.trim() != "") log += "\n\n";
+
       for (let vid of $inputs) {
         await ffmpeg.writeFile(vid.name, await fetchFile("/" + vid.name));
       }
-      const command = "-hide_banner -loglevel error" + $previewCommand;
-      let clist = command
-        .replaceAll('"', "")
-        .replace("ffmpeg", "")
-        .split(" ")
-        .filter((i) => i.trim() != "");
+
+			const fontNames = [...new Set([...$previewCommand.join(" ").matchAll(/\W([a-z]+\.ttf)/g)].map(f => f[1]))];
+
+			for (let f of fontNames) {
+        await ffmpeg.writeFile(f, await fetchFile("/" + f));
+			}
+
+			let clist = [...$previewCommand];
+			clist.shift() // remove "ffmpeg" from start of command
+			clist.unshift("-hide_banner", "-loglevel", "error")
+			clist = clist.map(c => c.replaceAll('"', ""));
       if (outname.endsWith("mp4")) {
         clist.splice(clist.length - 1, 0, "-pix_fmt");
         clist.splice(clist.length - 1, 0, "yuv420p");
@@ -135,7 +141,7 @@
         readonly
         class="actual-command"
         bind:this={commandRef}
-        on:click={() => commandRef.select()}>{$previewCommand}</textarea
+        on:click={() => commandRef.select()}>{$previewCommand.join(" ")}</textarea
       >
     </div>
   </section>

@@ -51,13 +51,13 @@ describe("Filter param builder", () => {
 
 describe("Command builder", () => {
 	test("Defaults", () => {
-		expect(get(previewCommand)).toBe("ffmpeg -i punch.mp4 out.mp4");
+		expect(get(previewCommand).join(" ")).toBe("ffmpeg -i punch.mp4 out.mp4");
 	});
 
 	test("Simple video filter", () => {
 		resetNodes();
 		addNode({ name: "filter", type: "V->V" }, "filter");
-		expect(get(previewCommand)).toBe(
+		expect(get(previewCommand).join(" ")).toBe(
 			`ffmpeg -i punch.mp4 -filter_complex "[0:v]filter[out_v]" -map "[out_v]" -map 0:a out.mp4`
 		);
 	});
@@ -65,7 +65,7 @@ describe("Command builder", () => {
 	test("Simple audio filter", () => {
 		resetNodes();
 		addNode({ name: "filter", type: "A->A" }, "filter");
-		expect(get(previewCommand)).toBe(
+		expect(get(previewCommand).join(" ")).toBe(
 			`ffmpeg -i punch.mp4 -filter_complex "[0:a]filter[out_a]" -map "[out_a]" -map 0:v out.mp4`
 		);
 	});
@@ -74,7 +74,7 @@ describe("Command builder", () => {
 		resetNodes();
 		addNode({ name: "afilter", type: "A->A" }, "filter");
 		addNode({ name: "vfilter", type: "V->V" }, "filter");
-		expect(get(previewCommand)).toBe(
+		expect(get(previewCommand).join(" ")).toBe(
 			`ffmpeg -i punch.mp4 -filter_complex "[0:a]afilter[out_a];[0:v]vfilter[out_v]" -map "[out_a]" -map "[out_v]" out.mp4`
 		);
 	});
@@ -84,7 +84,7 @@ describe("Command builder", () => {
 		addNode({ name: "vfilter", type: "V->V" }, "filter");
 		addNode({ name: "vfilter2", type: "V->V" }, "filter");
 		addNode({ name: "vfilter3", type: "V->V" }, "filter");
-		expect(get(previewCommand)).toBe(
+		expect(get(previewCommand).join(" ")).toBe(
 			`ffmpeg -i punch.mp4 -filter_complex "[0:v]vfilter,vfilter2,vfilter3[out_v]" -map "[out_v]" -map 0:a out.mp4`
 		);
 	});
@@ -94,7 +94,7 @@ describe("Command builder", () => {
 		addNode({ name: "afilter", type: "A->A" }, "filter");
 		addNode({ name: "vfilter", type: "V->V" }, "filter");
 		addNode({ name: "vfilter2", type: "V->V" }, "filter");
-		expect(get(previewCommand)).toBe(
+		expect(get(previewCommand).join(" ")).toBe(
 			`ffmpeg -i punch.mp4 -filter_complex "[0:v]vfilter[1];[0:a]afilter[out_a];[1]vfilter2[out_v]" -map "[out_a]" -map "[out_v]" out.mp4`
 		);
 	});

@@ -169,7 +169,7 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
 		finalCommand.push(out.data.name);
 	}
 
-	return finalCommand.join(" ");
+	return finalCommand;
 });
 
 export const inputs = derived(nodes, ($nodes) => {

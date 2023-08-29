@@ -2,6 +2,29 @@ import json
 import re
 from subprocess import run
 
+MAXES = ["INT_MAX", "FLT_MAX", "DBL_MAX", "I64_MAX", "UINT32_MAX"]
+
+MINS = [
+    "INT_MIN",
+    "FLT_MIN",
+    "DBL_MIN",
+    "-DBL_MAX",
+    "I64_MIN",
+    "-FLT_MAX",
+]
+
+OPTION_OVERRIDES = {
+    "drawtext": {
+        "fontfile": [
+            {"value": "", "desc": ""},
+            {"value": "times.ttf", "desc": "Times"},
+            {"value": "arial.ttf", "desc": "Arial"},
+            {"value": "courier.ttf", "desc": "Courier"},
+            {"value": "comic.ttf", "desc": "Comic Sans"},
+        ]
+    }
+}
+
 
 def get_names():
     filters = []
@@ -68,30 +91,17 @@ def get_params(f):
 
             params.append(item)
 
-            if item.get("max", 0) in ["INT_MAX", "FLT_MAX", "DBL_MAX", "I64_MAX"]:
-                item["max"] = 2147483647
+            if item.get("max", 0) in MAXES:
+                item["max"] = 2000
 
-            if item.get("min", 0) in [
-                "INT_MIN",
-                "FLT_MIN",
-                "DBL_MIN",
-                "-DBL_MAX",
-                "I64_MIN",
-                "-FLT_MAX",
-            ]:
-                item["min"] = -2147483648
+            if item.get("min", 0) in MINS:
+                item["min"] = -2000
 
-            if item.get("default", 0) in ["INT_MAX", "FLT_MAX", "DBL_MAX", "I64_MAX"]:
-                item["default"] = 2147483647
+            if item.get("default", 0) in MAXES:
+                item["default"] = 2000
 
-            if item.get("default", 0) in [
-                "INT_MIN",
-                "FLT_MIN",
-                "DBL_MIN",
-                "-DBL_MAX",
-                "I64_MAX",
-            ]:
-                item["default"] = -2147483648
+            if item.get("default", 0) in MINS:
+                item["default"] = -2000
 
             if item["default"] == "nan":
                 item["default"] = None
@@ -102,7 +112,7 @@ def get_params(f):
                 if item["default"]:
                     item["default"] = float(item["default"])
 
-            if item["type"] == "int":
+            if item["type"] in ["int", "int64", "int32"]:
                 try:
                     item["min"] = int(item["min"])
                     item["max"] = int(item["max"])
@@ -121,6 +131,13 @@ def get_params(f):
             params[-1]["options"].append(item)
 
     f["params"] = params
+
+    if f["name"] in OPTION_OVERRIDES:
+        for key, val in OPTION_OVERRIDES[f["name"]].items():
+            for p in f["params"]:
+                if p["name"] == key:
+                    p["options"] = val
+                    p["default"] = val[0]["value"]
 
     return f
 
