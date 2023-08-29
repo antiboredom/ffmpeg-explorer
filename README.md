@@ -32,6 +32,7 @@ npm run dev
 - [x] Use commas to separate filters when possible
 - [x] Include some default fonts so text works.
 - [x] Allow gif as output
+- [ ] Add more tests!
 - [ ] MAYBE allow users to upload their own videos
 - [ ] MAYBE make each part of the output command clickable, to highlight the corresponding nodes
 - [ ] MAYBE add previews in the filter list itself
