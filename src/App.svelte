@@ -100,7 +100,7 @@
         <li>Add filters from the list on the left.</li>
         <li>Click on filters in the center panel to edit options.</li>
         <li>Hit "render" to preview the output in browser.</li>
-        <li>For more complex filtergraphs, disable "automatic layout."</li>
+        <li>To edit the graph, disable "automatic layout."</li>
       </ol>
       <p>
         Note: this is a work in progress, many things may still be broken! If it hangs/crashes
