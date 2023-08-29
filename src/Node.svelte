@@ -1,12 +1,24 @@
 <script lang="ts">
   import { Handle, Position } from "@xyflow/svelte";
-  import { removeNode } from "./stores.js";
+  import { removeNode, nodes, INPUTNAMES, OUTPUTNAMES } from "./stores.js";
 
-  export let data = { nodeType: "", name: "", inputs: [], outputs: [] };
+  export let data = { ext: "", nodeType: "", name: "", inputs: [], outputs: [] };
   export let id;
 
   function remove() {
     removeNode(id);
+  }
+
+  function changeFile() {
+    const newFile = OUTPUTNAMES.find((n) => n.name === data.name);
+    data.inputs = [...newFile.inputs];
+    data.outputs = [...newFile.outputs];
+    data.ext = newFile.ext;
+    data = data;
+
+		// hack to deselect node and apply changes on chrome
+		$nodes.find(n => n.id === id).selected = false;
+		$nodes = $nodes
   }
 </script>
 
@@ -20,8 +32,15 @@
   <div class="body">
     {#if data.nodeType == "input"}
       <select bind:value={data.name}>
-        <option value="punch.mp4">punch.mp4</option>
-        <option value="shoe.mp4">shoe.mp4</option>
+        {#each INPUTNAMES as inp}
+          <option value={inp.name}>{inp.name}</option>
+        {/each}
+      </select>
+    {:else if data.nodeType == "output"}
+      <select bind:value={data.name} on:change={changeFile}>
+        {#each OUTPUTNAMES as out}
+          <option value={out.name}>{out.name}</option>
+        {/each}
       </select>
     {:else}
       {data.name}

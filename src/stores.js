@@ -6,8 +6,18 @@ export const edges = writable([]);
 export const auto = writable(true);
 export const selectedFilter = writable();
 
-addNode({ name: "punch.mp4" }, "input");
-addNode({ name: "out.mp4" }, "output");
+export const INPUTNAMES = [
+	{name: "punch.mp4", ext: "mp4", outputs: ["v", "a"], inputs: []},
+	{name: "shoe.mp4", ext: "mp4", outputs: ["v", "a"], inputs: []}
+];
+
+export const OUTPUTNAMES = [
+	{name: "out.mp4", ext: "mp4", inputs: ["v", "a"], outputs: []},
+	{name: "out.gif", ext: "gif", inputs: ["v"], outputs: []}
+];
+
+addNode({...INPUTNAMES[0]}, "input");
+addNode({...OUTPUTNAMES[0]}, "output");
 
 export function makeFilterArgs(f) {
 	let fCommand = f.name;
@@ -164,6 +174,10 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
 
 export const inputs = derived(nodes, ($nodes) => {
 	return $nodes.filter((n) => n.nodeType === "input").map((n) => n.data);
+});
+
+export const outputs = derived(nodes, ($nodes) => {
+	return $nodes.filter((n) => n.nodeType === "output").map((n) => n.data);
 });
 
 nodes.subscribe(($nodes) => {

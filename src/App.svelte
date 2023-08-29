@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { selectedFilter, nodes, inputs, previewCommand } from "./stores.js";
+  import { selectedFilter, nodes, inputs, outputs, previewCommand } from "./stores.js";
   import Filter from "./Filter.svelte";
   import FilterPicker from "./FilterPicker.svelte";
   import Graph from "./Graph.svelte";
@@ -32,6 +32,9 @@
     renderProgress = 0;
     videoValue = null;
     rendering = true;
+
+    const outname = $outputs[0].name;
+
     try {
       if (log.trim() != "") log += "\n\n";
       for (let vid of $inputs) {
@@ -43,10 +46,12 @@
         .replace("ffmpeg", "")
         .split(" ")
         .filter((i) => i.trim() != "");
-      clist.splice(clist.length - 1, 0, "-pix_fmt");
-      clist.splice(clist.length - 1, 0, "yuv420p");
+      if (outname.endsWith("mp4")) {
+        clist.splice(clist.length - 1, 0, "-pix_fmt");
+        clist.splice(clist.length - 1, 0, "yuv420p");
+      }
       await ffmpeg.exec(clist, TIMEOUT);
-      const data = await ffmpeg.readFile("out.mp4");
+      const data = await ffmpeg.readFile(outname);
       rendering = false;
       videoValue = URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }));
     } catch (e) {
@@ -151,7 +156,11 @@
           <span>Rendering...{(renderProgress * 100).toFixed(2)}%</span>
         </div>
       {/if}
-      <video bind:this={vidPlayerRef} controls src={videoValue} />
+      {#if $outputs[0].name.endsWith("gif") && videoValue && !videoValue.endsWith("mp4")}
+        <img src={videoValue} />
+      {:else}
+        <video bind:this={vidPlayerRef} controls src={videoValue} />
+      {/if}
     </div>
     <div style="text-align: right;padding-top:5px;">
       <button on:click={render} disabled={!ffmpegLoaded || rendering}>
@@ -230,11 +239,15 @@
     justify-content: stretch;
   }
 
-  .preview video {
+  .preview video,
+  .preview img {
     width: 100%;
     background-color: #000;
-    /* object-fit: contain; */
     flex: 1;
+  }
+
+  .preview img {
+    object-fit: contain;
   }
 
   .vid-holder {
