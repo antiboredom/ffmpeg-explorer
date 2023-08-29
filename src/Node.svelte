@@ -53,7 +53,7 @@
     position={Position.Left}
     id={inp + "_" + index}
     class="handle {inp}"
-    style="top: {index * 12 + 4}px; left: -8px;">{inp}</Handle
+    style="top: {index * 12 + 4}px; left: -13px;">{inp}</Handle
   >
 {/each}
 {#each data.outputs as out, index}
@@ -62,17 +62,20 @@
     id={out + "_" + index}
     position={Position.Right}
     class="handle {out}"
-    style="top: {index * 12 + 4}px; right: -18px; left: auto;">{out}</Handle
+    style="top: {index * 12 + 4}px; right: -13px; left: auto;">{out}</Handle
   >
 {/each}
 
 <style>
   :global(:root) {
+    --edge-stroke-default: var(--b1) !important;
+    --edge-stroke: var(--b1) !important;
     --edge-color: var(--b1) !important;
     --edge-color-selected: black;
   }
   :global(.svelte-flow__node) {
     box-shadow: 2px 2px 0px var(--b2);
+		background-color: #fff;
   }
   :global(.svelte-flow__node.selected) {
     outline: 1px solid var(--b1) !important;
@@ -85,6 +88,7 @@
     background-color: white !important;
     font-size: 10px;
     line-height: 6px;
+		text-align: center;
   }
   :global(.handle.a) {
     /* border: 1px solid var(--b2) !important; */

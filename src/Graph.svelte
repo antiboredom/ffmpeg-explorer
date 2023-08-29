@@ -7,6 +7,7 @@
     Background,
     BackgroundVariant,
   } from "@xyflow/svelte";
+	import '@xyflow/svelte/dist/style.css';
   import Node from "./Node.svelte";
   import FitComp from "./FitComp.svelte";
   import ButtonEdge from "./ButtonEdge.svelte";
@@ -46,12 +47,14 @@
     <div class="flow">
       <div style="height: 100%; width: 100%">
         <SvelteFlow
-          nodesConnectable={!auto}
-          panOnDrag={!auto}
-          edgesUpdatable={!auto}
+					nodesDraggable={!$auto}
+          nodesConnectable={!$auto}
+          panOnDrag={!$auto}
+          edgesUpdatable={!$auto}
           connectOnClick={true}
-          nodesFocusable={!auto}
-          edgesFocusable={!auto}
+          nodesFocusable={!$auto}
+          edgesFocusable={!$auto}
+					zoomOnScroll={!$auto}
           deleteKey={0}
           on:nodeclick={onClick}
           {nodeTypes}
