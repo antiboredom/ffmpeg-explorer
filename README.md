@@ -2,6 +2,8 @@
 
 A work in progress web tool to explore FFmpeg. Please log [issues/suggestions](https://github.com/antiboredom/ffmpeg-explorer/issues). Made with [svelte](https://svelte.dev/), [xyflow](https://github.com/wbkd/react-flow/tree/xyflow), and [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm).
 
+Contributions are welcome! Take a look at the todo list below if you'd like to add a new feature, or the issues page if you want to try to fix a bug.
+
 To run in dev mode:
 
 ```bash
