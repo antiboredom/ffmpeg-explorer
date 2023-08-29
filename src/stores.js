@@ -36,8 +36,10 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
 	const inputEdges = $edges.filter((e) => inputIds.includes(e.source));
 	const outputs = $nodes.filter((n) => n.nodeType === "output");
 
+	// create edge labels for each input
 	inputs.forEach((inp, i) => (inputIdMap[inp.id] = i));
 
+	// create edge labels for each filter
 	function traverseEdges(edg, type) {
 		const outEdges = $edges.filter((e) => e.source === edg.target && e.sourceHandle.includes(type));
 
