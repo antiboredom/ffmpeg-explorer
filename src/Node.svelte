@@ -11,6 +11,12 @@
     removeNode(id);
   }
 
+	function resetNode() {
+		// hack to deselect node and apply changes on chrome
+		$nodes.find(n => n.id === id).selected = false;
+		$nodes = $nodes
+	}
+
   function changeFile() {
     const newFile = OUTPUTNAMES.find((n) => n.name === data.name);
     data.inputs = [...newFile.inputs];
@@ -18,9 +24,7 @@
     data.ext = newFile.ext;
     data = data;
 
-		// hack to deselect node and apply changes on chrome
-		$nodes.find(n => n.id === id).selected = false;
-		$nodes = $nodes
+		resetNode();
   }
 </script>
 
@@ -33,7 +37,7 @@
   </div>
   <div class="body">
     {#if data.nodeType == "input"}
-      <select bind:value={data.name}>
+      <select bind:value={data.name} on:change={resetNode}>
         {#each INPUTNAMES as inp}
           <option value={inp.name}>{inp.name}</option>
         {/each}
