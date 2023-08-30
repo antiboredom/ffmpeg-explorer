@@ -2,6 +2,8 @@
 
 A work in progress web tool to explore FFmpeg. Please log [issues/suggestions](https://github.com/antiboredom/ffmpeg-explorer/issues). Made with [svelte](https://svelte.dev/), [xyflow](https://github.com/wbkd/react-flow/tree/xyflow), and [ffmpeg.wasm](https://github.com/ffmpegwasm/ffmpeg.wasm).
 
+Contributions are welcome! Take a look at the todo list below if you'd like to add a new feature, or the issues page if you want to try to fix a bug.
+
 To run in dev mode:
 
 ```bash
@@ -11,7 +13,6 @@ npm run dev
 
 ## Known Issues
 
-- Combining audio and video filters can fail
 - Rendering on chrome doesn't work in multi-threading mode (it seems to fail on mp4s)
 
 ## Todo
@@ -31,6 +32,7 @@ npm run dev
 - [x] Use commas to separate filters when possible
 - [x] Include some default fonts so text works.
 - [x] Allow gif as output
+- [ ] Add more tests!
 - [ ] MAYBE allow users to upload their own videos
 - [ ] MAYBE make each part of the output command clickable, to highlight the corresponding nodes
 - [ ] MAYBE add previews in the filter list itself
