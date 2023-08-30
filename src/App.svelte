@@ -1,6 +1,15 @@
 <script>
   import { onMount } from "svelte";
-  import { selectedFilter, nodes, inputs, outputs, previewCommand } from "./stores.js";
+  import {
+    selectedFilter,
+    nodes,
+    inputs,
+    outputs,
+    auto,
+    addNode,
+    inputNames,
+    previewCommand,
+  } from "./stores.js";
   import Filter from "./Filter.svelte";
   import FilterPicker from "./FilterPicker.svelte";
   import Graph from "./Graph.svelte";
@@ -9,9 +18,7 @@
 
   const isChrome = navigator.userAgent.match(/chrome|chromium|crios/i);
   const baseURL = `https://unpkg.com/@ffmpeg/core${!isChrome ? "-mt" : ""}@0.12.2/dist/esm`;
-  // const baseURL = "";
   const TIMEOUT = 40000;
-
   const ffmpeg = new FFmpeg();
 
   let videoValue = "/" + $inputs[0].name;
@@ -22,6 +29,18 @@
   let commandRef;
   let vidPlayerRef;
   let renderProgress = 0;
+  let fileinput;
+
+  function addInput() {
+    addNode({ ...$inputNames[$inputNames.length - 1] }, "input");
+  }
+
+  async function onFileSelected(e) {
+    let vid = e.target.files[0];
+    await ffmpeg.writeFile(vid.name, await fetchFile(vid));
+    $inputNames.push({ name: vid.name, url: vid.name });
+    addInput();
+  }
 
   function copyCommand() {
     commandRef.select();
@@ -38,20 +57,18 @@
     try {
       if (log.trim() != "") log += "\n\n";
 
-      for (let vid of $inputs) {
-        await ffmpeg.writeFile(vid.name, await fetchFile("/" + vid.name));
+      const fontNames = [
+        ...new Set([...$previewCommand.join(" ").matchAll(/\W([a-z]+\.ttf)/g)].map((f) => f[1])),
+      ];
+
+      for (let f of fontNames) {
+        await ffmpeg.writeFile(f, await fetchFile("/" + f));
       }
 
-			const fontNames = [...new Set([...$previewCommand.join(" ").matchAll(/\W([a-z]+\.ttf)/g)].map(f => f[1]))];
-
-			for (let f of fontNames) {
-        await ffmpeg.writeFile(f, await fetchFile("/" + f));
-			}
-
-			let clist = [...$previewCommand];
-			clist.shift() // remove "ffmpeg" from start of command
-			clist.unshift("-hide_banner", "-loglevel", "error")
-			clist = clist.map(c => c.replaceAll('"', ""));
+      let clist = [...$previewCommand];
+      clist.shift(); // remove "ffmpeg" from start of command
+      clist.unshift("-hide_banner", "-loglevel", "error");
+      clist = clist.map((c) => c.replaceAll('"', ""));
       if (outname.endsWith("mp4")) {
         clist.splice(clist.length - 1, 0, "-pix_fmt");
         clist.splice(clist.length - 1, 0, "yuv420p");
@@ -94,6 +111,9 @@
         wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),
         workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
       });
+    }
+    for (let vid of $inputNames) {
+      await ffmpeg.writeFile(vid.name, await fetchFile(vid.url));
     }
     ffmpegLoaded = true;
   }
@@ -196,7 +216,23 @@
   </section>
 
   <section class="graph">
-    <Graph />
+    <div class="graph-holder">
+      <div class="nav">
+        <button on:click={addInput}>Add Sample Input</button>
+        <button on:click={() => fileinput.click()}>Upload File</button>
+        <input
+          type="file"
+          accept="video/*"
+          on:change={(e) => onFileSelected(e)}
+          bind:this={fileinput}
+          style="display: none;"
+        />
+        <label for="auto"
+          ><input id="auto" type="checkbox" bind:checked={$auto} />Automatic Layout</label
+        >
+      </div>
+      <Graph {fetchFile} ffmepg={ffmpeg} />
+    </div>
   </section>
 
   <section class="filter-editor">
@@ -382,6 +418,11 @@
   }
   ol li {
     margin-bottom: 5px;
+  }
+  .graph-holder {
+    flex-direction: column;
+    display: flex;
+    flex: 1;
   }
 
   @media only screen and (max-width: 1400px) {

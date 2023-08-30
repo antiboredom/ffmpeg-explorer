@@ -5,17 +5,17 @@
   export let data = { ext: "", nodeType: "", name: "", inputs: [], outputs: [] };
   export let id;
 
-	$: isSelected = $selectedFilter && $nodes[$selectedFilter] && $nodes[$selectedFilter].id === id;
+  $: isSelected = $selectedFilter && $nodes[$selectedFilter] && $nodes[$selectedFilter].id === id;
 
   function remove() {
     removeNode(id);
   }
 
-	function resetNode() {
-		// hack to deselect node and apply changes on chrome
-		$nodes.find(n => n.id === id).selected = false;
-		$nodes = $nodes
-	}
+  function resetNode() {
+    // hack to deselect node and apply changes on chrome
+    $nodes.find((n) => n.id === id).selected = false;
+    $nodes = $nodes;
+  }
 
   function changeFile() {
     const newFile = OUTPUTNAMES.find((n) => n.name === data.name);
@@ -24,7 +24,7 @@
     data.ext = newFile.ext;
     data = data;
 
-		resetNode();
+    resetNode();
   }
 </script>
 
@@ -81,7 +81,7 @@
   }
   :global(.svelte-flow__node) {
     box-shadow: 2px 2px 0px var(--b2);
-		background-color: #fff;
+    background-color: #fff;
   }
   :global(.svelte-flow__node.selected) {
     outline: 1px solid var(--b1) !important;
@@ -94,7 +94,7 @@
     background-color: white !important;
     font-size: 10px;
     line-height: 6px;
-		text-align: center;
+    text-align: center;
   }
   :global(.handle.a) {
     /* border: 1px solid var(--b2) !important; */
@@ -102,10 +102,10 @@
   .node {
     padding: 5px;
   }
-	.selected {
+  .selected {
     outline: 2px solid var(--b1);
-		background-color: var(--b2);
-	}
+    background-color: var(--b2);
+  }
   .head {
     display: flex;
     justify-content: space-between;

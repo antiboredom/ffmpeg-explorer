@@ -1,5 +1,5 @@
 <script>
-  import { addNode, nodes, edges, auto, selectedFilter } from "./stores.js";
+  import { nodes, edges, auto, selectedFilter } from "./stores.js";
   import {
     SvelteFlowProvider,
     SvelteFlow,
@@ -7,7 +7,7 @@
     Background,
     BackgroundVariant,
   } from "@xyflow/svelte";
-	import '@xyflow/svelte/dist/style.css';
+  import "@xyflow/svelte/dist/style.css";
   import Node from "./Node.svelte";
   import FitComp from "./FitComp.svelte";
   import ButtonEdge from "./ButtonEdge.svelte";
@@ -28,59 +28,41 @@
       }
     }
   }
-
-  function addInput() {
-    addNode({ name: "shoe.mp4" }, "input");
-  }
-
 </script>
 
 <SvelteFlowProvider>
-  <div class="holder">
-    <FitComp />
-    <div class="nav">
-      <button on:click={addInput}>Add Input</button>
-      <label for="auto"
-        ><input id="auto" type="checkbox" bind:checked={$auto} />Automatic Layout</label
+  <FitComp />
+  <div class="flow">
+    <div style="height: 100%; width: 100%">
+      <SvelteFlow
+        nodesDraggable={!$auto}
+        nodesConnectable={!$auto}
+        panOnDrag={!$auto}
+        edgesUpdatable={!$auto}
+        connectOnClick={true}
+        nodesFocusable={false}
+        edgesFocusable={false}
+        elementsSelectable={false}
+        nodesSelectable={!$auto}
+        zoomOnScroll={!$auto}
+        deleteKey={0}
+        multiSelectionKeyCode={null}
+        on:nodeclick={onClick}
+        {nodeTypes}
+        {edgeTypes}
+        {nodes}
+        {edges}
+        snapGrid={[10, 10]}
+        fitView
       >
-    </div>
-    <div class="flow">
-      <div style="height: 100%; width: 100%">
-        <SvelteFlow
-					nodesDraggable={!$auto}
-          nodesConnectable={!$auto}
-          panOnDrag={!$auto}
-          edgesUpdatable={!$auto}
-          connectOnClick={true}
-          nodesFocusable={false}
-          edgesFocusable={false}
-          elementsSelectable={false}
-          nodesSelectable={!$auto}
-					zoomOnScroll={!$auto}
-          deleteKey={0}
-          multiSelectionKeyCode={null}
-          on:nodeclick={onClick}
-          {nodeTypes}
-          {edgeTypes}
-          {nodes}
-          {edges}
-          snapGrid={[10, 10]}
-          fitView
-        >
-          <Controls />
-          <Background variant={BackgroundVariant.Dots} />
-        </SvelteFlow>
-      </div>
+        <Controls />
+        <Background variant={BackgroundVariant.Dots} />
+      </SvelteFlow>
     </div>
   </div>
 </SvelteFlowProvider>
 
 <style>
-  .holder {
-    flex-direction: column;
-    display: flex;
-    flex: 1;
-  }
   .flow {
     flex: 1;
     margin-top: 10px;
