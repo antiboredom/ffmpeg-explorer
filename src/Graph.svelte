@@ -52,10 +52,13 @@
           panOnDrag={!$auto}
           edgesUpdatable={!$auto}
           connectOnClick={true}
-          nodesFocusable={!$auto}
-          edgesFocusable={!$auto}
+          nodesFocusable={false}
+          edgesFocusable={false}
+          elementsSelectable={false}
+          nodesSelectable={!$auto}
 					zoomOnScroll={!$auto}
           deleteKey={0}
+          multiSelectionKeyCode={null}
           on:nodeclick={onClick}
           {nodeTypes}
           {edgeTypes}

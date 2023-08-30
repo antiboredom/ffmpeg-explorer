@@ -1,9 +1,11 @@
 <script lang="ts">
   import { Handle, Position } from "@xyflow/svelte";
-  import { removeNode, nodes, INPUTNAMES, OUTPUTNAMES } from "./stores.js";
+  import { removeNode, nodes, INPUTNAMES, OUTPUTNAMES, selectedFilter } from "./stores.js";
 
   export let data = { ext: "", nodeType: "", name: "", inputs: [], outputs: [] };
   export let id;
+
+	$: isSelected = $selectedFilter && $nodes[$selectedFilter] && $nodes[$selectedFilter].id === id;
 
   function remove() {
     removeNode(id);
@@ -22,7 +24,7 @@
   }
 </script>
 
-<div class="node {data.nodeType}">
+<div class="node {data.nodeType} {isSelected ? 'selected' : ''}">
   <div class="head">
     <div class="node-type">{data.nodeType}</div>
     {#if data.nodeType != "output"}
@@ -96,6 +98,10 @@
   .node {
     padding: 5px;
   }
+	.selected {
+    outline: 2px solid var(--b1);
+		background-color: var(--b2);
+	}
   .head {
     display: flex;
     justify-content: space-between;
