@@ -133,13 +133,13 @@
       </p>
       <ol>
         <li>Add filters from the list on the left.</li>
-        <li>Click on filters in the center panel to edit options.</li>
+        <li>Click on filters in the node editor to modify options.</li>
         <li>Hit "render" to preview the output in browser.</li>
-        <li>To edit the graph, disable "automatic layout."</li>
+        <li>To edit the graph, disable "lock layout."</li>
       </ol>
       <p>
-        Note: this is a work in progress, many things may still be broken! If it hangs/crashes
-        refresh the page. Post issues/feedback to
+        Note: work in progress, many things may be broken! Refresh if it hangs or crashes. May not work on mobile. Post
+        issues/feedback to
         <a href="https://github.com/antiboredom/ffmpeg-explorer/" target="_blank">GitHub</a>. By
         <a href="https://lav.io" target="_blank">Sam Lavigne</a>.
       </p>
@@ -226,8 +226,7 @@
           bind:this={fileinput}
           style="display: none;"
         />
-        <label for="auto"
-          ><input id="auto" type="checkbox" bind:checked={$auto} />Automatic Layout</label
+        <label for="auto"><input id="auto" type="checkbox" bind:checked={$auto} />Lock Layout</label
         >
       </div>
       <Graph {fetchFile} ffmepg={ffmpeg} />
@@ -268,6 +267,8 @@
   .header {
     grid-area: hdr;
     overflow: scroll;
+		display: flex;
+		flex-direction: column;
   }
 
   .command {
@@ -371,12 +372,12 @@
     box-shadow: none;
     resize: none;
     height: auto;
+    font: inherit;
   }
 
   .actual-command {
     border: none;
     flex: 1;
-    font: inherit;
     padding: 5px;
     height: 100%;
   }
@@ -404,6 +405,8 @@
 
   .help {
     font-size: 0.9em;
+		flex: 1;
+		overflow: scroll;
   }
   ol {
     margin: 5px 0px;
@@ -431,19 +434,22 @@
         "flt flt flt"
         "gra gra gra"
         "edt edt edt";
-      grid-gap: 5px;
+      grid-gap: 0;
       padding: 10px;
       height: auto;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto;
+      grid-template-rows: fit-content;
     }
     .graph {
-      height: 50vh;
+      height: 60vh;
     }
     .command {
       margin: 0;
       margin-bottom: 10px;
     }
+		.command, .log {
+			height: 15vh;
+		}
     section {
       box-shadow: none;
       margin-bottom: 10px;
