@@ -75,7 +75,6 @@
       }
       await ffmpeg.exec(clist, TIMEOUT);
       const data = await ffmpeg.readFile(outname);
-      rendering = false;
       videoValue = URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }));
       if (outname.endsWith("mp4")) {
         setTimeout(() => {
