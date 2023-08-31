@@ -20,6 +20,9 @@
     default: ButtonEdge,
   };
 
+  let downloadLink;
+  let savedData;
+
   function onClick(e) {
     if (e.detail.nodeType === "filter") {
       const newSelected = $nodes.findIndex((n) => n.id === e.detail.id);
@@ -28,7 +31,23 @@
       }
     }
   }
+
+  function onKey(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === "s") {
+      e.preventDefault();
+      const out = JSON.stringify({ nodes: $nodes, edges: $edges }, null, 2);
+      savedData = "data:text/json;charset=utf-8," + encodeURIComponent(out);
+      setTimeout(() => {
+        downloadLink.click();
+      }, 600);
+    }
+  }
 </script>
+
+<svelte:window on:keydown={onKey} />
+
+<a style="display:none;" download="graph.json" href={savedData} bind:this={downloadLink}>Download</a
+>
 
 <SvelteFlowProvider>
   <FitComp />
