@@ -138,8 +138,8 @@
         <li>To edit the graph, disable "lock layout."</li>
       </ol>
       <p>
-        Note: work in progress, many things may be broken! Refresh if it hangs or crashes. May not work on mobile. Post
-        issues/feedback to
+        Note: work in progress, many things may be broken! Refresh if it hangs or crashes. May not
+        work on mobile. Post issues/feedback to
         <a href="https://github.com/antiboredom/ffmpeg-explorer/" target="_blank">GitHub</a>. By
         <a href="https://lav.io" target="_blank">Sam Lavigne</a>.
       </p>
@@ -267,8 +267,8 @@
   .header {
     grid-area: hdr;
     overflow: scroll;
-		display: flex;
-		flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
 
   .command {
@@ -405,8 +405,8 @@
 
   .help {
     font-size: 0.9em;
-		flex: 1;
-		overflow: scroll;
+    flex: 1;
+    overflow: scroll;
   }
   ol {
     margin: 5px 0px;
@@ -421,10 +421,28 @@
     flex: 1;
   }
 
-  @media only screen and (max-width: 1400px) {
+  @media only screen and (max-width: 1100px) {
+    main {
+      grid-template-columns: 250px 1fr 1fr 1fr 1fr 300px;
+      grid-template-rows: 40px 15% 15% calc(35% - 25px) calc(35% - 40px);
+      grid-template-areas:
+        "hdr hdr hdr hdr hdr hdr"
+        "log log log log prv prv"
+        "cmd cmd cmd cmd prv prv"
+        "flt gra gra gra gra gra"
+        "edt gra gra gra gra gra";
+      grid-gap: 7px;
+    }
+    .header {
+      overflow: hidden;
+    }
+    section {
+      padding: 7px;
+      box-shadow: 3px 3px 0px var(--b2);
+    }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     main {
       grid-template-areas:
         "hdr hdr hdr"
@@ -438,7 +456,11 @@
       padding: 10px;
       height: auto;
       grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: fit-content;
+      grid-template-rows: auto;
+    }
+    .header {
+      overflow: scroll;
+			height: auto;
     }
     .graph {
       height: 60vh;
@@ -447,9 +469,10 @@
       margin: 0;
       margin-bottom: 10px;
     }
-		.command, .log {
-			height: 15vh;
-		}
+    .command,
+    .log {
+      height: 15vh;
+    }
     section {
       box-shadow: none;
       margin-bottom: 10px;
