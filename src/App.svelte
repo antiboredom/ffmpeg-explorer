@@ -94,6 +94,8 @@
       if (outname.endsWith("mp4")) {
         clist.splice(clist.length - 1, 0, "-pix_fmt");
         clist.splice(clist.length - 1, 0, "yuv420p");
+        clist.splice(clist.length - 1, 0, "-preset");
+        clist.splice(clist.length - 1, 0, "ultrafast");
       }
       await ffmpeg.exec(clist, TIMEOUT);
       const data = await ffmpeg.readFile(outname);
