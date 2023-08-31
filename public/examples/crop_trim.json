@@ -1,0 +1,305 @@
+{
+  "nodes": [
+    {
+      "id": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "type": "ffmpeg",
+      "data": {
+        "name": "punch.mp4",
+        "url": "/punch.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input"
+      },
+      "nodeType": "input",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 0,
+        "y": 0
+      },
+      "width": 109,
+      "height": 54
+    },
+    {
+      "id": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "type": "ffmpeg",
+      "data": {
+        "name": "out.gif",
+        "ext": "gif",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [],
+        "nodeType": "output"
+      },
+      "nodeType": "output",
+      "position": {
+        "x": 438,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 438,
+        "y": 0
+      },
+      "width": 90,
+      "height": 54,
+      "selected": false
+    },
+    {
+      "id": "e8c40a7d-ed53-49db-90d6-ffc953761550",
+      "type": "ffmpeg",
+      "data": {
+        "id": 178,
+        "meta": "..C",
+        "name": "crop",
+        "type": "V->V",
+        "description": "Crop the input video.",
+        "params": [
+          {
+            "name": "out_w",
+            "type": "string",
+            "desc": "set the width crop area expression (default \"iw\")",
+            "min": null,
+            "max": null,
+            "default": "iw",
+            "value": "iw/2"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "desc": "set the width crop area expression (default \"iw\")",
+            "min": null,
+            "max": null,
+            "default": "iw",
+            "value": "iw"
+          },
+          {
+            "name": "out_h",
+            "type": "string",
+            "desc": "set the height crop area expression (default \"ih\")",
+            "min": null,
+            "max": null,
+            "default": "ih",
+            "value": "ih"
+          },
+          {
+            "name": "h",
+            "type": "string",
+            "desc": "set the height crop area expression (default \"ih\")",
+            "min": null,
+            "max": null,
+            "default": "ih",
+            "value": "ih"
+          },
+          {
+            "name": "x",
+            "type": "string",
+            "desc": "set the x crop area expression (default \"(in_w-out_w)/2\")",
+            "min": null,
+            "max": null,
+            "default": "(in_w-out_w",
+            "value": "(in_w-out_w"
+          },
+          {
+            "name": "y",
+            "type": "string",
+            "desc": "set the y crop area expression (default \"(in_h-out_h)/2\")",
+            "min": null,
+            "max": null,
+            "default": "(in_h-out_h",
+            "value": "(in_h-out_h"
+          },
+          {
+            "name": "keep_aspect",
+            "type": "boolean",
+            "desc": "keep aspect ratio (default false)",
+            "min": null,
+            "max": null,
+            "default": "false",
+            "value": "false"
+          },
+          {
+            "name": "exact",
+            "type": "boolean",
+            "desc": "do exact cropping (default false)",
+            "min": null,
+            "max": null,
+            "default": "false",
+            "value": "false"
+          }
+        ],
+        "nodeType": "filter",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ]
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 159,
+        "y": -50
+      },
+      "positionAbsolute": {
+        "x": 159,
+        "y": -50
+      },
+      "width": 59,
+      "height": 50
+    },
+    {
+      "id": "50168839-ce90-4f5b-825f-2043bea00b1b",
+      "type": "ffmpeg",
+      "data": {
+        "id": 391,
+        "meta": "...",
+        "name": "trim",
+        "type": "V->V",
+        "description": "Pick one continuous section from the input, drop the rest.",
+        "params": [
+          {
+            "name": "start",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be passed (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "1.7"
+          },
+          {
+            "name": "starti",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be passed (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "INT64_MAX"
+          },
+          {
+            "name": "end",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be dropped again (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "INT64_MAX"
+          },
+          {
+            "name": "endi",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be dropped again (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "INT64_MAX"
+          },
+          {
+            "name": "start_pts",
+            "type": "int64",
+            "desc": "Timestamp of the first frame that should be passed (from I64_MIN to I64_MAX) (default I64_MIN)",
+            "min": -2000,
+            "max": 2000,
+            "default": -2000,
+            "value": -2000
+          },
+          {
+            "name": "end_pts",
+            "type": "int64",
+            "desc": "Timestamp of the first frame that should be dropped again (from I64_MIN to I64_MAX) (default I64_MIN)",
+            "min": -2000,
+            "max": 2000,
+            "default": -2000,
+            "value": -2000
+          },
+          {
+            "name": "duration",
+            "type": "duration",
+            "desc": "Maximum duration of the output (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "0.5"
+          },
+          {
+            "name": "durationi",
+            "type": "duration",
+            "desc": "Maximum duration of the output (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "0"
+          },
+          {
+            "name": "start_frame",
+            "type": "int64",
+            "desc": "Number of the first frame that should be passed to the output (from -1 to I64_MAX) (default -1)",
+            "min": -1,
+            "max": 2000,
+            "default": -1,
+            "value": -1
+          },
+          {
+            "name": "end_frame",
+            "type": "int64",
+            "desc": "Number of the first frame that should be dropped again (from 0 to I64_MAX) (default I64_MAX)",
+            "min": 0,
+            "max": 2000,
+            "default": 2000,
+            "value": 2000
+          }
+        ],
+        "nodeType": "filter",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ]
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 268,
+        "y": -50
+      },
+      "positionAbsolute": {
+        "x": 268,
+        "y": -50
+      },
+      "width": 59,
+      "height": 50
+    }
+  ],
+  "edges": [
+    {
+      "id": "551f3ce9-cc4c-4deb-a2d0-5354ce107967",
+      "type": "default",
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "target": "e8c40a7d-ed53-49db-90d6-ffc953761550",
+      "sourceHandle": "v_0",
+      "targetHandle": "v_0"
+    },
+    {
+      "id": "fb179506-e951-4284-816d-8a738c84551c",
+      "type": "default",
+      "source": "e8c40a7d-ed53-49db-90d6-ffc953761550",
+      "target": "50168839-ce90-4f5b-825f-2043bea00b1b",
+      "sourceHandle": "v_0",
+      "targetHandle": "v_0"
+    },
+    {
+      "id": "465f9cbe-3352-40d0-9af5-a545e228a26b",
+      "type": "default",
+      "source": "50168839-ce90-4f5b-825f-2043bea00b1b",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "sourceHandle": "v_0",
+      "targetHandle": "v_0"
+    }
+  ]
+}

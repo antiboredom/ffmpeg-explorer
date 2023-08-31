@@ -1,0 +1,373 @@
+{
+  "nodes": [
+    {
+      "id": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "type": "ffmpeg",
+      "data": {
+        "name": "punch.mp4",
+        "url": "/punch.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input"
+      },
+      "nodeType": "input",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 0,
+        "y": 0
+      },
+      "width": 109,
+      "height": 54
+    },
+    {
+      "id": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "type": "ffmpeg",
+      "data": {
+        "name": "out.mp4",
+        "ext": "mp4",
+        "inputs": [
+          "v",
+          "a"
+        ],
+        "outputs": [],
+        "nodeType": "output"
+      },
+      "nodeType": "output",
+      "position": {
+        "x": 279,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 279,
+        "y": 0
+      },
+      "width": 90,
+      "height": 54
+    },
+    {
+      "id": "845a461c-6eb0-463f-864c-5209fdf87e9a",
+      "type": "ffmpeg",
+      "data": {
+        "id": 411,
+        "meta": ".S.",
+        "name": "xfade",
+        "type": "VV->V",
+        "description": "Cross fade one video with another video.",
+        "params": [
+          {
+            "name": "transition",
+            "type": "int",
+            "desc": "set cross fade transition (from -1 to 45) (default fade)",
+            "min": -1,
+            "max": 45,
+            "default": "fade",
+            "options": [
+              {
+                "value": "custom",
+                "desc": "custom transition"
+              },
+              {
+                "value": "fade",
+                "desc": "fade transition"
+              },
+              {
+                "value": "wipeleft",
+                "desc": "wipe left transition"
+              },
+              {
+                "value": "wiperight",
+                "desc": "wipe right transition"
+              },
+              {
+                "value": "wipeup",
+                "desc": "wipe up transition"
+              },
+              {
+                "value": "wipedown",
+                "desc": "wipe down transition"
+              },
+              {
+                "value": "slideleft",
+                "desc": "slide left transition"
+              },
+              {
+                "value": "slideright",
+                "desc": "slide right transition"
+              },
+              {
+                "value": "slideup",
+                "desc": "slide up transition"
+              },
+              {
+                "value": "slidedown",
+                "desc": "slide down transition"
+              },
+              {
+                "value": "circlecrop",
+                "desc": "circle crop transition"
+              },
+              {
+                "value": "rectcrop",
+                "desc": "rect crop transition"
+              },
+              {
+                "value": "distance",
+                "desc": "distance transition"
+              },
+              {
+                "value": "fadeblack",
+                "desc": "fadeblack transition"
+              },
+              {
+                "value": "fadewhite",
+                "desc": "fadewhite transition"
+              },
+              {
+                "value": "radial",
+                "desc": "radial transition"
+              },
+              {
+                "value": "smoothleft",
+                "desc": "smoothleft transition"
+              },
+              {
+                "value": "smoothright",
+                "desc": "smoothright transition"
+              },
+              {
+                "value": "smoothup",
+                "desc": "smoothup transition"
+              },
+              {
+                "value": "smoothdown",
+                "desc": "smoothdown transition"
+              },
+              {
+                "value": "circleopen",
+                "desc": "circleopen transition"
+              },
+              {
+                "value": "circleclose",
+                "desc": "circleclose transition"
+              },
+              {
+                "value": "vertopen",
+                "desc": "vert open transition"
+              },
+              {
+                "value": "vertclose",
+                "desc": "vert close transition"
+              },
+              {
+                "value": "horzopen",
+                "desc": "horz open transition"
+              },
+              {
+                "value": "horzclose",
+                "desc": "horz close transition"
+              },
+              {
+                "value": "dissolve",
+                "desc": "dissolve transition"
+              },
+              {
+                "value": "pixelize",
+                "desc": "pixelize transition"
+              },
+              {
+                "value": "diagtl",
+                "desc": "diag tl transition"
+              },
+              {
+                "value": "diagtr",
+                "desc": "diag tr transition"
+              },
+              {
+                "value": "diagbl",
+                "desc": "diag bl transition"
+              },
+              {
+                "value": "diagbr",
+                "desc": "diag br transition"
+              },
+              {
+                "value": "hlslice",
+                "desc": "hl slice transition"
+              },
+              {
+                "value": "hrslice",
+                "desc": "hr slice transition"
+              },
+              {
+                "value": "vuslice",
+                "desc": "vu slice transition"
+              },
+              {
+                "value": "vdslice",
+                "desc": "vd slice transition"
+              },
+              {
+                "value": "hblur",
+                "desc": "hblur transition"
+              },
+              {
+                "value": "fadegrays",
+                "desc": "fadegrays transition"
+              },
+              {
+                "value": "wipetl",
+                "desc": "wipe tl transition"
+              },
+              {
+                "value": "wipetr",
+                "desc": "wipe tr transition"
+              },
+              {
+                "value": "wipebl",
+                "desc": "wipe bl transition"
+              },
+              {
+                "value": "wipebr",
+                "desc": "wipe br transition"
+              },
+              {
+                "value": "squeezeh",
+                "desc": "squeeze h transition"
+              },
+              {
+                "value": "squeezev",
+                "desc": "squeeze v transition"
+              },
+              {
+                "value": "zoomin",
+                "desc": "zoom in transition"
+              },
+              {
+                "value": "fadefast",
+                "desc": "fast fade transition"
+              },
+              {
+                "value": "fadeslow",
+                "desc": "slow fade transition"
+              }
+            ],
+            "value": "radial"
+          },
+          {
+            "name": "duration",
+            "type": "duration",
+            "desc": "set cross fade duration (default 1)",
+            "min": null,
+            "max": null,
+            "default": "1",
+            "value": "3"
+          },
+          {
+            "name": "offset",
+            "type": "duration",
+            "desc": "set cross fade start relative to first input stream (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "0"
+          },
+          {
+            "name": "expr",
+            "type": "string",
+            "desc": "set expression for custom transition",
+            "min": null,
+            "max": null,
+            "default": null,
+            "value": null
+          }
+        ],
+        "nodeType": "filter",
+        "inputs": [
+          "v",
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ]
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 170,
+        "y": -50
+      },
+      "positionAbsolute": {
+        "x": 170,
+        "y": -50
+      },
+      "width": 59,
+      "height": 50
+    },
+    {
+      "id": "abd87b6a-102f-4357-9380-986a162a6448",
+      "type": "ffmpeg",
+      "data": {
+        "name": "shoe.mp4",
+        "url": "/shoe.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input"
+      },
+      "nodeType": "input",
+      "position": {
+        "x": 0,
+        "y": 100
+      },
+      "positionAbsolute": {
+        "x": 0,
+        "y": 100
+      },
+      "width": 109,
+      "height": 54
+    }
+  ],
+  "edges": [
+    {
+      "id": "29d53c5f-1428-40a3-8be3-69b08d5e119d",
+      "type": "default",
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "target": "845a461c-6eb0-463f-864c-5209fdf87e9a",
+      "sourceHandle": "v_0",
+      "targetHandle": "v_0"
+    },
+    {
+      "id": "281b82e1-f994-4f66-b968-1cf648ac02f0",
+      "type": "default",
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "sourceHandle": "a_1",
+      "targetHandle": "a_1"
+    },
+    {
+      "id": "b73848eb-3fa1-4828-8e2c-e66b5ce61b23",
+      "type": "default",
+      "source": "845a461c-6eb0-463f-864c-5209fdf87e9a",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "sourceHandle": "v_0",
+      "targetHandle": "v_0"
+    },
+    {
+      "id": "4e833412-0ac8-4d01-878f-b3fbe0e3d257",
+      "type": "default",
+      "source": "abd87b6a-102f-4357-9380-986a162a6448",
+      "target": "845a461c-6eb0-463f-864c-5209fdf87e9a",
+      "sourceHandle": "v_0",
+      "targetHandle": "v_1"
+    }
+  ]
+}

@@ -1,0 +1,526 @@
+{
+  "nodes": [
+    {
+      "id": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "type": "ffmpeg",
+      "data": {
+        "name": "punch.mp4",
+        "url": "/punch.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input"
+      },
+      "nodeType": "input",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 0,
+        "y": 0
+      },
+      "width": 109,
+      "height": 54
+    },
+    {
+      "id": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "type": "ffmpeg",
+      "data": {
+        "name": "out.mp4",
+        "ext": "mp4",
+        "inputs": [
+          "v",
+          "a"
+        ],
+        "outputs": [],
+        "nodeType": "output"
+      },
+      "nodeType": "output",
+      "position": {
+        "x": 439,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 439,
+        "y": 0
+      },
+      "width": 90,
+      "height": 54,
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "66adb05a-5bf8-48f8-ac0c-0c8434191665",
+      "type": "ffmpeg",
+      "data": {
+        "id": 207,
+        "meta": "T.C",
+        "name": "drawtext",
+        "type": "V->V",
+        "description": "Draw text on top of video frames using libfreetype library.",
+        "params": [
+          {
+            "name": "fontfile",
+            "type": "string",
+            "desc": "set font file",
+            "min": null,
+            "max": null,
+            "default": "",
+            "options": [
+              {
+                "value": "",
+                "desc": ""
+              },
+              {
+                "value": "times.ttf",
+                "desc": "Times"
+              },
+              {
+                "value": "arial.ttf",
+                "desc": "Arial"
+              },
+              {
+                "value": "courier.ttf",
+                "desc": "Courier"
+              },
+              {
+                "value": "comic.ttf",
+                "desc": "Comic Sans"
+              }
+            ],
+            "value": "comic.ttf"
+          },
+          {
+            "name": "text",
+            "type": "string",
+            "desc": "set text",
+            "min": null,
+            "max": null,
+            "default": null,
+            "value": "LOL"
+          },
+          {
+            "name": "textfile",
+            "type": "string",
+            "desc": "set text file",
+            "min": null,
+            "max": null,
+            "default": null,
+            "value": null
+          },
+          {
+            "name": "fontcolor",
+            "type": "color",
+            "desc": "set foreground color (default \"black\")",
+            "min": null,
+            "max": null,
+            "default": "black",
+            "value": "red"
+          },
+          {
+            "name": "fontcolor_expr",
+            "type": "string",
+            "desc": "set foreground color expression (default \"\")",
+            "min": null,
+            "max": null,
+            "default": "",
+            "value": ""
+          },
+          {
+            "name": "boxcolor",
+            "type": "color",
+            "desc": "set box color (default \"white\")",
+            "min": null,
+            "max": null,
+            "default": "white",
+            "value": "white"
+          },
+          {
+            "name": "bordercolor",
+            "type": "color",
+            "desc": "set border color (default \"black\")",
+            "min": null,
+            "max": null,
+            "default": "black",
+            "value": "white"
+          },
+          {
+            "name": "shadowcolor",
+            "type": "color",
+            "desc": "set shadow color (default \"black\")",
+            "min": null,
+            "max": null,
+            "default": "black",
+            "value": "black"
+          },
+          {
+            "name": "box",
+            "type": "boolean",
+            "desc": "set box (default false)",
+            "min": null,
+            "max": null,
+            "default": "false",
+            "value": "false"
+          },
+          {
+            "name": "boxborderw",
+            "type": "int",
+            "desc": "set box border width (from INT_MIN to INT_MAX) (default 0)",
+            "min": -2000,
+            "max": 2000,
+            "default": 0,
+            "value": "3"
+          },
+          {
+            "name": "line_spacing",
+            "type": "int",
+            "desc": "set line spacing in pixels (from INT_MIN to INT_MAX) (default 0)",
+            "min": -2000,
+            "max": 2000,
+            "default": 0,
+            "value": 0
+          },
+          {
+            "name": "fontsize",
+            "type": "string",
+            "desc": "set font size",
+            "min": null,
+            "max": null,
+            "default": null,
+            "value": "100"
+          },
+          {
+            "name": "x",
+            "type": "string",
+            "desc": "set x expression (default \"0\")",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "300"
+          },
+          {
+            "name": "y",
+            "type": "string",
+            "desc": "set y expression (default \"0\")",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "150"
+          },
+          {
+            "name": "shadowx",
+            "type": "int",
+            "desc": "set shadow x offset (from INT_MIN to INT_MAX) (default 0)",
+            "min": -2000,
+            "max": 2000,
+            "default": 0,
+            "value": 0
+          },
+          {
+            "name": "shadowy",
+            "type": "int",
+            "desc": "set shadow y offset (from INT_MIN to INT_MAX) (default 0)",
+            "min": -2000,
+            "max": 2000,
+            "default": 0,
+            "value": 0
+          },
+          {
+            "name": "borderw",
+            "type": "int",
+            "desc": "set border width (from INT_MIN to INT_MAX) (default 0)",
+            "min": -2000,
+            "max": 2000,
+            "default": 0,
+            "value": "5"
+          },
+          {
+            "name": "tabsize",
+            "type": "int",
+            "desc": "set tab size (from 0 to INT_MAX) (default 4)",
+            "min": 0,
+            "max": 2000,
+            "default": 4,
+            "value": 4
+          },
+          {
+            "name": "basetime",
+            "type": "int64",
+            "desc": "set base time (from I64_MIN to I64_MAX) (default I64_MIN)",
+            "min": -2000,
+            "max": 2000,
+            "default": -2000,
+            "value": -2000
+          },
+          {
+            "name": "font",
+            "type": "string",
+            "desc": "Font name (default \"Sans\")",
+            "min": null,
+            "max": null,
+            "default": "Sans",
+            "value": "Sans"
+          },
+          {
+            "name": "expansion",
+            "type": "int",
+            "desc": "set the expansion mode (from 0 to 2) (default normal)",
+            "min": 0,
+            "max": 2,
+            "default": "normal",
+            "options": [
+              {
+                "value": "none",
+                "desc": "set no expansion"
+              },
+              {
+                "value": "normal",
+                "desc": "set normal expansion"
+              },
+              {
+                "value": "strftime",
+                "desc": "set strftime expansion (deprecated)"
+              }
+            ],
+            "value": "normal"
+          },
+          {
+            "name": "timecode",
+            "type": "string",
+            "desc": "set initial timecode",
+            "min": null,
+            "max": null,
+            "default": null,
+            "value": null
+          },
+          {
+            "name": "tc24hmax",
+            "type": "boolean",
+            "desc": "set 24 hours max (timecode only) (default false)",
+            "min": null,
+            "max": null,
+            "default": "false",
+            "value": "false"
+          },
+          {
+            "name": "timecode_rate",
+            "type": "rational",
+            "desc": "set rate (timecode only) (from 0 to INT_MAX) (default 0/1)",
+            "min": "0",
+            "max": 2000,
+            "default": "0/1",
+            "value": "0/1"
+          },
+          {
+            "name": "r",
+            "type": "rational",
+            "desc": "set rate (timecode only) (from 0 to INT_MAX) (default 0/1)",
+            "min": "0",
+            "max": 2000,
+            "default": "0/1",
+            "value": "0/1"
+          },
+          {
+            "name": "rate",
+            "type": "rational",
+            "desc": "set rate (timecode only) (from 0 to INT_MAX) (default 0/1)",
+            "min": "0",
+            "max": 2000,
+            "default": "0/1",
+            "value": "0/1"
+          },
+          {
+            "name": "reload",
+            "type": "int",
+            "desc": "reload text file at specified frame interval (from 0 to INT_MAX) (default 0)",
+            "min": 0,
+            "max": 2000,
+            "default": 0,
+            "value": 0
+          },
+          {
+            "name": "alpha",
+            "type": "string",
+            "desc": "apply alpha while rendering (default \"1\")",
+            "min": null,
+            "max": null,
+            "default": "1",
+            "value": "1"
+          },
+          {
+            "name": "fix_bounds",
+            "type": "boolean",
+            "desc": "check and fix text coords to avoid clipping (default false)",
+            "min": null,
+            "max": null,
+            "default": "false",
+            "value": "false"
+          },
+          {
+            "name": "start_number",
+            "type": "int",
+            "desc": "start frame number for n/frame_num variable (from 0 to INT_MAX) (default 0)",
+            "min": 0,
+            "max": 2000,
+            "default": 0,
+            "value": 0
+          },
+          {
+            "name": "text_source",
+            "type": "string",
+            "desc": "the source of text",
+            "min": null,
+            "max": null,
+            "default": null,
+            "value": null
+          },
+          {
+            "name": "ft_load_flags",
+            "type": "flags",
+            "desc": "set font loading flags for libfreetype (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "options": [
+              {
+                "value": "default",
+                "desc": ""
+              },
+              {
+                "value": "no_scale",
+                "desc": ""
+              },
+              {
+                "value": "no_hinting",
+                "desc": ""
+              },
+              {
+                "value": "render",
+                "desc": ""
+              },
+              {
+                "value": "no_bitmap",
+                "desc": ""
+              },
+              {
+                "value": "vertical_layout",
+                "desc": ""
+              },
+              {
+                "value": "force_autohint",
+                "desc": ""
+              },
+              {
+                "value": "crop_bitmap",
+                "desc": ""
+              },
+              {
+                "value": "pedantic",
+                "desc": ""
+              },
+              {
+                "value": "ignore_global_advance_width",
+                "desc": ""
+              },
+              {
+                "value": "no_recurse",
+                "desc": ""
+              },
+              {
+                "value": "ignore_transform",
+                "desc": ""
+              },
+              {
+                "value": "monochrome",
+                "desc": ""
+              },
+              {
+                "value": "linear_design",
+                "desc": ""
+              },
+              {
+                "value": "no_autohint",
+                "desc": ""
+              }
+            ],
+            "value": "0"
+          }
+        ],
+        "nodeType": "filter",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ]
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 190,
+        "y": -30
+      },
+      "positionAbsolute": {
+        "x": 190,
+        "y": -30
+      },
+      "width": 68,
+      "height": 50,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "a6796a9d-7fb6-494c-9545-bde5d4628eea",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-a6796a9d-7fb6-494c-9545-bde5d4628eeav_0"
+    },
+    {
+      "source": "a0798490-6c5b-4a14-82a3-a5e7da6d223b",
+      "sourceHandle": "v_0",
+      "target": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "targetHandle": "v_1",
+      "id": "xyflow__edge-a0798490-6c5b-4a14-82a3-a5e7da6d223bv_0-1623b321-0d2b-42a1-99af-bad37a146b07v_1"
+    },
+    {
+      "source": "a6796a9d-7fb6-494c-9545-bde5d4628eea",
+      "sourceHandle": "v_0",
+      "target": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-a6796a9d-7fb6-494c-9545-bde5d4628eeav_0-1623b321-0d2b-42a1-99af-bad37a146b07v_0"
+    },
+    {
+      "source": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-1623b321-0d2b-42a1-99af-bad37a146b07v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    },
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "66adb05a-5bf8-48f8-ac0c-0c8434191665",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-66adb05a-5bf8-48f8-ac0c-0c8434191665v_0"
+    },
+    {
+      "source": "66adb05a-5bf8-48f8-ac0c-0c8434191665",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-66adb05a-5bf8-48f8-ac0c-0c8434191665v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    },
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "a_1",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "a_1",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31a_1-eb32733d-28ad-4a38-9db7-50a98db5f309a_1"
+    }
+  ]
+}

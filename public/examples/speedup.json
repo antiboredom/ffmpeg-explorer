@@ -1,0 +1,156 @@
+{
+  "nodes": [
+    {
+      "id": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "type": "ffmpeg",
+      "data": {
+        "name": "punch.mp4",
+        "url": "/punch.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input"
+      },
+      "nodeType": "input",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 0,
+        "y": 0
+      },
+      "width": 109,
+      "height": 54
+    },
+    {
+      "id": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "type": "ffmpeg",
+      "data": {
+        "name": "out.mp4",
+        "ext": "mp4",
+        "inputs": [
+          "v",
+          "a"
+        ],
+        "outputs": [],
+        "nodeType": "output"
+      },
+      "nodeType": "output",
+      "position": {
+        "x": 439,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 439,
+        "y": 0
+      },
+      "width": 90,
+      "height": 54,
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "8dfda4cc-5985-4258-b1a0-d66bec0328d8",
+      "type": "ffmpeg",
+      "data": {
+        "id": 351,
+        "meta": "...",
+        "name": "setpts",
+        "type": "V->V",
+        "description": "Set PTS for the output video frame.",
+        "params": [
+          {
+            "name": "expr",
+            "type": "string",
+            "desc": "Expression determining the frame timestamp (default \"PTS\")",
+            "min": null,
+            "max": null,
+            "default": "PTS",
+            "value": "0.5*PTS"
+          }
+        ],
+        "nodeType": "filter",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ]
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 260,
+        "y": -60
+      },
+      "positionAbsolute": {
+        "x": 260,
+        "y": -60
+      },
+      "width": 59,
+      "height": 50,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "a6796a9d-7fb6-494c-9545-bde5d4628eea",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-a6796a9d-7fb6-494c-9545-bde5d4628eeav_0"
+    },
+    {
+      "source": "a0798490-6c5b-4a14-82a3-a5e7da6d223b",
+      "sourceHandle": "v_0",
+      "target": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "targetHandle": "v_1",
+      "id": "xyflow__edge-a0798490-6c5b-4a14-82a3-a5e7da6d223bv_0-1623b321-0d2b-42a1-99af-bad37a146b07v_1"
+    },
+    {
+      "source": "a6796a9d-7fb6-494c-9545-bde5d4628eea",
+      "sourceHandle": "v_0",
+      "target": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-a6796a9d-7fb6-494c-9545-bde5d4628eeav_0-1623b321-0d2b-42a1-99af-bad37a146b07v_0"
+    },
+    {
+      "source": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-1623b321-0d2b-42a1-99af-bad37a146b07v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    },
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "66adb05a-5bf8-48f8-ac0c-0c8434191665",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-66adb05a-5bf8-48f8-ac0c-0c8434191665v_0"
+    },
+    {
+      "source": "66adb05a-5bf8-48f8-ac0c-0c8434191665",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-66adb05a-5bf8-48f8-ac0c-0c8434191665v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    },
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "8dfda4cc-5985-4258-b1a0-d66bec0328d8",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-8dfda4cc-5985-4258-b1a0-d66bec0328d8v_0"
+    },
+    {
+      "source": "8dfda4cc-5985-4258-b1a0-d66bec0328d8",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-8dfda4cc-5985-4258-b1a0-d66bec0328d8v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    }
+  ]
+}

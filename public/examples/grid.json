@@ -1,0 +1,331 @@
+{
+  "nodes": [
+    {
+      "id": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "type": "ffmpeg",
+      "data": {
+        "name": "punch.mp4",
+        "url": "/punch.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input"
+      },
+      "nodeType": "input",
+      "position": {
+        "x": 20,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 20,
+        "y": 0
+      },
+      "width": 109,
+      "height": 54,
+      "dragging": false
+    },
+    {
+      "id": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "type": "ffmpeg",
+      "data": {
+        "name": "out.mp4",
+        "ext": "mp4",
+        "inputs": [
+          "v",
+          "a"
+        ],
+        "outputs": [],
+        "nodeType": "output"
+      },
+      "nodeType": "output",
+      "position": {
+        "x": 439,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 439,
+        "y": 0
+      },
+      "width": 90,
+      "height": 54,
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "ddc5cb8d-ec7f-4b84-b78d-5aedef73cc15",
+      "type": "ffmpeg",
+      "data": {
+        "id": 413,
+        "meta": ".S.",
+        "name": "xstack",
+        "type": "N->V",
+        "description": "Stack video inputs into custom layout.",
+        "params": [
+          {
+            "name": "inputs",
+            "type": "int",
+            "desc": "set number of inputs (from 2 to INT_MAX) (default 2)",
+            "min": 2,
+            "max": 2000,
+            "default": 2,
+            "value": "4"
+          },
+          {
+            "name": "layout",
+            "type": "string",
+            "desc": "set custom layout",
+            "min": null,
+            "max": null,
+            "default": null,
+            "value": null
+          },
+          {
+            "name": "grid",
+            "type": "image_size",
+            "desc": "set fixed size grid layout",
+            "min": null,
+            "max": null,
+            "default": null,
+            "value": "2x2"
+          },
+          {
+            "name": "shortest",
+            "type": "boolean",
+            "desc": "force termination when the shortest input terminates (default false)",
+            "min": null,
+            "max": null,
+            "default": "false",
+            "value": "true"
+          },
+          {
+            "name": "fill",
+            "type": "string",
+            "desc": "set the color for unused pixels (default \"none\")",
+            "min": null,
+            "max": null,
+            "default": "none",
+            "value": "none"
+          }
+        ],
+        "nodeType": "filter",
+        "inputs": [
+          "n"
+        ],
+        "outputs": [
+          "v"
+        ]
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 290,
+        "y": 20
+      },
+      "positionAbsolute": {
+        "x": 290,
+        "y": 20
+      },
+      "width": 59,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "19255824-255f-49cb-8dff-a28499ad3c35",
+      "type": "ffmpeg",
+      "data": {
+        "name": "shoe.mp4",
+        "url": "/shoe.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input"
+      },
+      "nodeType": "input",
+      "position": {
+        "x": 70,
+        "y": -90
+      },
+      "positionAbsolute": {
+        "x": 70,
+        "y": -90
+      },
+      "width": 109,
+      "height": 54,
+      "dragging": false
+    },
+    {
+      "id": "83ec354d-b262-48e3-83d3-98324e29adf7",
+      "type": "ffmpeg",
+      "data": {
+        "name": "shoe.mp4",
+        "url": "/shoe.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input"
+      },
+      "nodeType": "input",
+      "position": {
+        "x": 160,
+        "y": 130
+      },
+      "positionAbsolute": {
+        "x": 160,
+        "y": 130
+      },
+      "width": 109,
+      "height": 54,
+      "dragging": false
+    },
+    {
+      "id": "adbe6433-76fe-47fd-bd70-924495465942",
+      "type": "ffmpeg",
+      "data": {
+        "name": "punch.mp4",
+        "url": "/shoe.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input"
+      },
+      "nodeType": "input",
+      "position": {
+        "x": 20,
+        "y": 100
+      },
+      "positionAbsolute": {
+        "x": 20,
+        "y": 100
+      },
+      "width": 109,
+      "height": 54,
+      "dragging": false,
+      "selected": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "a6796a9d-7fb6-494c-9545-bde5d4628eea",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-a6796a9d-7fb6-494c-9545-bde5d4628eeav_0"
+    },
+    {
+      "source": "a0798490-6c5b-4a14-82a3-a5e7da6d223b",
+      "sourceHandle": "v_0",
+      "target": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "targetHandle": "v_1",
+      "id": "xyflow__edge-a0798490-6c5b-4a14-82a3-a5e7da6d223bv_0-1623b321-0d2b-42a1-99af-bad37a146b07v_1"
+    },
+    {
+      "source": "a6796a9d-7fb6-494c-9545-bde5d4628eea",
+      "sourceHandle": "v_0",
+      "target": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-a6796a9d-7fb6-494c-9545-bde5d4628eeav_0-1623b321-0d2b-42a1-99af-bad37a146b07v_0"
+    },
+    {
+      "source": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-1623b321-0d2b-42a1-99af-bad37a146b07v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    },
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "66adb05a-5bf8-48f8-ac0c-0c8434191665",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-66adb05a-5bf8-48f8-ac0c-0c8434191665v_0"
+    },
+    {
+      "source": "66adb05a-5bf8-48f8-ac0c-0c8434191665",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-66adb05a-5bf8-48f8-ac0c-0c8434191665v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    },
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "8dfda4cc-5985-4258-b1a0-d66bec0328d8",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-8dfda4cc-5985-4258-b1a0-d66bec0328d8v_0"
+    },
+    {
+      "source": "8dfda4cc-5985-4258-b1a0-d66bec0328d8",
+      "sourceHandle": "v_0",
+      "target": "b2bd1fb9-b7ad-4c3b-9800-29748a8d8c73",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-8dfda4cc-5985-4258-b1a0-d66bec0328d8v_0-b2bd1fb9-b7ad-4c3b-9800-29748a8d8c73v_0"
+    },
+    {
+      "source": "b2bd1fb9-b7ad-4c3b-9800-29748a8d8c73",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-b2bd1fb9-b7ad-4c3b-9800-29748a8d8c73v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    },
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "a_1",
+      "target": "78efe031-cddd-477f-b975-708746d870e8",
+      "targetHandle": "a_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31a_1-78efe031-cddd-477f-b975-708746d870e8a_0"
+    },
+    {
+      "source": "78efe031-cddd-477f-b975-708746d870e8",
+      "sourceHandle": "a_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "a_1",
+      "id": "xyflow__edge-78efe031-cddd-477f-b975-708746d870e8a_0-eb32733d-28ad-4a38-9db7-50a98db5f309a_1"
+    },
+    {
+      "source": "19255824-255f-49cb-8dff-a28499ad3c35",
+      "sourceHandle": "v_0",
+      "target": "ddc5cb8d-ec7f-4b84-b78d-5aedef73cc15",
+      "targetHandle": "n_0",
+      "id": "xyflow__edge-19255824-255f-49cb-8dff-a28499ad3c35v_0-ddc5cb8d-ec7f-4b84-b78d-5aedef73cc15n_0"
+    },
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "ddc5cb8d-ec7f-4b84-b78d-5aedef73cc15",
+      "targetHandle": "n_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-ddc5cb8d-ec7f-4b84-b78d-5aedef73cc15n_0"
+    },
+    {
+      "source": "adbe6433-76fe-47fd-bd70-924495465942",
+      "sourceHandle": "v_0",
+      "target": "ddc5cb8d-ec7f-4b84-b78d-5aedef73cc15",
+      "targetHandle": "n_0",
+      "id": "xyflow__edge-adbe6433-76fe-47fd-bd70-924495465942v_0-ddc5cb8d-ec7f-4b84-b78d-5aedef73cc15n_0"
+    },
+    {
+      "source": "83ec354d-b262-48e3-83d3-98324e29adf7",
+      "sourceHandle": "v_0",
+      "target": "ddc5cb8d-ec7f-4b84-b78d-5aedef73cc15",
+      "targetHandle": "n_0",
+      "id": "xyflow__edge-83ec354d-b262-48e3-83d3-98324e29adf7v_0-ddc5cb8d-ec7f-4b84-b78d-5aedef73cc15n_0"
+    },
+    {
+      "source": "ddc5cb8d-ec7f-4b84-b78d-5aedef73cc15",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-ddc5cb8d-ec7f-4b84-b78d-5aedef73cc15v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    }
+  ]
+}

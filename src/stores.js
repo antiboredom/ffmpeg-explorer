@@ -4,6 +4,7 @@ import { writable, derived, get } from "svelte/store";
 export const nodes = writable([]);
 export const edges = writable([]);
 export const auto = writable(true);
+export const doFit = writable(0);
 export const selectedFilter = writable();
 
 export const INPUTNAMES = [

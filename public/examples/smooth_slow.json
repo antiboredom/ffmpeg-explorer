@@ -1,0 +1,422 @@
+{
+  "nodes": [
+    {
+      "id": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "type": "ffmpeg",
+      "data": {
+        "name": "punch.mp4",
+        "url": "/punch.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input"
+      },
+      "nodeType": "input",
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 0,
+        "y": 0
+      },
+      "width": 109,
+      "height": 54
+    },
+    {
+      "id": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "type": "ffmpeg",
+      "data": {
+        "name": "out.mp4",
+        "ext": "mp4",
+        "inputs": [
+          "v",
+          "a"
+        ],
+        "outputs": [],
+        "nodeType": "output"
+      },
+      "nodeType": "output",
+      "position": {
+        "x": 439,
+        "y": 0
+      },
+      "positionAbsolute": {
+        "x": 439,
+        "y": 0
+      },
+      "width": 90,
+      "height": 54,
+      "selected": false,
+      "dragging": false
+    },
+    {
+      "id": "8dfda4cc-5985-4258-b1a0-d66bec0328d8",
+      "type": "ffmpeg",
+      "data": {
+        "id": 351,
+        "meta": "...",
+        "name": "setpts",
+        "type": "V->V",
+        "description": "Set PTS for the output video frame.",
+        "params": [
+          {
+            "name": "expr",
+            "type": "string",
+            "desc": "Expression determining the frame timestamp (default \"PTS\")",
+            "min": null,
+            "max": null,
+            "default": "PTS",
+            "value": "2*PTS"
+          }
+        ],
+        "nodeType": "filter",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ]
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 160,
+        "y": -50
+      },
+      "positionAbsolute": {
+        "x": 160,
+        "y": -50
+      },
+      "width": 59,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "b2bd1fb9-b7ad-4c3b-9800-29748a8d8c73",
+      "type": "ffmpeg",
+      "data": {
+        "id": 290,
+        "meta": "...",
+        "name": "minterpolate",
+        "type": "V->V",
+        "description": "Frame rate conversion using Motion Interpolation.",
+        "params": [
+          {
+            "name": "fps",
+            "type": "video_rate",
+            "desc": "output's frame rate (default \"60\")",
+            "min": null,
+            "max": null,
+            "default": "60",
+            "value": "66"
+          },
+          {
+            "name": "mi_mode",
+            "type": "int",
+            "desc": "motion interpolation mode (from 0 to 2) (default mci)",
+            "min": 0,
+            "max": 2,
+            "default": "mci",
+            "options": [
+              {
+                "value": "dup",
+                "desc": "duplicate frames"
+              },
+              {
+                "value": "blend",
+                "desc": "blend frames"
+              },
+              {
+                "value": "mci",
+                "desc": "motion compensated interpolation"
+              }
+            ],
+            "value": "mci"
+          },
+          {
+            "name": "mc_mode",
+            "type": "int",
+            "desc": "motion compensation mode (from 0 to 1) (default obmc)",
+            "min": 0,
+            "max": 1,
+            "default": "obmc",
+            "options": [
+              {
+                "value": "obmc",
+                "desc": "overlapped block motion compensation"
+              },
+              {
+                "value": "aobmc",
+                "desc": "adaptive overlapped block motion compensation"
+              }
+            ],
+            "value": "obmc"
+          },
+          {
+            "name": "me_mode",
+            "type": "int",
+            "desc": "motion estimation mode (from 0 to 1) (default bilat)",
+            "min": 0,
+            "max": 1,
+            "default": "bilat",
+            "options": [
+              {
+                "value": "bidir",
+                "desc": "bidirectional motion estimation"
+              },
+              {
+                "value": "bilat",
+                "desc": "bilateral motion estimation"
+              }
+            ],
+            "value": "bilat"
+          },
+          {
+            "name": "me",
+            "type": "int",
+            "desc": "motion estimation method (from 1 to 9) (default epzs)",
+            "min": 1,
+            "max": 9,
+            "default": "epzs",
+            "options": [
+              {
+                "value": "esa",
+                "desc": "exhaustive search"
+              },
+              {
+                "value": "tss",
+                "desc": "three step search"
+              },
+              {
+                "value": "tdls",
+                "desc": "two dimensional logarithmic search"
+              },
+              {
+                "value": "ntss",
+                "desc": "new three step search"
+              },
+              {
+                "value": "fss",
+                "desc": "four step search"
+              },
+              {
+                "value": "ds",
+                "desc": "diamond search"
+              },
+              {
+                "value": "hexbs",
+                "desc": "hexagon-based search"
+              },
+              {
+                "value": "epzs",
+                "desc": "enhanced predictive zonal search"
+              },
+              {
+                "value": "umh",
+                "desc": "uneven multi-hexagon search"
+              }
+            ],
+            "value": "epzs"
+          },
+          {
+            "name": "mb_size",
+            "type": "int",
+            "desc": "macroblock size (from 4 to 16) (default 16)",
+            "min": 4,
+            "max": 16,
+            "default": 16,
+            "value": 16
+          },
+          {
+            "name": "search_param",
+            "type": "int",
+            "desc": "search parameter (from 4 to INT_MAX) (default 32)",
+            "min": 4,
+            "max": 2000,
+            "default": 32,
+            "value": 32
+          },
+          {
+            "name": "vsbmc",
+            "type": "int",
+            "desc": "variable-size block motion compensation (from 0 to 1) (default 0)",
+            "min": 0,
+            "max": 1,
+            "default": 0,
+            "value": 0
+          },
+          {
+            "name": "scd",
+            "type": "int",
+            "desc": "scene change detection method (from 0 to 1) (default fdiff)",
+            "min": 0,
+            "max": 1,
+            "default": "fdiff",
+            "options": [
+              {
+                "value": "none",
+                "desc": "disable detection"
+              },
+              {
+                "value": "fdiff",
+                "desc": "frame difference"
+              }
+            ],
+            "value": "fdiff"
+          },
+          {
+            "name": "scd_threshold",
+            "type": "double",
+            "desc": "scene change threshold (from 0 to 100) (default 10)",
+            "min": 0,
+            "max": 100,
+            "default": 10,
+            "value": 10
+          }
+        ],
+        "nodeType": "filter",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ]
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 280,
+        "y": -50
+      },
+      "positionAbsolute": {
+        "x": 280,
+        "y": -50
+      },
+      "width": 93,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "78efe031-cddd-477f-b975-708746d870e8",
+      "type": "ffmpeg",
+      "data": {
+        "id": 59,
+        "meta": "...",
+        "name": "asetpts",
+        "type": "A->A",
+        "description": "Set PTS for the output audio frame.",
+        "params": [
+          {
+            "name": "expr",
+            "type": "string",
+            "desc": "Expression determining the frame timestamp (default \"PTS\")",
+            "min": null,
+            "max": null,
+            "default": "PTS",
+            "value": "2*PTS"
+          }
+        ],
+        "nodeType": "filter",
+        "inputs": [
+          "a"
+        ],
+        "outputs": [
+          "a"
+        ]
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 260,
+        "y": 60
+      },
+      "positionAbsolute": {
+        "x": 260,
+        "y": 60
+      },
+      "width": 59,
+      "height": 50,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "a6796a9d-7fb6-494c-9545-bde5d4628eea",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-a6796a9d-7fb6-494c-9545-bde5d4628eeav_0"
+    },
+    {
+      "source": "a0798490-6c5b-4a14-82a3-a5e7da6d223b",
+      "sourceHandle": "v_0",
+      "target": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "targetHandle": "v_1",
+      "id": "xyflow__edge-a0798490-6c5b-4a14-82a3-a5e7da6d223bv_0-1623b321-0d2b-42a1-99af-bad37a146b07v_1"
+    },
+    {
+      "source": "a6796a9d-7fb6-494c-9545-bde5d4628eea",
+      "sourceHandle": "v_0",
+      "target": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-a6796a9d-7fb6-494c-9545-bde5d4628eeav_0-1623b321-0d2b-42a1-99af-bad37a146b07v_0"
+    },
+    {
+      "source": "1623b321-0d2b-42a1-99af-bad37a146b07",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-1623b321-0d2b-42a1-99af-bad37a146b07v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    },
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "66adb05a-5bf8-48f8-ac0c-0c8434191665",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-66adb05a-5bf8-48f8-ac0c-0c8434191665v_0"
+    },
+    {
+      "source": "66adb05a-5bf8-48f8-ac0c-0c8434191665",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-66adb05a-5bf8-48f8-ac0c-0c8434191665v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    },
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "v_0",
+      "target": "8dfda4cc-5985-4258-b1a0-d66bec0328d8",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31v_0-8dfda4cc-5985-4258-b1a0-d66bec0328d8v_0"
+    },
+    {
+      "source": "8dfda4cc-5985-4258-b1a0-d66bec0328d8",
+      "sourceHandle": "v_0",
+      "target": "b2bd1fb9-b7ad-4c3b-9800-29748a8d8c73",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-8dfda4cc-5985-4258-b1a0-d66bec0328d8v_0-b2bd1fb9-b7ad-4c3b-9800-29748a8d8c73v_0"
+    },
+    {
+      "source": "b2bd1fb9-b7ad-4c3b-9800-29748a8d8c73",
+      "sourceHandle": "v_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-b2bd1fb9-b7ad-4c3b-9800-29748a8d8c73v_0-eb32733d-28ad-4a38-9db7-50a98db5f309v_0"
+    },
+    {
+      "source": "9406a455-7e77-49bb-9cd8-381b54d47d31",
+      "sourceHandle": "a_1",
+      "target": "78efe031-cddd-477f-b975-708746d870e8",
+      "targetHandle": "a_0",
+      "id": "xyflow__edge-9406a455-7e77-49bb-9cd8-381b54d47d31a_1-78efe031-cddd-477f-b975-708746d870e8a_0"
+    },
+    {
+      "source": "78efe031-cddd-477f-b975-708746d870e8",
+      "sourceHandle": "a_0",
+      "target": "eb32733d-28ad-4a38-9db7-50a98db5f309",
+      "targetHandle": "a_1",
+      "id": "xyflow__edge-78efe031-cddd-477f-b975-708746d870e8a_0-eb32733d-28ad-4a38-9db7-50a98db5f309a_1"
+    }
+  ]
+}

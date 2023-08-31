@@ -3,12 +3,14 @@
   import {
     selectedFilter,
     nodes,
+    edges,
     inputs,
     outputs,
     auto,
     addNode,
     inputNames,
     previewCommand,
+    doFit,
   } from "./stores.js";
   import Filter from "./Filter.svelte";
   import FilterPicker from "./FilterPicker.svelte";
@@ -20,6 +22,15 @@
   const baseURL = `https://unpkg.com/@ffmpeg/core${!isChrome ? "-mt" : ""}@0.12.2/dist/esm`;
   const TIMEOUT = 40000;
   const ffmpeg = new FFmpeg();
+  const examples = [
+    { name: "Cross Fade", url: "/examples/xfade.json" },
+    { name: "Crop & Trim", url: "/examples/crop_trim.json" },
+    { name: "Scale & Overlay", url: "/examples/scale_overlay.json" },
+    { name: "Text", url: "/examples/text.json" },
+    { name: "Speed Up", url: "/examples/speedup.json" },
+    { name: "Slow Down Smoothly", url: "/examples/smooth_slow.json" },
+    { name: "Video Grid", url: "/examples/grid.json" },
+  ];
 
   let videoValue = "/" + $inputs[0].name;
   let ffmpegLoaded = false;
@@ -30,9 +41,20 @@
   let vidPlayerRef;
   let renderProgress = 0;
   let fileinput;
+  let fit;
 
   function addInput() {
     addNode({ ...$inputNames[$inputNames.length - 1] }, "input");
+  }
+
+  async function loadExample(url) {
+		if (!url) return;
+    $auto = false;
+    const response = await fetch(url);
+    const example = await response.json();
+    $nodes = example.nodes;
+    $edges = example.edges;
+    $doFit++;
   }
 
   async function onFileSelected(e) {
@@ -216,20 +238,33 @@
 
   <section class="graph">
     <div class="graph-holder">
-      <div class="nav">
-        <button on:click={addInput}>Add Sample Input</button>
-        <button on:click={() => fileinput.click()}>Upload File</button>
-        <input
-          type="file"
-          accept="video/*"
-          on:change={(e) => onFileSelected(e)}
-          bind:this={fileinput}
-          style="display: none;"
-        />
-        <label for="auto"><input id="auto" type="checkbox" bind:checked={$auto} />Lock Layout</label
-        >
+      <div class="graph-nav">
+        <div>
+          <button on:click={addInput}>Add Sample Input</button>
+          <button on:click={() => fileinput.click()}>Upload File</button>
+          <input
+            type="file"
+            accept="video/*"
+            on:change={(e) => onFileSelected(e)}
+            bind:this={fileinput}
+            style="display: none;"
+          />
+          <label for="auto"
+            ><input id="auto" type="checkbox" bind:checked={$auto} />Lock Layout</label
+          >
+        </div>
+
+        <div class="examples">
+          <label>Examples</label>
+          <select on:change={(e) => loadExample(e.target.value)}>
+            <option value="" />
+            {#each examples as example}
+              <option value={example.url}>{example.name}</option>
+            {/each}
+          </select>
+        </div>
       </div>
-      <Graph {fetchFile} ffmepg={ffmpeg} />
+      <Graph bind:this={fit} />
     </div>
   </section>
 
@@ -421,6 +456,11 @@
     flex: 1;
   }
 
+  .graph-nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
   @media only screen and (max-width: 1100px) {
     main {
       grid-template-columns: 250px 1fr 1fr 1fr 1fr 300px;
@@ -460,7 +500,7 @@
     }
     .header {
       overflow: scroll;
-			height: auto;
+      height: auto;
     }
     .graph {
       height: 60vh;
