@@ -48,7 +48,7 @@
   }
 
   async function loadExample(url) {
-		if (!url) return;
+    if (!url) return;
     $auto = false;
     const response = await fetch(url);
     const example = await response.json();
@@ -91,15 +91,21 @@
       clist.shift(); // remove "ffmpeg" from start of command
       clist.unshift("-hide_banner", "-loglevel", "error");
       clist = clist.map((c) => c.replaceAll('"', ""));
+
+      let contentType = "video/mp4";
+
       if (outname.endsWith("mp4")) {
         clist.splice(clist.length - 1, 0, "-pix_fmt");
         clist.splice(clist.length - 1, 0, "yuv420p");
         clist.splice(clist.length - 1, 0, "-preset");
         clist.splice(clist.length - 1, 0, "ultrafast");
+      } else {
+        contentType = "image/gif";
       }
+
       await ffmpeg.exec(clist, TIMEOUT);
       const data = await ffmpeg.readFile(outname);
-      videoValue = URL.createObjectURL(new Blob([data.buffer], { type: "video/mp4" }));
+      videoValue = URL.createObjectURL(new Blob([data.buffer], { type: contentType }));
       if (outname.endsWith("mp4")) {
         setTimeout(() => {
           vidPlayerRef.seekToNextFrame();
