@@ -387,12 +387,6 @@
     padding: 5px;
     flex: 1;
   }
-  .render-progress {
-    transition: 0.1s all;
-    width: 0%;
-    height: 7px;
-    background-color: var(--b1);
-  }
   .rendering-video {
     position: absolute;
     width: 100%;
