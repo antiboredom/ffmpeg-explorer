@@ -11,6 +11,8 @@ npm install
 npm run dev
 ```
 
+I'm also looking for good FFmpeg examples. If you make a nice filtergraph in the tool, just hit cmd-s (or ctrl-s on windows/linux), and it will export a json file of your graph. Feel free to post those to the issues page for possible inclusion in the tool.
+
 ## Known Issues
 
 - Rendering on chrome doesn't work in multi-threading mode (it seems to fail on mp4s)
@@ -33,7 +35,7 @@ npm run dev
 - [x] Include some default fonts so text works.
 - [x] Allow gif as output
 - [ ] Add more tests!
-- [ ] MAYBE allow users to upload their own videos
+- [x] MAYBE allow users to upload their own videos
 - [ ] MAYBE make each part of the output command clickable, to highlight the corresponding nodes
 - [ ] MAYBE add previews in the filter list itself
 
