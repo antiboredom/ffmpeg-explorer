@@ -138,9 +138,6 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
     finalCommand.push(inp.data.name);
   }
 
-  let hasVid = false;
-  let hasAud = false;
-
   let mediaMaps = Object.values(edgeIds)
     .map((eid) => {
       if (String(eid).includes("FILTERLESS")) {
@@ -149,8 +146,6 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
       return null;
     })
     .filter((m) => m !== null);
-
-  console.log(mediaMaps);
 
   if (filtergraph.length > 0) {
     let fg = `"${filtergraph.join(";")}"`;
