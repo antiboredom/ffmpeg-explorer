@@ -55,7 +55,8 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
 
   // create edge labels for each filter
   function traverseEdges(edg, type) {
-    const outEdges = $edges.filter((e) => e.source === edg.target && (e.sourceHandle.includes(type) || e.sourceHandle.includes("n")));
+    // const outEdges = $edges.filter((e) => e.source === edg.target && (e.sourceHandle.includes(type) || e.sourceHandle.includes("n")));
+    const outEdges = $edges.filter((e) => e.source === edg.target);
 
     let label;
 
@@ -102,17 +103,21 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
 
     for (let i of ins) {
       const eid = edgeIds[i.id];
-      if (typeof eid == "string" && eid.includes(":")) cmd.weight = -1000;
-      cmd.in.push(eid);
+			if (eid) {
+				if (typeof eid == "string" && eid.includes(":")) cmd.weight = -1000;
+				cmd.in.push(eid);
+			}
     }
 
     cmd.cmd = makeFilterArgs(n.data);
 
     for (let o of outs) {
       const eid = edgeIds[o.id];
-      if (typeof eid == "string" && eid.includes("out")) cmd.weight = 1000;
-      else cmd.weight = eid;
-      cmd.out.push(eid);
+			if (eid) {
+				if (typeof eid == "string" && eid.includes("out")) cmd.weight = 1000;
+				else cmd.weight = eid;
+				cmd.out.push(eid);
+			}
     }
 
     filtergraph.push(cmd);
