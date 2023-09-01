@@ -103,21 +103,21 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
 
     for (let i of ins) {
       const eid = edgeIds[i.id];
-			if (eid) {
-				if (typeof eid == "string" && eid.includes(":")) cmd.weight = -1000;
-				cmd.in.push(eid);
-			}
+      if (eid) {
+        if (typeof eid == "string" && eid.includes(":")) cmd.weight = -1000;
+        cmd.in.push(eid);
+      }
     }
 
     cmd.cmd = makeFilterArgs(n.data);
 
     for (let o of outs) {
       const eid = edgeIds[o.id];
-			if (eid) {
-				if (typeof eid == "string" && eid.includes("out")) cmd.weight = 1000;
-				else cmd.weight = eid;
-				cmd.out.push(eid);
-			}
+      if (eid) {
+        if (typeof eid == "string" && eid.includes("out")) cmd.weight = 1000;
+        else cmd.weight = eid;
+        cmd.out.push(eid);
+      }
     }
 
     filtergraph.push(cmd);
@@ -150,22 +150,21 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
     })
     .filter((m) => m !== null);
 
+  console.log(mediaMaps);
+
   if (filtergraph.length > 0) {
     let fg = `"${filtergraph.join(";")}"`;
 
     // this crazy thing replaces stuff like [1];[1] with a comma!
     fg = fg.replaceAll(/(\[\d+\]);\1(?!\[)/g, ",");
 
-    hasVid = fg.includes(":v]");
-    hasAud = fg.includes(":a]");
-
     finalCommand.push("-filter_complex", fg);
 
-    if (hasAud) {
+    if (fg.includes("[out_a]")) {
       finalCommand.push("-map", '"[out_a]"');
     }
 
-    if (hasVid) {
+    if (fg.includes("[out_v]")) {
       finalCommand.push("-map", '"[out_v]"');
     }
 
