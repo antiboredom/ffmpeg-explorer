@@ -55,7 +55,7 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
 
   // create edge labels for each filter
   function traverseEdges(edg, type) {
-    const outEdges = $edges.filter((e) => e.source === edg.target && e.sourceHandle.includes(type));
+    const outEdges = $edges.filter((e) => e.source === edg.target && (e.sourceHandle.includes(type) || e.sourceHandle.includes("n")));
 
     let label;
 
