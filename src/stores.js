@@ -105,6 +105,7 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
       const eid = edgeIds[i.id];
       if (eid) {
         if (typeof eid == "string" && eid.includes(":")) cmd.weight = -1000;
+        else cmd.weight = eid;
         cmd.in.push(eid);
       }
     }
@@ -115,7 +116,6 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
       const eid = edgeIds[o.id];
       if (eid) {
         if (typeof eid == "string" && eid.includes("out")) cmd.weight = 1000;
-        else cmd.weight = eid;
         cmd.out.push(eid);
       }
     }
@@ -151,7 +151,7 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
     let fg = `"${filtergraph.join(";")}"`;
 
     // this crazy thing replaces stuff like [1];[1] with a comma!
-    fg = fg.replaceAll(/(\[\d+\]);\1(?!\[)/g, ",");
+    fg = fg.replaceAll(/(?<!])(\[\d+\]);\1(?!\[)/g, ",");
 
     finalCommand.push("-filter_complex", fg);
 
