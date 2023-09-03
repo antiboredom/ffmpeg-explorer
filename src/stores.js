@@ -244,9 +244,6 @@ export function addNode(_data, type) {
   } else if (type === "output") {
     ins = ["v", "a"];
   } else if (type === "filter") {
-    const [_ins, _outs] = data.type.split("->");
-    ins = _ins.toLowerCase().split("");
-    outs = _outs.toLowerCase().split("");
     if (data.params) {
       data.params = data.params.map((p) => {
         p.value = null;
@@ -254,6 +251,8 @@ export function addNode(_data, type) {
         return p;
       });
     }
+    ins = data.inputs;
+    outs = data.outputs;
   }
 
   data.nodeType = type;
@@ -271,36 +270,62 @@ export function addNode(_data, type) {
   nodes.update((_nodes) => {
     _nodes.push(node);
 
-    const isAuto = get(auto);
+		_nodes = autoLayout(_nodes);
 
-    if (isAuto) {
-      const w = 120;
-      const h = 50;
-      const margin = 50;
-      let prev = null;
+    if (node.nodeType === "filter") {
+      selectedFilter.set(_nodes.length - 1);
+    }
+    return _nodes;
+  });
+}
 
-      for (let n of _nodes) {
-        if (n.nodeType === "input") {
-          n.position = { x: 0, y: prev ? prev.position.y + h + margin : 0 };
-          prev = n;
-        }
-      }
+function autoLayout(_nodes) {
+  const isAuto = get(auto);
 
-      for (let n of _nodes) {
-        if (n.nodeType === "filter") {
-          let _w = prev && prev.width ? prev.width : w;
-          n.position = { x: prev ? prev.position.x + _w + margin : 0, y: -50 };
-          prev = n;
-        }
-      }
+  if (isAuto) {
+    const w = 120;
+    const h = 50;
+    const margin = 50;
+    let prev = null;
 
-      for (let n of _nodes) {
-        if (n.nodeType === "output") {
-          let _w = prev && prev.width ? prev.width : w;
-          n.position = { x: prev ? prev.position.x + _w + margin : 0, y: 0 };
-        }
+    for (let n of _nodes) {
+      if (n.nodeType === "input") {
+        n.position = { x: 0, y: prev ? prev.position.y + h + margin : 0 };
+        prev = n;
       }
     }
+
+    for (let n of _nodes) {
+      if (n.nodeType === "filter") {
+        let _w = prev && prev.width ? prev.width : w;
+        n.position = { x: prev ? prev.position.x + _w + margin : 0, y: -50 };
+        prev = n;
+      }
+    }
+
+    for (let n of _nodes) {
+      if (n.nodeType === "output") {
+        let _w = prev && prev.width ? prev.width : w;
+        n.position = { x: prev ? prev.position.x + _w + margin : 0, y: 0 };
+      }
+    }
+  }
+  return _nodes;
+}
+
+export function copyNode(node) {
+	const oldId = node.id;
+  node = JSON.parse(JSON.stringify(node));
+	node.id = uuidv4();
+
+  nodes.update((_nodes) => {
+		_nodes.push(node);
+
+    const index = _nodes.findIndex((n) => n.id === oldId);
+    _nodes.splice(index, 1);
+
+		_nodes = autoLayout(_nodes);
+
     if (node.nodeType === "filter") {
       selectedFilter.set(_nodes.length - 1);
     }

@@ -1,10 +1,12 @@
 <script>
-  import { removeNode } from "./stores.js";
+	import {copyNode, nodes, selectedFilter} from './stores.js';
 
   export let filter = {
     name: "",
     params: [],
     description: "",
+		inputs: [],
+		outputs: [],
   };
 
   let show = true;
@@ -16,6 +18,22 @@
     }
     filter = filter;
   }
+
+	function changeHandles(e, name) {
+		if (filter.type.includes("N") && name === "inputs" || name === "outputs") {
+			const total = +e.target.value;
+			if (name === "inputs") {
+				const outtype = filter.outputs[0];
+				filter.inputs = Array(total).fill(outtype);
+			} else if (name === "outputs") {
+				const intype = filter.inputs[0];
+				filter.outputs = Array(total).fill(intype);
+			}
+			const oldNode = $nodes[$selectedFilter];
+			oldNode.data = filter;
+			copyNode(oldNode);
+		}
+	}
 
   $: url = `https://ffmpeg.org/ffmpeg-filters.html#${filter.name}`;
 </script>
@@ -53,8 +71,9 @@
                   min={p.min}
                   max={p.max}
                   bind:value={p.value}
+									on:change={(e) => changeHandles(e, p.name)}
                 />
-                <input bind:value={p.value} />
+                <input bind:value={p.value} on:change={(e) => changeHandles(e, p.name)} />
               {:else}
                 <input bind:value={p.value} />
               {/if}

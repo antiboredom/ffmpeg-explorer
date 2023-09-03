@@ -58,13 +58,22 @@ def get_params(f):
         text=True,
         capture_output=True,
     )
+
     text = help_text.stdout
+
+    input_channels, output_channels = f["type"].split("->")
+    f["inputs"] = list(input_channels.lower().strip())
+    f["outputs"] = list(output_channels.lower().strip())
+
     try:
         text = text.split("AVOptions:")[1]
     except Exception as e:
         return f
+    
     lines = text.split("\n")
+
     params = []
+
     for l in lines:
         if not l.startswith("   "):
             continue
@@ -123,6 +132,12 @@ def get_params(f):
 
             if type(item["default"]) == str:
                 item["default"] = item["default"].replace("'", "").replace('"', "")
+
+            if item["name"] == "inputs" and item["default"]:
+                f["inputs"] = [f["outputs"][0]] * item["default"]
+
+            if item["name"] == "outputs" and item["default"]:
+                f["outputs"] = [f["inputs"][0]] * item["default"]
 
         else:
             item = {"value": parts[0], "desc": " ".join(parts[3:])}

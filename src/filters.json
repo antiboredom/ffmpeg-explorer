@@ -5,6 +5,12 @@
     "name": "abench",
     "type": "A->A",
     "description": "Benchmark part of a filtergraph.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "action",
@@ -32,6 +38,12 @@
     "name": "acompressor",
     "type": "A->A",
     "description": "Audio compressor.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -167,6 +179,12 @@
     "name": "acontrast",
     "type": "A->A",
     "description": "Simple audio dynamic range compression/expansion filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "contrast",
@@ -183,7 +201,13 @@
     "meta": "...",
     "name": "acopy",
     "type": "A->A",
-    "description": "Copy the input audio unchanged to the output."
+    "description": "Copy the input audio unchanged to the output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ]
   },
   {
     "id": 4,
@@ -191,6 +215,12 @@
     "name": "acue",
     "type": "A->A",
     "description": "Delay filtering to match a cue.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "cue",
@@ -224,6 +254,13 @@
     "name": "acrossfade",
     "type": "AA->A",
     "description": "Cross fade two input audio streams.",
+    "inputs": [
+      "a",
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "nb_samples",
@@ -641,6 +678,12 @@
     "name": "acrossover",
     "type": "A->N",
     "description": "Split audio into per-bands streams.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "split",
@@ -746,6 +789,12 @@
     "name": "acrusher",
     "type": "A->A",
     "description": "Reduce audio bit resolution.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -853,6 +902,12 @@
     "name": "adeclick",
     "type": "A->A",
     "description": "Remove impulsive noise from input audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "window",
@@ -994,6 +1049,12 @@
     "name": "adeclip",
     "type": "A->A",
     "description": "Remove clipping from input audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "window",
@@ -1135,6 +1196,12 @@
     "name": "adecorrelate",
     "type": "A->A",
     "description": "Apply decorrelation to input audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "stages",
@@ -1160,6 +1227,12 @@
     "name": "adelay",
     "type": "A->A",
     "description": "Delay one or more audio channels.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "delays",
@@ -1185,6 +1258,12 @@
     "name": "adenorm",
     "type": "A->A",
     "description": "Remedy denormals by adding extremely low-level noise.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level",
@@ -1228,6 +1307,12 @@
     "name": "aderivative",
     "type": "A->A",
     "description": "Compute derivative of input audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": []
   },
   {
@@ -1236,6 +1321,12 @@
     "name": "adynamicequalizer",
     "type": "A->A",
     "description": "Apply Dynamic Equalization of input audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "threshold",
@@ -1409,6 +1500,12 @@
     "name": "adynamicsmooth",
     "type": "A->A",
     "description": "Apply Dynamic Smoothing of input audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "sensitivity",
@@ -1434,6 +1531,12 @@
     "name": "aecho",
     "type": "A->A",
     "description": "Add echoing to the audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "in_gain",
@@ -1475,6 +1578,12 @@
     "name": "aemphasis",
     "type": "A->A",
     "description": "Audio emphasis.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -1564,6 +1673,12 @@
     "name": "aeval",
     "type": "A->A",
     "description": "Filter audio signal according to a specified expression.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "exprs",
@@ -1597,6 +1712,12 @@
     "name": "aexciter",
     "type": "A->A",
     "description": "Enhance high frequency part of audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -1670,6 +1791,12 @@
     "name": "afade",
     "type": "A->A",
     "description": "Fade in/out input audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "type",
@@ -1975,6 +2102,12 @@
     "name": "afftdn",
     "type": "A->A",
     "description": "Denoise audio samples using FFT.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "noise_reduction",
@@ -2408,6 +2541,12 @@
     "name": "afftfilt",
     "type": "A->A",
     "description": "Apply arbitrary expressions to samples in frequency domain.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "real",
@@ -2547,6 +2686,12 @@
     "name": "afir",
     "type": "N->N",
     "description": "Apply Finite Impulse Response filter with supplied coefficients in additional stream(s).",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "dry",
@@ -2734,6 +2879,12 @@
     "name": "aformat",
     "type": "A->A",
     "description": "Convert the input audio to one of the specified formats.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "sample_fmts",
@@ -2791,6 +2942,12 @@
     "name": "afreqshift",
     "type": "A->A",
     "description": "Apply frequency shifting to input audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "shift",
@@ -2824,6 +2981,12 @@
     "name": "afwtdn",
     "type": "A->A",
     "description": "Denoise audio stream using Wavelets.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "sigma",
@@ -2927,6 +3090,12 @@
     "name": "agate",
     "type": "A->A",
     "description": "Audio gate.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -3062,6 +3231,12 @@
     "name": "aiir",
     "type": "A->N",
     "description": "Apply Infinite Impulse Response filter with supplied coefficients.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "zeros",
@@ -3363,6 +3538,12 @@
     "name": "aintegral",
     "type": "A->A",
     "description": "Compute integral of input audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": []
   },
   {
@@ -3371,6 +3552,12 @@
     "name": "ainterleave",
     "type": "N->A",
     "description": "Temporally interleave audio inputs.",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "nb_inputs",
@@ -3417,7 +3604,13 @@
     "meta": "T..",
     "name": "alatency",
     "type": "A->A",
-    "description": "Report audio filtering latency."
+    "description": "Report audio filtering latency.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ]
   },
   {
     "id": 32,
@@ -3425,6 +3618,12 @@
     "name": "alimiter",
     "type": "A->A",
     "description": "Audio lookahead limiter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -3506,6 +3705,12 @@
     "name": "allpass",
     "type": "A->A",
     "description": "Apply a two-pole all-pass filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -3807,6 +4012,12 @@
     "name": "aloop",
     "type": "A->A",
     "description": "Loop audio samples.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "loop",
@@ -3840,6 +4051,13 @@
     "name": "amerge",
     "type": "N->A",
     "description": "Merge two or more audio streams into a single multi-channel stream.",
+    "inputs": [
+      "a",
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "inputs",
@@ -3857,6 +4075,12 @@
     "name": "ametadata",
     "type": "A->A",
     "description": "Manipulate audio frame metadata.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "mode",
@@ -3974,6 +4198,13 @@
     "name": "amix",
     "type": "N->A",
     "description": "Audio mixing.",
+    "inputs": [
+      "a",
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "inputs",
@@ -4036,7 +4267,14 @@
     "meta": "...",
     "name": "amultiply",
     "type": "AA->A",
-    "description": "Multiply two audio streams."
+    "description": "Multiply two audio streams.",
+    "inputs": [
+      "a",
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ]
   },
   {
     "id": 39,
@@ -4044,6 +4282,12 @@
     "name": "anequalizer",
     "type": "A->N",
     "description": "Apply high-order audio parametric multi band equalizer.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "params",
@@ -4111,6 +4355,12 @@
     "name": "anlmdn",
     "type": "A->A",
     "description": "Reduce broadband noise from stream using Non-Local Means.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "strength",
@@ -4228,6 +4478,13 @@
     "name": "anlmf",
     "type": "AA->A",
     "description": "Apply Normalized Least-Mean-Fourth algorithm to first audio stream.",
+    "inputs": [
+      "a",
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "order",
@@ -4295,6 +4552,13 @@
     "name": "anlms",
     "type": "AA->A",
     "description": "Apply Normalized Least-Mean-Squares algorithm to first audio stream.",
+    "inputs": [
+      "a",
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "order",
@@ -4361,7 +4625,13 @@
     "meta": "...",
     "name": "anull",
     "type": "A->A",
-    "description": "Pass the source unchanged to the output."
+    "description": "Pass the source unchanged to the output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ]
   },
   {
     "id": 44,
@@ -4369,6 +4639,12 @@
     "name": "apad",
     "type": "A->A",
     "description": "Pad audio with silence.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "packet_size",
@@ -4418,6 +4694,12 @@
     "name": "aperms",
     "type": "A->A",
     "description": "Set permissions for the output audio frame.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "mode",
@@ -4465,6 +4747,12 @@
     "name": "aphaser",
     "type": "A->A",
     "description": "Add a phasing effect to the audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "in_gain",
@@ -4540,6 +4828,12 @@
     "name": "aphaseshift",
     "type": "A->A",
     "description": "Apply phase shifting to input audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "shift",
@@ -4573,6 +4867,12 @@
     "name": "apsyclip",
     "type": "A->A",
     "description": "Audio Psychoacoustic Clipper.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -4638,6 +4938,12 @@
     "name": "apulsator",
     "type": "A->A",
     "description": "Audio pulsator.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -4771,6 +5077,12 @@
     "name": "arealtime",
     "type": "A->A",
     "description": "Slow down filtering to match realtime.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "limit",
@@ -4796,6 +5108,12 @@
     "name": "aresample",
     "type": "A->A",
     "description": "Resample audio data.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "sample_rate",
@@ -4812,7 +5130,13 @@
     "meta": "...",
     "name": "areverse",
     "type": "A->A",
-    "description": "Reverse an audio clip."
+    "description": "Reverse an audio clip.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ]
   },
   {
     "id": 53,
@@ -4820,6 +5144,12 @@
     "name": "arnndn",
     "type": "A->A",
     "description": "Reduce noise from speech using Recurrent Neural Networks.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "model",
@@ -4852,7 +5182,14 @@
     "meta": "...",
     "name": "asdr",
     "type": "AA->A",
-    "description": "Measure Audio Signal-to-Distortion Ratio."
+    "description": "Measure Audio Signal-to-Distortion Ratio.",
+    "inputs": [
+      "a",
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ]
   },
   {
     "id": 55,
@@ -4860,6 +5197,12 @@
     "name": "asegment",
     "type": "A->N",
     "description": "Segment audio stream.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "timestamps",
@@ -4885,6 +5228,12 @@
     "name": "aselect",
     "type": "A->N",
     "description": "Select audio frames to pass in output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "expr",
@@ -4926,6 +5275,12 @@
     "name": "asendcmd",
     "type": "A->A",
     "description": "Send commands to filters.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "commands",
@@ -4967,6 +5322,12 @@
     "name": "asetnsamples",
     "type": "A->A",
     "description": "Set the number of samples for each output audio frames.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "nb_out_samples",
@@ -5008,6 +5369,12 @@
     "name": "asetpts",
     "type": "A->A",
     "description": "Set PTS for the output audio frame.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "expr",
@@ -5025,6 +5392,12 @@
     "name": "asetrate",
     "type": "A->A",
     "description": "Change the sample rate without altering the data.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "sample_rate",
@@ -5050,6 +5423,12 @@
     "name": "asettb",
     "type": "A->A",
     "description": "Set timebase for the audio output link.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "expr",
@@ -5074,7 +5453,13 @@
     "meta": "...",
     "name": "ashowinfo",
     "type": "A->A",
-    "description": "Show textual information for each audio frame."
+    "description": "Show textual information for each audio frame.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ]
   },
   {
     "id": 63,
@@ -5082,6 +5467,12 @@
     "name": "asidedata",
     "type": "A->A",
     "description": "Manipulate audio frame side data.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "mode",
@@ -5203,6 +5594,12 @@
     "name": "asoftclip",
     "type": "A->A",
     "description": "Audio Soft Clipper.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "type",
@@ -5290,6 +5687,12 @@
     "name": "aspectralstats",
     "type": "A->A",
     "description": "Show frequency domain statistics about audio frames.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "win_size",
@@ -5483,6 +5886,13 @@
     "name": "asplit",
     "type": "A->N",
     "description": "Pass on the audio input to N audio outputs.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a",
+      "a"
+    ],
     "params": [
       {
         "name": "outputs",
@@ -5500,6 +5910,12 @@
     "name": "astats",
     "type": "A->A",
     "description": "Show time domain statistics about audio frames.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "length",
@@ -5769,6 +6185,13 @@
     "name": "astreamselect",
     "type": "N->N",
     "description": "Select audio streams",
+    "inputs": [
+      "n",
+      "n"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "inputs",
@@ -5794,6 +6217,12 @@
     "name": "asubboost",
     "type": "A->A",
     "description": "Boost subwoofer frequencies.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "dry",
@@ -5875,6 +6304,12 @@
     "name": "asubcut",
     "type": "A->A",
     "description": "Cut subwoofer frequencies.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "cutoff",
@@ -5908,6 +6343,12 @@
     "name": "asupercut",
     "type": "A->A",
     "description": "Cut super frequencies.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "cutoff",
@@ -5941,6 +6382,12 @@
     "name": "asuperpass",
     "type": "A->A",
     "description": "Apply high order Butterworth band-pass filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "centerf",
@@ -5982,6 +6429,12 @@
     "name": "asuperstop",
     "type": "A->A",
     "description": "Apply high order Butterworth band-stop filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "centerf",
@@ -6023,6 +6476,12 @@
     "name": "atempo",
     "type": "A->A",
     "description": "Adjust audio tempo.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "tempo",
@@ -6040,6 +6499,12 @@
     "name": "atilt",
     "type": "A->A",
     "description": "Apply spectral tilt to audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "freq",
@@ -6089,6 +6554,12 @@
     "name": "atrim",
     "type": "A->A",
     "description": "Pick one continuous section from the input, drop the rest.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "start",
@@ -6178,6 +6649,13 @@
     "name": "axcorrelate",
     "type": "AA->A",
     "description": "Cross-correlate two audio streams.",
+    "inputs": [
+      "a",
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "size",
@@ -6213,6 +6691,12 @@
     "name": "bandpass",
     "type": "A->A",
     "description": "Apply a two-pole Butterworth band-pass filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -6522,6 +7006,12 @@
     "name": "bandreject",
     "type": "A->A",
     "description": "Apply a two-pole Butterworth band-reject filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -6823,6 +7313,12 @@
     "name": "bass",
     "type": "A->A",
     "description": "Boost or cut lower frequencies.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -7156,6 +7652,12 @@
     "name": "biquad",
     "type": "A->A",
     "description": "Apply a biquad IIR filter with the given coefficients.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "a0",
@@ -7413,6 +7915,12 @@
     "name": "channelmap",
     "type": "A->A",
     "description": "Remap audio channels.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "map",
@@ -7438,6 +7946,12 @@
     "name": "channelsplit",
     "type": "A->N",
     "description": "Split audio into per-channel streams.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "channel_layout",
@@ -7463,6 +7977,12 @@
     "name": "chorus",
     "type": "A->A",
     "description": "Add a chorus effect to the audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "in_gain",
@@ -7520,6 +8040,12 @@
     "name": "compand",
     "type": "A->A",
     "description": "Compress or expand audio dynamic range.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "attacks",
@@ -7585,6 +8111,12 @@
     "name": "compensationdelay",
     "type": "A->A",
     "description": "Audio Compensation Delay Line.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "mm",
@@ -7642,6 +8174,12 @@
     "name": "crossfeed",
     "type": "A->A",
     "description": "Apply headphone crossfeed filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "strength",
@@ -7699,6 +8237,12 @@
     "name": "crystalizer",
     "type": "A->A",
     "description": "Simple audio noise sharpening filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "i",
@@ -7724,6 +8268,12 @@
     "name": "dcshift",
     "type": "A->A",
     "description": "Apply a DC shift to the audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "shift",
@@ -7749,6 +8299,12 @@
     "name": "deesser",
     "type": "A->A",
     "description": "Apply de-essing to the audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "i",
@@ -7804,6 +8360,12 @@
     "name": "dialoguenhance",
     "type": "A->A",
     "description": "Audio Dialogue Enhancement.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "original",
@@ -7837,6 +8399,12 @@
     "name": "drmeter",
     "type": "A->A",
     "description": "Measure audio dynamic range.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "length",
@@ -7854,6 +8422,12 @@
     "name": "dynaudnorm",
     "type": "A->A",
     "description": "Dynamic Audio Normalizer.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "framelen",
@@ -8070,7 +8644,13 @@
     "meta": "...",
     "name": "earwax",
     "type": "A->A",
-    "description": "Widen the stereo image."
+    "description": "Widen the stereo image.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ]
   },
   {
     "id": 95,
@@ -8078,6 +8658,12 @@
     "name": "ebur128",
     "type": "A->N",
     "description": "EBU R128 scanner.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "video",
@@ -8239,6 +8825,12 @@
     "name": "equalizer",
     "type": "A->A",
     "description": "Apply two-pole peaking equalization (EQ) filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -8556,6 +9148,12 @@
     "name": "extrastereo",
     "type": "A->A",
     "description": "Increase difference between stereo audio channels.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "m",
@@ -8581,6 +9179,12 @@
     "name": "firequalizer",
     "type": "A->A",
     "description": "Finite Impulse Response Equalizer.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "gain",
@@ -8772,6 +9376,12 @@
     "name": "flanger",
     "type": "A->A",
     "description": "Apply a flanging effect to the audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "delay",
@@ -8873,6 +9483,12 @@
     "name": "haas",
     "type": "A->A",
     "description": "Apply Haas Stereo Enhancer.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -9004,6 +9620,12 @@
     "name": "hdcd",
     "type": "A->A",
     "description": "Apply High Definition Compatible Digital (HDCD) decoding.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "disable_autoconvert",
@@ -9097,6 +9719,12 @@
     "name": "headphone",
     "type": "N->A",
     "description": "Apply headphone binaural spatialization with HRTFs in additional streams.",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "map",
@@ -9174,6 +9802,12 @@
     "name": "highpass",
     "type": "A->A",
     "description": "Apply a high-pass filter with 3dB point frequency.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -9491,6 +10125,12 @@
     "name": "highshelf",
     "type": "A->A",
     "description": "Apply a high shelf filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -9824,6 +10464,13 @@
     "name": "join",
     "type": "N->A",
     "description": "Join multiple audio streams into multi-channel output.",
+    "inputs": [
+      "a",
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "inputs",
@@ -9857,6 +10504,12 @@
     "name": "loudnorm",
     "type": "A->A",
     "description": "EBU R128 loudness normalization",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "I",
@@ -10016,6 +10669,12 @@
     "name": "lowpass",
     "type": "A->A",
     "description": "Apply a low-pass filter with 3dB point frequency.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -10333,6 +10992,12 @@
     "name": "lowshelf",
     "type": "A->A",
     "description": "Apply a low shelf filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -10666,6 +11331,12 @@
     "name": "mcompand",
     "type": "A->A",
     "description": "Multiband Compress or expand audio dynamic range.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "args",
@@ -10683,6 +11354,12 @@
     "name": "pan",
     "type": "A->A",
     "description": "Remix channels with coefficients (panning).",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "args",
@@ -10699,7 +11376,13 @@
     "meta": "...",
     "name": "replaygain",
     "type": "A->A",
-    "description": "ReplayGain scanner."
+    "description": "ReplayGain scanner.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ]
   },
   {
     "id": 112,
@@ -10707,6 +11390,13 @@
     "name": "sidechaincompress",
     "type": "AA->A",
     "description": "Sidechain compressor.",
+    "inputs": [
+      "a",
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -10842,6 +11532,13 @@
     "name": "sidechaingate",
     "type": "AA->A",
     "description": "Audio sidechain gate.",
+    "inputs": [
+      "a",
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -10977,6 +11674,12 @@
     "name": "silencedetect",
     "type": "A->A",
     "description": "Detect silence.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "n",
@@ -11034,6 +11737,12 @@
     "name": "silenceremove",
     "type": "A->A",
     "description": "Remove silence.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "start_periods",
@@ -11169,6 +11878,12 @@
     "name": "speechnorm",
     "type": "A->A",
     "description": "Speech Normalizer.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "peak",
@@ -11338,6 +12053,12 @@
     "name": "stereotools",
     "type": "A->A",
     "description": "Apply various stereo tools.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "level_in",
@@ -11581,6 +12302,12 @@
     "name": "stereowiden",
     "type": "A->A",
     "description": "Apply stereo widening effect.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "delay",
@@ -11622,6 +12349,12 @@
     "name": "superequalizer",
     "type": "A->A",
     "description": "Apply 18 band equalization filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "1b",
@@ -11775,6 +12508,12 @@
     "name": "surround",
     "type": "A->A",
     "description": "Apply audio surround upmix filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "chl_out",
@@ -12284,6 +13023,12 @@
     "name": "tiltshelf",
     "type": "A->A",
     "description": "Apply a tilt shelf filter.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -12617,6 +13362,12 @@
     "name": "treble",
     "type": "A->A",
     "description": "Boost or cut upper frequencies.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -12950,6 +13701,12 @@
     "name": "tremolo",
     "type": "A->A",
     "description": "Apply tremolo effect.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "f",
@@ -12975,6 +13732,12 @@
     "name": "vibrato",
     "type": "A->A",
     "description": "Apply vibrato effect.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "f",
@@ -13000,6 +13763,12 @@
     "name": "virtualbass",
     "type": "A->A",
     "description": "Audio Virtual Bass.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "cutoff",
@@ -13025,6 +13794,12 @@
     "name": "volume",
     "type": "A->A",
     "description": "Change input volume.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "volume",
@@ -13123,7 +13898,13 @@
     "meta": "...",
     "name": "volumedetect",
     "type": "A->A",
-    "description": "Detect audio volume."
+    "description": "Detect audio volume.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ]
   },
   {
     "id": 128,
@@ -13131,6 +13912,12 @@
     "name": "aevalsrc",
     "type": "|->A",
     "description": "Generate an audio signal generated by an expression.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "exprs",
@@ -13212,6 +13999,12 @@
     "name": "afirsrc",
     "type": "|->A",
     "description": "Generate a FIR coefficients audio stream.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "taps",
@@ -13689,6 +14482,12 @@
     "name": "anoisesrc",
     "type": "|->A",
     "description": "Generate a noise audio signal.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "sample_rate",
@@ -13880,6 +14679,12 @@
     "name": "anullsrc",
     "type": "|->A",
     "description": "Null audio source, return empty audio frames.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "channel_layout",
@@ -13953,6 +14758,12 @@
     "name": "hilbert",
     "type": "|->A",
     "description": "Generate a Hilbert transform FIR coefficients.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "sample_rate",
@@ -14382,6 +15193,12 @@
     "name": "sinc",
     "type": "|->A",
     "description": "Generate a sinc kaiser-windowed low-pass, high-pass, band-pass, or band-reject FIR coefficients.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "sample_rate",
@@ -14487,6 +15304,12 @@
     "name": "sine",
     "type": "|->A",
     "description": "Generate sine wave audio signal.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "frequency",
@@ -14567,7 +15390,13 @@
     "meta": "...",
     "name": "anullsink",
     "type": "A->|",
-    "description": "Do absolutely nothing with the input audio."
+    "description": "Do absolutely nothing with the input audio.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "|"
+    ]
   },
   {
     "id": 136,
@@ -14575,6 +15404,12 @@
     "name": "addroi",
     "type": "V->V",
     "description": "Add region of interest to frame.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "x",
@@ -14631,7 +15466,13 @@
     "meta": "...",
     "name": "alphaextract",
     "type": "V->V",
-    "description": "Extract an alpha channel as a grayscale image component."
+    "description": "Extract an alpha channel as a grayscale image component.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 138,
@@ -14639,6 +15480,13 @@
     "name": "alphamerge",
     "type": "VV->V",
     "description": "Copy the luma value of the second input into the alpha channel of the first input.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": []
   },
   {
@@ -14647,6 +15495,12 @@
     "name": "amplify",
     "type": "V->V",
     "description": "Amplify changes between successive video frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "radius",
@@ -14712,6 +15566,12 @@
     "name": "ass",
     "type": "V->V",
     "description": "Render ASS subtitles onto input video using the libass library.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "filename",
@@ -14783,6 +15643,12 @@
     "name": "atadenoise",
     "type": "V->V",
     "description": "Apply an Adaptive Temporal Averaging Denoiser.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "0a",
@@ -14898,6 +15764,12 @@
     "name": "avgblur",
     "type": "V->V",
     "description": "Apply Average Blur filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "sizeX",
@@ -14931,6 +15803,12 @@
     "name": "bbox",
     "type": "V->V",
     "description": "Compute bounding box for each frame.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "min_val",
@@ -14948,6 +15826,12 @@
     "name": "bench",
     "type": "V->V",
     "description": "Benchmark part of a filtergraph.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "action",
@@ -14975,6 +15859,12 @@
     "name": "bilateral",
     "type": "V->V",
     "description": "Apply Bilateral filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "sigmaS",
@@ -15008,6 +15898,12 @@
     "name": "bitplanenoise",
     "type": "V->V",
     "description": "Measure bit plane noise.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "bitplane",
@@ -15033,6 +15929,12 @@
     "name": "blackdetect",
     "type": "V->V",
     "description": "Detect video intervals that are (almost) black.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "d",
@@ -15090,6 +15992,12 @@
     "name": "blackframe",
     "type": "V->V",
     "description": "Detect frames that are (almost) black.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "amount",
@@ -15123,6 +16031,13 @@
     "name": "blend",
     "type": "VV->V",
     "description": "Blend two video frames into each other.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "c0_mode",
@@ -16102,6 +17017,12 @@
     "name": "blockdetect",
     "type": "V->V",
     "description": "Blockdetect filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "period_min",
@@ -16135,6 +17056,12 @@
     "name": "blurdetect",
     "type": "V->V",
     "description": "Blurdetect filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "high",
@@ -16200,6 +17127,12 @@
     "name": "bm3d",
     "type": "N->V",
     "description": "Block-Matching 3D denoiser.",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "sigma",
@@ -16307,6 +17240,12 @@
     "name": "boxblur",
     "type": "V->V",
     "description": "Blur the input.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "luma_radius",
@@ -16412,6 +17351,12 @@
     "name": "bwdif",
     "type": "V->V",
     "description": "Deinterlace the input image.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -16479,6 +17424,12 @@
     "name": "cas",
     "type": "V->V",
     "description": "Contrast Adaptive Sharpen.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "strength",
@@ -16504,6 +17455,12 @@
     "name": "chromahold",
     "type": "V->V",
     "description": "Turns a certain color range into gray.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "color",
@@ -16545,6 +17502,12 @@
     "name": "chromakey",
     "type": "V->V",
     "description": "Turns a certain color into transparency. Operates on YUV colors.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "color",
@@ -16586,6 +17549,12 @@
     "name": "chromanr",
     "type": "V->V",
     "description": "Reduce chrominance noise.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "thres",
@@ -16677,6 +17646,12 @@
     "name": "chromashift",
     "type": "V->V",
     "description": "Shift chroma.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "cbh",
@@ -16736,6 +17711,12 @@
     "name": "ciescope",
     "type": "V->V",
     "description": "Video CIE scope.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "system",
@@ -16971,6 +17952,12 @@
     "name": "codecview",
     "type": "V->V",
     "description": "Visualize information about some codecs.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mv",
@@ -17098,6 +18085,12 @@
     "name": "colorbalance",
     "type": "V->V",
     "description": "Adjust the color balance.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rs",
@@ -17187,6 +18180,12 @@
     "name": "colorchannelmixer",
     "type": "V->V",
     "description": "Adjust colors by mixing color channels.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rr",
@@ -17370,6 +18369,12 @@
     "name": "colorcontrast",
     "type": "V->V",
     "description": "Adjust color contrast between RGB components.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rc",
@@ -17435,6 +18440,12 @@
     "name": "colorcorrect",
     "type": "V->V",
     "description": "Adjust color white balance selectively for blacks and whites.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rl",
@@ -17510,6 +18521,12 @@
     "name": "colorize",
     "type": "V->V",
     "description": "Overlay a solid color on the video stream.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "hue",
@@ -17551,6 +18568,12 @@
     "name": "colorkey",
     "type": "V->V",
     "description": "Turns a certain color into transparency. Operates on RGB colors.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "color",
@@ -17584,6 +18607,12 @@
     "name": "colorhold",
     "type": "V->V",
     "description": "Turns a certain color range into gray. Operates on RGB colors.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "color",
@@ -17617,6 +18646,12 @@
     "name": "colorlevels",
     "type": "V->V",
     "description": "Adjust the color levels.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rimin",
@@ -17792,6 +18827,14 @@
     "name": "colormap",
     "type": "VVV->V",
     "description": "Apply custom Color Maps to video stream.",
+    "inputs": [
+      "v",
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "patch_size",
@@ -17853,6 +18896,12 @@
     "name": "colormatrix",
     "type": "V->V",
     "description": "Convert color matrix.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "src",
@@ -17946,6 +18995,12 @@
     "name": "colorspace",
     "type": "V->V",
     "description": "Convert between colorspaces.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "all",
@@ -18525,6 +19580,12 @@
     "name": "colortemperature",
     "type": "V->V",
     "description": "Adjust color temperature of video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "temperature",
@@ -18558,6 +19619,12 @@
     "name": "convolution",
     "type": "V->V",
     "description": "Apply convolution filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "0m",
@@ -18751,6 +19818,13 @@
     "name": "convolve",
     "type": "VV->V",
     "description": "Convolve first video stream with second video stream.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -18793,7 +19867,13 @@
     "meta": "...",
     "name": "copy",
     "type": "V->V",
-    "description": "Copy the input video unchanged to the output."
+    "description": "Copy the input video unchanged to the output.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 177,
@@ -18801,6 +19881,12 @@
     "name": "cover_rect",
     "type": "V->V",
     "description": "Find and cover a user specified object.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "cover",
@@ -18836,6 +19922,12 @@
     "name": "crop",
     "type": "V->V",
     "description": "Crop the input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "out_w",
@@ -18909,6 +20001,12 @@
     "name": "cropdetect",
     "type": "V->V",
     "description": "Auto-detect crop size.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "limit",
@@ -19008,6 +20106,12 @@
     "name": "cue",
     "type": "V->V",
     "description": "Delay filtering to match a cue.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "cue",
@@ -19041,6 +20145,12 @@
     "name": "curves",
     "type": "V->V",
     "description": "Adjust components curves.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "preset",
@@ -19210,6 +20320,12 @@
     "name": "datascope",
     "type": "V->V",
     "description": "Video data analysis.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -19315,6 +20431,12 @@
     "name": "dblur",
     "type": "V->V",
     "description": "Apply Directional Blur filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "angle",
@@ -19348,6 +20470,12 @@
     "name": "dctdnoiz",
     "type": "V->V",
     "description": "Denoise frames using 2D DCT.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "sigma",
@@ -19405,6 +20533,12 @@
     "name": "deband",
     "type": "V->V",
     "description": "Debands video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "1thr",
@@ -19510,6 +20644,12 @@
     "name": "deblock",
     "type": "V->V",
     "description": "Deblock video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "filter",
@@ -19585,6 +20725,12 @@
     "name": "decimate",
     "type": "N->V",
     "description": "Decimate frames (post field matching filter).",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "cycle",
@@ -19658,6 +20804,13 @@
     "name": "deconvolve",
     "type": "VV->V",
     "description": "Deconvolve first video stream with second video stream.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -19701,6 +20854,12 @@
     "name": "dedot",
     "type": "V->V",
     "description": "Reduce cross-luminance and cross-color.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "m",
@@ -19760,6 +20919,12 @@
     "name": "deflate",
     "type": "V->V",
     "description": "Apply deflate effect.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "threshold0",
@@ -19801,6 +20966,12 @@
     "name": "deflicker",
     "type": "V->V",
     "description": "Remove temporal frame luminance variations.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -19910,6 +21081,12 @@
     "name": "dejudder",
     "type": "V->V",
     "description": "Remove judder produced by pullup.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "cycle",
@@ -19927,6 +21104,12 @@
     "name": "delogo",
     "type": "V->V",
     "description": "Remove logo from input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "x",
@@ -19976,6 +21159,12 @@
     "name": "derain",
     "type": "V->V",
     "description": "Apply derain filter to the input.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "filter_type",
@@ -20041,6 +21230,12 @@
     "name": "deshake",
     "type": "V->V",
     "description": "Stabilize shaky video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "x",
@@ -20174,6 +21369,12 @@
     "name": "despill",
     "type": "V->V",
     "description": "Despill video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "type",
@@ -20257,6 +21458,12 @@
     "name": "detelecine",
     "type": "V->V",
     "description": "Apply an inverse telecine pattern.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "first_field",
@@ -20308,6 +21515,12 @@
     "name": "dilation",
     "type": "V->V",
     "description": "Apply dilation effect.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "coordinates",
@@ -20357,6 +21570,14 @@
     "name": "displace",
     "type": "VVV->V",
     "description": "Displace pixels.",
+    "inputs": [
+      "v",
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "edge",
@@ -20392,6 +21613,12 @@
     "name": "dnn_classify",
     "type": "V->V",
     "description": "Apply DNN classify filter to the input.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "dnn_backend",
@@ -20481,6 +21708,12 @@
     "name": "dnn_detect",
     "type": "V->V",
     "description": "Apply DNN detect filter to the input.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "dnn_backend",
@@ -20562,6 +21795,12 @@
     "name": "dnn_processing",
     "type": "V->V",
     "description": "Apply DNN processing filter to the input.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "dnn_backend",
@@ -20633,6 +21872,12 @@
     "name": "doubleweave",
     "type": "V->V",
     "description": "Weave input video fields into double number of frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "first_field",
@@ -20668,6 +21913,12 @@
     "name": "drawbox",
     "type": "V->V",
     "description": "Draw a colored box on the input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "x",
@@ -20773,6 +22024,12 @@
     "name": "drawgraph",
     "type": "V->V",
     "description": "Draw a graph using input video metadata.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "m1",
@@ -20954,6 +22211,12 @@
     "name": "drawgrid",
     "type": "V->V",
     "description": "Draw a colored grid on the input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "x",
@@ -21051,6 +22314,12 @@
     "name": "drawtext",
     "type": "V->V",
     "description": "Draw text on top of video frames using libfreetype library.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "fontfile",
@@ -21414,6 +22683,12 @@
     "name": "edgedetect",
     "type": "V->V",
     "description": "Detect and draw edge.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "high",
@@ -21495,6 +22770,12 @@
     "name": "elbg",
     "type": "V->V",
     "description": "Apply posterize effect, using the ELBG algorithm.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "codebook_length",
@@ -21568,6 +22849,12 @@
     "name": "entropy",
     "type": "V->V",
     "description": "Measure video frames entropy.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -21595,6 +22882,12 @@
     "name": "epx",
     "type": "V->V",
     "description": "Scale the input using EPX algorithm.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "n",
@@ -21612,6 +22905,12 @@
     "name": "eq",
     "type": "V->V",
     "description": "Adjust brightness, contrast, gamma, and saturation.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "contrast",
@@ -21703,6 +23002,12 @@
     "name": "erosion",
     "type": "V->V",
     "description": "Apply erosion effect.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "coordinates",
@@ -21752,6 +23057,12 @@
     "name": "estdif",
     "type": "V->V",
     "description": "Apply Edge Slope Tracing deinterlace.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -21881,6 +23192,12 @@
     "name": "exposure",
     "type": "V->V",
     "description": "Adjust exposure of the video stream.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "exposure",
@@ -21906,6 +23223,12 @@
     "name": "extractplanes",
     "type": "V->N",
     "description": "Extract planes as grayscale frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "planes",
@@ -21953,6 +23276,12 @@
     "name": "fade",
     "type": "V->V",
     "description": "Fade in/out input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "type",
@@ -22086,6 +23415,14 @@
     "name": "feedback",
     "type": "VV->VV",
     "description": "Apply feedback video filter.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v",
+      "v"
+    ],
     "params": [
       {
         "name": "x",
@@ -22127,6 +23464,12 @@
     "name": "fftdnoiz",
     "type": "V->V",
     "description": "Denoise frames using 3D FFT.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "sigma",
@@ -22308,6 +23651,12 @@
     "name": "fftfilt",
     "type": "V->V",
     "description": "Apply arbitrary expressions to pixels in frequency domain.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "dc_Y",
@@ -22383,6 +23732,12 @@
     "name": "field",
     "type": "V->V",
     "description": "Extract a field from the input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "type",
@@ -22410,6 +23765,12 @@
     "name": "fieldhint",
     "type": "V->V",
     "description": "Field matching using hints.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "hint",
@@ -22449,6 +23810,12 @@
     "name": "fieldmatch",
     "type": "N->V",
     "description": "Field matching for inverse telecine.",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "order",
@@ -22660,6 +24027,12 @@
     "name": "fieldorder",
     "type": "V->V",
     "description": "Set the field order.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "order",
@@ -22687,6 +24060,12 @@
     "name": "fillborders",
     "type": "V->V",
     "description": "Fill borders of the input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "left",
@@ -22774,6 +24153,12 @@
     "name": "find_rect",
     "type": "V->V",
     "description": "Find a user specified object.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "object",
@@ -22847,6 +24232,12 @@
     "name": "floodfill",
     "type": "V->V",
     "description": "Fill area with same color with another color.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "x",
@@ -22936,6 +24327,12 @@
     "name": "format",
     "type": "V->V",
     "description": "Convert the input video to one of the specified pixel formats.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "pix_fmts",
@@ -22953,6 +24350,12 @@
     "name": "fps",
     "type": "V->V",
     "description": "Force constant framerate.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "fps",
@@ -23026,6 +24429,13 @@
     "name": "framepack",
     "type": "VV->V",
     "description": "Generate a frame packed stereoscopic video.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "format",
@@ -23065,6 +24475,12 @@
     "name": "framerate",
     "type": "V->V",
     "description": "Upsamples or downsamples progressive source between specified frame rates.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "fps",
@@ -23124,6 +24540,12 @@
     "name": "framestep",
     "type": "V->V",
     "description": "Select one frame every N frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "step",
@@ -23141,6 +24563,12 @@
     "name": "freezedetect",
     "type": "V->V",
     "description": "Detects frozen video input.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "n",
@@ -23182,6 +24610,13 @@
     "name": "freezeframes",
     "type": "VV->V",
     "description": "Freeze video frames.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "first",
@@ -23215,6 +24650,12 @@
     "name": "fspp",
     "type": "V->V",
     "description": "Apply Fast Simple Post-processing filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "quality",
@@ -23256,6 +24697,12 @@
     "name": "gblur",
     "type": "V->V",
     "description": "Apply Gaussian Blur filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "sigma",
@@ -23297,6 +24744,12 @@
     "name": "geq",
     "type": "V->V",
     "description": "Apply generic equation to each pixel.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "lum_expr",
@@ -23470,6 +24923,12 @@
     "name": "gradfun",
     "type": "V->V",
     "description": "Debands video quickly using gradients.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "strength",
@@ -23495,6 +24954,12 @@
     "name": "graphmonitor",
     "type": "V->V",
     "description": "Show various filtergraph stats.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -23736,6 +25201,12 @@
     "name": "grayworld",
     "type": "V->V",
     "description": "Adjust white balance using LAB gray world algorithm",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": []
   },
   {
@@ -23744,6 +25215,12 @@
     "name": "greyedge",
     "type": "V->V",
     "description": "Estimates scene illumination by grey edge assumption.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "difford",
@@ -23777,6 +25254,12 @@
     "name": "guided",
     "type": "N->V",
     "description": "Apply Guided filter.",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "radius",
@@ -23854,6 +25337,13 @@
     "name": "haldclut",
     "type": "VV->V",
     "description": "Adjust colors using a Hald CLUT.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "clut",
@@ -23911,6 +25401,12 @@
     "name": "hflip",
     "type": "V->V",
     "description": "Horizontally flip the input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": []
   },
   {
@@ -23919,6 +25415,12 @@
     "name": "histeq",
     "type": "V->V",
     "description": "Apply global color histogram equalization.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "strength",
@@ -23966,6 +25468,12 @@
     "name": "histogram",
     "type": "V->V",
     "description": "Compute and draw a histogram.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "level_height",
@@ -24219,6 +25727,12 @@
     "name": "hqdn3d",
     "type": "V->V",
     "description": "Apply a High Quality 3D Denoiser.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "luma_spatial",
@@ -24260,6 +25774,12 @@
     "name": "hqx",
     "type": "V->V",
     "description": "Scale the input by 2, 3 or 4 using the hq*x magnification algorithm.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "n",
@@ -24277,6 +25797,13 @@
     "name": "hstack",
     "type": "N->V",
     "description": "Stack video inputs horizontally.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "inputs",
@@ -24302,6 +25829,12 @@
     "name": "hsvhold",
     "type": "V->V",
     "description": "Turns a certain HSV range into gray.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "hue",
@@ -24351,6 +25884,12 @@
     "name": "hsvkey",
     "type": "V->V",
     "description": "Turns a certain HSV range into transparency. Operates on YUV colors.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "hue",
@@ -24400,6 +25939,12 @@
     "name": "hue",
     "type": "V->V",
     "description": "Adjust the hue and saturation of the input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "h",
@@ -24441,6 +25986,12 @@
     "name": "huesaturation",
     "type": "V->V",
     "description": "Apply hue-saturation-intensity adjustments.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "hue",
@@ -24551,7 +26102,13 @@
     "meta": "...",
     "name": "hwdownload",
     "type": "V->V",
-    "description": "Download a hardware frame to a normal frame"
+    "description": "Download a hardware frame to a normal frame",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 255,
@@ -24559,6 +26116,12 @@
     "name": "hwmap",
     "type": "V->V",
     "description": "Map hardware frames",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -24610,6 +26173,12 @@
     "name": "hwupload",
     "type": "V->V",
     "description": "Upload a normal frame to a hardware frame",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "derive_device",
@@ -24627,6 +26196,13 @@
     "name": "hysteresis",
     "type": "VV->V",
     "description": "Grow first stream into second stream by connecting components.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -24652,6 +26228,13 @@
     "name": "identity",
     "type": "VV->V",
     "description": "Calculate the Identity between two video streams.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": []
   },
   {
@@ -24660,6 +26243,12 @@
     "name": "idet",
     "type": "V->V",
     "description": "Interlace detect Filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "intl_thres",
@@ -24709,6 +26298,12 @@
     "name": "il",
     "type": "V->V",
     "description": "Deinterleave or interleave fields.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "luma_mode",
@@ -24946,6 +26541,12 @@
     "name": "inflate",
     "type": "V->V",
     "description": "Apply inflate effect.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "threshold0",
@@ -24987,6 +26588,12 @@
     "name": "interlace",
     "type": "V->V",
     "description": "Convert progressive video into interlaced.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "scan",
@@ -25036,6 +26643,12 @@
     "name": "interleave",
     "type": "N->V",
     "description": "Temporally interleave video inputs.",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "nb_inputs",
@@ -25083,6 +26696,12 @@
     "name": "kerndeint",
     "type": "V->V",
     "description": "Apply kernel deinterlacing to the input.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "thresh",
@@ -25132,6 +26751,12 @@
     "name": "kirsch",
     "type": "V->V",
     "description": "Apply kirsch operator.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -25165,6 +26790,12 @@
     "name": "lagfun",
     "type": "V->V",
     "description": "Slowly update darker pixels.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "decay",
@@ -25189,7 +26820,13 @@
     "meta": "T..",
     "name": "latency",
     "type": "V->V",
-    "description": "Report video filtering latency."
+    "description": "Report video filtering latency.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 268,
@@ -25197,6 +26834,12 @@
     "name": "lenscorrection",
     "type": "V->V",
     "description": "Rectify the image by correcting for lens distortion.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "cx",
@@ -25264,6 +26907,12 @@
     "name": "limitdiff",
     "type": "N->V",
     "description": "Apply filtering with limiting difference.",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "threshold",
@@ -25305,6 +26954,12 @@
     "name": "limiter",
     "type": "V->V",
     "description": "Limit pixels components to the specified range.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "min",
@@ -25338,6 +26993,12 @@
     "name": "loop",
     "type": "V->V",
     "description": "Loop video frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "loop",
@@ -25371,6 +27032,12 @@
     "name": "lumakey",
     "type": "V->V",
     "description": "Turns a certain luma into transparency.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "threshold",
@@ -25404,6 +27071,12 @@
     "name": "lut",
     "type": "V->V",
     "description": "Compute and apply a lookup table to the RGB/YUV input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "c0",
@@ -25501,6 +27174,12 @@
     "name": "lut1d",
     "type": "V->V",
     "description": "Adjust colors using a 1D LUT.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "file",
@@ -25548,6 +27227,13 @@
     "name": "lut2",
     "type": "VV->V",
     "description": "Compute and apply a lookup table from two video inputs.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "c0",
@@ -25597,6 +27283,12 @@
     "name": "lut3d",
     "type": "V->V",
     "description": "Adjust colors using a 3D LUT.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "file",
@@ -25662,6 +27354,12 @@
     "name": "lutrgb",
     "type": "V->V",
     "description": "Compute and apply a lookup table to the RGB input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "c0",
@@ -25759,6 +27457,12 @@
     "name": "lutyuv",
     "type": "V->V",
     "description": "Compute and apply a lookup table to the YUV input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "c0",
@@ -25856,6 +27560,14 @@
     "name": "maskedclamp",
     "type": "VVV->V",
     "description": "Clamp first stream with second stream and third stream.",
+    "inputs": [
+      "v",
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "undershoot",
@@ -25889,6 +27601,14 @@
     "name": "maskedmax",
     "type": "VVV->V",
     "description": "Apply filtering with maximum difference of two streams.",
+    "inputs": [
+      "v",
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -25906,6 +27626,14 @@
     "name": "maskedmerge",
     "type": "VVV->V",
     "description": "Merge first stream with second stream using third stream as mask.",
+    "inputs": [
+      "v",
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -25923,6 +27651,14 @@
     "name": "maskedmin",
     "type": "VVV->V",
     "description": "Apply filtering with minimum difference of two streams.",
+    "inputs": [
+      "v",
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -25940,6 +27676,13 @@
     "name": "maskedthreshold",
     "type": "VV->V",
     "description": "Pick pixels comparing absolute difference of two streams with threshold.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "threshold",
@@ -25983,6 +27726,12 @@
     "name": "maskfun",
     "type": "V->V",
     "description": "Create Mask.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "low",
@@ -26032,6 +27781,12 @@
     "name": "median",
     "type": "V->V",
     "description": "Apply Median filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "radius",
@@ -26073,6 +27828,12 @@
     "name": "mergeplanes",
     "type": "N->V",
     "description": "Merge planes.",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mapping",
@@ -26162,6 +27923,12 @@
     "name": "mestimate",
     "type": "V->V",
     "description": "Generate motion vectors.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "method",
@@ -26233,6 +28000,12 @@
     "name": "metadata",
     "type": "V->V",
     "description": "Manipulate video frame metadata.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -26350,6 +28123,13 @@
     "name": "midequalizer",
     "type": "VV->V",
     "description": "Apply Midway Equalization.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -26367,6 +28147,12 @@
     "name": "minterpolate",
     "type": "V->V",
     "description": "Frame rate conversion using Motion Interpolation.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "fps",
@@ -26538,6 +28324,13 @@
     "name": "mix",
     "type": "N->V",
     "description": "Mix video inputs.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "inputs",
@@ -26601,6 +28394,12 @@
     "name": "monochrome",
     "type": "V->V",
     "description": "Convert video to gray using custom color filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "cb",
@@ -26642,6 +28441,13 @@
     "name": "morpho",
     "type": "VV->V",
     "description": "Apply Morphological filter.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -26715,6 +28521,12 @@
     "name": "mpdecimate",
     "type": "V->V",
     "description": "Remove near-duplicate frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "max",
@@ -26756,6 +28568,13 @@
     "name": "msad",
     "type": "VV->V",
     "description": "Calculate the MSAD between two video streams.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": []
   },
   {
@@ -26764,6 +28583,13 @@
     "name": "multiply",
     "type": "VV->V",
     "description": "Multiply first video stream with second video stream.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "scale",
@@ -26797,6 +28623,12 @@
     "name": "negate",
     "type": "V->V",
     "description": "Negate input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "components",
@@ -26852,6 +28684,12 @@
     "name": "nlmeans",
     "type": "V->V",
     "description": "Non-local means denoiser.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "s",
@@ -26901,6 +28739,12 @@
     "name": "nnedi",
     "type": "V->V",
     "description": "Apply neural network edge directed interpolation intra-only deinterlacer.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "weights",
@@ -27120,6 +28964,12 @@
     "name": "noformat",
     "type": "V->V",
     "description": "Force libavfilter not to use any of the specified pixel formats for the input to the next filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "pix_fmts",
@@ -27137,6 +28987,12 @@
     "name": "noise",
     "type": "V->V",
     "description": "Add noise.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "all_seed",
@@ -27526,6 +29382,12 @@
     "name": "normalize",
     "type": "V->V",
     "description": "Normalize RGB video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "blackpt",
@@ -27574,7 +29436,13 @@
     "meta": "...",
     "name": "null",
     "type": "V->V",
-    "description": "Pass the source unchanged to the output."
+    "description": "Pass the source unchanged to the output.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 304,
@@ -27582,6 +29450,12 @@
     "name": "oscilloscope",
     "type": "V->V",
     "description": "2D Video Oscilloscope.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "x",
@@ -27695,6 +29569,13 @@
     "name": "overlay",
     "type": "VV->V",
     "description": "Overlay a video source on top of the input.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "x",
@@ -27836,6 +29717,12 @@
     "name": "owdenoise",
     "type": "V->V",
     "description": "Denoise using wavelets.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "depth",
@@ -27885,6 +29772,12 @@
     "name": "pad",
     "type": "V->V",
     "description": "Pad the input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "width",
@@ -27976,6 +29869,12 @@
     "name": "palettegen",
     "type": "V->V",
     "description": "Find the optimal palette for a given stream.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "max_colors",
@@ -28031,6 +29930,13 @@
     "name": "paletteuse",
     "type": "VV->V",
     "description": "Use a palette to downsample an input video stream.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "dither",
@@ -28128,6 +30034,12 @@
     "name": "perms",
     "type": "V->V",
     "description": "Set permissions for the output video frame.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -28175,6 +30087,12 @@
     "name": "perspective",
     "type": "V->V",
     "description": "Correct the perspective of video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "x0",
@@ -28302,6 +30220,12 @@
     "name": "phase",
     "type": "V->V",
     "description": "Phase shift fields.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -28357,6 +30281,12 @@
     "name": "photosensitivity",
     "type": "V->V",
     "description": "Filter out photosensitive epilepsy seizure-inducing flashes.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "frames",
@@ -28413,7 +30343,13 @@
     "meta": "...",
     "name": "pixdesctest",
     "type": "V->V",
-    "description": "Test pixel format definitions."
+    "description": "Test pixel format definitions.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 315,
@@ -28421,6 +30357,12 @@
     "name": "pixelize",
     "type": "V->V",
     "description": "Pixelize video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "width",
@@ -28522,6 +30464,12 @@
     "name": "pixscope",
     "type": "V->V",
     "description": "Pixel data analysis.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "x",
@@ -28587,6 +30535,12 @@
     "name": "pp",
     "type": "V->V",
     "description": "Filter video using libpostproc.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "subfilters",
@@ -28604,6 +30558,12 @@
     "name": "pp7",
     "type": "V->V",
     "description": "Apply Postprocessing 7 filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "qp",
@@ -28643,6 +30603,12 @@
     "name": "premultiply",
     "type": "N->V",
     "description": "PreMultiply first stream with first plane of second stream.",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -28668,6 +30634,12 @@
     "name": "prewitt",
     "type": "V->V",
     "description": "Apply prewitt operator.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -28701,6 +30673,12 @@
     "name": "pseudocolor",
     "type": "V->V",
     "description": "Make pseudocolored video frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "c0",
@@ -28914,6 +30892,13 @@
     "name": "psnr",
     "type": "VV->V",
     "description": "Calculate the PSNR between two video streams.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "stats_file",
@@ -28955,6 +30940,12 @@
     "name": "pullup",
     "type": "V->V",
     "description": "Pullup from field sequence to frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "jl",
@@ -29026,6 +31017,12 @@
     "name": "qp",
     "type": "V->V",
     "description": "Change video quantization parameters.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "qp",
@@ -29043,6 +31040,12 @@
     "name": "random",
     "type": "V->V",
     "description": "Return random frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "frames",
@@ -29068,6 +31071,12 @@
     "name": "readeia608",
     "type": "V->V",
     "description": "Read EIA-608 Closed Caption codes from input video and write them to frame metadata.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "scan_min",
@@ -29117,6 +31126,12 @@
     "name": "readvitc",
     "type": "V->V",
     "description": "Read vertical interval timecode and write it to frame metadata.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "scan_max",
@@ -29150,6 +31165,12 @@
     "name": "realtime",
     "type": "V->V",
     "description": "Slow down filtering to match realtime.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "limit",
@@ -29175,6 +31196,14 @@
     "name": "remap",
     "type": "VVV->V",
     "description": "Remap pixels.",
+    "inputs": [
+      "v",
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "format",
@@ -29210,6 +31239,12 @@
     "name": "removegrain",
     "type": "V->V",
     "description": "Remove grain.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "m0",
@@ -29251,6 +31286,12 @@
     "name": "removelogo",
     "type": "V->V",
     "description": "Remove a TV logo based on a mask image.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "filename",
@@ -29275,14 +31316,26 @@
     "meta": "...",
     "name": "repeatfields",
     "type": "V->V",
-    "description": "Hard repeat fields based on MPEG repeat field flag."
+    "description": "Hard repeat fields based on MPEG repeat field flag.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 333,
     "meta": "...",
     "name": "reverse",
     "type": "V->V",
-    "description": "Reverse a clip."
+    "description": "Reverse a clip.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 334,
@@ -29290,6 +31343,12 @@
     "name": "rgbashift",
     "type": "V->V",
     "description": "Shift RGBA.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rh",
@@ -29381,6 +31440,12 @@
     "name": "roberts",
     "type": "V->V",
     "description": "Apply roberts cross operator.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -29414,6 +31479,12 @@
     "name": "rotate",
     "type": "V->V",
     "description": "Rotate the input image.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "angle",
@@ -29495,6 +31566,12 @@
     "name": "sab",
     "type": "V->V",
     "description": "Apply shape adaptive blur.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "luma_radius",
@@ -29600,6 +31677,12 @@
     "name": "scale",
     "type": "V->V",
     "description": "Scale the input video size and/or convert the image format.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "w",
@@ -29921,6 +32004,14 @@
     "name": "scale2ref",
     "type": "VV->VV",
     "description": "Scale the input video size and/or convert the image format to the given reference.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v",
+      "v"
+    ],
     "params": [
       {
         "name": "w",
@@ -30242,6 +32333,12 @@
     "name": "scdet",
     "type": "V->V",
     "description": "Detect video scene change",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "threshold",
@@ -30283,6 +32380,12 @@
     "name": "scharr",
     "type": "V->V",
     "description": "Apply scharr operator.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -30316,6 +32419,12 @@
     "name": "scroll",
     "type": "V->V",
     "description": "Scroll input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "horizontal",
@@ -30373,6 +32482,12 @@
     "name": "segment",
     "type": "V->N",
     "description": "Segment video stream.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "timestamps",
@@ -30398,6 +32513,12 @@
     "name": "select",
     "type": "V->N",
     "description": "Select video frames to pass in output.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "expr",
@@ -30439,6 +32560,12 @@
     "name": "selectivecolor",
     "type": "V->V",
     "description": "Apply CMYK adjustments to specific color ranges.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "correction_method",
@@ -30546,6 +32673,12 @@
     "name": "sendcmd",
     "type": "V->V",
     "description": "Send commands to filters.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "commands",
@@ -30586,7 +32719,13 @@
     "meta": "...",
     "name": "separatefields",
     "type": "V->V",
-    "description": "Split input video frames into fields."
+    "description": "Split input video frames into fields.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 348,
@@ -30594,6 +32733,12 @@
     "name": "setdar",
     "type": "V->V",
     "description": "Set the frame display aspect ratio.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "dar",
@@ -30635,6 +32780,12 @@
     "name": "setfield",
     "type": "V->V",
     "description": "Force field for the output video frame.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -30670,6 +32821,12 @@
     "name": "setparams",
     "type": "V->V",
     "description": "Force field, or color property for the output video frame.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "field_mode",
@@ -30969,6 +33126,12 @@
     "name": "setpts",
     "type": "V->V",
     "description": "Set PTS for the output video frame.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "expr",
@@ -30986,6 +33149,12 @@
     "name": "setrange",
     "type": "V->V",
     "description": "Force color range for the output video frame.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "range",
@@ -31041,6 +33210,12 @@
     "name": "setsar",
     "type": "V->V",
     "description": "Set the pixel sample aspect ratio.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "sar",
@@ -31082,6 +33257,12 @@
     "name": "settb",
     "type": "V->V",
     "description": "Set timebase for the video output link.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "expr",
@@ -31107,6 +33288,12 @@
     "name": "shear",
     "type": "V->V",
     "description": "Shear transform the input image.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "shx",
@@ -31166,6 +33353,12 @@
     "name": "showinfo",
     "type": "V->V",
     "description": "Show textual information for each video frame.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "checksum",
@@ -31183,6 +33376,12 @@
     "name": "showpalette",
     "type": "V->V",
     "description": "Display frame palette.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "s",
@@ -31200,6 +33399,12 @@
     "name": "shuffleframes",
     "type": "V->V",
     "description": "Shuffle video frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mapping",
@@ -31217,6 +33422,12 @@
     "name": "shufflepixels",
     "type": "V->V",
     "description": "Shuffle video pixels.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "direction",
@@ -31354,6 +33565,12 @@
     "name": "shuffleplanes",
     "type": "V->V",
     "description": "Shuffle video planes.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "map0",
@@ -31395,6 +33612,12 @@
     "name": "sidedata",
     "type": "V->V",
     "description": "Manipulate video frame side data.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -31516,6 +33739,12 @@
     "name": "signalstats",
     "type": "V->V",
     "description": "Generate statistics from video analysis.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "stat",
@@ -31585,6 +33814,12 @@
     "name": "signature",
     "type": "N->V",
     "description": "Calculate the MPEG-7 video signature",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "detectmode",
@@ -31690,6 +33925,12 @@
     "name": "siti",
     "type": "V->V",
     "description": "Calculate spatial information (SI) and temporal information (TI).",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "print_summary",
@@ -31707,6 +33948,12 @@
     "name": "smartblur",
     "type": "V->V",
     "description": "Blur the input video without impacting the outlines.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "luma_radius",
@@ -31812,6 +34059,12 @@
     "name": "sobel",
     "type": "V->V",
     "description": "Apply sobel operator.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -31845,6 +34098,13 @@
     "name": "split",
     "type": "V->N",
     "description": "Pass on the input to N video outputs.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v",
+      "v"
+    ],
     "params": [
       {
         "name": "outputs",
@@ -31862,6 +34122,12 @@
     "name": "spp",
     "type": "V->V",
     "description": "Apply a simple post processing filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "quality",
@@ -31913,6 +34179,12 @@
     "name": "sr",
     "type": "V->V",
     "description": "Apply DNN-based image super resolution to the input.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "dnn_backend",
@@ -31968,6 +34240,13 @@
     "name": "ssim",
     "type": "VV->V",
     "description": "Calculate the SSIM between two video streams.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "stats_file",
@@ -31993,6 +34272,12 @@
     "name": "stereo3d",
     "type": "V->V",
     "description": "Convert video stereoscopic 3D view.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "in",
@@ -32242,6 +34527,13 @@
     "name": "streamselect",
     "type": "N->N",
     "description": "Select video streams",
+    "inputs": [
+      "n",
+      "n"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "inputs",
@@ -32267,6 +34559,12 @@
     "name": "subtitles",
     "type": "V->V",
     "description": "Render text subtitles onto input video using the libass library.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "filename",
@@ -32347,7 +34645,13 @@
     "meta": ".S.",
     "name": "super2xsai",
     "type": "V->V",
-    "description": "Scale the input by 2x using the Super2xSaI pixel art algorithm."
+    "description": "Scale the input by 2x using the Super2xSaI pixel art algorithm.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 375,
@@ -32355,6 +34659,12 @@
     "name": "swaprect",
     "type": "V->V",
     "description": "Swap 2 rectangular objects in video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "w",
@@ -32412,6 +34722,12 @@
     "name": "swapuv",
     "type": "V->V",
     "description": "Swap U and V components.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": []
   },
   {
@@ -32420,6 +34736,12 @@
     "name": "tblend",
     "type": "V->V",
     "description": "Blend successive frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "c0_mode",
@@ -33399,6 +35721,12 @@
     "name": "telecine",
     "type": "V->V",
     "description": "Apply a telecine pattern.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "first_field",
@@ -33442,6 +35770,12 @@
     "name": "thistogram",
     "type": "V->V",
     "description": "Compute and draw a temporal histogram.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "width",
@@ -33641,6 +35975,15 @@
     "name": "threshold",
     "type": "VVVV->V",
     "description": "Threshold first video stream using other video streams.",
+    "inputs": [
+      "v",
+      "v",
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -33658,6 +36001,12 @@
     "name": "thumbnail",
     "type": "V->V",
     "description": "Select the most representative frame in a given sequence of consecutive frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "n",
@@ -33697,6 +36046,12 @@
     "name": "tile",
     "type": "V->V",
     "description": "Tile several successive frames together.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "layout",
@@ -33762,6 +36117,12 @@
     "name": "tinterlace",
     "type": "V->V",
     "description": "Perform temporal field interlacing.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -33813,6 +36174,12 @@
     "name": "tlut2",
     "type": "V->V",
     "description": "Compute and apply a lookup table from two successive frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "c0",
@@ -33854,6 +36221,12 @@
     "name": "tmedian",
     "type": "V->V",
     "description": "Pick median pixels from successive frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "radius",
@@ -33887,6 +36260,12 @@
     "name": "tmidequalizer",
     "type": "V->V",
     "description": "Apply Temporal Midway Equalization.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "radius",
@@ -33920,6 +36299,12 @@
     "name": "tmix",
     "type": "V->V",
     "description": "Mix successive video frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "frames",
@@ -33961,6 +36346,12 @@
     "name": "tonemap",
     "type": "V->V",
     "description": "Conversion to/from different dynamic ranges.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "tonemap",
@@ -34032,6 +36423,12 @@
     "name": "tpad",
     "type": "V->V",
     "description": "Temporarily pad video frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "start",
@@ -34117,6 +36514,12 @@
     "name": "transpose",
     "type": "V->V",
     "description": "Transpose input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "dir",
@@ -34174,6 +36577,12 @@
     "name": "trim",
     "type": "V->V",
     "description": "Pick one continuous section from the input, drop the rest.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "start",
@@ -34263,6 +36672,12 @@
     "name": "unpremultiply",
     "type": "N->V",
     "description": "UnPreMultiply first stream with first plane of second stream.",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -34288,6 +36703,12 @@
     "name": "unsharp",
     "type": "V->V",
     "description": "Sharpen or blur the input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "luma_msize_x",
@@ -34441,6 +36862,12 @@
     "name": "untile",
     "type": "V->V",
     "description": "Untile a frame into a sequence of frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "layout",
@@ -34458,6 +36885,12 @@
     "name": "v360",
     "type": "V->V",
     "description": "Convert 360 projection of video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "input",
@@ -35081,6 +37514,12 @@
     "name": "vaguedenoiser",
     "type": "V->V",
     "description": "Apply a Wavelet based Denoiser.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "threshold",
@@ -35162,6 +37601,13 @@
     "name": "varblur",
     "type": "VV->V",
     "description": "Apply Variable Blur filter.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "min_r",
@@ -35195,6 +37641,12 @@
     "name": "vectorscope",
     "type": "V->V",
     "description": "Video vectorscope.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -35600,6 +38052,12 @@
     "name": "vflip",
     "type": "V->V",
     "description": "Flip the input video vertically.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": []
   },
   {
@@ -35607,7 +38065,13 @@
     "meta": "...",
     "name": "vfrdet",
     "type": "V->V",
-    "description": "Variable frame rate detect filter."
+    "description": "Variable frame rate detect filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 401,
@@ -35615,6 +38079,12 @@
     "name": "vibrance",
     "type": "V->V",
     "description": "Boost or alter saturation.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "intensity",
@@ -35688,6 +38158,13 @@
     "name": "vif",
     "type": "VV->V",
     "description": "Calculate the VIF between two video streams.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": []
   },
   {
@@ -35696,6 +38173,12 @@
     "name": "vignette",
     "type": "V->V",
     "description": "Make or reverse a vignette effect.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "angle",
@@ -35789,6 +38272,12 @@
     "name": "vmafmotion",
     "type": "V->V",
     "description": "Calculate the VMAF Motion score.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "stats_file",
@@ -35806,6 +38295,13 @@
     "name": "vstack",
     "type": "N->V",
     "description": "Stack video inputs vertically.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "inputs",
@@ -35831,6 +38327,12 @@
     "name": "w3fdif",
     "type": "V->V",
     "description": "Apply Martin Weston three field deinterlace.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "filter",
@@ -35916,6 +38418,12 @@
     "name": "waveform",
     "type": "V->V",
     "description": "Video waveform monitor.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -36421,6 +38929,12 @@
     "name": "weave",
     "type": "V->V",
     "description": "Weave input video fields into frames.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "first_field",
@@ -36456,6 +38970,12 @@
     "name": "xbr",
     "type": "V->V",
     "description": "Scale the input using xBR algorithm.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "n",
@@ -36473,6 +38993,13 @@
     "name": "xcorrelate",
     "type": "VV->V",
     "description": "Cross-correlate first video stream with second video stream.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "planes",
@@ -36508,6 +39035,13 @@
     "name": "xfade",
     "type": "VV->V",
     "description": "Cross fade one video with another video.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "transition",
@@ -36739,6 +39273,14 @@
     "name": "xmedian",
     "type": "N->V",
     "description": "Pick median pixels from several video inputs.",
+    "inputs": [
+      "v",
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "inputs",
@@ -36772,6 +39314,13 @@
     "name": "xstack",
     "type": "N->V",
     "description": "Stack video inputs into custom layout.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "inputs",
@@ -36821,6 +39370,12 @@
     "name": "yadif",
     "type": "V->V",
     "description": "Deinterlace the input image.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -36896,6 +39451,12 @@
     "name": "yaepblur",
     "type": "V->V",
     "description": "Yet another edge preserving blur filter.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "radius",
@@ -36953,6 +39514,12 @@
     "name": "zoompan",
     "type": "V->V",
     "description": "Apply Zoom & Pan effect.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "zoom",
@@ -37018,6 +39585,12 @@
     "name": "allrgb",
     "type": "|->V",
     "description": "Generate all RGB colors.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rate",
@@ -37067,6 +39640,12 @@
     "name": "allyuv",
     "type": "|->V",
     "description": "Generate all yuv colors.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rate",
@@ -37116,6 +39695,12 @@
     "name": "cellauto",
     "type": "|->V",
     "description": "Create pattern generated by an elementary cellular automaton.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "filename",
@@ -37261,6 +39846,12 @@
     "name": "color",
     "type": "|->V",
     "description": "Provide an uniformly colored input.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "color",
@@ -37342,6 +39933,12 @@
     "name": "colorchart",
     "type": "|->V",
     "description": "Generate color checker chart.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rate",
@@ -37417,6 +40014,12 @@
     "name": "colorspectrum",
     "type": "|->V",
     "description": "Generate colors spectrum.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -37504,6 +40107,12 @@
     "name": "gradients",
     "type": "|->V",
     "description": "Draw a gradients.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -37741,6 +40350,12 @@
     "name": "haldclutsrc",
     "type": "|->V",
     "description": "Provide an identity Hald CLUT.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "level",
@@ -37798,6 +40413,12 @@
     "name": "life",
     "type": "|->V",
     "description": "Create life.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "filename",
@@ -37935,6 +40556,12 @@
     "name": "mandelbrot",
     "type": "|->V",
     "description": "Render a Mandelbrot fractal.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -38108,6 +40735,12 @@
     "name": "mptestsrc",
     "type": "|->V",
     "description": "Generate various test pattern.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rate",
@@ -38273,6 +40906,12 @@
     "name": "nullsrc",
     "type": "|->V",
     "description": "Null video source, return unprocessed video frames.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -38338,6 +40977,12 @@
     "name": "pal75bars",
     "type": "|->V",
     "description": "Generate PAL 75% color bars.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -38403,6 +41048,12 @@
     "name": "pal100bars",
     "type": "|->V",
     "description": "Generate PAL 100% color bars.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -38468,6 +41119,12 @@
     "name": "rgbtestsrc",
     "type": "|->V",
     "description": "Generate RGB test pattern.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -38549,6 +41206,12 @@
     "name": "sierpinski",
     "type": "|->V",
     "description": "Render a Sierpinski fractal.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -38624,6 +41287,12 @@
     "name": "smptebars",
     "type": "|->V",
     "description": "Generate SMPTE color bars.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -38689,6 +41358,12 @@
     "name": "smptehdbars",
     "type": "|->V",
     "description": "Generate SMPTE HD color bars.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -38754,6 +41429,12 @@
     "name": "testsrc",
     "type": "|->V",
     "description": "Generate test pattern.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -38835,6 +41516,12 @@
     "name": "testsrc2",
     "type": "|->V",
     "description": "Generate another test pattern.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -38908,6 +41595,12 @@
     "name": "yuvtestsrc",
     "type": "|->V",
     "description": "Generate YUV test pattern.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -38972,7 +41665,13 @@
     "meta": "...",
     "name": "nullsink",
     "type": "V->|",
-    "description": "Do absolutely nothing with the input video."
+    "description": "Do absolutely nothing with the input video.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "|"
+    ]
   },
   {
     "id": 439,
@@ -38980,6 +41679,12 @@
     "name": "abitscope",
     "type": "A->V",
     "description": "Convert input audio to audio bit scope video output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rate",
@@ -39065,6 +41770,12 @@
     "name": "adrawgraph",
     "type": "A->V",
     "description": "Draw a graph using input audio metadata.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "m1",
@@ -39246,6 +41957,12 @@
     "name": "agraphmonitor",
     "type": "A->V",
     "description": "Show various filtergraph stats.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -39487,6 +42204,12 @@
     "name": "ahistogram",
     "type": "A->V",
     "description": "Convert input audio to histogram video output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "dmode",
@@ -39646,6 +42369,12 @@
     "name": "aphasemeter",
     "type": "A->N",
     "description": "Convert input audio to phase meter video output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "rate",
@@ -39783,6 +42512,12 @@
     "name": "avectorscope",
     "type": "A->V",
     "description": "Convert input audio to vectorscope video output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "mode",
@@ -40022,6 +42757,12 @@
     "name": "concat",
     "type": "N->N",
     "description": "Concatenate audio and video streams.",
+    "inputs": [
+      "n"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "n",
@@ -40063,6 +42804,12 @@
     "name": "showcqt",
     "type": "A->V",
     "description": "Convert input audio to a CQT (Constant/Clamped Q Transform) spectrum video output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -40382,6 +43129,12 @@
     "name": "showfreqs",
     "type": "A->V",
     "description": "Convert input audio to a frequencies video output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -40679,6 +43432,12 @@
     "name": "showspatial",
     "type": "A->V",
     "description": "Convert input audio to a spatial video output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -40826,6 +43585,12 @@
     "name": "showspectrum",
     "type": "A->V",
     "description": "Convert input audio to a spectrum video output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -41247,6 +44012,12 @@
     "name": "showspectrumpic",
     "type": "A->V",
     "description": "Convert input audio to a spectrum video output single picture.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -41600,6 +44371,12 @@
     "name": "showvolume",
     "type": "A->V",
     "description": "Convert input audio volume to video output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "rate",
@@ -41767,6 +44544,12 @@
     "name": "showwaves",
     "type": "A->V",
     "description": "Convert input audio to a video output.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -41902,6 +44685,12 @@
     "name": "showwavespic",
     "type": "A->V",
     "description": "Convert input audio to a video output single picture.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -42005,6 +44794,13 @@
     "name": "spectrumsynth",
     "type": "VV->A",
     "description": "Convert input spectrum videos to audio output.",
+    "inputs": [
+      "v",
+      "v"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "sample_rate",
@@ -42198,6 +44994,13 @@
     "name": "avsynctest",
     "type": "|->AV",
     "description": "Generate an Audio Video Sync Test.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "a",
+      "v"
+    ],
     "params": [
       {
         "name": "size",
@@ -42359,6 +45162,12 @@
     "name": "amovie",
     "type": "|->N",
     "description": "Read audio from a movie source.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "filename",
@@ -42472,6 +45281,12 @@
     "name": "movie",
     "type": "|->N",
     "description": "Read from a movie source.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "n"
+    ],
     "params": [
       {
         "name": "filename",
@@ -42584,14 +45399,26 @@
     "meta": "...",
     "name": "afifo",
     "type": "A->A",
-    "description": "Buffer input frames and send them when they are requested."
+    "description": "Buffer input frames and send them when they are requested.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "a"
+    ]
   },
   {
     "id": 459,
     "meta": "...",
     "name": "fifo",
     "type": "V->V",
-    "description": "Buffer input images and send them when they are requested."
+    "description": "Buffer input images and send them when they are requested.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "v"
+    ]
   },
   {
     "id": 460,
@@ -42599,6 +45426,12 @@
     "name": "abuffer",
     "type": "|->A",
     "description": "Buffer audio frames, and make them accessible to the filterchain.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "a"
+    ],
     "params": [
       {
         "name": "time_base",
@@ -42648,6 +45481,12 @@
     "name": "buffer",
     "type": "|->V",
     "description": "Buffer video frames, and make them accessible to the filterchain.",
+    "inputs": [
+      "|"
+    ],
+    "outputs": [
+      "v"
+    ],
     "params": [
       {
         "name": "width",
@@ -42721,6 +45560,12 @@
     "name": "abuffersink",
     "type": "A->|",
     "description": "Buffer audio frames, and make them available to the end of the filter graph.",
+    "inputs": [
+      "a"
+    ],
+    "outputs": [
+      "|"
+    ],
     "params": [
       {
         "name": "sample_fmts",
@@ -42778,6 +45623,12 @@
     "name": "buffersink",
     "type": "V->|",
     "description": "Buffer video frames, and make them available to the end of the filter graph.",
+    "inputs": [
+      "v"
+    ],
+    "outputs": [
+      "|"
+    ],
     "params": [
       {
         "name": "pix_fmts",
