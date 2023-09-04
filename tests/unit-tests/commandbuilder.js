@@ -1,4 +1,4 @@
-const fs = require('fs');
+import * as fs from 'node:fs';
 import { expect, test, describe } from "vitest";
 import { get } from "svelte/store";
 import {
