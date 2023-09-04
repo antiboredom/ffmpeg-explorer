@@ -1,0 +1,381 @@
+{
+  "nodes": [
+    {
+      "id": "ba50174d-7567-4911-8935-075ded3f65ac",
+      "type": "ffmpeg",
+      "data": {
+        "name": "punch.mp4",
+        "url": "/punch.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input"
+      },
+      "nodeType": "input",
+      "position": {
+        "x": 0,
+        "y": 10
+      },
+      "positionAbsolute": {
+        "x": 0,
+        "y": 10
+      },
+      "width": 109,
+      "height": 54,
+      "dragging": false
+    },
+    {
+      "id": "ab3ea91a-c1b7-494e-b9a9-535e34f37a8e",
+      "type": "ffmpeg",
+      "data": {
+        "name": "out.mp4",
+        "ext": "mp4",
+        "inputs": [
+          "v",
+          "a"
+        ],
+        "outputs": [],
+        "nodeType": "output"
+      },
+      "nodeType": "output",
+      "position": {
+        "x": 630,
+        "y": 10
+      },
+      "positionAbsolute": {
+        "x": 630,
+        "y": 10
+      },
+      "width": 90,
+      "height": 54,
+      "dragging": false
+    },
+    {
+      "id": "1e7a29cf-4b6f-49a0-a6d2-5e990f314b8e",
+      "type": "ffmpeg",
+      "data": {
+        "id": 367,
+        "meta": "...",
+        "name": "split",
+        "type": "V->N",
+        "description": "Pass on the input to N video outputs.",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v",
+          "v"
+        ],
+        "params": [
+          {
+            "name": "outputs",
+            "type": "int",
+            "desc": "set number of outputs (from 1 to INT_MAX) (default 2)",
+            "min": 1,
+            "max": 2000,
+            "default": 2,
+            "value": 2
+          }
+        ],
+        "nodeType": "filter"
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 80,
+        "y": -100
+      },
+      "positionAbsolute": {
+        "x": 80,
+        "y": -100
+      },
+      "width": 59,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "4ed67545-efaa-4344-ab1c-23f96d43b40a",
+      "type": "ffmpeg",
+      "data": {
+        "id": 244,
+        "meta": "TS.",
+        "name": "hflip",
+        "type": "V->V",
+        "description": "Horizontally flip the input video.",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ],
+        "params": [],
+        "nodeType": "filter"
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 170,
+        "y": -190
+      },
+      "positionAbsolute": {
+        "x": 170,
+        "y": -190
+      },
+      "width": 59,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "87d1cfd4-afae-4f37-8ab9-ec4384415c96",
+      "type": "ffmpeg",
+      "data": {
+        "id": 249,
+        "meta": ".S.",
+        "name": "hstack",
+        "type": "N->V",
+        "description": "Stack video inputs horizontally.",
+        "inputs": [
+          "v",
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ],
+        "params": [
+          {
+            "name": "inputs",
+            "type": "int",
+            "desc": "set number of inputs (from 2 to INT_MAX) (default 2)",
+            "min": 2,
+            "max": 2000,
+            "default": 2,
+            "value": 2
+          },
+          {
+            "name": "shortest",
+            "type": "boolean",
+            "desc": "force termination when the shortest input terminates (default false)",
+            "min": null,
+            "max": null,
+            "default": "false",
+            "value": "false"
+          }
+        ],
+        "nodeType": "filter"
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 250,
+        "y": -90
+      },
+      "positionAbsolute": {
+        "x": 250,
+        "y": -90
+      },
+      "width": 59,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "cf20cf34-ceed-412b-a814-056ad327b1ff",
+      "type": "ffmpeg",
+      "data": {
+        "id": 367,
+        "meta": "...",
+        "name": "split",
+        "type": "V->N",
+        "description": "Pass on the input to N video outputs.",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v",
+          "v"
+        ],
+        "params": [
+          {
+            "name": "outputs",
+            "type": "int",
+            "desc": "set number of outputs (from 1 to INT_MAX) (default 2)",
+            "min": 1,
+            "max": 2000,
+            "default": 2,
+            "value": 2
+          }
+        ],
+        "nodeType": "filter"
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 330,
+        "y": -160
+      },
+      "positionAbsolute": {
+        "x": 330,
+        "y": -160
+      },
+      "width": 59,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "c7a52d98-7e33-4aa6-86e8-da6efb01a054",
+      "type": "ffmpeg",
+      "data": {
+        "id": 399,
+        "meta": "T..",
+        "name": "vflip",
+        "type": "V->V",
+        "description": "Flip the input video vertically.",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ],
+        "params": [],
+        "nodeType": "filter"
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 460,
+        "y": -190
+      },
+      "positionAbsolute": {
+        "x": 460,
+        "y": -190
+      },
+      "width": 59,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "00094660-b592-41d6-a0c9-8165d5c3c57c",
+      "type": "ffmpeg",
+      "data": {
+        "id": 405,
+        "meta": ".S.",
+        "name": "vstack",
+        "type": "N->V",
+        "description": "Stack video inputs vertically.",
+        "inputs": [
+          "v",
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ],
+        "params": [
+          {
+            "name": "inputs",
+            "type": "int",
+            "desc": "set number of inputs (from 2 to INT_MAX) (default 2)",
+            "min": 2,
+            "max": 2000,
+            "default": 2,
+            "value": 2
+          },
+          {
+            "name": "shortest",
+            "type": "boolean",
+            "desc": "force termination when the shortest input terminates (default false)",
+            "min": null,
+            "max": null,
+            "default": "false",
+            "value": "false"
+          }
+        ],
+        "nodeType": "filter"
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 540,
+        "y": -70
+      },
+      "positionAbsolute": {
+        "x": 540,
+        "y": -70
+      },
+      "width": 59,
+      "height": 50,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "id": "2358d0de-d9f2-4b79-b099-bf6034c06749",
+      "type": "default",
+      "source": "ba50174d-7567-4911-8935-075ded3f65ac",
+      "target": "1e7a29cf-4b6f-49a0-a6d2-5e990f314b8e",
+      "sourceHandle": "v_0",
+      "targetHandle": "v_0"
+    },
+    {
+      "id": "f816ee38-6755-4c4c-9c93-86ee93102079",
+      "type": "default",
+      "source": "ba50174d-7567-4911-8935-075ded3f65ac",
+      "target": "ab3ea91a-c1b7-494e-b9a9-535e34f37a8e",
+      "sourceHandle": "a_1",
+      "targetHandle": "a_1"
+    },
+    {
+      "id": "b798b4e8-d43a-470e-ae8f-890d4b50bb89",
+      "type": "default",
+      "source": "1e7a29cf-4b6f-49a0-a6d2-5e990f314b8e",
+      "target": "4ed67545-efaa-4344-ab1c-23f96d43b40a",
+      "sourceHandle": "v_0",
+      "targetHandle": "v_0"
+    },
+    {
+      "source": "4ed67545-efaa-4344-ab1c-23f96d43b40a",
+      "sourceHandle": "v_0",
+      "target": "87d1cfd4-afae-4f37-8ab9-ec4384415c96",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-4ed67545-efaa-4344-ab1c-23f96d43b40av_0-87d1cfd4-afae-4f37-8ab9-ec4384415c96v_0"
+    },
+    {
+      "source": "1e7a29cf-4b6f-49a0-a6d2-5e990f314b8e",
+      "sourceHandle": "v_1",
+      "target": "87d1cfd4-afae-4f37-8ab9-ec4384415c96",
+      "targetHandle": "v_1",
+      "id": "xyflow__edge-1e7a29cf-4b6f-49a0-a6d2-5e990f314b8ev_1-87d1cfd4-afae-4f37-8ab9-ec4384415c96v_1"
+    },
+    {
+      "source": "87d1cfd4-afae-4f37-8ab9-ec4384415c96",
+      "sourceHandle": "v_0",
+      "target": "cf20cf34-ceed-412b-a814-056ad327b1ff",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-87d1cfd4-afae-4f37-8ab9-ec4384415c96v_0-cf20cf34-ceed-412b-a814-056ad327b1ffv_0"
+    },
+    {
+      "source": "cf20cf34-ceed-412b-a814-056ad327b1ff",
+      "sourceHandle": "v_0",
+      "target": "c7a52d98-7e33-4aa6-86e8-da6efb01a054",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-cf20cf34-ceed-412b-a814-056ad327b1ffv_0-c7a52d98-7e33-4aa6-86e8-da6efb01a054v_0"
+    },
+    {
+      "source": "00094660-b592-41d6-a0c9-8165d5c3c57c",
+      "sourceHandle": "v_0",
+      "target": "ab3ea91a-c1b7-494e-b9a9-535e34f37a8e",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-00094660-b592-41d6-a0c9-8165d5c3c57cv_0-ab3ea91a-c1b7-494e-b9a9-535e34f37a8ev_0"
+    },
+    {
+      "source": "cf20cf34-ceed-412b-a814-056ad327b1ff",
+      "sourceHandle": "v_1",
+      "target": "00094660-b592-41d6-a0c9-8165d5c3c57c",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-cf20cf34-ceed-412b-a814-056ad327b1ffv_1-00094660-b592-41d6-a0c9-8165d5c3c57cv_0"
+    },
+    {
+      "source": "c7a52d98-7e33-4aa6-86e8-da6efb01a054",
+      "sourceHandle": "v_0",
+      "target": "00094660-b592-41d6-a0c9-8165d5c3c57c",
+      "targetHandle": "v_1",
+      "id": "xyflow__edge-c7a52d98-7e33-4aa6-86e8-da6efb01a054v_0-00094660-b592-41d6-a0c9-8165d5c3c57cv_1"
+    }
+  ],
+  "command": "ffmpeg -i punch.mp4 -filter_complex \"[0:v]split[1][7];[1]hflip[2];[2][7]hstack,split[9][11];[9]vflip[10];[11][10]vstack[out_v]\" -map \"[out_v]\" -map 0:a out.mp4"
+}

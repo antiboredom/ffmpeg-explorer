@@ -30,6 +30,7 @@
     { name: "Speed Up", url: "/examples/speedup.json" },
     { name: "Slow Down Smoothly", url: "/examples/smooth_slow.json" },
     { name: "Video Grid", url: "/examples/grid.json" },
+    { name: "Mirror", url: "/examples/mirror.json" },
   ];
 
   let videoValue = "/" + $inputs[0].name;
