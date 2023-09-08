@@ -1,5 +1,5 @@
 <script>
-  import { nodes, edges, auto, selectedFilter } from "./stores.js";
+  import { nodes, edges, auto, selectedFilter, previewCommand } from "./stores.js";
   import {
     SvelteFlowProvider,
     SvelteFlow,
@@ -35,7 +35,11 @@
   function onKey(e) {
     if ((e.ctrlKey || e.metaKey) && e.key === "s") {
       e.preventDefault();
-      const out = JSON.stringify({ nodes: $nodes, edges: $edges }, null, 2);
+      const out = JSON.stringify(
+        { nodes: $nodes, edges: $edges, command: $previewCommand.join(" ") },
+        null,
+        2
+      );
       savedData = "data:text/json;charset=utf-8," + encodeURIComponent(out);
       setTimeout(() => {
         downloadLink.click();
