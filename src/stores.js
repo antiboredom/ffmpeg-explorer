@@ -270,7 +270,7 @@ export function addNode(_data, type) {
   nodes.update((_nodes) => {
     _nodes.push(node);
 
-		_nodes = autoLayout(_nodes);
+    _nodes = autoLayout(_nodes);
 
     if (node.nodeType === "filter") {
       selectedFilter.set(_nodes.length - 1);
@@ -298,7 +298,12 @@ function autoLayout(_nodes) {
     for (let n of _nodes) {
       if (n.nodeType === "filter") {
         let _w = prev && prev.width ? prev.width : w;
-        n.position = { x: prev ? prev.position.x + _w + margin : 0, y: -50 };
+        let _x = prev ? prev.position.x + _w + margin : 0;
+        let _y = -50;
+        if (n.data.inputs && n.data.inputs[0] && n.data.inputs[0] === "a") {
+          _y = 50;
+        }
+        n.position = { x: _x, y: _y };
         prev = n;
       }
     }
@@ -314,17 +319,17 @@ function autoLayout(_nodes) {
 }
 
 export function copyNode(node) {
-	const oldId = node.id;
+  const oldId = node.id;
   node = JSON.parse(JSON.stringify(node));
-	node.id = uuidv4();
+  node.id = uuidv4();
 
   nodes.update((_nodes) => {
-		_nodes.push(node);
+    _nodes.push(node);
 
     const index = _nodes.findIndex((n) => n.id === oldId);
     _nodes.splice(index, 1);
 
-		_nodes = autoLayout(_nodes);
+    _nodes = autoLayout(_nodes);
 
     if (node.nodeType === "filter") {
       selectedFilter.set(_nodes.length - 1);
