@@ -12,7 +12,8 @@
           "a"
         ],
         "inputs": [],
-        "nodeType": "input"
+        "nodeType": "input",
+        "enabled": true
       },
       "nodeType": "input",
       "position": {
@@ -37,7 +38,8 @@
           "a"
         ],
         "outputs": [],
-        "nodeType": "output"
+        "nodeType": "output",
+        "enabled": true
       },
       "nodeType": "output",
       "position": {
@@ -79,7 +81,8 @@
         ],
         "outputs": [
           "v"
-        ]
+        ],
+        "enabled": true
       },
       "nodeType": "filter",
       "position": {
@@ -283,7 +286,8 @@
         ],
         "outputs": [
           "v"
-        ]
+        ],
+        "enabled": true
       },
       "nodeType": "filter",
       "position": {
@@ -324,7 +328,8 @@
         ],
         "outputs": [
           "a"
-        ]
+        ],
+        "enabled": true
       },
       "nodeType": "filter",
       "position": {
