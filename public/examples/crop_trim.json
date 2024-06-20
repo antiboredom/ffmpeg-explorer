@@ -12,7 +12,8 @@
           "a"
         ],
         "inputs": [],
-        "nodeType": "input"
+        "nodeType": "input",
+        "enabled": true
       },
       "nodeType": "input",
       "position": {
@@ -36,7 +37,8 @@
           "v"
         ],
         "outputs": [],
-        "nodeType": "output"
+        "nodeType": "output",
+        "enabled": true
       },
       "nodeType": "output",
       "position": {
@@ -140,7 +142,8 @@
         ],
         "outputs": [
           "v"
-        ]
+        ],
+        "enabled": true
       },
       "nodeType": "filter",
       "position": {
@@ -261,7 +264,8 @@
         ],
         "outputs": [
           "v"
-        ]
+        ],
+        "enabled": true
       },
       "nodeType": "filter",
       "position": {
