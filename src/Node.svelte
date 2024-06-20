@@ -1,17 +1,34 @@
 <script lang="ts">
   import { Handle, Position } from "@xyflow/svelte";
-  import { removeNode, nodes, updateNode, INPUTNAMES, OUTPUTNAMES, selectedFilter } from "./stores.js";
+  import {
+    removeNode,
+    nodes,
+    updateNode,
+    INPUTNAMES,
+    OUTPUTNAMES,
+    selectedFilter,
+  } from "./stores.js";
 
-  export let data = { ext: "", nodeType: "", name: "", inputs: [], outputs: [], enabled: true };
+  export let data = {
+    ext: "",
+    nodeType: "",
+    name: "",
+    inputs: [],
+    outputs: [],
+    enabled: true,
+  };
   export let id;
 
-  $: isSelected = $selectedFilter && $nodes[$selectedFilter] && $nodes[$selectedFilter].id === id;
+  $: isSelected =
+    $selectedFilter &&
+    $nodes[$selectedFilter] &&
+    $nodes[$selectedFilter].id === id;
 
   function remove() {
     removeNode(id);
   }
 
-  function updateEnabled(e){
+  function updateEnabled(e) {
     data.enabled = e.target.checked;
     updateNode(id, data);
   }
@@ -33,12 +50,13 @@
   }
 </script>
 
-<div class="node {data.nodeType} {isSelected ? 'selected' : ''} {data.enabled || data.enabled === undefined ? '' : 'disabled'}">
+<div
+  class="node {data.nodeType} {isSelected ? 'selected' : ''} {data.enabled ||
+  data.enabled === undefined
+    ? ''
+    : 'disabled'}"
+>
   <div class="head">
-    {#if data.nodeType === "filter"}
-      <input type="checkbox" on:change={updateEnabled} checked={data.enabled}/>
-    {/if}
-
     <div class="node-type">{data.nodeType}</div>
     {#if data.nodeType != "output"}
       <button on:click={remove}>X</button>
@@ -58,6 +76,13 @@
         {/each}
       </select>
     {:else}
+      {#if data.nodeType === "filter"}
+        <input
+          type="checkbox"
+          on:change={updateEnabled}
+          checked={data.enabled}
+        />
+      {/if}
       {data.name}
     {/if}
   </div>
@@ -117,7 +142,15 @@
   }
 
   .disabled {
-    outline: 2px solid red !important;
+    outline: 1px solid gray;
+    background-color: #eee;
+    color: #999;
+  }
+
+  input[type="checkbox"] {
+    margin: 0;
+    background-color: red;
+    box-shadow: none;
   }
 
   .head {
