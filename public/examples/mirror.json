@@ -12,7 +12,8 @@
           "a"
         ],
         "inputs": [],
-        "nodeType": "input"
+        "nodeType": "input",
+        "enabled": true
       },
       "nodeType": "input",
       "position": {
@@ -38,7 +39,8 @@
           "a"
         ],
         "outputs": [],
-        "nodeType": "output"
+        "nodeType": "output",
+        "enabled": true
       },
       "nodeType": "output",
       "position": {
@@ -80,7 +82,8 @@
             "value": 2
           }
         ],
-        "nodeType": "filter"
+        "nodeType": "filter",
+        "enabled": true
       },
       "nodeType": "filter",
       "position": {
@@ -162,7 +165,8 @@
             "value": "false"
           }
         ],
-        "nodeType": "filter"
+        "nodeType": "filter",
+        "enabled": true
       },
       "nodeType": "filter",
       "position": {
@@ -204,7 +208,8 @@
             "value": 2
           }
         ],
-        "nodeType": "filter"
+        "nodeType": "filter",
+        "enabled": true
       },
       "nodeType": "filter",
       "position": {
@@ -235,7 +240,8 @@
           "v"
         ],
         "params": [],
-        "nodeType": "filter"
+        "nodeType": "filter",
+        "enabled": true
       },
       "nodeType": "filter",
       "position": {
@@ -286,7 +292,8 @@
             "value": "false"
           }
         ],
-        "nodeType": "filter"
+        "nodeType": "filter",
+        "enabled": true
       },
       "nodeType": "filter",
       "position": {
