@@ -19967,7 +19967,7 @@
         "desc": "set the x crop area expression (default \"(in_w-out_w)/2\")",
         "min": null,
         "max": null,
-        "default": "(in_w-out_w"
+        "default": "(in_w-out_w)/2"
       },
       {
         "name": "y",
@@ -19975,7 +19975,7 @@
         "desc": "set the y crop area expression (default \"(in_h-out_h)/2\")",
         "min": null,
         "max": null,
-        "default": "(in_h-out_h"
+        "default": "(in_h-out_h)/2"
       },
       {
         "name": "keep_aspect",
