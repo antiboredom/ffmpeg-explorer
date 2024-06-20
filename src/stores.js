@@ -93,7 +93,7 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
     }
   }
 
-  for (let n of $nodes.filter((n) => n.nodeType == "filter")) {
+  for (let n of $nodes.filter((n) => n.nodeType == "filter" && n.data.enabled)) {
     let cmd = { weight: 0, in: [], out: [], cmd: "" };
 
     const outs = $edges.filter((e) => e.source == n.id);
@@ -258,6 +258,7 @@ export function addNode(_data, type) {
   data.nodeType = type;
   data.inputs = ins;
   data.outputs = outs;
+  data.enabled = true;
 
   let node = {
     id: uuidv4(),
@@ -350,6 +351,16 @@ export function removeNode(id) {
     _nodes.splice(index, 1);
     return _nodes;
   });
+}
+
+export function updateNode(id, data){
+  nodes.update((_nodes)=>{
+    const node = _nodes.find((n)=>n.id === id);
+    if(node){
+      node.data = data;
+    }
+    return _nodes;
+  })
 }
 
 export function removeEdge(id) {

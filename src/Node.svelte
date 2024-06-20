@@ -1,14 +1,19 @@
 <script lang="ts">
   import { Handle, Position } from "@xyflow/svelte";
-  import { removeNode, nodes, INPUTNAMES, OUTPUTNAMES, selectedFilter } from "./stores.js";
+  import { removeNode, nodes, updateNode, INPUTNAMES, OUTPUTNAMES, selectedFilter } from "./stores.js";
 
-  export let data = { ext: "", nodeType: "", name: "", inputs: [], outputs: [] };
+  export let data = { ext: "", nodeType: "", name: "", inputs: [], outputs: [], enabled: true };
   export let id;
 
   $: isSelected = $selectedFilter && $nodes[$selectedFilter] && $nodes[$selectedFilter].id === id;
 
   function remove() {
     removeNode(id);
+  }
+
+  function updateEnabled(e){
+    data.enabled = e.target.checked;
+    updateNode(id, data);
   }
 
   function resetNode() {
@@ -28,8 +33,12 @@
   }
 </script>
 
-<div class="node {data.nodeType} {isSelected ? 'selected' : ''}">
+<div class="node {data.nodeType} {isSelected ? 'selected' : ''} {data.enabled || data.enabled === undefined ? '' : 'disabled'}">
   <div class="head">
+    {#if data.nodeType === "filter"}
+      <input type="checkbox" on:change={updateEnabled} checked={data.enabled}/>
+    {/if}
+
     <div class="node-type">{data.nodeType}</div>
     {#if data.nodeType != "output"}
       <button on:click={remove}>X</button>
@@ -106,6 +115,11 @@
     outline: 2px solid var(--b1);
     background-color: var(--b2);
   }
+
+  .disabled {
+    outline: 2px solid red !important;
+  }
+
   .head {
     display: flex;
     justify-content: space-between;
