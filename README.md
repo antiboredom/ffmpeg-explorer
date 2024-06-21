@@ -22,7 +22,7 @@ npm run dev
 ## Todo
 
 - [x] Rendering progress bar
-- [ ] "Cancel Render" button
+- [x] "Cancel Render" button (thanks to @jwetzell)
 - [x] Disable/enable filters without removing them (thanks to @jwetzell) 
 - [ ] Deal with duplicate parameters in filters (sometimes filters have a long and short option)
 - [ ] Add more help/documentation in the filters (there is more on FFmpeg's site that I could incorporate)
