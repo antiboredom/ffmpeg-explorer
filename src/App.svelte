@@ -70,6 +70,12 @@
     document.execCommand("copy");
   }
 
+  async function stopRender(){
+    await ffmpeg.terminate()
+    ffmpegLoaded = false;
+    await loadFFmpeg()
+  }
+
   async function render() {
     renderProgress = 0;
     videoValue = null;
@@ -113,7 +119,9 @@
         }, 100);
       }
     } catch (e) {
-      log += e + "\n";
+      if(e.message !== 'called FFmpeg.terminate()'){
+        log += e + "\n";
+      }
     }
     rendering = false;
   }
@@ -213,8 +221,10 @@
   <section class="preview">
     <div class="vid-holder">
       {#if rendering}
-        <div class="rendering-video">
+        <div class="rendering-video" on:click={stopRender}>
           <span>Rendering...{(renderProgress * 100).toFixed(2)}%</span>
+          <br>
+          <span>Click to cancel</span>
         </div>
       {/if}
       {#if $outputs[0].name.endsWith("gif") && videoValue && !videoValue.endsWith("mp4")}
