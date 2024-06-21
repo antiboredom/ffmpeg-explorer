@@ -70,6 +70,12 @@
     document.execCommand("copy");
   }
 
+  async function stopRender() {
+    await ffmpeg.terminate();
+    ffmpegLoaded = false;
+    await loadFFmpeg();
+  }
+
   async function render() {
     renderProgress = 0;
     videoValue = null;
@@ -81,7 +87,11 @@
       if (log.trim() != "") log += "\n\n";
 
       const fontNames = [
-        ...new Set([...$previewCommand.join(" ").matchAll(/\W([a-z]+\.ttf)/g)].map((f) => f[1])),
+        ...new Set(
+          [...$previewCommand.join(" ").matchAll(/\W([a-z]+\.ttf)/g)].map(
+            (f) => f[1],
+          ),
+        ),
       ];
 
       for (let f of fontNames) {
@@ -106,14 +116,18 @@
 
       await ffmpeg.exec(clist, TIMEOUT);
       const data = await ffmpeg.readFile(outname);
-      videoValue = URL.createObjectURL(new Blob([data.buffer], { type: contentType }));
+      videoValue = URL.createObjectURL(
+        new Blob([data.buffer], { type: contentType }),
+      );
       if (outname.endsWith("mp4")) {
         setTimeout(() => {
           vidPlayerRef.seekToNextFrame();
         }, 100);
       }
     } catch (e) {
-      log += e + "\n";
+      if (e.message !== "called FFmpeg.terminate()") {
+        log += e + "\n";
+      }
     }
     rendering = false;
   }
@@ -131,15 +145,30 @@
     });
     if (isChrome) {
       await ffmpeg.load({
-        coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
-        wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),
+        coreURL: await toBlobURL(
+          `${baseURL}/ffmpeg-core.js`,
+          "text/javascript",
+        ),
+        wasmURL: await toBlobURL(
+          `${baseURL}/ffmpeg-core.wasm`,
+          "application/wasm",
+        ),
         // workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
       });
     } else {
       await ffmpeg.load({
-        coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
-        wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm"),
-        workerURL: await toBlobURL(`${baseURL}/ffmpeg-core.worker.js`, "text/javascript"),
+        coreURL: await toBlobURL(
+          `${baseURL}/ffmpeg-core.js`,
+          "text/javascript",
+        ),
+        wasmURL: await toBlobURL(
+          `${baseURL}/ffmpeg-core.wasm`,
+          "application/wasm",
+        ),
+        workerURL: await toBlobURL(
+          `${baseURL}/ffmpeg-core.worker.js`,
+          "text/javascript",
+        ),
       });
     }
     for (let vid of $inputNames) {
@@ -159,7 +188,10 @@
     <h1>FFmpeg Explorer</h1>
     <div class="help">
       <p>
-        A tool to help you explore <a href="https://www.ffmpeg.org/" target="_blank">FFmpeg</a>
+        A tool to help you explore <a
+          href="https://www.ffmpeg.org/"
+          target="_blank">FFmpeg</a
+        >
         filters. To use:
       </p>
       <ol>
@@ -169,9 +201,12 @@
         <li>To edit the graph, disable "lock layout."</li>
       </ol>
       <p>
-        Note: work in progress, many things may be broken! Refresh if it hangs or crashes. May not
-        work on mobile. Post issues/feedback to
-        <a href="https://github.com/antiboredom/ffmpeg-explorer/" target="_blank">GitHub</a>. By
+        Note: work in progress, many things may be broken! Refresh if it hangs
+        or crashes. May not work on mobile. Post issues/feedback to
+        <a
+          href="https://github.com/antiboredom/ffmpeg-explorer/"
+          target="_blank">GitHub</a
+        >. By
         <a href="https://lav.io" target="_blank">Sam Lavigne</a>.
       </p>
     </div>
@@ -191,7 +226,8 @@
         readonly
         class="actual-command"
         bind:this={commandRef}
-        on:click={() => commandRef.select()}>{$previewCommand.join(" ")}</textarea
+        on:click={() => commandRef.select()}
+        >{$previewCommand.join(" ")}</textarea
       >
     </div>
   </section>
@@ -207,14 +243,17 @@
         >
       </div>
     </div>
-    <textarea rows="1" readonly class="the-log" bind:this={logbox}>{log}</textarea>
+    <textarea rows="1" readonly class="the-log" bind:this={logbox}
+      >{log}</textarea
+    >
   </section>
 
   <section class="preview">
     <div class="vid-holder">
       {#if rendering}
         <div class="rendering-video">
-          <span>Rendering...{(renderProgress * 100).toFixed(2)}%</span>
+          <p>Rendering...{(renderProgress * 100).toFixed(2)}%</p>
+          <button on:click={stopRender}>Cancel</button>
         </div>
       {/if}
       {#if $outputs[0].name.endsWith("gif") && videoValue && !videoValue.endsWith("mp4")}
