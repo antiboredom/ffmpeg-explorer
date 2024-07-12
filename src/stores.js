@@ -93,9 +93,8 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
     }
   }
 
-  for (let n of $nodes.filter((n) => n.nodeType == "filter" && n.data.enabled)) {
-    let cmd = { weight: 0, in: [], out: [], cmd: "" };
-
+  for (let n of $nodes.filter((n) => n.nodeType == "filter")) {
+    let cmd = { weight: 0, in: [], out: [], cmd: "", enabled: n.data.enabled };
     const outs = $edges.filter((e) => e.source == n.id);
     const ins = $edges.filter((e) => e.target == n.id);
 
@@ -127,7 +126,21 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
     return a.weight - b.weight;
   });
 
-  filtergraph = filtergraph.map((c) => {
+  // "patch around" filters that are not enabled this assumes the previous filter can handle the in/out of the disabled filter.
+  filtergraph.forEach((filter, index)=>{
+    if(!filter.enabled){
+      const previousFilter = filtergraph[index-1]
+      if(previousFilter){
+        previousFilter.out = filter.out
+      }
+      const nextFilter = filtergraph[index+1]
+      if(nextFilter){
+        nextFilter.in = filter.in
+      }
+    }
+  })
+
+  filtergraph = filtergraph.filter(filter=>filter.enabled).map((c) => {
     return c.in.map((i) => `[${i}]`).join("") + c.cmd + c.out.map((i) => `[${i}]`).join("");
   });
 
