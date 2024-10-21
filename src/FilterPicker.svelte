@@ -2,21 +2,29 @@
   import uFuzzy from "@leeoniya/ufuzzy";
   import FILTERS from "./filters.json";
   import { addNode } from "./stores.js";
+  import DynamicFilterModal from "./DynamicFilterModal.svelte";
 
   export let select = "video";
   $: selectedFilters = selectFilters(select);
   $: allfilters = [...selectedFilters];
   let q = "";
 
+  let selectedFilter = null;
+  let showModal = false;
+
   const uf = new uFuzzy();
 
   function selectFilters(sel) {
     if (sel == "video") {
-      // return FILTERS.filter((f) => f.type.startsWith("V")  || f.type.endsWith("V"));
-      return FILTERS.filter((f) => f.type[0] === "V" || f.type === "N->V");
+      // add support to N->N inputs
+      return FILTERS.filter(
+        (f) => f.type[0] === "V" || f.type === "N->V" || f.type === "N->N"
+      );
     } else if (sel == "audio") {
-      // return FILTERS.filter((f) => f.type.startsWith("A")  || f.type.endsWith("A"));
-      return FILTERS.filter((f) => f.type[0] === "A" || f.type === "N->A");
+      // add support to N->N inputs
+      return FILTERS.filter(
+        (f) => f.type[0] === "A" || f.type === "N->A" || f.type === "N->N"
+      );
     } else {
       return [...FILTERS];
     }
@@ -62,13 +70,40 @@
   </div>
   <div class="all-filters">
     {#each allfilters as f}
-      <div class="filter" on:click={() => add(f)}>
-        <div class="name">{f.name} <span class="type">{f.type.replace("->", "⇒")}</span></div>
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
+      <div
+        class="filter"
+        on:click={() => {
+          // if input or output is N (dynamic) show modal
+          if (
+            f.type.startsWith("N") ||
+            f.type.endsWith("N") ||
+            f.type === "N"
+          ) {
+            // deep copy current filter data so when overwriting it, it doesn't affect the original
+            selectedFilter = {...f, inputs: [...f.inputs], outputs: [...f.outputs]};
+            showModal = true;
+          } else {
+            add(f);
+          }
+        }}
+      >
+        <div class="name">
+          {f.name} <span class="type">{f.type.replace("->", "⇒")}</span>
+        </div>
         <div class="desc">{f.description}</div>
       </div>
     {/each}
   </div>
 </div>
+
+{#if showModal}
+  <DynamicFilterModal 
+    bind:showModal
+    selectedFilter={selectedFilter}
+  />
+{/if}
 
 <style>
   .holder {

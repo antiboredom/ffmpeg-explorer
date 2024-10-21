@@ -31,6 +31,8 @@
     { name: "Slow Down Smoothly", url: "/examples/smooth_slow.json" },
     { name: "Video Grid", url: "/examples/grid.json" },
     { name: "Mirror", url: "/examples/mirror.json" },
+    { name: "Cut Parts From Video And Audio", url: "/examples/trim-concat.json" },
+    { name: 'Cut Parts Apply Blur And Grayscale', url: '/examples/cut-bluer-grayscale.json' },
   ];
 
   let videoValue = "/" + $inputs[0].name;
@@ -121,7 +123,7 @@
       );
       if (outname.endsWith("mp4")) {
         setTimeout(() => {
-          vidPlayerRef.seekToNextFrame();
+          vidPlayerRef?.seekToNextFrame?.();
         }, 100);
       }
     } catch (e) {

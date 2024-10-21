@@ -1,0 +1,937 @@
+{
+  "nodes": [
+    {
+      "id": "7d004403-7325-49fe-a1b1-2ccfd02e10eb",
+      "type": "ffmpeg",
+      "data": {
+        "name": "shoe.mp4",
+        "url": "/punch.mp4",
+        "ext": "mp4",
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "inputs": [],
+        "nodeType": "input",
+        "enabled": true
+      },
+      "nodeType": "input",
+      "position": {
+        "x": -190,
+        "y": -40
+      },
+      "positionAbsolute": {
+        "x": -190,
+        "y": -40
+      },
+      "width": 108,
+      "height": 53,
+      "dragging": false,
+      "selected": false
+    },
+    {
+      "id": "10ebcbf9-cb96-4cff-ad69-63b5cab9a7f1",
+      "type": "ffmpeg",
+      "data": {
+        "name": "out.mp4",
+        "ext": "mp4",
+        "inputs": [
+          "v",
+          "a"
+        ],
+        "outputs": [],
+        "nodeType": "output",
+        "enabled": true
+      },
+      "nodeType": "output",
+      "position": {
+        "x": 320,
+        "y": -60
+      },
+      "positionAbsolute": {
+        "x": 320,
+        "y": -60
+      },
+      "width": 89,
+      "height": 53,
+      "dragging": false
+    },
+    {
+      "id": "ca9bfea8-4e6e-4d37-86e8-2278f478311b",
+      "type": "ffmpeg",
+      "data": {
+        "id": 391,
+        "meta": "...",
+        "name": "trim",
+        "type": "V->V",
+        "description": "Pick one continuous section from the input, drop the rest.",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ],
+        "params": [
+          {
+            "name": "start",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be passed (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "3"
+          },
+          {
+            "name": "starti",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be passed (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "INT64_MAX"
+          },
+          {
+            "name": "end",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be dropped again (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "4"
+          },
+          {
+            "name": "endi",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be dropped again (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "INT64_MAX"
+          },
+          {
+            "name": "start_pts",
+            "type": "int64",
+            "desc": "Timestamp of the first frame that should be passed (from I64_MIN to I64_MAX) (default I64_MIN)",
+            "min": -2000,
+            "max": 2000,
+            "default": -2000,
+            "value": -2000
+          },
+          {
+            "name": "end_pts",
+            "type": "int64",
+            "desc": "Timestamp of the first frame that should be dropped again (from I64_MIN to I64_MAX) (default I64_MIN)",
+            "min": -2000,
+            "max": 2000,
+            "default": -2000,
+            "value": -2000
+          },
+          {
+            "name": "duration",
+            "type": "duration",
+            "desc": "Maximum duration of the output (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "0"
+          },
+          {
+            "name": "durationi",
+            "type": "duration",
+            "desc": "Maximum duration of the output (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "0"
+          },
+          {
+            "name": "start_frame",
+            "type": "int64",
+            "desc": "Number of the first frame that should be passed to the output (from -1 to I64_MAX) (default -1)",
+            "min": -1,
+            "max": 2000,
+            "default": -1,
+            "value": -1
+          },
+          {
+            "name": "end_frame",
+            "type": "int64",
+            "desc": "Number of the first frame that should be dropped again (from 0 to I64_MAX) (default I64_MAX)",
+            "min": 0,
+            "max": 2000,
+            "default": 2000,
+            "value": 2000
+          }
+        ],
+        "nodeType": "filter",
+        "enabled": true
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": -40,
+        "y": -70
+      },
+      "positionAbsolute": {
+        "x": -40,
+        "y": -70
+      },
+      "width": 60,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "36fdb883-b486-4d6d-a967-6c5e75fea2d4",
+      "type": "ffmpeg",
+      "data": {
+        "id": 391,
+        "meta": "...",
+        "name": "trim",
+        "type": "V->V",
+        "description": "Pick one continuous section from the input, drop the rest.",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ],
+        "params": [
+          {
+            "name": "start",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be passed (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "1"
+          },
+          {
+            "name": "starti",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be passed (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "INT64_MAX"
+          },
+          {
+            "name": "end",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be dropped again (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "2"
+          },
+          {
+            "name": "endi",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be dropped again (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "INT64_MAX"
+          },
+          {
+            "name": "start_pts",
+            "type": "int64",
+            "desc": "Timestamp of the first frame that should be passed (from I64_MIN to I64_MAX) (default I64_MIN)",
+            "min": -2000,
+            "max": 2000,
+            "default": -2000,
+            "value": -2000
+          },
+          {
+            "name": "end_pts",
+            "type": "int64",
+            "desc": "Timestamp of the first frame that should be dropped again (from I64_MIN to I64_MAX) (default I64_MIN)",
+            "min": -2000,
+            "max": 2000,
+            "default": -2000,
+            "value": -2000
+          },
+          {
+            "name": "duration",
+            "type": "duration",
+            "desc": "Maximum duration of the output (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "0"
+          },
+          {
+            "name": "durationi",
+            "type": "duration",
+            "desc": "Maximum duration of the output (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "0"
+          },
+          {
+            "name": "start_frame",
+            "type": "int64",
+            "desc": "Number of the first frame that should be passed to the output (from -1 to I64_MAX) (default -1)",
+            "min": -1,
+            "max": 2000,
+            "default": -1,
+            "value": -1
+          },
+          {
+            "name": "end_frame",
+            "type": "int64",
+            "desc": "Number of the first frame that should be dropped again (from 0 to I64_MAX) (default I64_MAX)",
+            "min": 0,
+            "max": 2000,
+            "default": 2000,
+            "value": 2000
+          }
+        ],
+        "nodeType": "filter",
+        "enabled": true
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": -40,
+        "y": -130
+      },
+      "positionAbsolute": {
+        "x": -40,
+        "y": -130
+      },
+      "width": 60,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "83608257-ca86-4e2b-bd15-8130dd57408f",
+      "type": "ffmpeg",
+      "data": {
+        "id": 76,
+        "meta": "...",
+        "name": "atrim",
+        "type": "A->A",
+        "description": "Pick one continuous section from the input, drop the rest.",
+        "inputs": [
+          "a"
+        ],
+        "outputs": [
+          "a"
+        ],
+        "params": [
+          {
+            "name": "start",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be passed (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "3"
+          },
+          {
+            "name": "starti",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be passed (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "INT64_MAX"
+          },
+          {
+            "name": "end",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be dropped again (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "4"
+          },
+          {
+            "name": "endi",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be dropped again (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "INT64_MAX"
+          },
+          {
+            "name": "start_pts",
+            "type": "int64",
+            "desc": "Timestamp of the first frame that should be passed (from I64_MIN to I64_MAX) (default I64_MIN)",
+            "min": -2000,
+            "max": 2000,
+            "default": -2000,
+            "value": -2000
+          },
+          {
+            "name": "end_pts",
+            "type": "int64",
+            "desc": "Timestamp of the first frame that should be dropped again (from I64_MIN to I64_MAX) (default I64_MIN)",
+            "min": -2000,
+            "max": 2000,
+            "default": -2000,
+            "value": -2000
+          },
+          {
+            "name": "duration",
+            "type": "duration",
+            "desc": "Maximum duration of the output (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "0"
+          },
+          {
+            "name": "durationi",
+            "type": "duration",
+            "desc": "Maximum duration of the output (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "0"
+          },
+          {
+            "name": "start_sample",
+            "type": "int64",
+            "desc": "Number of the first audio sample that should be passed to the output (from -1 to I64_MAX) (default -1)",
+            "min": -1,
+            "max": 2000,
+            "default": -1,
+            "value": -1
+          },
+          {
+            "name": "end_sample",
+            "type": "int64",
+            "desc": "Number of the first audio sample that should be dropped again (from 0 to I64_MAX) (default I64_MAX)",
+            "min": 0,
+            "max": 2000,
+            "default": 2000,
+            "value": 2000
+          }
+        ],
+        "nodeType": "filter",
+        "enabled": true
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": -40,
+        "y": 50
+      },
+      "positionAbsolute": {
+        "x": -40,
+        "y": 50
+      },
+      "width": 63,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "2524a9ea-cc56-40f7-a815-c63f42cb27ac",
+      "type": "ffmpeg",
+      "data": {
+        "id": 59,
+        "meta": "...",
+        "name": "asetpts",
+        "type": "A->A",
+        "description": "Set PTS for the output audio frame.",
+        "inputs": [
+          "a"
+        ],
+        "outputs": [
+          "a"
+        ],
+        "params": [
+          {
+            "name": "expr",
+            "type": "string",
+            "desc": "Expression determining the frame timestamp (default \"PTS\")",
+            "min": null,
+            "max": null,
+            "default": "PTS",
+            "value": "PTS-STARTPTS"
+          }
+        ],
+        "nodeType": "filter",
+        "enabled": true
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 60,
+        "y": 50
+      },
+      "positionAbsolute": {
+        "x": 60,
+        "y": 50
+      },
+      "width": 73,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "297207f9-d013-4382-802c-6358227487ff",
+      "type": "ffmpeg",
+      "data": {
+        "id": 59,
+        "meta": "...",
+        "name": "asetpts",
+        "type": "A->A",
+        "description": "Set PTS for the output audio frame.",
+        "inputs": [
+          "a"
+        ],
+        "outputs": [
+          "a"
+        ],
+        "params": [
+          {
+            "name": "expr",
+            "type": "string",
+            "desc": "Expression determining the frame timestamp (default \"PTS\")",
+            "min": null,
+            "max": null,
+            "default": "PTS",
+            "value": "PTS-STARTPTS"
+          }
+        ],
+        "nodeType": "filter",
+        "enabled": true
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 60,
+        "y": -10
+      },
+      "positionAbsolute": {
+        "x": 60,
+        "y": -10
+      },
+      "width": 73,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "bbcf717d-709e-4195-8721-0beff2d3c724",
+      "type": "ffmpeg",
+      "data": {
+        "id": 351,
+        "meta": "...",
+        "name": "setpts",
+        "type": "V->V",
+        "description": "Set PTS for the output video frame.",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ],
+        "params": [
+          {
+            "name": "expr",
+            "type": "string",
+            "desc": "Expression determining the frame timestamp (default \"PTS\")",
+            "min": null,
+            "max": null,
+            "default": "PTS",
+            "value": "PTS-STARTPTS"
+          }
+        ],
+        "nodeType": "filter",
+        "enabled": true
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 60,
+        "y": -130
+      },
+      "positionAbsolute": {
+        "x": 60,
+        "y": -130
+      },
+      "width": 65,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "070a7983-c3aa-47af-af40-b7cc1d1beb7e",
+      "type": "ffmpeg",
+      "data": {
+        "id": 351,
+        "meta": "...",
+        "name": "setpts",
+        "type": "V->V",
+        "description": "Set PTS for the output video frame.",
+        "inputs": [
+          "v"
+        ],
+        "outputs": [
+          "v"
+        ],
+        "params": [
+          {
+            "name": "expr",
+            "type": "string",
+            "desc": "Expression determining the frame timestamp (default \"PTS\")",
+            "min": null,
+            "max": null,
+            "default": "PTS",
+            "value": "PTS-STARTPTS"
+          }
+        ],
+        "nodeType": "filter",
+        "enabled": true
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 60,
+        "y": -70
+      },
+      "positionAbsolute": {
+        "x": 60,
+        "y": -70
+      },
+      "width": 65,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "8b5a5796-e55e-40c1-a6d1-c02810f36e9d",
+      "type": "ffmpeg",
+      "data": {
+        "id": 76,
+        "meta": "...",
+        "name": "atrim",
+        "type": "A->A",
+        "description": "Pick one continuous section from the input, drop the rest.",
+        "inputs": [
+          "a"
+        ],
+        "outputs": [
+          "a"
+        ],
+        "params": [
+          {
+            "name": "start",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be passed (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "1"
+          },
+          {
+            "name": "starti",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be passed (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "INT64_MAX"
+          },
+          {
+            "name": "end",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be dropped again (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "2"
+          },
+          {
+            "name": "endi",
+            "type": "duration",
+            "desc": "Timestamp of the first frame that should be dropped again (default INT64_MAX)",
+            "min": null,
+            "max": null,
+            "default": "INT64_MAX",
+            "value": "INT64_MAX"
+          },
+          {
+            "name": "start_pts",
+            "type": "int64",
+            "desc": "Timestamp of the first frame that should be passed (from I64_MIN to I64_MAX) (default I64_MIN)",
+            "min": -2000,
+            "max": 2000,
+            "default": -2000,
+            "value": -2000
+          },
+          {
+            "name": "end_pts",
+            "type": "int64",
+            "desc": "Timestamp of the first frame that should be dropped again (from I64_MIN to I64_MAX) (default I64_MIN)",
+            "min": -2000,
+            "max": 2000,
+            "default": -2000,
+            "value": -2000
+          },
+          {
+            "name": "duration",
+            "type": "duration",
+            "desc": "Maximum duration of the output (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "0"
+          },
+          {
+            "name": "durationi",
+            "type": "duration",
+            "desc": "Maximum duration of the output (default 0)",
+            "min": null,
+            "max": null,
+            "default": "0",
+            "value": "0"
+          },
+          {
+            "name": "start_sample",
+            "type": "int64",
+            "desc": "Number of the first audio sample that should be passed to the output (from -1 to I64_MAX) (default -1)",
+            "min": -1,
+            "max": 2000,
+            "default": -1,
+            "value": -1
+          },
+          {
+            "name": "end_sample",
+            "type": "int64",
+            "desc": "Number of the first audio sample that should be dropped again (from 0 to I64_MAX) (default I64_MAX)",
+            "min": 0,
+            "max": 2000,
+            "default": 2000,
+            "value": 2000
+          }
+        ],
+        "nodeType": "filter",
+        "enabled": true
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": -40,
+        "y": -10
+      },
+      "positionAbsolute": {
+        "x": -40,
+        "y": -10
+      },
+      "width": 63,
+      "height": 50,
+      "dragging": false
+    },
+    {
+      "id": "6b442773-04c1-4f44-befa-f83a497141af",
+      "type": "ffmpeg",
+      "data": {
+        "id": 445,
+        "meta": "..C",
+        "name": "concat",
+        "type": "N->N",
+        "description": "Concatenate audio and video streams.",
+        "inputs": [
+          "v",
+          "a",
+          "v",
+          "a"
+        ],
+        "isCustom": true,
+        "outputs": [
+          "v",
+          "a"
+        ],
+        "params": [
+          {
+            "name": "n",
+            "type": "int",
+            "desc": "specify the number of segments (from 1 to INT_MAX) (default 2)",
+            "min": 1,
+            "max": 2000,
+            "default": 2,
+            "value": 2
+          },
+          {
+            "name": "v",
+            "type": "int",
+            "desc": "specify the number of video streams (from 0 to INT_MAX) (default 1)",
+            "min": 0,
+            "max": 2000,
+            "default": 1,
+            "value": 1
+          },
+          {
+            "name": "a",
+            "type": "int",
+            "desc": "specify the number of audio streams (from 0 to INT_MAX) (default 0)",
+            "min": 0,
+            "max": 2000,
+            "default": 0,
+            "value": "1"
+          },
+          {
+            "name": "unsafe",
+            "type": "boolean",
+            "desc": "enable unsafe mode (default false)",
+            "min": null,
+            "max": null,
+            "default": "false",
+            "value": "false"
+          }
+        ],
+        "nodeType": "filter",
+        "enabled": true
+      },
+      "nodeType": "filter",
+      "position": {
+        "x": 200,
+        "y": -60
+      },
+      "positionAbsolute": {
+        "x": 200,
+        "y": -60
+      },
+      "width": 71,
+      "height": 50,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "7d004403-7325-49fe-a1b1-2ccfd02e10eb",
+      "sourceHandle": "v_0",
+      "target": "36fdb883-b486-4d6d-a967-6c5e75fea2d4",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-7d004403-7325-49fe-a1b1-2ccfd02e10ebv_0-36fdb883-b486-4d6d-a967-6c5e75fea2d4v_0"
+    },
+    {
+      "source": "7d004403-7325-49fe-a1b1-2ccfd02e10eb",
+      "sourceHandle": "v_0",
+      "target": "ca9bfea8-4e6e-4d37-86e8-2278f478311b",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-7d004403-7325-49fe-a1b1-2ccfd02e10ebv_0-ca9bfea8-4e6e-4d37-86e8-2278f478311bv_0"
+    },
+    {
+      "source": "7d004403-7325-49fe-a1b1-2ccfd02e10eb",
+      "sourceHandle": "a_1",
+      "target": "8b5a5796-e55e-40c1-a6d1-c02810f36e9d",
+      "targetHandle": "a_0",
+      "id": "xyflow__edge-7d004403-7325-49fe-a1b1-2ccfd02e10eba_1-8b5a5796-e55e-40c1-a6d1-c02810f36e9da_0"
+    },
+    {
+      "source": "7d004403-7325-49fe-a1b1-2ccfd02e10eb",
+      "sourceHandle": "a_1",
+      "target": "83608257-ca86-4e2b-bd15-8130dd57408f",
+      "targetHandle": "a_0",
+      "id": "xyflow__edge-7d004403-7325-49fe-a1b1-2ccfd02e10eba_1-83608257-ca86-4e2b-bd15-8130dd57408fa_0"
+    },
+    {
+      "source": "36fdb883-b486-4d6d-a967-6c5e75fea2d4",
+      "sourceHandle": "v_0",
+      "target": "bbcf717d-709e-4195-8721-0beff2d3c724",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-36fdb883-b486-4d6d-a967-6c5e75fea2d4v_0-bbcf717d-709e-4195-8721-0beff2d3c724v_0"
+    },
+    {
+      "source": "ca9bfea8-4e6e-4d37-86e8-2278f478311b",
+      "sourceHandle": "v_0",
+      "target": "070a7983-c3aa-47af-af40-b7cc1d1beb7e",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-ca9bfea8-4e6e-4d37-86e8-2278f478311bv_0-070a7983-c3aa-47af-af40-b7cc1d1beb7ev_0"
+    },
+    {
+      "source": "8b5a5796-e55e-40c1-a6d1-c02810f36e9d",
+      "sourceHandle": "a_0",
+      "target": "297207f9-d013-4382-802c-6358227487ff",
+      "targetHandle": "a_0",
+      "id": "xyflow__edge-8b5a5796-e55e-40c1-a6d1-c02810f36e9da_0-297207f9-d013-4382-802c-6358227487ffa_0"
+    },
+    {
+      "source": "83608257-ca86-4e2b-bd15-8130dd57408f",
+      "sourceHandle": "a_0",
+      "target": "2524a9ea-cc56-40f7-a815-c63f42cb27ac",
+      "targetHandle": "a_0",
+      "id": "xyflow__edge-83608257-ca86-4e2b-bd15-8130dd57408fa_0-2524a9ea-cc56-40f7-a815-c63f42cb27aca_0"
+    },
+    {
+      "source": "bbcf717d-709e-4195-8721-0beff2d3c724",
+      "sourceHandle": "v_0",
+      "target": "6bcb655e-e9c0-427a-9eed-0c6ea4f52b2b",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-bbcf717d-709e-4195-8721-0beff2d3c724v_0-6bcb655e-e9c0-427a-9eed-0c6ea4f52b2bv_0"
+    },
+    {
+      "source": "297207f9-d013-4382-802c-6358227487ff",
+      "sourceHandle": "a_0",
+      "target": "6bcb655e-e9c0-427a-9eed-0c6ea4f52b2b",
+      "targetHandle": "a_1",
+      "id": "xyflow__edge-297207f9-d013-4382-802c-6358227487ffa_0-6bcb655e-e9c0-427a-9eed-0c6ea4f52b2ba_1"
+    },
+    {
+      "source": "070a7983-c3aa-47af-af40-b7cc1d1beb7e",
+      "sourceHandle": "v_0",
+      "target": "6bcb655e-e9c0-427a-9eed-0c6ea4f52b2b",
+      "targetHandle": "v_2",
+      "id": "xyflow__edge-070a7983-c3aa-47af-af40-b7cc1d1beb7ev_0-6bcb655e-e9c0-427a-9eed-0c6ea4f52b2bv_2"
+    },
+    {
+      "source": "2524a9ea-cc56-40f7-a815-c63f42cb27ac",
+      "sourceHandle": "a_0",
+      "target": "6bcb655e-e9c0-427a-9eed-0c6ea4f52b2b",
+      "targetHandle": "a_3",
+      "id": "xyflow__edge-2524a9ea-cc56-40f7-a815-c63f42cb27aca_0-6bcb655e-e9c0-427a-9eed-0c6ea4f52b2ba_3"
+    },
+    {
+      "source": "6bcb655e-e9c0-427a-9eed-0c6ea4f52b2b",
+      "sourceHandle": "v_0",
+      "target": "10ebcbf9-cb96-4cff-ad69-63b5cab9a7f1",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-6bcb655e-e9c0-427a-9eed-0c6ea4f52b2bv_0-10ebcbf9-cb96-4cff-ad69-63b5cab9a7f1v_0"
+    },
+    {
+      "source": "6bcb655e-e9c0-427a-9eed-0c6ea4f52b2b",
+      "sourceHandle": "a_1",
+      "target": "10ebcbf9-cb96-4cff-ad69-63b5cab9a7f1",
+      "targetHandle": "a_1",
+      "id": "xyflow__edge-6bcb655e-e9c0-427a-9eed-0c6ea4f52b2ba_1-10ebcbf9-cb96-4cff-ad69-63b5cab9a7f1a_1"
+    },
+    {
+      "source": "bbcf717d-709e-4195-8721-0beff2d3c724",
+      "sourceHandle": "v_0",
+      "target": "6b442773-04c1-4f44-befa-f83a497141af",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-bbcf717d-709e-4195-8721-0beff2d3c724v_0-6b442773-04c1-4f44-befa-f83a497141afv_0"
+    },
+    {
+      "source": "297207f9-d013-4382-802c-6358227487ff",
+      "sourceHandle": "a_0",
+      "target": "6b442773-04c1-4f44-befa-f83a497141af",
+      "targetHandle": "a_1",
+      "id": "xyflow__edge-297207f9-d013-4382-802c-6358227487ffa_0-6b442773-04c1-4f44-befa-f83a497141afa_1"
+    },
+    {
+      "source": "070a7983-c3aa-47af-af40-b7cc1d1beb7e",
+      "sourceHandle": "v_0",
+      "target": "6b442773-04c1-4f44-befa-f83a497141af",
+      "targetHandle": "v_2",
+      "id": "xyflow__edge-070a7983-c3aa-47af-af40-b7cc1d1beb7ev_0-6b442773-04c1-4f44-befa-f83a497141afv_2"
+    },
+    {
+      "source": "2524a9ea-cc56-40f7-a815-c63f42cb27ac",
+      "sourceHandle": "a_0",
+      "target": "6b442773-04c1-4f44-befa-f83a497141af",
+      "targetHandle": "a_3",
+      "id": "xyflow__edge-2524a9ea-cc56-40f7-a815-c63f42cb27aca_0-6b442773-04c1-4f44-befa-f83a497141afa_3"
+    },
+    {
+      "source": "6b442773-04c1-4f44-befa-f83a497141af",
+      "sourceHandle": "v_0",
+      "target": "10ebcbf9-cb96-4cff-ad69-63b5cab9a7f1",
+      "targetHandle": "v_0",
+      "id": "xyflow__edge-6b442773-04c1-4f44-befa-f83a497141afv_0-10ebcbf9-cb96-4cff-ad69-63b5cab9a7f1v_0"
+    },
+    {
+      "source": "6b442773-04c1-4f44-befa-f83a497141af",
+      "sourceHandle": "a_1",
+      "target": "10ebcbf9-cb96-4cff-ad69-63b5cab9a7f1",
+      "targetHandle": "a_1",
+      "id": "xyflow__edge-6b442773-04c1-4f44-befa-f83a497141afa_1-10ebcbf9-cb96-4cff-ad69-63b5cab9a7f1a_1"
+    }
+  ],
+  "command": "ffmpeg -i shoe.mp4 -filter_complex \"[0:v]trim=start=3:end=4[3];[0:v]trim=start=1:end=2[1];[0:a]atrim=start=3:end=4[7];[0:a]atrim=start=1:end=2[5];[1]setpts=expr=PTS-STARTPTS[2];[3]setpts=expr=PTS-STARTPTS[4];[5]asetpts=expr=PTS-STARTPTS[6];[7]asetpts=expr=PTS-STARTPTS[8];[2][6][4][8]concat=a=1[out_370][out_869]\" -map [out_370] -map [out_869] out.mp4"
+}

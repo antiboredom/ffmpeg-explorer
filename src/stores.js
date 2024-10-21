@@ -42,6 +42,7 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
   let finalCommand = [];
   let filtergraph = [];
   let labelIndex = 1;
+  let outs = 0;
   const edgeIds = {};
   const inputIdMap = {};
 
@@ -70,7 +71,9 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
         label = labelIndex;
         labelIndex++;
       } else if (inNode.nodeType === "filter" && outNode.nodeType === "output") {
-        label = "out_" + type;
+        // this was breaking when it was IDing by the type, as work around i made it current-outs-count based ID and it works
+        label = 'out_' + outs;
+        outs++
       } else if (inNode.nodeType === "input" && outNode.nodeType === "output") {
         label = "FILTERLESS_" + inputIdMap[inNode.id] + ":" + type;
       } else {
@@ -97,7 +100,14 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
     let cmd = { weight: 0, in: [], out: [], cmd: "" };
 
     const outs = $edges.filter((e) => e.source == n.id);
-    const ins = $edges.filter((e) => e.target == n.id);
+    let ins = $edges.filter((e) => e.target == n.id)
+
+    // respect the user define input order (not just when the edges were created) this fixes a lot of issues whit complex filter like concat (v a v a) -> (v a)
+    if (n?.data?.isCustom) {
+      ins = ins.sort((a, b) => {
+         return Number(a.targetHandle.split('_')[1]) - Number(b.targetHandle.split('_')[1])
+      })
+   }
 
     if (outs.length == 0 && ins.length == 0) continue;
 
@@ -155,13 +165,11 @@ export const previewCommand = derived([edges, nodes], ([$edges, $nodes]) => {
 
     finalCommand.push("-filter_complex", fg);
 
-    if (fg.includes("[out_a]")) {
-      finalCommand.push("-map", '"[out_a]"');
-    }
+    const getMappers = fg.match(/\[out_\d+\]/g) || [] // get all the out_0 out_1 etc
 
-    if (fg.includes("[out_v]")) {
-      finalCommand.push("-map", '"[out_v]"');
-    }
+    for (let m of getMappers) {
+      finalCommand.push('-map', `"${m}"`)
+   }
 
     for (let m of mediaMaps) {
       finalCommand.push("-map", m);
